@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-30",
+  "task_execution_commit": "780ac890f99c215df2b6742fd045b0b4ce05a895",
+  "task_runs": 27,
+  "completed_task_runs": 27,
+  "v1_judge_attempts_archived": 27,
+  "v2_judge_attempts": 27,
+  "v2_valid_scores": 25,
+  "regression_tests": {
+    "passed": 85,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 37.36
+  },
+  "fairness_audit_passed": true,
+  "archived_scoring_files_byte_verified": 168,
+  "workspace_files_sha256_verified": 90,
+  "scoring_source_sha256": "f04d88c3c856a6be5f6a3739aa17867da15086296d353ba2d13c09959665be3c",
+  "summary": "summary.json",
+  "report": "../../../docs/member2-validation-report.md",
+  "score_policy": "Use v2 only; preserve missing values; no pooling with v1; no paid retries."
+}

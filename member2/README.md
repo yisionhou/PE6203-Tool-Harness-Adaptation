@@ -2,7 +2,7 @@
 
 第一版实现 `dependency-aware-v1`，使用确定性模板与显式依赖图，提供真正执行不同更新路径的 `no_update`、`full_rewrite` 和 `selective_patch`。它不调用模型生成知识，更新 token 成本为 0，耗时由程序实际测量。
 
-验收：82 项自动测试通过；27 个条件均完成工具发现与知识加载，审计通过；本轮没有模型或评分 API 请求。
+当前验收：85 项自动测试通过；27 次真实任务正常结束，v2 有效评分 25/27，运行条件审计通过。先读 [成员 3 交付说明](../docs/member2-handoff.md) 和 [验证报告](../docs/member2-validation-report.md)。初次开发阶段的 82 项测试和零模型调用记录仍保存在历史验收摘要中。
 
 详细计划见 [成员 2 开发计划](../docs/member2-development-plan.md)，报告素材见 [方法说明](../docs/member2-report-section.md)。本目录产物独立于成员 1 Stage 4 的 `test_fixture` 示例；历史示例仍保留原标记。
 
@@ -17,7 +17,8 @@
 | `tests/test_adaptation.py` | 改名、删除、参数与描述变化、保留、失败和导出测试 |
 | `evidence/adaptation/` | 本次实际生成的输入快照、知识包、更新记录和批次计划 |
 | `evidence/tool_integration/` | 27 个条件的工具发现和知识加载记录 |
-| `evidence/verification.json` | 实际验收摘要与范围说明 |
+| `evidence/verification.json` | 初次开发阶段的历史验收摘要 |
+| `evidence/pre_handoff/` | 本轮真实任务、工作文件、评分与汇总 |
 
 现有 Python/Node 环境直接复用，不新增依赖，不读取本地 API 配置来生成知识。主仓库位于 `D:\6203-final\outputs\PE6203-Tool-Harness-Adaptation`。
 
@@ -119,7 +120,7 @@ evidence/adaptation/
 └─ build_report.json                       观察来源、生成代码哈希和索引
 ```
 
-共导出 21 个不同路径的知识包：不更新 3 份共享包，全量与局部各 9 份；组合成 27 个运行条件。每包都经成员 1 `load_knowledge` 校验，并由 `prepare` 检查计划中的全部条件。没有设置 `test_fixture`；它们来自真实程序式更新，但当前还未进行实际模型任务表现评估。
+共导出 21 个不同路径的知识包：不更新 3 份共享包，全量与局部各 9 份；组合成 27 个运行条件。每包都经成员 1 `load_knowledge` 校验，并由 `prepare` 检查计划中的全部条件。没有设置 `test_fixture`；它们来自真实程序式更新，并已完成一轮真实模型验证，结果见交付前验证报告。
 
 新增元数据 `knowledge_blocks`、`knowledge_global_instructions`、`adaptation` 不改变成员 1 既有输入协议。模型使用的是 `tools` 和编译后的 `instructions`，附加元数据用于追踪。每条任务的原始 `knowledge.json` 中有 `adaptation.update_id`，可与 `build_report.json` 和更新日志关联。
 
@@ -151,12 +152,12 @@ evidence/adaptation/
 - 当前输入没有可比较的输出 Schema，因此输出变化处理仅由合成测试验证。
 - 改名、删除、复杂参数和损坏依赖有自动测试；真实固定子集主要包含可选参数和描述变化，任务 156 的新增工具也不是完成该问题的必需工具。
 - `test_affected_opaque_rule_requires_review_instead_of_silent_under_update` 展示遗漏更新风险被阻止；`test_full_rewrite_regenerates_every_card_and_rule_even_if_tools_are_unchanged` 展示额外人工措辞在全量再生成中可能丢失。它们是机制测试，不是课程要求的真实模型失败轨迹，不能写成实际任务损伤结论。
-- 接下来由成员 3 固定正式任务集合与 judge 协议，判断是否扩充具有强制迁移的官方任务，再进行付费任务运行与评分。此前 Stage 4 的调用授权不用于这一新批次。
+- 接下来由成员 3 在本轮自验基础上固定更有区分度的正式任务集合与重复次数，保持 judge 协议一致；新批次单独安排预算。
 
-正式任务命令如下，会产生模型费用，尚未执行：
+下面是再次运行相同任务计划的命令，会产生新的模型费用。本轮已有结果可直接读取，不必重跑：
 
 ```powershell
 .venv\Scripts\python.exe -X utf8 member1/run_comparison.py --plan member2/evidence/adaptation/comparison.json --env-file D:\6203-final\work\stage4.env --output-dir outputs/member2-model-comparison
 ```
 
-完成真实运行后，再按成员 1 评分桥接说明准备 judge 输入；评委参数、重复次数和总费用必须在正式实验前固定。
+新一轮任务完成后，按 [交付说明](../docs/member2-handoff.md) 准备 judge 输入；当前默认使用模型实际可见的工具返回。评委参数、重复次数和预算应在正式实验前固定。

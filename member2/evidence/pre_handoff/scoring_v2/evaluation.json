@@ -1,0 +1,914 @@
+{
+  "schema_version": 1,
+  "protocol_sha256": "65c1078abefc3b00d9fb66851416b9ba5c76e5cd5183ba253f2173860e1fe98a",
+  "cases": [
+    {
+      "case_id": "0000-no_update-Early-28",
+      "task_id": 28,
+      "version": "Early",
+      "strategy": "no_update",
+      "run_id": "20261030T041028Z-d39e7bb4",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Early-task-28/run_summary.json",
+        "answer": "no_update/Early-task-28/result/ANSWER/28.json",
+        "events": "no_update/Early-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "12230b16436c0ef1238d92d54216e0a0a2d1cf793c3d0175ef2c1ebfe64fc4a2",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0000-no_update-Early-28/prompt-1.txt",
+          "sha256": "b20d76f5fdb5acc388ab7d09e0899492c15d9bcbfdf67dfb958230a4c46818e4",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 5
+      }
+    },
+    {
+      "case_id": "0001-full_rewrite-Early-28",
+      "task_id": 28,
+      "version": "Early",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041107Z-1fe3c76f",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Early-task-28/run_summary.json",
+        "answer": "full_rewrite/Early-task-28/result/ANSWER/28.json",
+        "events": "full_rewrite/Early-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "8bf6c5ccd36d3251980be64001fe65ac71327810216dab0db0d7c6510ce08522",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0001-full_rewrite-Early-28/prompt-1.txt",
+          "sha256": "20f51d5496324ed734e8913dd0334c95a5a5094ce5311982191f65909dc52a4a",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0002-selective_patch-Early-28",
+      "task_id": 28,
+      "version": "Early",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041134Z-879f8abe",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Early-task-28/run_summary.json",
+        "answer": "selective_patch/Early-task-28/result/ANSWER/28.json",
+        "events": "selective_patch/Early-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "6209d9445371a8896bf0863496c8266668b0605eb29947828a1e2a5ceeac5661",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0002-selective_patch-Early-28/prompt-1.txt",
+          "sha256": "9e6059c47fa67aba6afca77afa483222905525c45e03913244712237bce6ff01",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0003-no_update-Early-144",
+      "task_id": 144,
+      "version": "Early",
+      "strategy": "no_update",
+      "run_id": "20261030T041202Z-f4556175",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Early-task-144/run_summary.json",
+        "answer": "no_update/Early-task-144/result/ANSWER/144.json",
+        "events": "no_update/Early-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "3206804824c6d939bcaca9c81fc6111f808c47130a7aa978a8fd650843207ea9",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0003-no_update-Early-144/prompt-1.txt",
+          "sha256": "ae4ac2298afcc4bb37987e92cfa3749e35c965e39fac9fd33503ac85e43fcb20",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0004-full_rewrite-Early-144",
+      "task_id": 144,
+      "version": "Early",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041218Z-3b92643a",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Early-task-144/run_summary.json",
+        "answer": "full_rewrite/Early-task-144/result/ANSWER/144.json",
+        "events": "full_rewrite/Early-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "76f04756c3f7f70cda6f13c618d49607a46ee3dcfac34044784aa11960b6e0d5",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0004-full_rewrite-Early-144/prompt-1.txt",
+          "sha256": "74e5081031cade1539946df58695fc1175eac79407e97241ee02bde76ed7d24b",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 5
+      }
+    },
+    {
+      "case_id": "0005-selective_patch-Early-144",
+      "task_id": 144,
+      "version": "Early",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041235Z-070a64dc",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Early-task-144/run_summary.json",
+        "answer": "selective_patch/Early-task-144/result/ANSWER/144.json",
+        "events": "selective_patch/Early-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "8aad993c203eddc2177dc69acc2e0ba0d02371d2e3f6c3a41f7d7f0c8e018898",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0005-selective_patch-Early-144/prompt-1.txt",
+          "sha256": "f9d88318959d4daa3e3d5c889d60a53421dc53543151a2c8718c6e66c8df436f",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0006-no_update-Early-156",
+      "task_id": 156,
+      "version": "Early",
+      "strategy": "no_update",
+      "run_id": "20261030T041253Z-db91a8bb",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Early-task-156/run_summary.json",
+        "answer": "no_update/Early-task-156/result/ANSWER/156.json",
+        "events": "no_update/Early-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "83538b6f10bf4bfb1f5f11ad9c220264c9574bc27d1e726f7f5a95d8eea76140",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0006-no_update-Early-156/prompt-1.txt",
+          "sha256": "3853f69351aff6040344a2821b76fb849cda2877f5b594e07e691d41f55a1ae3",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 7
+      }
+    },
+    {
+      "case_id": "0007-full_rewrite-Early-156",
+      "task_id": 156,
+      "version": "Early",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041313Z-405b47a1",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Early-task-156/run_summary.json",
+        "answer": "full_rewrite/Early-task-156/result/ANSWER/156.json",
+        "events": "full_rewrite/Early-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "4b5d139c951ac41c2fa6bb4d344e979b63491f42b4728e446c9ee959529c3b4c",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0007-full_rewrite-Early-156/prompt-1.txt",
+          "sha256": "030a5c42dd600d4d682bf7c278ca466ec325d9ab786e174d76f717c5ad256cce",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0008-selective_patch-Early-156",
+      "task_id": 156,
+      "version": "Early",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041324Z-c91699ba",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Early-task-156/run_summary.json",
+        "answer": "selective_patch/Early-task-156/result/ANSWER/156.json",
+        "events": "selective_patch/Early-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "321afe4fdf84531163ee500edd1ac3ca218451a3c723d05c0f36b2b78d61fad5",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0008-selective_patch-Early-156/prompt-1.txt",
+          "sha256": "18bbc34c3c07ecf90e7f52629a3227ed28ab513e75419cbe5f3c74e136177ec6",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0009-no_update-Middle-28",
+      "task_id": 28,
+      "version": "Middle",
+      "strategy": "no_update",
+      "run_id": "20261030T041335Z-c07a1e41",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Middle-task-28/run_summary.json",
+        "answer": "no_update/Middle-task-28/result/ANSWER/28.json",
+        "events": "no_update/Middle-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "45aed19123fab92f993d568bdc6c0b09a2bf337398e52cce4f4cf12ba92bb7d9",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0009-no_update-Middle-28/prompt-1.txt",
+          "sha256": "c9b6a8b3a468ad63d93eaa5c986503e4723764e71e711e182da1051b05085b46",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0010-full_rewrite-Middle-28",
+      "task_id": 28,
+      "version": "Middle",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041409Z-71ac726c",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Middle-task-28/run_summary.json",
+        "answer": "full_rewrite/Middle-task-28/result/ANSWER/28.json",
+        "events": "full_rewrite/Middle-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "4c1e20b00f02e09d049f31d68908e45a83ed8cd4b520b09931728fef3b042b13",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0010-full_rewrite-Middle-28/prompt-1.txt",
+          "sha256": "4d10f766261c249a134ca24d3426d7379dd7a6c0299f3092e3beb5d2d3c3d116",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0011-selective_patch-Middle-28",
+      "task_id": 28,
+      "version": "Middle",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041437Z-5ebed9ac",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Middle-task-28/run_summary.json",
+        "answer": "selective_patch/Middle-task-28/result/ANSWER/28.json",
+        "events": "selective_patch/Middle-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "c44f9cec54c48a3e557fb6ef603e09a86ec0754bc6c8163ead83c07b60190afb",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0011-selective_patch-Middle-28/prompt-1.txt",
+          "sha256": "33102b6649022e595c658c7ef1ff79546e0410f45832d90560c25ace9f2472ae",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0012-no_update-Middle-144",
+      "task_id": 144,
+      "version": "Middle",
+      "strategy": "no_update",
+      "run_id": "20261030T041508Z-aa04815d",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Middle-task-144/run_summary.json",
+        "answer": "no_update/Middle-task-144/result/ANSWER/144.json",
+        "events": "no_update/Middle-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "cc27a3dc4d0e2f6b51636ffd7424cd827ee9afac30e768c7d396d9a7d78bd8c4",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0012-no_update-Middle-144/prompt-1.txt",
+          "sha256": "9acceda5cc0cae01ac47d6e90d98a434fec88096d5c2c59b5ac34e6f41894044",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 9,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0013-full_rewrite-Middle-144",
+      "task_id": 144,
+      "version": "Middle",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041525Z-f3185767",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Middle-task-144/run_summary.json",
+        "answer": "full_rewrite/Middle-task-144/result/ANSWER/144.json",
+        "events": "full_rewrite/Middle-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "84ca241fb6623ea3d8fb756c173ed78c2edbbd14d334ea7da974f2390c1d748d",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0013-full_rewrite-Middle-144/prompt-1.txt",
+          "sha256": "5574eb07681aeacb6870af6b58033c5fb5c587ab382d2931f5fb56692ad1e5a3",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 8,
+        "planning_and_efficiency": 5
+      }
+    },
+    {
+      "case_id": "0014-selective_patch-Middle-144",
+      "task_id": 144,
+      "version": "Middle",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041544Z-6f70750a",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Middle-task-144/run_summary.json",
+        "answer": "selective_patch/Middle-task-144/result/ANSWER/144.json",
+        "events": "selective_patch/Middle-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "e81046dd6e484a6f5b8284f987ca421a649f1eba2e4236d2d7eea37e4ceb368a",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0014-selective_patch-Middle-144/prompt-1.txt",
+          "sha256": "8049232a8d43048bc0111736fa70e1be80832e712284a5b32839f29e4ffb67a7",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 5
+      }
+    },
+    {
+      "case_id": "0015-no_update-Middle-156",
+      "task_id": 156,
+      "version": "Middle",
+      "strategy": "no_update",
+      "run_id": "20261030T041601Z-d77c02e6",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Middle-task-156/run_summary.json",
+        "answer": "no_update/Middle-task-156/result/ANSWER/156.json",
+        "events": "no_update/Middle-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "9d25dfed75c874fa5a2f068aadcc36225fcf63f302bc27635558989d0c4d0898",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0015-no_update-Middle-156/prompt-1.txt",
+          "sha256": "0e73b5a70b2a430a6b4efb83a4a44c56fee1b8d713e5418fe90772e4affea2f9",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0016-full_rewrite-Middle-156",
+      "task_id": 156,
+      "version": "Middle",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041614Z-3b7ed416",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Middle-task-156/run_summary.json",
+        "answer": "full_rewrite/Middle-task-156/result/ANSWER/156.json",
+        "events": "full_rewrite/Middle-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "97b505c5b6533547a83d199ea570a43273ec6213c7838dd43e94562d5696d39a",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0016-full_rewrite-Middle-156/prompt-1.txt",
+          "sha256": "9b069de9aaaa88cb1461ae149ae3577ca0357bc5aeb15a0403e51b36e3bb2a22",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0017-selective_patch-Middle-156",
+      "task_id": 156,
+      "version": "Middle",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041627Z-60215f02",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Middle-task-156/run_summary.json",
+        "answer": "selective_patch/Middle-task-156/result/ANSWER/156.json",
+        "events": "selective_patch/Middle-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "c2ffdde43114ea9492686c27bb43405e89d2dd82a8c0d4fa7137ccdb4a05f841",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0017-selective_patch-Middle-156/prompt-1.txt",
+          "sha256": "ca329c1e4bfaa3f7df968cd910f3d0ded867fcf9b8df4493a8b1aafdce56502f",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 5
+      }
+    },
+    {
+      "case_id": "0018-no_update-Late-28",
+      "task_id": 28,
+      "version": "Late",
+      "strategy": "no_update",
+      "run_id": "20261030T041640Z-27d65c3a",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Late-task-28/run_summary.json",
+        "answer": "no_update/Late-task-28/result/ANSWER/28.json",
+        "events": "no_update/Late-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "14e8fb51262a5285cfe2c0c99726b2f8043a65ee19b3f40ab4a8fa209f1bb438",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0018-no_update-Late-28/prompt-1.txt",
+          "sha256": "287ddb99eb8d0174e4d4d7e3cd7eacbf69792b0d696b39790fcb180d6855a8c8",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0019-full_rewrite-Late-28",
+      "task_id": 28,
+      "version": "Late",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041712Z-e7fabcbe",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Late-task-28/run_summary.json",
+        "answer": "full_rewrite/Late-task-28/result/ANSWER/28.json",
+        "events": "full_rewrite/Late-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "f305ebc4e057ae91b3e0c662c1e3656445aaa1b660af01257a37d9522e50bfbf",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0019-full_rewrite-Late-28/prompt-1.txt",
+          "sha256": "69ea9c8b5c7e5e355424a6b9940a9ce601ce52baea15a5a5339bb1342a8b749c",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 9,
+        "planning_and_efficiency": 8
+      }
+    },
+    {
+      "case_id": "0020-selective_patch-Late-28",
+      "task_id": 28,
+      "version": "Late",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041751Z-3fc0e992",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Late-task-28/run_summary.json",
+        "answer": "selective_patch/Late-task-28/result/ANSWER/28.json",
+        "events": "selective_patch/Late-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "2e6fbbeddeb4af4a4504532f759564524e248252c0cbec7fb59cb0645917fafd",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0020-selective_patch-Late-28/prompt-1.txt",
+          "sha256": "6b8be7c5445acfce60d527d39e699156ed966478f3561ebdca0c902f5fd6aea9",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0021-no_update-Late-144",
+      "task_id": 144,
+      "version": "Late",
+      "strategy": "no_update",
+      "run_id": "20261030T041821Z-f53d246d",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Late-task-144/run_summary.json",
+        "answer": "no_update/Late-task-144/result/ANSWER/144.json",
+        "events": "no_update/Late-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "a4029f4f2508ddfc231a11b7030339701a3fa2eb535101db7d245e245ae0c1ff",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0021-no_update-Late-144/prompt-1.txt",
+          "sha256": "263c6574bd73e3e6eb885ea19ae1ad60ff6bffb6c2d10a478b86d09816ef1258",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 5
+      }
+    },
+    {
+      "case_id": "0022-full_rewrite-Late-144",
+      "task_id": 144,
+      "version": "Late",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041838Z-a1b1ba0c",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Late-task-144/run_summary.json",
+        "answer": "full_rewrite/Late-task-144/result/ANSWER/144.json",
+        "events": "full_rewrite/Late-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "0685983789ff9fb2c95fc72be24ca6de52ceea8df39fc4aa5c3ff4a83465ec9b",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0022-full_rewrite-Late-144/prompt-1.txt",
+          "sha256": "0900b11b3f45c29cc0e1f1a2c27bf79b8d5479abe25aa12a28f58843ff48a4ae",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0023-selective_patch-Late-144",
+      "task_id": 144,
+      "version": "Late",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041852Z-76ef63fd",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Late-task-144/run_summary.json",
+        "answer": "selective_patch/Late-task-144/result/ANSWER/144.json",
+        "events": "selective_patch/Late-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "aaa76f24e25fe742a41d32df00184d59d6eda3e6c86b3468a31df264a46b57c3",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0023-selective_patch-Late-144/prompt-1.txt",
+          "sha256": "97f112095180bb937fbab8d9ac5f3e547fdcadaa4f1dfcbe859cc73d7483938e",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 8,
+        "planning_and_efficiency": 5
+      }
+    },
+    {
+      "case_id": "0024-no_update-Late-156",
+      "task_id": 156,
+      "version": "Late",
+      "strategy": "no_update",
+      "run_id": "20261030T041908Z-30ec8d3c",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Late-task-156/run_summary.json",
+        "answer": "no_update/Late-task-156/result/ANSWER/156.json",
+        "events": "no_update/Late-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "f723b6b91d9d7c79e0b9227f6f5391dbde9be22fd8883bc91f6d36486e2ab534",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0024-no_update-Late-156/prompt-1.txt",
+          "sha256": "f32308969594f6f301134005628179cfc24ca70e93dd9f9a2b19d6d666a99e88",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 5
+      }
+    },
+    {
+      "case_id": "0025-full_rewrite-Late-156",
+      "task_id": 156,
+      "version": "Late",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041920Z-953e332c",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Late-task-156/run_summary.json",
+        "answer": "full_rewrite/Late-task-156/result/ANSWER/156.json",
+        "events": "full_rewrite/Late-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "98ea13113c6e00ed56659ec42e138cc1c4d68183c9d20a1e9399fc431890a5b7",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0025-full_rewrite-Late-156/prompt-1.txt",
+          "sha256": "cf05fea67d7e96aa4672cd485e3b533e8931a78c333c78551de165ea238ce63e",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 5
+      }
+    },
+    {
+      "case_id": "0026-selective_patch-Late-156",
+      "task_id": 156,
+      "version": "Late",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041932Z-0fc920ec",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Late-task-156/run_summary.json",
+        "answer": "selective_patch/Late-task-156/result/ANSWER/156.json",
+        "events": "selective_patch/Late-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "ffc9011a8ddf4d9fb93fb20eb132653dbd2e8c25b328f5cea3bb153c56b020e5",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0026-selective_patch-Late-156/prompt-1.txt",
+          "sha256": "abe86ea25fda5342f8be9bdd78ec7e759bb88592d13b2efaf73a8d078ad6105c",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,814 @@
+{
+  "schema_version": 1,
+  "protocol_sha256": "b0ff86e7a12a1b5bebb5eeefb1da30e40d1b188167efd5ec66c5fe80c83178a9",
+  "cases": [
+    {
+      "case_id": "0000-no_update-Early-28",
+      "task_id": 28,
+      "version": "Early",
+      "strategy": "no_update",
+      "run_id": "20261030T041028Z-d39e7bb4",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Early-task-28/run_summary.json",
+        "answer": "no_update/Early-task-28/result/ANSWER/28.json",
+        "events": "no_update/Early-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "12230b16436c0ef1238d92d54216e0a0a2d1cf793c3d0175ef2c1ebfe64fc4a2",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0000-no_update-Early-28/prompt-1.txt",
+          "sha256": "b318e935af1e94eb20280366ac7a8f419b8390705556e131155be0276746d050",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 5
+      }
+    },
+    {
+      "case_id": "0001-full_rewrite-Early-28",
+      "task_id": 28,
+      "version": "Early",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041107Z-1fe3c76f",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Early-task-28/run_summary.json",
+        "answer": "full_rewrite/Early-task-28/result/ANSWER/28.json",
+        "events": "full_rewrite/Early-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "8bf6c5ccd36d3251980be64001fe65ac71327810216dab0db0d7c6510ce08522",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0001-full_rewrite-Early-28/prompt-1.txt",
+          "sha256": "e3580a2647e4875c7eccdfeada7e2108b84e3978d7597c2de2c04c79f606364d",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 7
+      }
+    },
+    {
+      "case_id": "0002-selective_patch-Early-28",
+      "task_id": 28,
+      "version": "Early",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041134Z-879f8abe",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Early-task-28/run_summary.json",
+        "answer": "selective_patch/Early-task-28/result/ANSWER/28.json",
+        "events": "selective_patch/Early-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "6209d9445371a8896bf0863496c8266668b0605eb29947828a1e2a5ceeac5661",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0002-selective_patch-Early-28/prompt-1.txt",
+          "sha256": "f251375584a80d7637bbd5f8151b6b2a57e558d4905c832c7020230fb07e5ce4",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0003-no_update-Early-144",
+      "task_id": 144,
+      "version": "Early",
+      "strategy": "no_update",
+      "run_id": "20261030T041202Z-f4556175",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Early-task-144/run_summary.json",
+        "answer": "no_update/Early-task-144/result/ANSWER/144.json",
+        "events": "no_update/Early-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "3206804824c6d939bcaca9c81fc6111f808c47130a7aa978a8fd650843207ea9",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0003-no_update-Early-144/prompt-1.txt",
+          "sha256": "35bada4367822792ef6d8da9983d3e0b439293403e3de0521e02e34ecb55eb3f",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0004-full_rewrite-Early-144",
+      "task_id": 144,
+      "version": "Early",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041218Z-3b92643a",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Early-task-144/run_summary.json",
+        "answer": "full_rewrite/Early-task-144/result/ANSWER/144.json",
+        "events": "full_rewrite/Early-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "76f04756c3f7f70cda6f13c618d49607a46ee3dcfac34044784aa11960b6e0d5",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0004-full_rewrite-Early-144/prompt-1.txt",
+          "sha256": "1a3627d577c070fe25f0cd7f4ee91a74dc19fa60a1444963eccdd49c0f605ed9",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 5
+      }
+    },
+    {
+      "case_id": "0005-selective_patch-Early-144",
+      "task_id": 144,
+      "version": "Early",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041235Z-070a64dc",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Early-task-144/run_summary.json",
+        "answer": "selective_patch/Early-task-144/result/ANSWER/144.json",
+        "events": "selective_patch/Early-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "8aad993c203eddc2177dc69acc2e0ba0d02371d2e3f6c3a41f7d7f0c8e018898",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0005-selective_patch-Early-144/prompt-1.txt",
+          "sha256": "007ab5c6d7246c937ca39ce04302ed6681a04b282f0a1dba4f34cb45512888d4",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 10
+      }
+    },
+    {
+      "case_id": "0006-no_update-Early-156",
+      "task_id": 156,
+      "version": "Early",
+      "strategy": "no_update",
+      "run_id": "20261030T041253Z-db91a8bb",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Early-task-156/run_summary.json",
+        "answer": "no_update/Early-task-156/result/ANSWER/156.json",
+        "events": "no_update/Early-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "83538b6f10bf4bfb1f5f11ad9c220264c9574bc27d1e726f7f5a95d8eea76140",
+      "status": "ready",
+      "judge_status": "completed",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0006-no_update-Early-156/prompt-1.txt",
+          "sha256": "21631dfcbb457d9ec58b4e1de23c390075ebc47334b7a93e594c392a3b9b64a3",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ],
+      "scores": {
+        "task_fulfillment": 10,
+        "grounding": 10,
+        "planning_and_efficiency": 7
+      }
+    },
+    {
+      "case_id": "0007-full_rewrite-Early-156",
+      "task_id": 156,
+      "version": "Early",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041313Z-405b47a1",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Early-task-156/run_summary.json",
+        "answer": "full_rewrite/Early-task-156/result/ANSWER/156.json",
+        "events": "full_rewrite/Early-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "4b5d139c951ac41c2fa6bb4d344e979b63491f42b4728e446c9ee959529c3b4c",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0007-full_rewrite-Early-156/prompt-1.txt",
+          "sha256": "dbf9cb317d2f8edafcfb7faeb2586610f2d45b6ac5ad0b311bec966780e84371",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0008-selective_patch-Early-156",
+      "task_id": 156,
+      "version": "Early",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041324Z-c91699ba",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Early-task-156/run_summary.json",
+        "answer": "selective_patch/Early-task-156/result/ANSWER/156.json",
+        "events": "selective_patch/Early-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "321afe4fdf84531163ee500edd1ac3ca218451a3c723d05c0f36b2b78d61fad5",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0008-selective_patch-Early-156/prompt-1.txt",
+          "sha256": "1251bb48d3c0868dd169479d89506f7dffc2732e3c1432fa97a4520f528ba207",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0009-no_update-Middle-28",
+      "task_id": 28,
+      "version": "Middle",
+      "strategy": "no_update",
+      "run_id": "20261030T041335Z-c07a1e41",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Middle-task-28/run_summary.json",
+        "answer": "no_update/Middle-task-28/result/ANSWER/28.json",
+        "events": "no_update/Middle-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "45aed19123fab92f993d568bdc6c0b09a2bf337398e52cce4f4cf12ba92bb7d9",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0009-no_update-Middle-28/prompt-1.txt",
+          "sha256": "77cac333e5a6494fce86ea98fe9f5baaf19d7579c845c57e68709aaa17a8dd70",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0010-full_rewrite-Middle-28",
+      "task_id": 28,
+      "version": "Middle",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041409Z-71ac726c",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Middle-task-28/run_summary.json",
+        "answer": "full_rewrite/Middle-task-28/result/ANSWER/28.json",
+        "events": "full_rewrite/Middle-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "4c1e20b00f02e09d049f31d68908e45a83ed8cd4b520b09931728fef3b042b13",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0010-full_rewrite-Middle-28/prompt-1.txt",
+          "sha256": "d8f71652be15aa943f6de9a8a600ae0490d336d3d987c2c0d50427d91e521d52",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0011-selective_patch-Middle-28",
+      "task_id": 28,
+      "version": "Middle",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041437Z-5ebed9ac",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Middle-task-28/run_summary.json",
+        "answer": "selective_patch/Middle-task-28/result/ANSWER/28.json",
+        "events": "selective_patch/Middle-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "c44f9cec54c48a3e557fb6ef603e09a86ec0754bc6c8163ead83c07b60190afb",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0011-selective_patch-Middle-28/prompt-1.txt",
+          "sha256": "2aa7a5ee875d0f80a0eaaf030a5ea52201d26c58b643fa19f6e5c91f7bbf04c4",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0012-no_update-Middle-144",
+      "task_id": 144,
+      "version": "Middle",
+      "strategy": "no_update",
+      "run_id": "20261030T041508Z-aa04815d",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Middle-task-144/run_summary.json",
+        "answer": "no_update/Middle-task-144/result/ANSWER/144.json",
+        "events": "no_update/Middle-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "cc27a3dc4d0e2f6b51636ffd7424cd827ee9afac30e768c7d396d9a7d78bd8c4",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0012-no_update-Middle-144/prompt-1.txt",
+          "sha256": "d63551bbae5fc01a29e17dc85f3eadec13f2d536d679d0e72db259f4574b278d",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0013-full_rewrite-Middle-144",
+      "task_id": 144,
+      "version": "Middle",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041525Z-f3185767",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Middle-task-144/run_summary.json",
+        "answer": "full_rewrite/Middle-task-144/result/ANSWER/144.json",
+        "events": "full_rewrite/Middle-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "84ca241fb6623ea3d8fb756c173ed78c2edbbd14d334ea7da974f2390c1d748d",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0013-full_rewrite-Middle-144/prompt-1.txt",
+          "sha256": "c2c7ca0efb8c87319e0eeb9e43c3e8b68d23d7e03d0a8ed029eb93a9c321893a",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0014-selective_patch-Middle-144",
+      "task_id": 144,
+      "version": "Middle",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041544Z-6f70750a",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Middle-task-144/run_summary.json",
+        "answer": "selective_patch/Middle-task-144/result/ANSWER/144.json",
+        "events": "selective_patch/Middle-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "e81046dd6e484a6f5b8284f987ca421a649f1eba2e4236d2d7eea37e4ceb368a",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0014-selective_patch-Middle-144/prompt-1.txt",
+          "sha256": "ae6f09ee47e6e2079d5471859b27d6b0c8fb05b9e6ad9a5d800fba1040922ddb",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0015-no_update-Middle-156",
+      "task_id": 156,
+      "version": "Middle",
+      "strategy": "no_update",
+      "run_id": "20261030T041601Z-d77c02e6",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Middle-task-156/run_summary.json",
+        "answer": "no_update/Middle-task-156/result/ANSWER/156.json",
+        "events": "no_update/Middle-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "9d25dfed75c874fa5a2f068aadcc36225fcf63f302bc27635558989d0c4d0898",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0015-no_update-Middle-156/prompt-1.txt",
+          "sha256": "b4a4c44dee02034ea96f9a6ebac097a3633550aac57f5b052cc8f3745b2d4ae5",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0016-full_rewrite-Middle-156",
+      "task_id": 156,
+      "version": "Middle",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041614Z-3b7ed416",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Middle-task-156/run_summary.json",
+        "answer": "full_rewrite/Middle-task-156/result/ANSWER/156.json",
+        "events": "full_rewrite/Middle-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "97b505c5b6533547a83d199ea570a43273ec6213c7838dd43e94562d5696d39a",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0016-full_rewrite-Middle-156/prompt-1.txt",
+          "sha256": "ef2e21175d9ba2a343bf58abd82239614869fada26a038fa244b9c5314c586d8",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0017-selective_patch-Middle-156",
+      "task_id": 156,
+      "version": "Middle",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041627Z-60215f02",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Middle-task-156/run_summary.json",
+        "answer": "selective_patch/Middle-task-156/result/ANSWER/156.json",
+        "events": "selective_patch/Middle-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "c2ffdde43114ea9492686c27bb43405e89d2dd82a8c0d4fa7137ccdb4a05f841",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0017-selective_patch-Middle-156/prompt-1.txt",
+          "sha256": "890c9a6bb526ff1a300103f0310f05abbf3e2c0fd2c2211d725b18554d14f8de",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0018-no_update-Late-28",
+      "task_id": 28,
+      "version": "Late",
+      "strategy": "no_update",
+      "run_id": "20261030T041640Z-27d65c3a",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Late-task-28/run_summary.json",
+        "answer": "no_update/Late-task-28/result/ANSWER/28.json",
+        "events": "no_update/Late-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "14e8fb51262a5285cfe2c0c99726b2f8043a65ee19b3f40ab4a8fa209f1bb438",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0018-no_update-Late-28/prompt-1.txt",
+          "sha256": "faaf87e82f89eda2faa9ecc383a7c6dabbf9c2924e5eb51a6adf966486ee1207",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0019-full_rewrite-Late-28",
+      "task_id": 28,
+      "version": "Late",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041712Z-e7fabcbe",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Late-task-28/run_summary.json",
+        "answer": "full_rewrite/Late-task-28/result/ANSWER/28.json",
+        "events": "full_rewrite/Late-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "f305ebc4e057ae91b3e0c662c1e3656445aaa1b660af01257a37d9522e50bfbf",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0019-full_rewrite-Late-28/prompt-1.txt",
+          "sha256": "62603c11517bd8478bfa7025ec5d2464234ee3fbfdb8e1f8ddbf9b69a3343950",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0020-selective_patch-Late-28",
+      "task_id": 28,
+      "version": "Late",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041751Z-3fc0e992",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Late-task-28/run_summary.json",
+        "answer": "selective_patch/Late-task-28/result/ANSWER/28.json",
+        "events": "selective_patch/Late-task-28/result/events.jsonl"
+      },
+      "source_record_sha256": "2e6fbbeddeb4af4a4504532f759564524e248252c0cbec7fb59cb0645917fafd",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0020-selective_patch-Late-28/prompt-1.txt",
+          "sha256": "a4432f26cca48cfada7d8cf2362601250a160068532729e14d23d986e47e9386",
+          "dimension_order": [
+            1,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0021-no_update-Late-144",
+      "task_id": 144,
+      "version": "Late",
+      "strategy": "no_update",
+      "run_id": "20261030T041821Z-f53d246d",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Late-task-144/run_summary.json",
+        "answer": "no_update/Late-task-144/result/ANSWER/144.json",
+        "events": "no_update/Late-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "a4029f4f2508ddfc231a11b7030339701a3fa2eb535101db7d245e245ae0c1ff",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0021-no_update-Late-144/prompt-1.txt",
+          "sha256": "2ef270e3ebba9fb68bdaf855df8c065102d2f40d0c9cd331de74c020b9dd113f",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0022-full_rewrite-Late-144",
+      "task_id": 144,
+      "version": "Late",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041838Z-a1b1ba0c",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Late-task-144/run_summary.json",
+        "answer": "full_rewrite/Late-task-144/result/ANSWER/144.json",
+        "events": "full_rewrite/Late-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "0685983789ff9fb2c95fc72be24ca6de52ceea8df39fc4aa5c3ff4a83465ec9b",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0022-full_rewrite-Late-144/prompt-1.txt",
+          "sha256": "81f9de4ce6a64a0f829a01ab08de4a434dfec567c209e40c641ae4ad3a5ad1f5",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0023-selective_patch-Late-144",
+      "task_id": 144,
+      "version": "Late",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041852Z-76ef63fd",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Late-task-144/run_summary.json",
+        "answer": "selective_patch/Late-task-144/result/ANSWER/144.json",
+        "events": "selective_patch/Late-task-144/result/events.jsonl"
+      },
+      "source_record_sha256": "aaa76f24e25fe742a41d32df00184d59d6eda3e6c86b3468a31df264a46b57c3",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0023-selective_patch-Late-144/prompt-1.txt",
+          "sha256": "99f24ef57170cebb790f0b62df0a5dd70e639cf93d69c857e449b52808086a78",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0024-no_update-Late-156",
+      "task_id": 156,
+      "version": "Late",
+      "strategy": "no_update",
+      "run_id": "20261030T041908Z-30ec8d3c",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "no_update/Late-task-156/run_summary.json",
+        "answer": "no_update/Late-task-156/result/ANSWER/156.json",
+        "events": "no_update/Late-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "f723b6b91d9d7c79e0b9227f6f5391dbde9be22fd8883bc91f6d36486e2ab534",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0024-no_update-Late-156/prompt-1.txt",
+          "sha256": "ce031345899688395caf10c310db855f6cde91c9f47c85d77c8fa5158372121a",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0025-full_rewrite-Late-156",
+      "task_id": 156,
+      "version": "Late",
+      "strategy": "full_rewrite",
+      "run_id": "20261030T041920Z-953e332c",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "full_rewrite/Late-task-156/run_summary.json",
+        "answer": "full_rewrite/Late-task-156/result/ANSWER/156.json",
+        "events": "full_rewrite/Late-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "98ea13113c6e00ed56659ec42e138cc1c4d68183c9d20a1e9399fc431890a5b7",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0025-full_rewrite-Late-156/prompt-1.txt",
+          "sha256": "73b68c06356db37c4af9ecf6a72fa032ffab82fcbf09108f9d7eeb16c50e490e",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "0026-selective_patch-Late-156",
+      "task_id": 156,
+      "version": "Late",
+      "strategy": "selective_patch",
+      "run_id": "20261030T041932Z-0fc920ec",
+      "purpose": "strategy_comparison",
+      "run_status": "completed",
+      "source_files": {
+        "summary": "selective_patch/Late-task-156/run_summary.json",
+        "answer": "selective_patch/Late-task-156/result/ANSWER/156.json",
+        "events": "selective_patch/Late-task-156/result/events.jsonl"
+      },
+      "source_record_sha256": "ffc9011a8ddf4d9fb93fb20eb132653dbd2e8c25b328f5cea3bb153c56b020e5",
+      "status": "ready",
+      "judge_status": "judge_error",
+      "read_errors": [],
+      "prompts": [
+        {
+          "path": "cases/0026-selective_patch-Late-156/prompt-1.txt",
+          "sha256": "db235b00d3beb922a57693b9d125babfe11accb4d18313e7ad34a5dfa9485072",
+          "dimension_order": [
+            1,
+            0,
+            2
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -45,5 +45,7 @@
     "under_update": "Affected opaque rule raises ReviewRequired; synthetic test, not a model failure trajectory.",
     "over_update": "Full regeneration can remove manually enriched card wording; synthetic test, not observed task damage."
   },
-  "git_diff_check": "passed"
+  "git_diff_check": "passed",
+  "scope": "Historical initial implementation and tools-only integration stage, before paid pre-handoff validation.",
+  "subsequent_validation": "pre_handoff/summary.json"
 }

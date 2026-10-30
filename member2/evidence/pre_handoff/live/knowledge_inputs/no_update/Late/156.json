@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "task_id": 156,
+  "strategy": "no_update",
+  "source_version": "Early",
+  "tools": [
+    {
+      "name": "clock__get_current_time",
+      "description": "获取当前日期和时间",
+      "inputSchema": {
+        "properties": {
+          "format": {
+            "description": "时间格式：'iso'（ISO 8601）、'locale'（本地格式）、'timestamp'（时间戳）。默认为 'iso'",
+            "enum": [
+              "iso",
+              "locale",
+              "timestamp"
+            ],
+            "type": "string"
+          },
+          "timezone": {
+            "description": "时区（例如：Asia/Shanghai, UTC, America/New_York）。默认为系统时区",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "source_name": "get_current_time",
+      "source_server": "@guanxiong/mcp-server-time"
+    },
+    {
+      "name": "clock__get_time_info",
+      "description": "获取详细的时间信息，包括年、月、日、时、分、秒等",
+      "inputSchema": {
+        "properties": {
+          "timezone": {
+            "description": "时区（例如：Asia/Shanghai, UTC）。默认为系统时区",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "source_name": "get_time_info",
+      "source_server": "@guanxiong/mcp-server-time"
+    },
+    {
+      "name": "calculator__calculate",
+      "description": "Calculates/evaluates the given expression.",
+      "inputSchema": {
+        "properties": {
+          "expression": {
+            "title": "Expression",
+            "type": "string"
+          }
+        },
+        "required": [
+          "expression"
+        ],
+        "title": "calculateArguments",
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "source_name": "calculate",
+      "source_server": "calculator"
+    }
+  ],
+  "instructions": "Use the supplied tool knowledge. Example arguments illustrate JSON shape only; replace placeholders with values from the user task before execution. Do not treat examples as task answers. Inspect tool errors before continuing.\n\nTool clock__get_current_time: 获取当前日期和时间\nRequired arguments: .\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"format\": {\"description\": \"时间格式：'iso'（ISO 8601）、'locale'（本地格式）、'timestamp'（时间戳）。默认为 'iso'\", \"enum\": [\"iso\", \"locale\", \"timestamp\"], \"type\": \"string\"}, \"timezone\": {\"description\": \"时区（例如：Asia/Shanghai, UTC, America/New_York）。默认为系统时区\", \"type\": \"string\"}}, \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"clock__get_current_time\"}\n\nTool clock__get_time_info: 获取详细的时间信息，包括年、月、日、时、分、秒等\nRequired arguments: .\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"timezone\": {\"description\": \"时区（例如：Asia/Shanghai, UTC）。默认为系统时区\", \"type\": \"string\"}}, \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"clock__get_time_info\"}\n\nTool calculator__calculate: Calculates/evaluates the given expression.\nRequired arguments: expression.\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"expression\": {\"title\": \"Expression\", \"type\": \"string\"}}, \"required\": [\"expression\"], \"title\": \"calculateArguments\", \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"expression\": \"<expression>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"calculator__calculate\"}\n\nAvailable routes: clock__get_current_time, clock__get_time_info, calculator__calculate. Use only these supplied routes and their declared argument names.",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.0
+  },
+  "knowledge_blocks": [
+    {
+      "id": "rule:@guanxiong/mcp-server-time::get_current_time",
+      "recipe": "tool_card_v1",
+      "tool_id": "@guanxiong/mcp-server-time::get_current_time",
+      "depends_on": [
+        "tool:@guanxiong/mcp-server-time::get_current_time"
+      ],
+      "text": "Tool clock__get_current_time: 获取当前日期和时间\nRequired arguments: .\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"format\": {\"description\": \"时间格式：'iso'（ISO 8601）、'locale'（本地格式）、'timestamp'（时间戳）。默认为 'iso'\", \"enum\": [\"iso\", \"locale\", \"timestamp\"], \"type\": \"string\"}, \"timezone\": {\"description\": \"时区（例如：Asia/Shanghai, UTC, America/New_York）。默认为系统时区\", \"type\": \"string\"}}, \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"clock__get_current_time\"}",
+      "example": {
+        "tool": "clock__get_current_time",
+        "arguments": {},
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:@guanxiong/mcp-server-time::get_time_info",
+      "recipe": "tool_card_v1",
+      "tool_id": "@guanxiong/mcp-server-time::get_time_info",
+      "depends_on": [
+        "tool:@guanxiong/mcp-server-time::get_time_info"
+      ],
+      "text": "Tool clock__get_time_info: 获取详细的时间信息，包括年、月、日、时、分、秒等\nRequired arguments: .\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"timezone\": {\"description\": \"时区（例如：Asia/Shanghai, UTC）。默认为系统时区\", \"type\": \"string\"}}, \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"clock__get_time_info\"}",
+      "example": {
+        "tool": "clock__get_time_info",
+        "arguments": {},
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:calculator::calculate",
+      "recipe": "tool_card_v1",
+      "tool_id": "calculator::calculate",
+      "depends_on": [
+        "tool:calculator::calculate"
+      ],
+      "text": "Tool calculator__calculate: Calculates/evaluates the given expression.\nRequired arguments: expression.\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"expression\": {\"title\": \"Expression\", \"type\": \"string\"}}, \"required\": [\"expression\"], \"title\": \"calculateArguments\", \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"expression\": \"<expression>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"calculator__calculate\"}",
+      "example": {
+        "tool": "calculator__calculate",
+        "arguments": {
+          "expression": "<expression>"
+        },
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:inventory",
+      "recipe": "tool_inventory_v1",
+      "depends_on": [
+        "rule:@guanxiong/mcp-server-time::get_current_time",
+        "rule:@guanxiong/mcp-server-time::get_time_info",
+        "rule:calculator::calculate"
+      ],
+      "text": "Available routes: clock__get_current_time, clock__get_time_info, calculator__calculate. Use only these supplied routes and their declared argument names."
+    }
+  ],
+  "knowledge_global_instructions": "Use the supplied tool knowledge. Example arguments illustrate JSON shape only; replace placeholders with values from the user task before execution. Do not treat examples as task answers. Inspect tool errors before continuing.",
+  "adaptation": {
+    "method_version": "dependency-aware-v1",
+    "backend": "deterministic_templates",
+    "update_id": "no-update-3f45f097df3db68b6c03ef77efb4b139ee2800b5c023e9251c7d33218815e42c",
+    "base_version": "Early",
+    "base_sha256": "3f45f097df3db68b6c03ef77efb4b139ee2800b5c023e9251c7d33218815e42c",
+    "knowledge_sha256": "3f45f097df3db68b6c03ef77efb4b139ee2800b5c023e9251c7d33218815e42c",
+    "target_catalog_sha256": null
+  }
+}

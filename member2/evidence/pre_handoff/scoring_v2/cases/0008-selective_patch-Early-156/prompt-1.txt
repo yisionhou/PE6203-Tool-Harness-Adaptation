@@ -1,0 +1,216 @@
+# System Role
+You are an impartial evaluator judging the quality of an AI agent's multi-server tool-based task execution. You focus on three independent dimensions: Task Completion, Grounding, and Planning Efficiency.
+
+# User Instructions
+You must assign scores based ONLY on evidence from the task, solution, and tool usage trajectory.
+- Objective: Ignore language fluency, formatting, or politeness.
+- Justified: Every score must be backed by specific counts/percentages derived from the trajectory.
+- Independent: Evaluate each dimension separately. A flaw in one dimension (e.g., redundancy) should NOT lower the score of another (e.g., task completion) unless it directly caused failure.
+
+# Input Data
+TASK PRESENTED TO AGENT:
+What is the total number of seconds that have passed since the start of the day in Tokyo right now?
+
+AVAILABLE TOOLS:
+[
+  {
+    "name": "calculator__calculate",
+    "description": "Calculates/evaluates the given expression.",
+    "inputSchema": {
+      "properties": {
+        "expression": {
+          "title": "Expression",
+          "type": "string"
+        }
+      },
+      "required": [
+        "expression"
+      ],
+      "title": "calculateArguments",
+      "type": "object",
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    }
+  },
+  {
+    "name": "clock__get_current_time",
+    "description": "获取当前日期和时间",
+    "inputSchema": {
+      "properties": {
+        "format": {
+          "description": "时间格式：'iso'（ISO 8601）、'locale'（本地格式）、'timestamp'（时间戳）。默认为 'iso'",
+          "enum": [
+            "iso",
+            "locale",
+            "timestamp"
+          ],
+          "type": "string"
+        },
+        "timezone": {
+          "description": "时区（例如：Asia/Shanghai, UTC, America/New_York）。默认为系统时区",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    }
+  },
+  {
+    "name": "clock__get_time_info",
+    "description": "获取详细的时间信息，包括年、月、日、时、分、秒等",
+    "inputSchema": {
+      "properties": {
+        "timezone": {
+          "description": "时区（例如：Asia/Shanghai, UTC）。默认为系统时区",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    }
+  }
+]
+
+AGENT TRAJECTORY FOR TASK COMPLETION:
+[
+  {
+    "role": "user",
+    "content": "What is the total number of seconds that have passed since the start of the day in Tokyo right now?"
+  },
+  {
+    "content": "",
+    "role": "assistant",
+    "tool_calls": [
+      {
+        "id": "call_jto9lvpb2xo36epkaqtypre3",
+        "function": {
+          "arguments": "{\"timezone\": \"Asia/Tokyo\"}",
+          "name": "clock__get_time_info"
+        },
+        "type": "function"
+      }
+    ],
+    "reasoning_content": "The user wants the total number of seconds that have passed since the start of the day in Tokyo right now.\n\nI need to get the current time in Tokyo, then compute seconds since start of day (midnight).\n\nLet me get the current time in Tokyo with timezone Asia/Tokyo. I can get time info with timezone Asia/Tokyo.\n\nLet me call clock__get_time_info with timezone Asia/Tokyo to get hour, minute, second. Then compute seconds = h*3600 + m*60 + s.\n\nLet me do that."
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_jto9lvpb2xo36epkaqtypre3",
+    "content": "[TextContent(type='text', text='{\\n  \"year\": 2026,\\n  \"month\": 10,\\n  \"day\": 30,\\n  \"hour\": 13,\\n  \"minute\": 13,\\n  \"second\": 27,\\n  \"weekday\": \"星期五\",\\n  \"timezone\": \"Asia/Tokyo\"\\n}', annotations=None, meta=None)]..."
+  },
+  {
+    "content": "",
+    "role": "assistant",
+    "tool_calls": [
+      {
+        "id": "call_emam2pxekbssiw3hc30u20wx",
+        "function": {
+          "arguments": "{\"expression\": \"13*3600 + 13*60 + 27\"}",
+          "name": "calculator__calculate"
+        },
+        "type": "function"
+      }
+    ],
+    "reasoning_content": "Current time in Tokyo: 13:13:27 (hour 13, minute 13, second 27).\n\nSeconds since start of day = 13*3600 + 13*60 + 27 = 46800 + 780 + 27 = 47607.\n\nLet me verify with calculator."
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_emam2pxekbssiw3hc30u20wx",
+    "content": "[TextContent(type='text', text='47607', annotations=None, meta=None)]..."
+  },
+  {
+    "content": "The current time in Tokyo (Asia/Tokyo) is **13:13:27** on 2026-10-30.\n\nTotal seconds elapsed since the start of the day (midnight):\n\n13 × 3600 + 13 × 60 + 27 = 46800 + 780 + 27 = **47,607 seconds**\n\nSo, **47,607 seconds** have passed since the start of the day in Tokyo.",
+    "role": "assistant",
+    "reasoning_content": ""
+  }
+]
+
+FINAL ANSWER
+The current time in Tokyo (Asia/Tokyo) is **13:13:27** on 2026-10-30.
+
+Total seconds elapsed since the start of the day (midnight):
+
+13 × 3600 + 13 × 60 + 27 = 46800 + 780 + 27 = **47,607 seconds**
+
+So, **47,607 seconds** have passed since the start of the day in Tokyo.
+
+# SCORING RUBRICS (1–10 PER SUBDIMENSION)
+Scores are derived from the DEFECT RATE calculated in the principles below.
+
+## Information Grounding
+Measures: Are the agent's final assertions supported by tool outputs?
+- 1–3: 10–30% of claims are perfectly grounded in tool outputs.
+- 4–6: 40–60% of claims are perfectly grounded in tool outputs.
+- 7–8: 70–80% of claims are perfectly grounded in tool outputs.
+- 9–10: 90–100% of claims are perfectly grounded in tool outputs.
+
+## Task Fulfillment
+Measures: Did the agent achieve the user's explicit goals?
+- 1–3: Perfectly completes 10–30% of requirements.
+- 4–6: Perfectly completes 40–60% of requirements.
+- 7–8: Perfectly completes 70–80% of requirements.
+- 9–10: Perfectly completes 90–100% of requirements.
+
+## Planning Efficiency
+Measures: Did the agent avoid redundant or unnecessary tool calls?
+- 9–10: <10% of calls were redundant/unnecessary.
+- 7–8: 10–30% of calls were redundant/unnecessary.
+- 4–6: 30–60% of calls were redundant/unnecessary.
+- 1–3: >60% of calls were redundant/unnecessary.
+
+# CALCULATION METHODOLOGY
+
+## Step 1: Define "Opportunities" (Denominator) for Each Dimension
+1. **Grounding**: Count the atomic factual claims or data points in the agent's FINAL response.
+2. **Task Fulfillment**: Count the distinct, explicit sub-goals/requirements in the **TASK PRESENTED TO AGENT**.
+3. **Planning Efficiency**: Count the TOTAL number of tool calls made in the **AGENT TRAJECTORY FOR TASK COMPLETION**.
+
+## Step 2: Identify "Issues" (Numerator) for Each Dimension
+1. **Grounding Issues**: Claims in the final answer that are NOT found in or CONTRADICT the tool outputs.
+2. **Task Fulfillment Issues**: Sub-goals that were FAILED, IGNORED, or INCORRECTLY executed.
+   - Note: If a sub-goal was met but via a redundant path, it is STILL COUNTED AS MET for this dimension. Do not penalize efficiency here.
+3. **Planning Efficiency Issues**: Tool calls that were REDUNDANT (repeating previous successful calls), UNNECESSARY (not needed for any sub-goal), or RETRIED without parameter changes after failure.
+   - Note: Necessary calls that were just "slow" or "sub-optimal" but not redundant are NOT issues.
+
+## Step 3: Calculate Defect Rate & Map to Score
+- Defect Rate = (Issues / Opportunities) × 100%
+- Mapping:
+  - 0–10% defects → Score 9–10
+  - 10–30% defects → Score 7–8
+  - 30–60% defects → Score 4–6
+  - 60–100% defects → Score 1–3
+
+# How to Score:
+1. When evaluating percentages, be EXTREMELY STRICT about what counts as "perfectly executed".
+2. "Perfectly" means ALL of the following must be true:
+    - Complete and accurate parameters (not just valid, but IDEAL)
+    - Zero redundancy (no repeated or unnecessary calls)
+    - Proper error handling (graceful recovery from ANY failure)
+    - Efficient execution (minimal rounds)
+3. If ANY of the above is missing, that portion is NOT perfectly executed (counts as 0%).
+4. Example: Task completed correctly but with 1 redundant call = that portion is 0% perfect.
+
+# KEY PRINCIPLES:
+1. ALWAYS calculate as percentage, NOT absolute numbers.
+2. 10 errors in 100 calls (10%) = same score as 1 error in 10 calls (10%).
+3. NORMALIZE by complexity - don’t punish complex tasks:
+    - Simple task: 1 error/5 steps (20% defect) = Score 7
+    - Complex task: 4 errors/20 steps (20% defect) = Score 7
+4. CRITICAL: Apply the STRICTEST interpretation of “perfectly executed”. If there’s ANY doubt, score lower.
+
+# FINAL REMINDER BEFORE SCORING:
+- Count ONLY truly perfect executions toward the percentage
+- Be your most critical self - find flaws first, then acknowledge successes
+- If you're considering a score above 8, re-examine for ANY imperfection
+- Server count is IRRELEVANT - using more servers is NOT better
+
+# OUTPUT FORMAT
+Return your evaluation scoring and reasoning in this exact JSON format. Return ONLY the JSON object.
+```json
+{
+  "task_fulfillment_reasoning": "List total requirements vs. met requirements. Calculate defect rate.",
+  "grounding_reasoning": "List total claims vs. unsupported claims. Calculate defect rate.",
+  "planning_efficiency_reasoning": "List total tool calls vs. redundant/unnecessary calls. Calculate defect rate.",
+  "task_fulfillment": <integer_score>,
+  "grounding": <integer_score>,
+  "planning_and_efficiency": <integer_score>
+}
+```

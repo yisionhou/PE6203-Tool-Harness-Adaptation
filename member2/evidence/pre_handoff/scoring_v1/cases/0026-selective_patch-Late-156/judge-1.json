@@ -1,0 +1,7 @@
+{
+  "protocol_sha256": "b0ff86e7a12a1b5bebb5eeefb1da30e40d1b188167efd5ec66c5fe80c83178a9",
+  "prompt_sha256": "db235b00d3beb922a57693b9d125babfe11accb4d18313e7ad34a5dfa9485072",
+  "started_utc": "2026-10-30T04:27:05.434493+00:00",
+  "status": "judge_error",
+  "error": "Error code: 403 - {'error': {'code': 'AccountOverdueError', 'message': 'The request failed because your account has an overdue balance. Request id: 021793334425277fb9ad9ccefd1cf94f2af1554e5d9f812f0f098', 'param': '', 'type': 'Forbidden'}}"
+}

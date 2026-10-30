@@ -11,17 +11,18 @@ PE6203 选题 4：研究工具环境发生变化后，如何更新 Agent 的工�
 - [x] 阶段三：接入外部 JSON 工具知识、阻止自动刷新，提供统一原始结果读取接口。
 - [x] 阶段四运行器侧：三策略接口、参数隔离、评分桥接、原始证据与交接文档。
 - [x] 成员 2 第一版：实现基于依赖关系的程序式三策略更新，生成兼容知识包与更新日志。
-- [ ] 正式实验：由成员 3 执行模型任务、固定评分协议并完成正式多任务评测。
+- [x] 成员 2 交付前自验：27 次真实任务完成，v2 有效评分 25/27，自动测试 85 项通过。
+- [ ] 正式实验：由成员 3 扩充任务范围并完成多次重复评测。
 
 阶段四已完成任务 156 的三策略接口样例 × 三版本共 9 次真实运行，条件审计通过；9 次评分中 8 次有效、1 次空正文失败，缺失项保持为空。56 项测试通过。以上阶段四结果仅用于接口验收。成员 2 后续新增的规则式方法、开发计划和实际生成知识包见下方链接。
 
 当前工作区：`D:\6203-final`；主仓库在 `outputs/PE6203-Tool-Harness-Adaptation`。在 PowerShell 执行 `. D:\6203-final\start-work.ps1` 进入环境。
 
-**下一步先读 [阶段四联调与交付说明](docs/stage4-integration-and-handoff.md)**；报告素材见 [运行环境与基准集成说明](docs/member1-report-section.md)。
+**下一步先读 [成员 3 交付说明](docs/member2-handoff.md) 和 [本轮验证报告](docs/member2-validation-report.md)**。成员 1 的历史验收见 [阶段四联调与交付说明](docs/stage4-integration-and-handoff.md)；报告素材见 [运行环境与基准集成说明](docs/member1-report-section.md)。
 
 ## 成员 2 工具知识更新
 
-[详细开发计划](docs/member2-development-plan.md)及[实现与复现说明](member2/README.md)。第一版通过工具差异与规则依赖关系确定局部更新范围，共用确定性生成器实现两个基线与选择性修补，不产生更新模型 API 费用。它已生成三个任务、三个版本、三种策略的 27 条件计划，正式 TF/PE/ECS 模型实验尚未执行。
+[详细开发计划](docs/member2-development-plan.md)及[实现与复现说明](member2/README.md)。第一版通过工具差异与规则依赖关系确定局部更新范围，共用确定性生成器实现两个基线与选择性修补，不产生更新模型 API 费用。它已生成三个任务、三个版本、三种策略的 27 条件计划，完成一轮真实自验（27 次任务、25/27 条有效评分）。本轮结果见验证报告，更广的任务覆盖与重复实验仍待成员 3 完成。
 
 ```powershell
 .venv\Scripts\python.exe -X utf8 member2/build.py --output-dir outputs/member2-new-build
@@ -85,5 +86,5 @@ PE6203 选题 4：研究工具环境发生变化后，如何更新 Agent 的工�
 
 - 上游仓库：`https://github.com/Octobrist/MCPEvol-Bench`
 - 使用的上游 commit：`888c779a0fe735f612ca62bdd1fdd7c9e6bf8701`
-- 本组新增代码主要位于 `member1/`，Agent 兼容性调整及停止规则详见运行说明。
+- 本组新增代码主要位于 `member1/` 和 `member2/`，Agent 兼容性调整及停止规则详见运行说明。
 - 后续三种策略须使用相同模型、推理参数、任务集、停止规则与 judge 协议。

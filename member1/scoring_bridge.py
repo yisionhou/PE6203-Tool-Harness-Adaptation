@@ -22,25 +22,29 @@ from custom.prompt.eval_error_prompt import build_mcp_bench_judge_prompt
 SCORES = ('task_fulfillment', 'grounding', 'planning_and_efficiency')
 REASONS = ('task_fulfillment_reasoning', 'grounding_reasoning', 'planning_efficiency_reasoning')
 VERSIONS = ('Early', 'Middle', 'Late')
+TRAJECTORY_POLICIES = ('model_visible_tool_results_v2', 'full_saved_tool_results_v1')
 
 
 def write_json(path, value):
     Path(path).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
 
-def evidence_for_judge(row):
-    """Restore complete tool results by call ID, without exposing reference answers."""
+def evidence_for_judge(row, trajectory_policy=TRAJECTORY_POLICIES[0]):
+    """Judge the observations actually visible to the model; retain legacy replay."""
+    if trajectory_policy not in TRAJECTORY_POLICIES:
+        raise ValueError("Unknown judge trajectory policy")
     messages = copy.deepcopy(row['trajectory_messages'])
-    results = {}
-    for event in row['events']:
-        if event.get('event') == 'tool_result':
-            data = event['data']
-            call_id = data.get('tool_call_id')
-            if call_id:
-                results[call_id] = data['result']
-    for message in messages:
-        if message.get('role') == 'tool' and message.get('tool_call_id') in results:
-            message['content'] = json.dumps(results[message['tool_call_id']], ensure_ascii=False)
+    if trajectory_policy == 'full_saved_tool_results_v1':
+        results = {}
+        for event in row['events']:
+            if event.get('event') == 'tool_result':
+                data = event['data']
+                call_id = data.get('tool_call_id')
+                if call_id:
+                    results[call_id] = data['result']
+        for message in messages:
+            if message.get('role') == 'tool' and message.get('tool_call_id') in results:
+                message['content'] = json.dumps(results[message['tool_call_id']], ensure_ascii=False)
     # The system prompt contains strategy-specific instructions, not judge evidence.
     messages = [m for m in messages if m.get('role') != 'system']
     catalog = row.get('runtime_tools')
@@ -67,9 +71,9 @@ def evidence_for_judge(row):
         'answer': answer.get('answer', '') if answer else ''}
 
 
-def prepare_evaluation(source, output, judge_config):
+def prepare_evaluation(source, output, judge_config, trajectory_policy=TRAJECTORY_POLICIES[0]):
     required = {'model', 'base_url', 'temperature', 'max_completion_tokens', 'num_runs', 'seed'}
-    if not isinstance(judge_config, dict) or set(judge_config) != required:
+    if not isinstance(judge_config, dict) or not required <= set(judge_config) or not set(judge_config) <= required | {'request_timeout'}:
         raise ValueError('Judge config has missing/unknown fields')
     for key in ('model', 'base_url'):
         if not isinstance(judge_config[key], str) or not judge_config[key].strip():
@@ -79,11 +83,16 @@ def prepare_evaluation(source, output, judge_config):
             raise ValueError(f'Judge {key} must be a positive integer')
     if type(judge_config['seed']) is not int or type(judge_config['temperature']) not in (int, float) or not 0 <= judge_config['temperature'] <= 2:
         raise ValueError('Invalid judge seed or temperature')
+    if trajectory_policy not in TRAJECTORY_POLICIES:
+        raise ValueError('Unknown judge trajectory policy')
+    judge_config = {**judge_config, 'request_timeout': judge_config.get('request_timeout', 90)}
+    if type(judge_config['request_timeout']) is not int or judge_config['request_timeout'] < 1:
+        raise ValueError('Judge request_timeout must be a positive integer')
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=False)
     rubric = ROOT / 'src/custom/prompt/eval_error_prompt.py'
     protocol = {'schema_version': 1, 'rubric_sha256': hashlib.sha256(rubric.read_bytes()).hexdigest(),
-        'judge_config': judge_config, 'trajectory_policy': 'full_saved_tool_results_v1',
+        'judge_config': judge_config, 'trajectory_policy': trajectory_policy,
         'catalog_policy': 'saved_actual_environment_with_description_layers_v1'}
     protocol['sha256'] = canonical_hash(protocol)
     write_json(output / 'protocol.json', protocol)
@@ -102,7 +111,7 @@ def prepare_evaluation(source, output, judge_config):
                 raise ValueError('Corrupt evidence requires review before scoring')
             if not any(m.get('role') == 'assistant' for m in row['trajectory_messages']):
                 raise ValueError('No model trajectory; retain as unscored infrastructure failure')
-            evidence = evidence_for_judge(row)
+            evidence = evidence_for_judge(row, trajectory_policy)
             case_dir = output / 'cases' / item['case_id']
             case_dir.mkdir(parents=True)
             write_json(case_dir / 'evidence.json', evidence)
@@ -131,6 +140,12 @@ def parse_scores(raw):
     value = json.loads(stripped)
     if not isinstance(value, dict):
         raise ValueError('Judge must return a JSON object')
+    alias = 'planning_and_efficiency_reasoning'
+    canonical = 'planning_efficiency_reasoning'
+    if alias in value:
+        if canonical in value and value[canonical] != value[alias]:
+            raise ValueError('Conflicting planning reasoning fields')
+        value[canonical] = value.pop(alias)
     for metric in SCORES:
         if type(value.get(metric)) is not int or not 1 <= value[metric] <= 10:
             raise ValueError(f'{metric} must be an integer in [1, 10]')
@@ -156,7 +171,9 @@ def run_judge(directory, env_file=None):
     record = json.loads((root / 'evaluation.json').read_text(encoding='utf-8'))
     if record['protocol_sha256'] != fingerprint:
         raise ValueError('Evaluation protocol fingerprint mismatch')
-    client = OpenAI(api_key=key, base_url=config['base_url'], timeout=90, max_retries=0)
+    client = OpenAI(api_key=key, base_url=config['base_url'], timeout=config.get('request_timeout', 90), max_retries=0)
+    record.pop('stopped_reason', None)
+    stop_reason = None
     for item in record['cases']:
         if item['status'] != 'ready':
             continue
@@ -187,17 +204,28 @@ def run_judge(directory, env_file=None):
                 payload['status'] = 'completed'
             except Exception as exc:
                 payload.update(status='judge_error', error=str(exc))
+                if 'AccountOverdueError' in str(exc):
+                    payload['error_code'] = 'AccountOverdueError'
+                    stop_reason = 'AccountOverdueError: remaining cases were not requested'
             # Never overwrite previous judge attempts; failed attempts remain evidence.
             text = json.dumps(payload, ensure_ascii=False, indent=2).replace(key, '[REDACTED]')
             with result_path.open('x', encoding='utf-8') as stream:
                 stream.write(text + '\n')
             run_results.append(payload)
+            if stop_reason:
+                break
         valid = [r['scores'] for r in run_results if r['status'] == 'completed']
         item['judge_status'] = 'completed' if len(valid) == config['num_runs'] else 'judge_error'
         if item['judge_status'] == 'completed':
             item['scores'] = {k: statistics.mean(r[k] for r in valid) for k in SCORES}
+        if item['judge_status'] != 'completed':
+            item.pop('scores', None)
+        if stop_reason:
+            record['stopped_reason'] = stop_reason
         write_json(root / 'evaluation.json', record)
         print(item['case_id'], item['judge_status'], flush=True)
+        if stop_reason:
+            break
     client.close()
     return record
 
@@ -233,6 +261,7 @@ def main():
     prep.add_argument('source', type=Path)
     prep.add_argument('--output-dir', type=Path, required=True)
     prep.add_argument('--judge-config', type=Path, required=True)
+    prep.add_argument('--trajectory-policy', choices=TRAJECTORY_POLICIES, default=TRAJECTORY_POLICIES[0])
     judge = sub.add_parser('judge')
     judge.add_argument('directory', type=Path)
     judge.add_argument('--env-file', type=Path)
@@ -241,7 +270,7 @@ def main():
     args = parser.parse_args()
     if args.command == 'prepare':
         record = prepare_evaluation(args.source, args.output_dir,
-            json.loads(args.judge_config.read_text(encoding='utf-8-sig')))
+            json.loads(args.judge_config.read_text(encoding='utf-8-sig')), args.trajectory_policy)
         print(f'Prepared {len(record["cases"])} cases; {sum(c["status"] == "ready" for c in record["cases"])} ready')
         return 0
     if args.command == 'judge':

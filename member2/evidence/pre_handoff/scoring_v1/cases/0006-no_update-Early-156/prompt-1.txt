@@ -1,0 +1,249 @@
+# System Role
+You are an impartial evaluator judging the quality of an AI agent's multi-server tool-based task execution. You focus on three independent dimensions: Task Completion, Grounding, and Planning Efficiency.
+
+# User Instructions
+You must assign scores based ONLY on evidence from the task, solution, and tool usage trajectory.
+- Objective: Ignore language fluency, formatting, or politeness.
+- Justified: Every score must be backed by specific counts/percentages derived from the trajectory.
+- Independent: Evaluate each dimension separately. A flaw in one dimension (e.g., redundancy) should NOT lower the score of another (e.g., task completion) unless it directly caused failure.
+
+# Input Data
+TASK PRESENTED TO AGENT:
+What is the total number of seconds that have passed since the start of the day in Tokyo right now?
+
+AVAILABLE TOOLS:
+[
+  {
+    "name": "calculator__calculate",
+    "description": "Calculates/evaluates the given expression.",
+    "inputSchema": {
+      "properties": {
+        "expression": {
+          "title": "Expression",
+          "type": "string"
+        }
+      },
+      "required": [
+        "expression"
+      ],
+      "title": "calculateArguments",
+      "type": "object",
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    }
+  },
+  {
+    "name": "clock__get_current_time",
+    "description": "获取当前日期和时间",
+    "inputSchema": {
+      "properties": {
+        "format": {
+          "description": "时间格式：'iso'（ISO 8601）、'locale'（本地格式）、'timestamp'（时间戳）。默认为 'iso'",
+          "enum": [
+            "iso",
+            "locale",
+            "timestamp"
+          ],
+          "type": "string"
+        },
+        "timezone": {
+          "description": "时区（例如：Asia/Shanghai, UTC, America/New_York）。默认为系统时区",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    }
+  },
+  {
+    "name": "clock__get_time_info",
+    "description": "获取详细的时间信息，包括年、月、日、时、分、秒等",
+    "inputSchema": {
+      "properties": {
+        "timezone": {
+          "description": "时区（例如：Asia/Shanghai, UTC）。默认为系统时区",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    }
+  }
+]
+
+AGENT TRAJECTORY FOR TASK COMPLETION:
+[
+  {
+    "role": "user",
+    "content": "What is the total number of seconds that have passed since the start of the day in Tokyo right now?"
+  },
+  {
+    "content": "",
+    "role": "assistant",
+    "tool_calls": [
+      {
+        "id": "call_xnox1jmizy3siuu4rwdkvrrq",
+        "function": {
+          "arguments": "{\"timezone\": \"Asia/Tokyo\", \"format\": \"iso\"}",
+          "name": "clock__get_current_time"
+        },
+        "type": "function"
+      }
+    ],
+    "reasoning_content": "The user wants to know the total number of seconds that have passed since the start of the day in Tokyo right now.\n\nI need to get the current time in Tokyo (Asia/Tokyo timezone), then compute seconds since start of day.\n\nLet me get the current time info for Tokyo timezone. I can use clock__get_current_time with timezone Asia/Tokyo and format iso, or get_time_info.\n\nLet me call clock__get_current_time with timezone Asia/Tokyo and format iso. Then parse the time and compute seconds since midnight.\n\nActually, I could compute directly: hours*3600 + minutes*60 + seconds.\n\nLet me first get the current time."
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_xnox1jmizy3siuu4rwdkvrrq",
+    "content": "{\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"time\\\": \\\"2026-10-30T05:12:57.000Z\\\",\\n  \\\"timezone\\\": \\\"Asia/Tokyo\\\",\\n  \\\"format\\\": \\\"iso\\\"\\n}\"}], \"isError\": false}"
+  },
+  {
+    "content": "",
+    "role": "assistant",
+    "tool_calls": [
+      {
+        "id": "call_82hhmnsv4zcg45yripw5hprl",
+        "function": {
+          "arguments": "{\"timezone\": \"Asia/Tokyo\"}",
+          "name": "clock__get_time_info"
+        },
+        "type": "function"
+      },
+      {
+        "id": "call_ro4ra8eeoxb0cq6y533694tr",
+        "function": {
+          "arguments": "{\"format\": \"locale\", \"timezone\": \"Asia/Tokyo\"}",
+          "name": "clock__get_current_time"
+        },
+        "type": "function"
+      }
+    ],
+    "reasoning_content": "The result shows time in UTC: 2026-10-30T05:12:57.000Z. Wait, that's UTC. The timezone field says Asia/Tokyo but the time appears to be UTC? Hmm, actually the returned time is \"2026-10-30T05:12:57.000Z\" — with Z suffix, meaning UTC. That seems to be the raw current time. The timezone is Asia/Tokyo though.\n\nHmm, wait. Tokyo is UTC+9. So local time in Tokyo would be 14:12:57 on 2026-10-30.\n\nBut maybe the tool returns the time in the requested timezone but formatted as Z? That would be odd. Let me get more detailed time info with timezone to clarify. Or get current time with locale format for Asia/Tokyo.\n\nLet me call clock__get_time_info with timezone Asia/Tokyo to get detailed local time. Also could call get_current_time with locale format."
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_82hhmnsv4zcg45yripw5hprl",
+    "content": "{\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"year\\\": 2026,\\n  \\\"month\\\": 10,\\n  \\\"day\\\": 30,\\n  \\\"hour\\\": 13,\\n  \\\"minute\\\": 13,\\n  \\\"second\\\": 1,\\n  \\\"weekday\\\": \\\"星期五\\\",\\n  \\\"timezone\\\": \\\"Asia/Tokyo\\\"\\n}\"}], \"isError\": false}"
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_ro4ra8eeoxb0cq6y533694tr",
+    "content": "{\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"time\\\": \\\"2026/10/30 14:13:01\\\",\\n  \\\"timezone\\\": \\\"Asia/Tokyo\\\",\\n  \\\"format\\\": \\\"locale\\\"\\n}\"}], \"isError\": false}"
+  },
+  {
+    "content": "",
+    "role": "assistant",
+    "tool_calls": [
+      {
+        "id": "call_tqa6s8f2rdp2r4zo65449npc",
+        "function": {
+          "arguments": "{\"expression\": \"14*3600 + 13*60 + 1\"}",
+          "name": "calculator__calculate"
+        },
+        "type": "function"
+      }
+    ],
+    "reasoning_content": "Now I have local Tokyo time: 2026/10/30 14:13:01 (from locale format). The get_time_info says hour 13, minute 13, second 1 — hmm, slight discrepancy. Locale says 14:13:01, get_time_info says 13:13:01. The calls happened at slightly different times? Actually the first ISO call returned 05:12:57 UTC = 14:12:57 Tokyo. The locale call returned 14:13:01. The get_time_info returned 13:13:01 which is inconsistent with UTC+9 (05:13:01 UTC would be 14:13:01 Tokyo). So get_time_info might have a bug with timezone conversion, or the difference of one hour.\n\nHmm, which to trust? The locale format call returned \"2026/10/30 14:13:01\" with timezone Asia/Tokyo. The ISO call returned \"2026-10-30T05:12:57.000Z\" — if that's the UTC time, Tokyo local = 14:12:57. That's consistent with the locale output (14:13:01, one minute later). The get_time_info returned hour 13, which seems off by one hour.\n\nSo the correct Tokyo local time is about 14:13:01 (or 14:12:57). Let me use hour=14, minute=13, second=1 (or 57 seconds for consistency with first call).\n\nSeconds since start of day = 14*3600 + 13*60 + 1 = 50400 + 780 + 1 = 51181 seconds.\n\nWith 14:12:57: 14*3600 + 12*60 + 57 = 50400 + 720 + 57 = 51177 seconds.\n\nLet me verify with the calculator. Use 14*3600 + 13*60 + 1 = 51181.\n\nGiven slight time drift between calls, I'll compute based on the most recent time (14:13:01 from locale call). Let me compute."
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_tqa6s8f2rdp2r4zo65449npc",
+    "content": "{\"content\": [{\"type\": \"text\", \"text\": \"51181\"}], \"structuredContent\": {\"result\": \"51181\"}, \"isError\": false}"
+  },
+  {
+    "content": "Based on the current time in Tokyo (Asia/Tokyo), it is **2026-10-30 14:13:01** local time.\n\nThe number of seconds that have passed since the start of the day (00:00) in Tokyo:\n\n**14 hours × 3600 + 13 minutes × 60 + 1 second = 51,181 seconds**\n\nSo, **51,181 seconds** have elapsed since the start of the day in Tokyo right now.",
+    "role": "assistant",
+    "reasoning_content": "The current local time in Tokyo is approximately 14:13:01 (based on the locale-format result with timezone Asia/Tokyo). Seconds elapsed since midnight Tokyo = 14*3600 + 13*60 + 1 = 51181 seconds.\n\nI'll report this."
+  }
+]
+
+FINAL ANSWER
+Based on the current time in Tokyo (Asia/Tokyo), it is **2026-10-30 14:13:01** local time.
+
+The number of seconds that have passed since the start of the day (00:00) in Tokyo:
+
+**14 hours × 3600 + 13 minutes × 60 + 1 second = 51,181 seconds**
+
+So, **51,181 seconds** have elapsed since the start of the day in Tokyo right now.
+
+# SCORING RUBRICS (1–10 PER SUBDIMENSION)
+Scores are derived from the DEFECT RATE calculated in the principles below.
+
+## Information Grounding
+Measures: Are the agent's final assertions supported by tool outputs?
+- 1–3: 10–30% of claims are perfectly grounded in tool outputs.
+- 4–6: 40–60% of claims are perfectly grounded in tool outputs.
+- 7–8: 70–80% of claims are perfectly grounded in tool outputs.
+- 9–10: 90–100% of claims are perfectly grounded in tool outputs.
+
+## Task Fulfillment
+Measures: Did the agent achieve the user's explicit goals?
+- 1–3: Perfectly completes 10–30% of requirements.
+- 4–6: Perfectly completes 40–60% of requirements.
+- 7–8: Perfectly completes 70–80% of requirements.
+- 9–10: Perfectly completes 90–100% of requirements.
+
+## Planning Efficiency
+Measures: Did the agent avoid redundant or unnecessary tool calls?
+- 9–10: <10% of calls were redundant/unnecessary.
+- 7–8: 10–30% of calls were redundant/unnecessary.
+- 4–6: 30–60% of calls were redundant/unnecessary.
+- 1–3: >60% of calls were redundant/unnecessary.
+
+# CALCULATION METHODOLOGY
+
+## Step 1: Define "Opportunities" (Denominator) for Each Dimension
+1. **Grounding**: Count the atomic factual claims or data points in the agent's FINAL response.
+2. **Task Fulfillment**: Count the distinct, explicit sub-goals/requirements in the **TASK PRESENTED TO AGENT**.
+3. **Planning Efficiency**: Count the TOTAL number of tool calls made in the **AGENT TRAJECTORY FOR TASK COMPLETION**.
+
+## Step 2: Identify "Issues" (Numerator) for Each Dimension
+1. **Grounding Issues**: Claims in the final answer that are NOT found in or CONTRADICT the tool outputs.
+2. **Task Fulfillment Issues**: Sub-goals that were FAILED, IGNORED, or INCORRECTLY executed.
+   - Note: If a sub-goal was met but via a redundant path, it is STILL COUNTED AS MET for this dimension. Do not penalize efficiency here.
+3. **Planning Efficiency Issues**: Tool calls that were REDUNDANT (repeating previous successful calls), UNNECESSARY (not needed for any sub-goal), or RETRIED without parameter changes after failure.
+   - Note: Necessary calls that were just "slow" or "sub-optimal" but not redundant are NOT issues.
+
+## Step 3: Calculate Defect Rate & Map to Score
+- Defect Rate = (Issues / Opportunities) × 100%
+- Mapping:
+  - 0–10% defects → Score 9–10
+  - 10–30% defects → Score 7–8
+  - 30–60% defects → Score 4–6
+  - 60–100% defects → Score 1–3
+
+# How to Score:
+1. When evaluating percentages, be EXTREMELY STRICT about what counts as "perfectly executed".
+2. "Perfectly" means ALL of the following must be true:
+    - Complete and accurate parameters (not just valid, but IDEAL)
+    - Zero redundancy (no repeated or unnecessary calls)
+    - Proper error handling (graceful recovery from ANY failure)
+    - Efficient execution (minimal rounds)
+3. If ANY of the above is missing, that portion is NOT perfectly executed (counts as 0%).
+4. Example: Task completed correctly but with 1 redundant call = that portion is 0% perfect.
+
+# KEY PRINCIPLES:
+1. ALWAYS calculate as percentage, NOT absolute numbers.
+2. 10 errors in 100 calls (10%) = same score as 1 error in 10 calls (10%).
+3. NORMALIZE by complexity - don’t punish complex tasks:
+    - Simple task: 1 error/5 steps (20% defect) = Score 7
+    - Complex task: 4 errors/20 steps (20% defect) = Score 7
+4. CRITICAL: Apply the STRICTEST interpretation of “perfectly executed”. If there’s ANY doubt, score lower.
+
+# FINAL REMINDER BEFORE SCORING:
+- Count ONLY truly perfect executions toward the percentage
+- Be your most critical self - find flaws first, then acknowledge successes
+- If you're considering a score above 8, re-examine for ANY imperfection
+- Server count is IRRELEVANT - using more servers is NOT better
+
+# OUTPUT FORMAT
+Return your evaluation scoring and reasoning in this exact JSON format. Return ONLY the JSON object.
+```json
+{
+  "task_fulfillment_reasoning": "List total requirements vs. met requirements. Calculate defect rate.",
+  "grounding_reasoning": "List total claims vs. unsupported claims. Calculate defect rate.",
+  "planning_efficiency_reasoning": "List total tool calls vs. redundant/unnecessary calls. Calculate defect rate.",
+  "task_fulfillment": <integer_score>,
+  "grounding": <integer_score>,
+  "planning_and_efficiency": <integer_score>
+}
+```

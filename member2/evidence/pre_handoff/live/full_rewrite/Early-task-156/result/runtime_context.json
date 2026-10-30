@@ -1,0 +1,53 @@
+{
+  "version": "Early",
+  "snapshot": "original",
+  "task_ids": [
+    156
+  ],
+  "mcp_url": "http://127.0.0.1:3051/mcp",
+  "services": {
+    "clock": {
+      "original_server": "@guanxiong/mcp-server-time",
+      "package": "@guanxiong/mcp-server-time",
+      "entry_path": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\node_modules\\@guanxiong\\mcp-server-time\\.mcpevol\\original\\index.js",
+      "entry_sha256": "0d0a7cff06a2416299c025d40a7a9f75c7e2ca809194839b776346a9f39465ad"
+    },
+    "calculator": {
+      "original_server": "calculator",
+      "package": "mcp-server-calculator",
+      "entry_path": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\.venv\\Scripts\\mcp-server-calculator.exe",
+      "entry_sha256": "e951a5a8aed99cf7d4a1455dfb34f638df5199b56f7b79046c75222c1eb783fa"
+    }
+  },
+  "workspace": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\member2-prehandoff-live\\full_rewrite\\Early-task-156\\workspace",
+  "manifest_sha256": "4a475ad876d2a159ac5555c863948980ae11fbe541aff6f3f896e09492c16c89",
+  "artifact_revision": "162e3ffbea1717ac8a20fe9b26465e29117229e4",
+  "evolution_layers": [],
+  "benchmark_commit": "888c779a0fe735f612ca62bdd1fdd7c9e6bf8701",
+  "workspace_initial_sha256": {
+    "txt/log_yesterday.txt": "5c1ff5f77281d4a9b1f14fdf1ec12d1a82764c4bafe309c518ab0a75e73b1ccc",
+    "txt/log_today.txt": "ca16f52bf4b099d2bdff7c2b755466d7b3e41352d92ae7afcca4607ff7b095f9",
+    ".task-sources.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "config_path": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\member2-prehandoff-live\\full_rewrite\\Early-task-156\\runtime\\mcp.json",
+  "config_sha256": "27c80d7dfe8a4b1ccef54073c4da149ef267f3c31d7f020e69aded4e72150a2f",
+  "launch_command": [
+    "D:\\Program Files\\nodejs\\node.EXE",
+    "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\node_modules\\@1mcp\\agent\\build\\index.js",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "3051",
+    "--transport",
+    "http",
+    "--log-level",
+    "warn",
+    "--config",
+    "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\member2-prehandoff-live\\full_rewrite\\Early-task-156\\runtime\\mcp.json",
+    "--config-dir",
+    "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\member2-prehandoff-live\\full_rewrite\\Early-task-156\\runtime",
+    "--enable-session-persistence=false",
+    "--enable-internal-tools=false"
+  ],
+  "pid": 28428
+}

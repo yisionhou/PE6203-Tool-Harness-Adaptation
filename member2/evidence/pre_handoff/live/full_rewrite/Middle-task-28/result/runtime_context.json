@@ -1,0 +1,56 @@
+{
+  "version": "Middle",
+  "snapshot": "iter3",
+  "task_ids": [
+    28
+  ],
+  "mcp_url": "http://127.0.0.1:3053/mcp",
+  "services": {
+    "files": {
+      "original_server": "mcp-filesystem-server",
+      "package": "mcp-filesystem-server",
+      "entry_path": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\node_modules\\mcp-filesystem-server\\.mcpevol\\iter3\\server.js",
+      "entry_sha256": "86549dd09c526178d67ad49fa27c5fb8ffbf2c0dba7dc4cd91e32683af823c23"
+    },
+    "tasks": {
+      "original_server": "mcp-tasks",
+      "package": "mcp-tasks",
+      "entry_path": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\node_modules\\mcp-tasks\\.mcpevol\\iter3\\dist\\index.js",
+      "entry_sha256": "19a16be37051360fb10931ef783df9beea7adbfee7ea3abdb37e26494d06a54a"
+    }
+  },
+  "workspace": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\member2-prehandoff-live\\full_rewrite\\Middle-task-28\\workspace",
+  "manifest_sha256": "4a475ad876d2a159ac5555c863948980ae11fbe541aff6f3f896e09492c16c89",
+  "artifact_revision": "162e3ffbea1717ac8a20fe9b26465e29117229e4",
+  "evolution_layers": [
+    1
+  ],
+  "benchmark_commit": "888c779a0fe735f612ca62bdd1fdd7c9e6bf8701",
+  "workspace_initial_sha256": {
+    "txt/log_yesterday.txt": "5c1ff5f77281d4a9b1f14fdf1ec12d1a82764c4bafe309c518ab0a75e73b1ccc",
+    "txt/log_today.txt": "ca16f52bf4b099d2bdff7c2b755466d7b3e41352d92ae7afcca4607ff7b095f9",
+    ".task-sources.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "compatibility_loader_sha256": "e0d16002b26da3db9a9d443047509818d089f4f6d40fb52d05b0ae75a5b9d728",
+  "config_path": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\member2-prehandoff-live\\full_rewrite\\Middle-task-28\\runtime\\mcp.json",
+  "config_sha256": "b7fddddabed31d1d1cf20df63fc4e11f8dfa3661fb7e040a9fae59a10ac67116",
+  "launch_command": [
+    "D:\\Program Files\\nodejs\\node.EXE",
+    "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\node_modules\\@1mcp\\agent\\build\\index.js",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "3053",
+    "--transport",
+    "http",
+    "--log-level",
+    "warn",
+    "--config",
+    "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\member2-prehandoff-live\\full_rewrite\\Middle-task-28\\runtime\\mcp.json",
+    "--config-dir",
+    "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\member2-prehandoff-live\\full_rewrite\\Middle-task-28\\runtime",
+    "--enable-session-persistence=false",
+    "--enable-internal-tools=false"
+  ],
+  "pid": 10644
+}

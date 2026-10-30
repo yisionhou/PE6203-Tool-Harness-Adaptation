@@ -1,6 +1,8 @@
 # 阶段四：三策略接口联调与交付
 
-2026-10-30。成员 1 的运行器、三策略批次入口、评分输入桥接、证据归档与交接说明已完成。成员 2 尚未交付正式 `full_rewrite` / `selective_patch` 方法，本次使用明确标记的接口测试样例。正式算法对比与成员 2、3 本人确认仍待完成。
+本文保留成员 1 Stage 4 当时的验收记录和样例结果。之后成员 2 已完成真实三策略实现及一轮交付前验证，最新状态见 [成员 3 交付说明](member2-handoff.md) 和 [验证报告](member2-validation-report.md)。
+
+2026-10-30，Stage 4 验收时：成员 1 的运行器、三策略批次入口、评分输入桥接、证据归档与交接说明已完成；成员 2 尚未交付正式 `full_rewrite` / `selective_patch` 方法，因此该阶段使用明确标记的接口测试样例。下文结果均属于这一历史阶段。
 
 ## 1. 现在的工作目录
 
@@ -144,7 +146,7 @@ npm.cmd ci --registry=https://registry.npmjs.org --cache=.npm-cache --no-audit -
 .venv\Scripts\python.exe -X utf8 member1/scoring_bridge.py prepare member1/evidence/stage4/interface_validation --output-dir outputs/stage4-score-replay --judge-config member1/judge_config.example.json
 ```
 
-评分桥接复用未经修改的上游 `build_mcp_bench_judge_prompt`，绕过原评分入口导入时连接本机 MCP 及依赖缺失 `real.json` 的问题。它用保存的实际环境工具目录及相应说明层、原问题、完整轨迹和最终答案构造评分输入；不把参考答案或策略系统提示发给 judge。模型的工具观察仍沿用上游截断行为，但 judge 统一通过调用 ID 恢复日志中的完整工具返回；这是明确记录的评分输入选择。
+评分桥接复用未经修改的上游 `build_mcp_bench_judge_prompt`，绕过原评分入口导入时连接本机 MCP 及依赖缺失 `real.json` 的问题。它用保存的实际环境工具目录及相应说明层、原问题、完整轨迹和最终答案构造评分输入；不把参考答案或策略系统提示发给 judge。模型的工具观察仍沿用上游截断行为。Stage 4 历史评分采用 `full_saved_tool_results_v1`，通过调用 ID 补全工具返回；该选择可能影响重复调用的效率判断。当前代码默认 `model_visible_tool_results_v2`，只向 judge 提供模型当时实际看到的工具返回。若离线重建旧输入，请在 prepare 命令中显式添加 `--trajectory-policy full_saved_tool_results_v1`；原有评分证据保持不变。
 
 评分协议包含 rubric 哈希、固定 judge 参数、轨迹政策及提示词哈希。同一任务同一次评分的三个维度顺序对全部策略/环境一致。默认 judge 与执行模型相同，temperature 0、最大完成 token 8192、每例 1 次，适用于本次接口验证；正式研究需事先固定评委模型与重复次数并说明潜在偏差。
 

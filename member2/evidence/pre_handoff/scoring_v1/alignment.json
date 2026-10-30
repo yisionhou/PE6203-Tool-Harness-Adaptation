@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "ecs_definition": "per task: mean(TF_Early,TF_Middle,TF_Late) - population_stddev",
+  "tasks": [
+    {
+      "strategy": "full_rewrite",
+      "task_id": 28,
+      "issues": [
+        "Middle: no complete judge score (judge_error)",
+        "Late: no complete judge score (judge_error)"
+      ],
+      "ecs": null
+    },
+    {
+      "strategy": "full_rewrite",
+      "task_id": 144,
+      "issues": [
+        "Middle: no complete judge score (judge_error)",
+        "Late: no complete judge score (judge_error)"
+      ],
+      "ecs": null
+    },
+    {
+      "strategy": "full_rewrite",
+      "task_id": 156,
+      "issues": [
+        "Early: no complete judge score (judge_error)",
+        "Middle: no complete judge score (judge_error)",
+        "Late: no complete judge score (judge_error)"
+      ],
+      "ecs": null
+    },
+    {
+      "strategy": "no_update",
+      "task_id": 28,
+      "issues": [
+        "Middle: no complete judge score (judge_error)",
+        "Late: no complete judge score (judge_error)"
+      ],
+      "ecs": null
+    },
+    {
+      "strategy": "no_update",
+      "task_id": 144,
+      "issues": [
+        "Early: no complete judge score (judge_error)",
+        "Middle: no complete judge score (judge_error)",
+        "Late: no complete judge score (judge_error)"
+      ],
+      "ecs": null
+    },
+    {
+      "strategy": "no_update",
+      "task_id": 156,
+      "issues": [
+        "Middle: no complete judge score (judge_error)",
+        "Late: no complete judge score (judge_error)"
+      ],
+      "ecs": null
+    },
+    {
+      "strategy": "selective_patch",
+      "task_id": 28,
+      "issues": [
+        "Early: no complete judge score (judge_error)",
+        "Middle: no complete judge score (judge_error)",
+        "Late: no complete judge score (judge_error)"
+      ],
+      "ecs": null
+    },
+    {
+      "strategy": "selective_patch",
+      "task_id": 144,
+      "issues": [
+        "Middle: no complete judge score (judge_error)",
+        "Late: no complete judge score (judge_error)"
+      ],
+      "ecs": null
+    },
+    {
+      "strategy": "selective_patch",
+      "task_id": 156,
+      "issues": [
+        "Early: no complete judge score (judge_error)",
+        "Middle: no complete judge score (judge_error)",
+        "Late: no complete judge score (judge_error)"
+      ],
+      "ecs": null
+    }
+  ],
+  "unscored_cases": 22,
+  "note": "Interface-smoke scores are integration evidence, not formal strategy-performance conclusions."
+}

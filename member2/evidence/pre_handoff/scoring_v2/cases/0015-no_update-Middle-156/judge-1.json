@@ -1,0 +1,26 @@
+{
+  "protocol_sha256": "65c1078abefc3b00d9fb66851416b9ba5c76e5cd5183ba253f2173860e1fe98a",
+  "prompt_sha256": "0e73b5a70b2a430a6b4efb83a4a44c56fee1b8d713e5418fe90772e4affea2f9",
+  "started_utc": "2026-10-30T04:49:29.155874+00:00",
+  "raw_response": "",
+  "response_model": "deepseek-v4-flash-ga-260731",
+  "finish_reason": "length",
+  "response_id": "021793335769094d58e3edad71566bed3cb03770f22004fb7d939",
+  "usage": {
+    "completion_tokens": 16384,
+    "prompt_tokens": 2992,
+    "total_tokens": 19376,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 16384,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  },
+  "status": "judge_error",
+  "error": "Judge returned no score text; inspect usage and finish_reason"
+}

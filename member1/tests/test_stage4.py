@@ -59,7 +59,7 @@ def test_full_tool_results_are_joined_by_call_id_and_system_rules_are_excluded()
     event = next(e for e in row['events'] if e['event'] == 'tool_result')
     event['data']['result'] = {'content': [{'type': 'text', 'text': 'FULL-EVIDENCE-' + 'x' * 2000}]}
     row['trajectory_messages'][0]['content'] = 'STRATEGY-SECRET-INSTRUCTION'
-    evidence = evidence_for_judge(row)
+    evidence = evidence_for_judge(row, trajectory_policy='full_saved_tool_results_v1')
     assert 'FULL-EVIDENCE-' + 'x' * 2000 in evidence['trajectory']
     assert 'STRATEGY-SECRET-INSTRUCTION' not in evidence['trajectory']
 
@@ -211,3 +211,60 @@ def test_judge_preserves_empty_response_and_never_recharges_saved_attempts(tmp_p
     with pytest.raises(ValueError, match='modified'):
         run_judge(directory)
     assert len(requests) == 9
+
+
+
+def test_default_judge_preserves_model_visible_truncation_and_legacy_replay_is_explicit():
+    from member1.read_results import read_results
+    from member1.scoring_bridge import evidence_for_judge
+    row=list(read_results(ROOT/'member1/evidence/stage3/handoff_validation/Early-task-156'))[0]
+    event=next(e for e in row['events'] if e['event']=='tool_result')
+    call_id=event['data']['tool_call_id']
+    event['data']['result']={'content':[{'type':'text','text':'UNSEEN-SUFFIX'}]}
+    message=next(m for m in row['trajectory_messages'] if m.get('tool_call_id')==call_id and m['role']=='tool')
+    message['content']='ACTUALLY-SEEN...'
+    evidence=evidence_for_judge(row)
+    assert 'ACTUALLY-SEEN...' in evidence['trajectory']
+    assert 'UNSEEN-SUFFIX' not in evidence['trajectory']
+    assert 'UNSEEN-SUFFIX' in evidence_for_judge(row,'full_saved_tool_results_v1')['trajectory']
+
+
+def test_reasoning_field_alias_is_normalized_without_changing_scores():
+    from member1.scoring_bridge import parse_scores,SCORES,REASONS
+    raw={**{k:8 for k in SCORES},**{k:'reason' for k in REASONS}}
+    raw['planning_and_efficiency_reasoning']=raw.pop('planning_efficiency_reasoning')
+    parsed=parse_scores(json.dumps(raw))
+    assert all(parsed[k]==8 for k in SCORES)
+    assert parsed['planning_efficiency_reasoning']=='reason'
+    raw['planning_efficiency_reasoning']='different'
+    with pytest.raises(ValueError,match='Conflicting'):
+        parse_scores(json.dumps(raw))
+
+
+def test_judge_timeout_is_frozen_and_overdue_account_stops_remaining_calls(tmp_path,monkeypatch):
+    from types import SimpleNamespace
+    import openai
+    from member1.scoring_bridge import prepare_evaluation,run_judge
+    config=json.loads((ROOT/'member1/judge_config.example.json').read_text())
+    config['request_timeout']=180
+    out=tmp_path/'score'
+    prepare_evaluation(ROOT/'member1/evidence/stage3/handoff_validation',out,config)
+    protocol=json.loads((out/'protocol.json').read_text())
+    assert protocol['trajectory_policy']=='model_visible_tool_results_v2'
+    assert protocol['judge_config']['request_timeout']==180
+    requests=[]
+    class Client:
+        def __init__(self,**kwargs):
+            assert kwargs['timeout']==180 and kwargs['max_retries']==0
+            self.chat=SimpleNamespace(completions=SimpleNamespace(create=self.create))
+        def create(self,**kwargs):
+            requests.append(kwargs)
+            raise RuntimeError('AccountOverdueError: overdue balance')
+        def close(self): pass
+    monkeypatch.setenv('JUDGE_API_KEY','dummy-test-value')
+    monkeypatch.setattr(openai,'OpenAI',Client)
+    result=run_judge(out)
+    assert len(requests)==1
+    assert result['cases'][0]['judge_status']=='judge_error'
+    assert all(c['judge_status']=='not_run' for c in result['cases'][1:])
+    assert 'AccountOverdueError' in result['stopped_reason']

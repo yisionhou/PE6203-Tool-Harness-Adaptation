@@ -1,0 +1,26 @@
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│        ██╗███╗   ███╗  ██████╗ ██████╗                                       │
+│       ███║████╗ ████║ ██╔════╝ ██╔══██╗                                      │
+│       ╚██║██╔████╔██║ ██║      ██████╔╝                                      │
+│        ██║██║╚██╔╝██║ ██║      ██╔═══╝                                       │
+│        ██║██║ ╚═╝ ██║ ╚██████╗ ██║                                           │
+│        ╚═╝╚═╝     ╚═╝  ╚═════╝ ╚═╝                                           │
+│                                                                              │
+│        All your MCPs in one place                                            │
+│                                                                              │
+│   Version: 0.39.6                                                            │
+│   Transport: HTTP (127.0.0.1:3055)                                           │
+│   Servers: 0 configured                                                      │
+│   Auth: Disabled | Log: warn                                                 │
+│   Config: D:\6203-final\outputs\PE6203-Tool-Harness-Adaptation\outputs\mem   │
+│   ber2-prehandoff-live\full_rewrite\Late-task-144\runtime                    │
+│                                                                              │
+│   https://github.com/1mcp-app/agent                                          │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2026-10-30T04:18:39.585Z [WARN] message="Capability conflict in <private>.<private>: client <private> overriding existing value" event="capabilityManager.capability.conflict.in.client.overriding.existing.value.fadeac61"
+2026-10-30T04:18:43.184Z [WARN] message="Capability conflict in <private>.<private>: client <private> overriding existing value" event="capabilityManager.capability.conflict.in.client.overriding.existing.value.fadeac61"
+2026-10-30T04:18:44.614Z [WARN] message="Capability conflict in <private>.<private>: client <private> overriding existing value" event="capabilityManager.capability.conflict.in.client.overriding.existing.value.fadeac61"

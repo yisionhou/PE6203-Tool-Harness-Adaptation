@@ -1,0 +1,360 @@
+# System Role
+You are an impartial evaluator judging the quality of an AI agent's multi-server tool-based task execution. You focus on three independent dimensions: Task Completion, Grounding, and Planning Efficiency.
+
+# User Instructions
+You must assign scores based ONLY on evidence from the task, solution, and tool usage trajectory.
+- Objective: Ignore language fluency, formatting, or politeness.
+- Justified: Every score must be backed by specific counts/percentages derived from the trajectory.
+- Independent: Evaluate each dimension separately. A flaw in one dimension (e.g., redundancy) should NOT lower the score of another (e.g., task completion) unless it directly caused failure.
+
+# Input Data
+TASK PRESENTED TO AGENT:
+I'm planning an international virtual meeting, and I need to know the exact current time in Tokyo and then convert it to New York time to coordinate with my colleagues there. Could you help me with this?
+
+AVAILABLE TOOLS:
+[
+  {
+    "name": "time_mcp__convert_time",
+    "description": "Convert a time from one timezone to another.",
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "properties": {
+        "sourceTimezone": {
+          "description": "The source timezone of the input time.",
+          "type": "string"
+        },
+        "targetTimezone": {
+          "description": "The timezone to convert the input time to.",
+          "type": "string"
+        },
+        "time": {
+          "description": "The time value to convert.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sourceTimezone",
+        "targetTimezone",
+        "time"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "time_mcp__current_time",
+    "description": "Get the current date and time, optionally formatted using one of the supported format values and optionally for a specified timezone.",
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "properties": {
+        "format": {
+          "default": "YYYY-MM-DD HH:mm:ss",
+          "description": "The format of the time",
+          "enum": [
+            "h:mm A",
+            "h:mm:ss A",
+            "YYYY-MM-DD HH:mm:ss",
+            "YYYY-MM-DD",
+            "YYYY-MM",
+            "MM/DD/YYYY",
+            "MM/DD/YY",
+            "YYYY/MM/DD",
+            "YYYY/MM"
+          ],
+          "type": "string"
+        },
+        "timezone": {
+          "description": "The timezone of the time, IANA timezone name, e.g. Asia/Shanghai",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  {
+    "name": "time_mcp__days_in_month",
+    "description": "Get the number of days in a month. If no date is provided, get the number of days in the current month.",
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "properties": {
+        "date": {
+          "description": "The date to get the days in month. Format: YYYY-MM-DD",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  {
+    "name": "time_mcp__get_timestamp",
+    "description": "Get the timestamp for the time.",
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "properties": {
+        "time": {
+          "description": "The time to get the timestamp. Format: YYYY-MM-DD HH:mm:ss.SSS",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  {
+    "name": "time_mcp__get_week_year",
+    "description": "Get the week and isoWeek of the year.",
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "properties": {
+        "date": {
+          "description": "The date to get the week and isoWeek of the year. e.g. 2025-03-23",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  {
+    "name": "time_mcp__relative_time",
+    "description": "Get the relative time from now.",
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "properties": {
+        "time": {
+          "description": "The time to get the relative time from now. Format: YYYY-MM-DD HH:mm:ss",
+          "type": "string"
+        }
+      },
+      "required": [
+        "time"
+      ],
+      "type": "object"
+    }
+  },
+  {
+    "name": "time_py__convert_time",
+    "description": "Convert time between timezones",
+    "inputSchema": {
+      "properties": {
+        "source_timezone": {
+          "description": "Source IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'America/New_York' as local timezone if no source timezone provided by the user.",
+          "type": "string"
+        },
+        "target_timezone": {
+          "description": "Target IANA timezone name (e.g., 'Asia/Tokyo', 'America/San_Francisco'). Use 'America/New_York' as local timezone if no target timezone provided by the user.",
+          "type": "string"
+        },
+        "time": {
+          "description": "Time to convert in 24-hour format (HH:MM)",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_timezone",
+        "time",
+        "target_timezone"
+      ],
+      "type": "object",
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    }
+  },
+  {
+    "name": "time_py__get_current_time",
+    "description": "Get current time in a specific timezone",
+    "inputSchema": {
+      "properties": {
+        "timezone": {
+          "description": "IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'America/New_York' as local timezone if no timezone provided by the user.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "timezone"
+      ],
+      "type": "object",
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    }
+  }
+]
+
+AGENT TRAJECTORY FOR TASK COMPLETION:
+[
+  {
+    "role": "user",
+    "content": "I'm planning an international virtual meeting, and I need to know the exact current time in Tokyo and then convert it to New York time to coordinate with my colleagues there. Could you help me with this?"
+  },
+  {
+    "content": "I'll help you coordinate your international meeting. Let me first get the current time in Tokyo.\n\n",
+    "role": "assistant",
+    "tool_calls": [
+      {
+        "id": "call_1hfknymzck3emucb4l4cmfv0",
+        "function": {
+          "arguments": "{\"timezone\": \"Asia/Tokyo\"}",
+          "name": "time_py__get_current_time"
+        },
+        "type": "function"
+      },
+      {
+        "id": "call_6ue1wrjs4qspm6um8tu9h3fy",
+        "function": {
+          "arguments": "{\"timezone\": \"Asia/Tokyo\"}",
+          "name": "time_mcp__current_time"
+        },
+        "type": "function"
+      }
+    ],
+    "reasoning_content": "The user wants to know the exact current time in Tokyo and then convert it to New York time. Let me get the current time in Tokyo first, then convert it to New York time.\n\nI can use time_py__get_current_time for Tokyo, or time_mcp__current_time with timezone. Let me get the current time in Tokyo first. Then convert to New York.\n\nLet me make two calls - first get current time in Tokyo. Actually, I need the current time in Tokyo first before I can convert. So I should get the Tokyo time first, then convert.\n\nLet me call time_py__get_current_time with timezone Asia/Tokyo. Also I could call time_mcp__current_time with timezone Asia/Tokyo. These are independent, so I can call both to get the current time in Tokyo. Actually, I just need one. Let me use time_py__get_current_time with timezone \"Asia/Tokyo\".\n\nThen I'll convert that time to New York (America/New_York) using time_py__convert_time or time_mcp__convert_time.\n\nSince the conversion depends on the result of the current time call, I need to make the first call, wait for the result, then make the second call."
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_1hfknymzck3emucb4l4cmfv0",
+    "content": "[TextContent(type='text', text='{\\n  \"timezone\": \"Asia/Tokyo\",\\n  \"datetime\": \"2026-10-30T13:18:26+09:00\",\\n  \"day_of_week\": \"Friday\",\\n  \"is_dst\": false\\n}', annotations=None, meta=None)]..."
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_6ue1wrjs4qspm6um8tu9h3fy",
+    "content": "[TextContent(type='text', text='Current UTC time is 2026-10-30 04:18:27, and the time in Asia/Tokyo is 2026-10-30 13:18:27.', annotations=None, meta=None)]..."
+  },
+  {
+    "content": "I have the current time in Tokyo. Now let me convert it to New York time.\n\n",
+    "role": "assistant",
+    "tool_calls": [
+      {
+        "id": "call_afr2e3p1dw7y6wptvoudjme5",
+        "function": {
+          "arguments": "{\"source_timezone\": \"Asia/Tokyo\", \"time\": \"13:18\", \"target_timezone\": \"America/New_York\"}",
+          "name": "time_py__convert_time"
+        },
+        "type": "function"
+      },
+      {
+        "id": "call_lci96jx6760v54zvwerk90ti",
+        "function": {
+          "arguments": "{\"sourceTimezone\": \"Asia/Tokyo\", \"targetTimezone\": \"America/New_York\", \"time\": \"2026-10-30 13:18:27\"}",
+          "name": "time_mcp__convert_time"
+        },
+        "type": "function"
+      }
+    ],
+    "reasoning_content": "The current time in Tokyo is 2026-10-30 13:18:26 (or 13:18:27). Now I need to convert this to New York time (America/New_York).\n\nLet me convert using both tools to verify."
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_afr2e3p1dw7y6wptvoudjme5",
+    "content": "[TextContent(type='text', text='{\\n  \"source\": {\\n    \"timezone\": \"Asia/Tokyo\",\\n    \"datetime\": \"2026-10-30T13:18:00+09:00\",\\n    \"day_of_week\": \"Friday\",\\n    \"is_dst\": false\\n  },\\n  \"target\": {\\n    \"timezone\": \"America/New_York\",\\n    \"datetime\": \"2026-10-30T00:18:00-04:00\",\\n    \"day_of_week\": \"Friday\",\\n    \"is_dst\": true\\n  },\\n  \"time_difference\": \"-13.0h\"\\n}', annotations=None, meta=None)]..."
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_lci96jx6760v54zvwerk90ti",
+    "content": "[TextContent(type='text', text='Current time in Asia/Tokyo is 2026-10-30 13:18:27, and the time in America/New_York is 2026-10-30 00:18:27. The time difference is -13 hours.', annotations=None, meta=None)]..."
+  },
+  {
+    "content": "Here are the details for coordinating your international meeting:\n\n## 🌏 Current Time in Tokyo\n- **Date & Time:** Friday, October 30, 2026, **13:18 (1:18 PM)** JST\n- **Time Zone:** Asia/Tokyo (UTC+9)\n\n## 🗽 Converted Time in New York\n- **Date & Time:** Friday, October 30, 2026, **00:18 (12:18 AM)** EDT\n- **Time Zone:** America/New_York (UTC-4, currently on DST)\n\n## ⏱️ Time Difference\n- **Tokyo is 13 hours ahead** of New York.\n\n### Meeting Coordination Note\nSince it's currently **early morning (12:18 AM)** in New York while it's **afternoon (1:18 PM)** in Tokyo, you'll need to choose a time that works for both sides. For example:\n- **Tokyo 9:00 AM** → New York **8:00 PM** (previous day)\n- **Tokyo 10:00 AM** → New York **9:00 PM** (previous day)\n- **Tokyo 6:00 PM** → New York **5:00 AM** (same day)\n\nThe best overlap window for a workday meeting is typically Tokyo morning (9 AM–12 PM) corresponding to New York evening (8 PM–11 PM previous day), or Tokyo evening corresponding to New York early morning. Let me know if you'd like me to convert a specific meeting time!",
+    "role": "assistant",
+    "reasoning_content": "Both tools agree. The current time in Tokyo is 2026-10-30 13:18 (Friday), and converting to New York time gives 2026-10-30 00:18 (Friday), which is a -13 hour difference.\n\nLet me present this to the user."
+  }
+]
+
+FINAL ANSWER
+Here are the details for coordinating your international meeting:
+
+## 🌏 Current Time in Tokyo
+- **Date & Time:** Friday, October 30, 2026, **13:18 (1:18 PM)** JST
+- **Time Zone:** Asia/Tokyo (UTC+9)
+
+## 🗽 Converted Time in New York
+- **Date & Time:** Friday, October 30, 2026, **00:18 (12:18 AM)** EDT
+- **Time Zone:** America/New_York (UTC-4, currently on DST)
+
+## ⏱️ Time Difference
+- **Tokyo is 13 hours ahead** of New York.
+
+### Meeting Coordination Note
+Since it's currently **early morning (12:18 AM)** in New York while it's **afternoon (1:18 PM)** in Tokyo, you'll need to choose a time that works for both sides. For example:
+- **Tokyo 9:00 AM** → New York **8:00 PM** (previous day)
+- **Tokyo 10:00 AM** → New York **9:00 PM** (previous day)
+- **Tokyo 6:00 PM** → New York **5:00 AM** (same day)
+
+The best overlap window for a workday meeting is typically Tokyo morning (9 AM–12 PM) corresponding to New York evening (8 PM–11 PM previous day), or Tokyo evening corresponding to New York early morning. Let me know if you'd like me to convert a specific meeting time!
+
+# SCORING RUBRICS (1–10 PER SUBDIMENSION)
+Scores are derived from the DEFECT RATE calculated in the principles below.
+
+## Information Grounding
+Measures: Are the agent's final assertions supported by tool outputs?
+- 1–3: 10–30% of claims are perfectly grounded in tool outputs.
+- 4–6: 40–60% of claims are perfectly grounded in tool outputs.
+- 7–8: 70–80% of claims are perfectly grounded in tool outputs.
+- 9–10: 90–100% of claims are perfectly grounded in tool outputs.
+
+## Task Fulfillment
+Measures: Did the agent achieve the user's explicit goals?
+- 1–3: Perfectly completes 10–30% of requirements.
+- 4–6: Perfectly completes 40–60% of requirements.
+- 7–8: Perfectly completes 70–80% of requirements.
+- 9–10: Perfectly completes 90–100% of requirements.
+
+## Planning Efficiency
+Measures: Did the agent avoid redundant or unnecessary tool calls?
+- 9–10: <10% of calls were redundant/unnecessary.
+- 7–8: 10–30% of calls were redundant/unnecessary.
+- 4–6: 30–60% of calls were redundant/unnecessary.
+- 1–3: >60% of calls were redundant/unnecessary.
+
+# CALCULATION METHODOLOGY
+
+## Step 1: Define "Opportunities" (Denominator) for Each Dimension
+1. **Grounding**: Count the atomic factual claims or data points in the agent's FINAL response.
+2. **Task Fulfillment**: Count the distinct, explicit sub-goals/requirements in the **TASK PRESENTED TO AGENT**.
+3. **Planning Efficiency**: Count the TOTAL number of tool calls made in the **AGENT TRAJECTORY FOR TASK COMPLETION**.
+
+## Step 2: Identify "Issues" (Numerator) for Each Dimension
+1. **Grounding Issues**: Claims in the final answer that are NOT found in or CONTRADICT the tool outputs.
+2. **Task Fulfillment Issues**: Sub-goals that were FAILED, IGNORED, or INCORRECTLY executed.
+   - Note: If a sub-goal was met but via a redundant path, it is STILL COUNTED AS MET for this dimension. Do not penalize efficiency here.
+3. **Planning Efficiency Issues**: Tool calls that were REDUNDANT (repeating previous successful calls), UNNECESSARY (not needed for any sub-goal), or RETRIED without parameter changes after failure.
+   - Note: Necessary calls that were just "slow" or "sub-optimal" but not redundant are NOT issues.
+
+## Step 3: Calculate Defect Rate & Map to Score
+- Defect Rate = (Issues / Opportunities) × 100%
+- Mapping:
+  - 0–10% defects → Score 9–10
+  - 10–30% defects → Score 7–8
+  - 30–60% defects → Score 4–6
+  - 60–100% defects → Score 1–3
+
+# How to Score:
+1. When evaluating percentages, be EXTREMELY STRICT about what counts as "perfectly executed".
+2. "Perfectly" means ALL of the following must be true:
+    - Complete and accurate parameters (not just valid, but IDEAL)
+    - Zero redundancy (no repeated or unnecessary calls)
+    - Proper error handling (graceful recovery from ANY failure)
+    - Efficient execution (minimal rounds)
+3. If ANY of the above is missing, that portion is NOT perfectly executed (counts as 0%).
+4. Example: Task completed correctly but with 1 redundant call = that portion is 0% perfect.
+
+# KEY PRINCIPLES:
+1. ALWAYS calculate as percentage, NOT absolute numbers.
+2. 10 errors in 100 calls (10%) = same score as 1 error in 10 calls (10%).
+3. NORMALIZE by complexity - don’t punish complex tasks:
+    - Simple task: 1 error/5 steps (20% defect) = Score 7
+    - Complex task: 4 errors/20 steps (20% defect) = Score 7
+4. CRITICAL: Apply the STRICTEST interpretation of “perfectly executed”. If there’s ANY doubt, score lower.
+
+# FINAL REMINDER BEFORE SCORING:
+- Count ONLY truly perfect executions toward the percentage
+- Be your most critical self - find flaws first, then acknowledge successes
+- If you're considering a score above 8, re-examine for ANY imperfection
+- Server count is IRRELEVANT - using more servers is NOT better
+
+# OUTPUT FORMAT
+Return your evaluation scoring and reasoning in this exact JSON format. Return ONLY the JSON object.
+```json
+{
+  "task_fulfillment_reasoning": "List total requirements vs. met requirements. Calculate defect rate.",
+  "grounding_reasoning": "List total claims vs. unsupported claims. Calculate defect rate.",
+  "planning_efficiency_reasoning": "List total tool calls vs. redundant/unnecessary calls. Calculate defect rate.",
+  "task_fulfillment": <integer_score>,
+  "grounding": <integer_score>,
+  "planning_and_efficiency": <integer_score>
+}
+```

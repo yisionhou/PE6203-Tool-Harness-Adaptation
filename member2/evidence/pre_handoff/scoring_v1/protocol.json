@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "rubric_sha256": "ce81bbc5c13a89598a9e44a64d51aa896f62281df9b76a848496f5980072edc2",
+  "judge_config": {
+    "model": "deepseek-v4-flash-ga-260731",
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "temperature": 0.0,
+    "max_completion_tokens": 16384,
+    "num_runs": 1,
+    "seed": 6203
+  },
+  "trajectory_policy": "full_saved_tool_results_v1",
+  "catalog_policy": "saved_actual_environment_with_description_layers_v1",
+  "sha256": "b0ff86e7a12a1b5bebb5eeefb1da30e40d1b188167efd5ec66c5fe80c83178a9"
+}

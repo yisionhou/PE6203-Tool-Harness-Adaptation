@@ -1,0 +1,11 @@
+{
+  "case_path": "no_update/Early-task-156",
+  "evidence": "live/no_update/Early-task-156/result/events.jsonl",
+  "get_time_info": "2026-10-30 13:13:01 Asia/Tokyo",
+  "get_current_time_locale": "2026-10-30 14:13:01 Asia/Tokyo",
+  "calculator_expression": "14*3600 + 13*60 + 1",
+  "calculator_result": 51181,
+  "seconds_from_get_time_info": 47581,
+  "finding": "Two time interfaces disagree by one hour. The answer is consistent with the locale output chosen by the agent. This is not evidence of a strategy-specific adaptation failure.",
+  "action": "Preserve this run and its judge score. Reconcile time-service behavior before formal clock-based experiments."
+}

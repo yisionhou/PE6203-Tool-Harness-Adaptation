@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-30",
+  "task_execution_commit": "780ac890f99c215df2b6742fd045b0b4ce05a895",
+  "repaired_scoring_source_sha256": "f04d88c3c856a6be5f6a3739aa17867da15086296d353ba2d13c09959665be3c",
+  "v2_protocol_sha256": "65c1078abefc3b00d9fb66851416b9ba5c76e5cd5183ba253f2173860e1fe98a",
+  "tests": {
+    "passed": 85,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 37.36
+  },
+  "changes": [
+    "Default judge input preserves exactly the model-visible tool observations.",
+    "Explicit legacy full-result policy retained for reproducibility.",
+    "Equivalent planning reasoning field alias accepted; conflicting aliases rejected.",
+    "Judge request timeout is fixed and recorded in protocol.",
+    "An AccountOverdueError stops additional requests in the current scoring batch."
+  ],
+  "authorization_scope": {
+    "task_runs": 27,
+    "original_judge_attempts": 27,
+    "additional_judge_attempts_authorized_after_topup": 27
+  },
+  "original_evidence_preserved": true,
+  "additional_task_runs_for_rescoring": 0
+}
