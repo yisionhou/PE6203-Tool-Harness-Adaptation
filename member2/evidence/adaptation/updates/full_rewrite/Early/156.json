@@ -1,0 +1,50 @@
+{
+  "update_id": "38fca9fd-519b-44b9-bd86-387953ef365d",
+  "strategy": "full_rewrite",
+  "base_version": "Early",
+  "target_version": "Early",
+  "base_sha256": "3f45f097df3db68b6c03ef77efb4b139ee2800b5c023e9251c7d33218815e42c",
+  "target_catalog_sha256": "0a0ca515eae1c783af92c535b760c4cec1cc5555fe7d96a79f6b992ac4027a78",
+  "changes": {
+    "added": [],
+    "removed": [],
+    "changed": {},
+    "unchanged": [
+      "@guanxiong/mcp-server-time::get_current_time",
+      "@guanxiong/mcp-server-time::get_time_info",
+      "calculator::calculate"
+    ]
+  },
+  "affected_blocks": [],
+  "regenerated_tools": [
+    "@guanxiong/mcp-server-time::get_current_time",
+    "@guanxiong/mcp-server-time::get_time_info",
+    "calculator::calculate"
+  ],
+  "regenerated_blocks": [
+    "rule:@guanxiong/mcp-server-time::get_current_time",
+    "rule:@guanxiong/mcp-server-time::get_time_info",
+    "rule:calculator::calculate",
+    "rule:inventory"
+  ],
+  "removed_blocks": [],
+  "changed_blocks": [],
+  "changed_tool_records": [],
+  "preserved_tool_sha256": {},
+  "preserved_block_sha256": {},
+  "output_sha256": "3f45f097df3db68b6c03ef77efb4b139ee2800b5c023e9251c7d33218815e42c",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.009375200010254048
+  },
+  "schema_version": 1,
+  "task_id": 156,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/full_rewrite/Early/156.json",
+  "knowledge_sha256": "04adcd80abcb0ba8c57f9a9c4d9cd1ae01bf44fd86b8f4bb1d632f03b1d8362e",
+  "observation_ref": "Early/156",
+  "record_path": "updates/full_rewrite/Early/156.json"
+}

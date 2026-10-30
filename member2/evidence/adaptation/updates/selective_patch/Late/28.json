@@ -1,0 +1,82 @@
+{
+  "update_id": "5cc53407-daa4-4614-af5c-fad03477f4a7",
+  "strategy": "selective_patch",
+  "base_version": "Early",
+  "target_version": "Late",
+  "base_sha256": "ff1eab35ef713078380c7235f896a8ece43826ed9011e3a9abf8b63be84eaed2",
+  "target_catalog_sha256": "60b8f6e2136f832d22fec2d8a22b354a8e774bbea31029721dd7a0ef128e2856",
+  "changes": {
+    "added": [],
+    "removed": [],
+    "changed": {
+      "mcp-filesystem-server::read_multiple_files": {
+        "paths": [
+          "/description",
+          "/inputSchema/properties/ignoreErrors",
+          "/inputSchema/properties/includeMetadata",
+          "/inputSchema/properties/separator"
+        ],
+        "kinds": [
+          "description",
+          "parameter"
+        ]
+      },
+      "mcp-tasks::tasks_setup": {
+        "paths": [
+          "/description",
+          "/inputSchema/properties/workspace/description"
+        ],
+        "kinds": [
+          "description"
+        ]
+      }
+    },
+    "unchanged": [
+      "mcp-tasks::tasks_add"
+    ]
+  },
+  "affected_blocks": [
+    "rule:inventory",
+    "rule:mcp-filesystem-server::read_multiple_files",
+    "rule:mcp-tasks::tasks_setup"
+  ],
+  "regenerated_tools": [
+    "mcp-filesystem-server::read_multiple_files",
+    "mcp-tasks::tasks_setup"
+  ],
+  "regenerated_blocks": [
+    "rule:inventory",
+    "rule:mcp-filesystem-server::read_multiple_files",
+    "rule:mcp-tasks::tasks_setup"
+  ],
+  "removed_blocks": [],
+  "changed_blocks": [
+    "rule:mcp-filesystem-server::read_multiple_files",
+    "rule:mcp-tasks::tasks_setup"
+  ],
+  "changed_tool_records": [
+    "mcp-filesystem-server::read_multiple_files",
+    "mcp-tasks::tasks_setup"
+  ],
+  "preserved_tool_sha256": {
+    "mcp-tasks::tasks_add": "f0128e6f328edb63f4e5f6ed8978fbba80941dab22d211f72ca75a482cdd7e0a"
+  },
+  "preserved_block_sha256": {
+    "rule:mcp-tasks::tasks_add": "80ecc42ffd2af1d1b660016f8033f6694487133a03e350520dce1639f624aa68"
+  },
+  "output_sha256": "387ef3f9c40a5b84dff209a7ece095d577c0a25b62fd13c5485cc61881b0234e",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.01590810000197962
+  },
+  "schema_version": 1,
+  "task_id": 28,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/selective_patch/Late/28.json",
+  "knowledge_sha256": "f5d81ef97e4fc2b02ce620caa874e1c80602e1bd0f2026eaddb7ba607bcb8043",
+  "observation_ref": "Late/28",
+  "record_path": "updates/selective_patch/Late/28.json"
+}

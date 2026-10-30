@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "purpose": "strategy_comparison",
+  "mode": "tools_only",
+  "expected_cases": 27,
+  "observed_cases": 27,
+  "checks": [
+    {
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 28,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "c9dc92e2d49e710a1ad0f92d53b5e2b60fec10adda866910d80ed64849863973",
+      "passed": true
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 28,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "fef7cb4addb1c077d6424e6a531bfff61e42d07e33aa6f3ee0ac59298711fd72",
+      "passed": true
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 28,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "35b2c90eb5cc0a6c43c27adafbc0eb7fd315c83dda9d7f7f5841bbb64d3e910e",
+      "passed": true
+    },
+    {
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 144,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "1cca90bbc7ce55e6b2c665d31909269534e97828810d71bce3f436bf307c419f",
+      "passed": true
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 144,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "27b8ccddf9c16c5b05013c753c5c0ec049c6072054d2148842727bd10b32ea71",
+      "passed": true
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 144,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "3d44bf7e8b6946fccaca69ecacacac3fe6a8d8d1b666df2bafc1c38181bd3f3a",
+      "passed": true
+    },
+    {
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 156,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "d0caae62b1ba2e367acacf4b57d87e597321509cbc6a24c738119e8b27d69762",
+      "passed": true
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 156,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "04adcd80abcb0ba8c57f9a9c4d9cd1ae01bf44fd86b8f4bb1d632f03b1d8362e",
+      "passed": true
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 156,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "3213db769b348adcb48ca30c148ada25017f1849a6b739dbefda5a5806eff810",
+      "passed": true
+    },
+    {
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 28,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "c9dc92e2d49e710a1ad0f92d53b5e2b60fec10adda866910d80ed64849863973",
+      "passed": true
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 28,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "4f9e3902cfe8e03d006e03b9bd6fcab6af23ec984c0ab645f56f411bc640113e",
+      "passed": true
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 28,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "7019968fd065d2964f8cd25bdef10acabc24a048483a5653802bf5a4bce1e41a",
+      "passed": true
+    },
+    {
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 144,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "1cca90bbc7ce55e6b2c665d31909269534e97828810d71bce3f436bf307c419f",
+      "passed": true
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 144,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "f4ab929a6a843a9e57871ed31a970accf2808d6c953333d79fba1993a7cad539",
+      "passed": true
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 144,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "60c7c06f656813e90d0d385cd8e014a1cbb826d4aaa8a417db3b9734351a4341",
+      "passed": true
+    },
+    {
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 156,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "d0caae62b1ba2e367acacf4b57d87e597321509cbc6a24c738119e8b27d69762",
+      "passed": true
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 156,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "7dd3981615724acba6717b9bfd106cd8501946f4e43f48cb5348b596be6d7dbc",
+      "passed": true
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 156,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "8e2acad0143ec331e4f728619bd38346ca159f8fa550e56ee6f75d1d7e5cf0d1",
+      "passed": true
+    },
+    {
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 28,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "c9dc92e2d49e710a1ad0f92d53b5e2b60fec10adda866910d80ed64849863973",
+      "passed": true
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 28,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "93b1988de713bba7b8e13d5a2d897fd81c45ec54208720eb81a5cb2d41ba1ad3",
+      "passed": true
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 28,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "f5d81ef97e4fc2b02ce620caa874e1c80602e1bd0f2026eaddb7ba607bcb8043",
+      "passed": true
+    },
+    {
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 144,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "1cca90bbc7ce55e6b2c665d31909269534e97828810d71bce3f436bf307c419f",
+      "passed": true
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 144,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "b8a408953f91b07328adff869b4ab0380880c5653463569ead24184cf9e54a73",
+      "passed": true
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 144,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "e278676a7e0fd4b6137d729ce70837ab934fb1df1f45bfd12ad23b739f1c7792",
+      "passed": true
+    },
+    {
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 156,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "d0caae62b1ba2e367acacf4b57d87e597321509cbc6a24c738119e8b27d69762",
+      "passed": true
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 156,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "279b441653ca846cd7cbca98af7db2124803fe5f561f778a318efb36b6a67818",
+      "passed": true
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 156,
+      "status": "knowledge_ready",
+      "knowledge_sha256": "f0de5650bc9b82c23b8234ee5d7fb9b0c59c669cd9fa7363d098f1951f359e10",
+      "passed": true
+    }
+  ],
+  "issues": [],
+  "scope": "Protocol/input isolation check; not proof of strategy quality or task fulfillment."
+}

@@ -1,0 +1,81 @@
+{
+  "update_id": "3dbdcc41-687c-475a-baa7-c9d332eb911c",
+  "strategy": "full_rewrite",
+  "base_version": "Early",
+  "target_version": "Late",
+  "base_sha256": "2c68ecd06679ca42b0ddac14c1389815a28bf6d1d15812baf6096c86b6bdf0b9",
+  "target_catalog_sha256": "bffb5d1c6e099380e1c51e0b4c1ba8439e4ebbb969008e0d90d6fcf6f0874202",
+  "changes": {
+    "added": [],
+    "removed": [],
+    "changed": {
+      "time-mcp::convert_time": {
+        "paths": [
+          "/description",
+          "/inputSchema/properties/sourceTimezone/description",
+          "/inputSchema/properties/targetTimezone/description",
+          "/inputSchema/properties/time/description"
+        ],
+        "kinds": [
+          "description"
+        ]
+      },
+      "time-mcp::current_time": {
+        "paths": [
+          "/description"
+        ],
+        "kinds": [
+          "description"
+        ]
+      }
+    },
+    "unchanged": [
+      "time::convert_time",
+      "time::get_current_time"
+    ]
+  },
+  "affected_blocks": [
+    "rule:inventory",
+    "rule:time-mcp::convert_time",
+    "rule:time-mcp::current_time"
+  ],
+  "regenerated_tools": [
+    "time-mcp::convert_time",
+    "time-mcp::current_time",
+    "time::convert_time",
+    "time::get_current_time"
+  ],
+  "regenerated_blocks": [
+    "rule:inventory",
+    "rule:time-mcp::convert_time",
+    "rule:time-mcp::current_time",
+    "rule:time::convert_time",
+    "rule:time::get_current_time"
+  ],
+  "removed_blocks": [],
+  "changed_blocks": [
+    "rule:time-mcp::convert_time",
+    "rule:time-mcp::current_time"
+  ],
+  "changed_tool_records": [
+    "time-mcp::convert_time",
+    "time-mcp::current_time"
+  ],
+  "preserved_tool_sha256": {},
+  "preserved_block_sha256": {},
+  "output_sha256": "ea26ded50535c500d1da6544a91027a91679600350fc1a7efd1efa5955b8934e",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.016498099997988902
+  },
+  "schema_version": 1,
+  "task_id": 144,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/full_rewrite/Late/144.json",
+  "knowledge_sha256": "b8a408953f91b07328adff869b4ab0380880c5653463569ead24184cf9e54a73",
+  "observation_ref": "Late/144",
+  "record_path": "updates/full_rewrite/Late/144.json"
+}

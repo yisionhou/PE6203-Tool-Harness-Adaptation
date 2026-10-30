@@ -1,0 +1,26 @@
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│        ██╗███╗   ███╗  ██████╗ ██████╗                                       │
+│       ███║████╗ ████║ ██╔════╝ ██╔══██╗                                      │
+│       ╚██║██╔████╔██║ ██║      ██████╔╝                                      │
+│        ██║██║╚██╔╝██║ ██║      ██╔═══╝                                       │
+│        ██║██║ ╚═╝ ██║ ╚██████╗ ██║                                           │
+│        ╚═╝╚═╝     ╚═╝  ╚═════╝ ╚═╝                                           │
+│                                                                              │
+│        All your MCPs in one place                                            │
+│                                                                              │
+│   Version: 0.39.6                                                            │
+│   Transport: HTTP (127.0.0.1:3051)                                           │
+│   Servers: 0 configured                                                      │
+│   Auth: Disabled | Log: warn                                                 │
+│   Config: D:\6203-final\outputs\PE6203-Tool-Harness-Adaptation\outputs\mem   │
+│   ber2-tool-integration\full_rewrite\Early-task-28\runtime                   │
+│                                                                              │
+│   https://github.com/1mcp-app/agent                                          │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2026-10-30T03:49:26.117Z [WARN] message="[files] MCP Filesystem Server running on stdio" serverName="files" source="backend-stderr" backendLogSequence=1 backendLogSourceId="static:files" backendLogEventKind="line"
+2026-10-30T03:49:26.117Z [WARN] message="[files] Current working directory (pwd): D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\member2-tool-integration\\full_rewrite\\Early-task-28\\workspace" serverName="files" source="backend-stderr" backendLogSequence=2 backendLogSourceId="static:files" backendLogEventKind="line"
+2026-10-30T03:49:26.117Z [WARN] message="[files] Unrestricted filesystem access enabled" serverName="files" source="backend-stderr" backendLogSequence=3 backendLogSourceId="static:files" backendLogEventKind="line"

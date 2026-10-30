@@ -1,0 +1,473 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "created_utc": "2026-10-30T03:49:17.161521+00:00",
+  "python": "3.12.14",
+  "task_ids": [
+    28,
+    144,
+    156
+  ],
+  "versions": [
+    "Early",
+    "Middle",
+    "Late"
+  ],
+  "transition_policy": "independent Early -> target",
+  "sources": {
+    "Early/28": {
+      "source_file": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\member1\\evidence\\stage2\\validation\\Early-task-28\\result\\tools.json",
+      "sha256": "3a1c173c7151e9c25498e6bb74015ad6a89cdd0683fa02afb81ad7a0204a750d",
+      "frozen_path": "observations/Early/28.json",
+      "policy": "saved member1 model-visible catalog with official description layers; no answer or trajectory input"
+    },
+    "Early/144": {
+      "source_file": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\member1\\evidence\\stage2\\validation\\Early-task-144\\result\\tools.json",
+      "sha256": "17107144350a93af5f43c4b63c8617fb289deb91eeb8c4d5ec2a48baa1e94fe2",
+      "frozen_path": "observations/Early/144.json",
+      "policy": "saved member1 model-visible catalog with official description layers; no answer or trajectory input"
+    },
+    "Early/156": {
+      "source_file": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\member1\\evidence\\stage2\\validation\\Early-task-156\\result\\tools.json",
+      "sha256": "b5cee55e213bec973934175569f52834761b2a8a06646ba1f1363a51c53a49ef",
+      "frozen_path": "observations/Early/156.json",
+      "policy": "saved member1 model-visible catalog with official description layers; no answer or trajectory input"
+    },
+    "Middle/28": {
+      "source_file": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\member1\\evidence\\stage2\\validation\\Middle-task-28\\result\\tools.json",
+      "sha256": "3a1c173c7151e9c25498e6bb74015ad6a89cdd0683fa02afb81ad7a0204a750d",
+      "frozen_path": "observations/Middle/28.json",
+      "policy": "saved member1 model-visible catalog with official description layers; no answer or trajectory input"
+    },
+    "Middle/144": {
+      "source_file": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\member1\\evidence\\stage2\\validation\\Middle-task-144\\result\\tools.json",
+      "sha256": "818affe44cffcf43214c55dcdf990613dfd1cdf18f711d5b9ae36573e0f164bc",
+      "frozen_path": "observations/Middle/144.json",
+      "policy": "saved member1 model-visible catalog with official description layers; no answer or trajectory input"
+    },
+    "Middle/156": {
+      "source_file": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\member1\\evidence\\stage2\\validation\\Middle-task-156\\result\\tools.json",
+      "sha256": "37fd6c05ccf54dad26e9ed05cefd60636e30bb8ca8f24f994e67235ff4593266",
+      "frozen_path": "observations/Middle/156.json",
+      "policy": "saved member1 model-visible catalog with official description layers; no answer or trajectory input"
+    },
+    "Late/28": {
+      "source_file": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\member1\\evidence\\stage2\\validation\\Late-task-28\\result\\tools.json",
+      "sha256": "bae3335a27fbc7c9f4e7996c328090e339a8ebb837108b219a3985d4b4a4bf56",
+      "frozen_path": "observations/Late/28.json",
+      "policy": "saved member1 model-visible catalog with official description layers; no answer or trajectory input"
+    },
+    "Late/144": {
+      "source_file": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\member1\\evidence\\stage2\\validation\\Late-task-144\\result\\tools.json",
+      "sha256": "b7765cd97661e90e08b90cb9d0a2bf7c97b2b887e273499b711c028f92c7a417",
+      "frozen_path": "observations/Late/144.json",
+      "policy": "saved member1 model-visible catalog with official description layers; no answer or trajectory input"
+    },
+    "Late/156": {
+      "source_file": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\member1\\evidence\\stage2\\validation\\Late-task-156\\result\\tools.json",
+      "sha256": "46e9c3c55f414aa5471ca43ddd3c6ff582b4ac66c0f7d8fed850ea73c43cb498",
+      "frozen_path": "observations/Late/156.json",
+      "policy": "saved member1 model-visible catalog with official description layers; no answer or trajectory input"
+    }
+  },
+  "code_sha256": {
+    "__init__.py": "4b9915a12d7ab2010c5f14a85c958baec6e13143cf54dd1c6994dd28834024ef",
+    "adapt.py": "6046150f93e62e2f26f4437e548fbfea0436b2234ae5c0d4ce0860dabc302dce",
+    "build.py": "054f4cc36049ea1f7f46e54ef9c02416738058ac3a4587ee3b3b576717c1ac52",
+    "catalog.py": "a572b42d9c2576f668afe33264b4b5d000ba53c93fac87ac287f92f6cef9c360",
+    "knowledge_base.py": "0d7ef3202b2ea1d077efb21267acdbddd0436c25b8172f102651c01cd32814f8"
+  },
+  "initialization": [
+    {
+      "task_id": 28,
+      "seconds": 0.005720000001019798,
+      "tokens": 0,
+      "shared_across_strategies": true
+    },
+    {
+      "task_id": 144,
+      "seconds": 0.004837499989662319,
+      "tokens": 0,
+      "shared_across_strategies": true
+    },
+    {
+      "task_id": 156,
+      "seconds": 0.0027491999935591593,
+      "tokens": 0,
+      "shared_across_strategies": true
+    }
+  ],
+  "updates": [
+    {
+      "update_id": "no-update-ff1eab35ef713078380c7235f896a8ece43826ed9011e3a9abf8b63be84eaed2",
+      "task_id": 28,
+      "strategy": "no_update",
+      "target_version": "Early",
+      "knowledge_path": "knowledge/no_update/28.json",
+      "knowledge_sha256": "c9dc92e2d49e710a1ad0f92d53b5e2b60fec10adda866910d80ed64849863973",
+      "record_path": "updates/no_update/Early/28.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "update_id": "no-update-2c68ecd06679ca42b0ddac14c1389815a28bf6d1d15812baf6096c86b6bdf0b9",
+      "task_id": 144,
+      "strategy": "no_update",
+      "target_version": "Early",
+      "knowledge_path": "knowledge/no_update/144.json",
+      "knowledge_sha256": "1cca90bbc7ce55e6b2c665d31909269534e97828810d71bce3f436bf307c419f",
+      "record_path": "updates/no_update/Early/144.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "update_id": "no-update-3f45f097df3db68b6c03ef77efb4b139ee2800b5c023e9251c7d33218815e42c",
+      "task_id": 156,
+      "strategy": "no_update",
+      "target_version": "Early",
+      "knowledge_path": "knowledge/no_update/156.json",
+      "knowledge_sha256": "d0caae62b1ba2e367acacf4b57d87e597321509cbc6a24c738119e8b27d69762",
+      "record_path": "updates/no_update/Early/156.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "update_id": "267d71ff-6663-47a4-a09d-601ed3a588d1",
+      "task_id": 28,
+      "strategy": "full_rewrite",
+      "target_version": "Early",
+      "knowledge_path": "knowledge/full_rewrite/Early/28.json",
+      "knowledge_sha256": "fef7cb4addb1c077d6424e6a531bfff61e42d07e33aa6f3ee0ac59298711fd72",
+      "record_path": "updates/full_rewrite/Early/28.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.02016919999732636
+      }
+    },
+    {
+      "update_id": "1dd22fe7-9f99-453d-a509-6867ccabada9",
+      "task_id": 144,
+      "strategy": "full_rewrite",
+      "target_version": "Early",
+      "knowledge_path": "knowledge/full_rewrite/Early/144.json",
+      "knowledge_sha256": "27b8ccddf9c16c5b05013c753c5c0ec049c6072054d2148842727bd10b32ea71",
+      "record_path": "updates/full_rewrite/Early/144.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.017777100001694635
+      }
+    },
+    {
+      "update_id": "38fca9fd-519b-44b9-bd86-387953ef365d",
+      "task_id": 156,
+      "strategy": "full_rewrite",
+      "target_version": "Early",
+      "knowledge_path": "knowledge/full_rewrite/Early/156.json",
+      "knowledge_sha256": "04adcd80abcb0ba8c57f9a9c4d9cd1ae01bf44fd86b8f4bb1d632f03b1d8362e",
+      "record_path": "updates/full_rewrite/Early/156.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.009375200010254048
+      }
+    },
+    {
+      "update_id": "44a00c3a-5ab5-40a3-b1dd-3650b4647bae",
+      "task_id": 28,
+      "strategy": "selective_patch",
+      "target_version": "Early",
+      "knowledge_path": "knowledge/selective_patch/Early/28.json",
+      "knowledge_sha256": "35b2c90eb5cc0a6c43c27adafbc0eb7fd315c83dda9d7f7f5841bbb64d3e910e",
+      "record_path": "updates/selective_patch/Early/28.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.014573899999959394
+      }
+    },
+    {
+      "update_id": "5cec330b-da85-4b5b-9bbc-6637382b985c",
+      "task_id": 144,
+      "strategy": "selective_patch",
+      "target_version": "Early",
+      "knowledge_path": "knowledge/selective_patch/Early/144.json",
+      "knowledge_sha256": "3d44bf7e8b6946fccaca69ecacacac3fe6a8d8d1b666df2bafc1c38181bd3f3a",
+      "record_path": "updates/selective_patch/Early/144.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.012222499994095415
+      }
+    },
+    {
+      "update_id": "75a70093-692d-4641-86ea-c174203754f4",
+      "task_id": 156,
+      "strategy": "selective_patch",
+      "target_version": "Early",
+      "knowledge_path": "knowledge/selective_patch/Early/156.json",
+      "knowledge_sha256": "3213db769b348adcb48ca30c148ada25017f1849a6b739dbefda5a5806eff810",
+      "record_path": "updates/selective_patch/Early/156.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.006859099987195805
+      }
+    },
+    {
+      "update_id": "no-update-ff1eab35ef713078380c7235f896a8ece43826ed9011e3a9abf8b63be84eaed2",
+      "task_id": 28,
+      "strategy": "no_update",
+      "target_version": "Middle",
+      "knowledge_path": "knowledge/no_update/28.json",
+      "knowledge_sha256": "c9dc92e2d49e710a1ad0f92d53b5e2b60fec10adda866910d80ed64849863973",
+      "record_path": "updates/no_update/Middle/28.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "update_id": "no-update-2c68ecd06679ca42b0ddac14c1389815a28bf6d1d15812baf6096c86b6bdf0b9",
+      "task_id": 144,
+      "strategy": "no_update",
+      "target_version": "Middle",
+      "knowledge_path": "knowledge/no_update/144.json",
+      "knowledge_sha256": "1cca90bbc7ce55e6b2c665d31909269534e97828810d71bce3f436bf307c419f",
+      "record_path": "updates/no_update/Middle/144.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "update_id": "no-update-3f45f097df3db68b6c03ef77efb4b139ee2800b5c023e9251c7d33218815e42c",
+      "task_id": 156,
+      "strategy": "no_update",
+      "target_version": "Middle",
+      "knowledge_path": "knowledge/no_update/156.json",
+      "knowledge_sha256": "d0caae62b1ba2e367acacf4b57d87e597321509cbc6a24c738119e8b27d69762",
+      "record_path": "updates/no_update/Middle/156.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "update_id": "a5edfb68-30da-454d-9751-5b10cfd84f60",
+      "task_id": 28,
+      "strategy": "full_rewrite",
+      "target_version": "Middle",
+      "knowledge_path": "knowledge/full_rewrite/Middle/28.json",
+      "knowledge_sha256": "4f9e3902cfe8e03d006e03b9bd6fcab6af23ec984c0ab645f56f411bc640113e",
+      "record_path": "updates/full_rewrite/Middle/28.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.01920090000203345
+      }
+    },
+    {
+      "update_id": "c0cc4296-f599-44e2-bec0-76c80a33d723",
+      "task_id": 144,
+      "strategy": "full_rewrite",
+      "target_version": "Middle",
+      "knowledge_path": "knowledge/full_rewrite/Middle/144.json",
+      "knowledge_sha256": "f4ab929a6a843a9e57871ed31a970accf2808d6c953333d79fba1993a7cad539",
+      "record_path": "updates/full_rewrite/Middle/144.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.016191999995498918
+      }
+    },
+    {
+      "update_id": "0d116b24-f987-4227-994e-d34c15b00d57",
+      "task_id": 156,
+      "strategy": "full_rewrite",
+      "target_version": "Middle",
+      "knowledge_path": "knowledge/full_rewrite/Middle/156.json",
+      "knowledge_sha256": "7dd3981615724acba6717b9bfd106cd8501946f4e43f48cb5348b596be6d7dbc",
+      "record_path": "updates/full_rewrite/Middle/156.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.011890300011145882
+      }
+    },
+    {
+      "update_id": "a3a77e49-b746-4a5e-aa31-4e657c0506f1",
+      "task_id": 28,
+      "strategy": "selective_patch",
+      "target_version": "Middle",
+      "knowledge_path": "knowledge/selective_patch/Middle/28.json",
+      "knowledge_sha256": "7019968fd065d2964f8cd25bdef10acabc24a048483a5653802bf5a4bce1e41a",
+      "record_path": "updates/selective_patch/Middle/28.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.014514199996483512
+      }
+    },
+    {
+      "update_id": "348da0ad-1b3d-402b-ba04-0dc15ba85dbd",
+      "task_id": 144,
+      "strategy": "selective_patch",
+      "target_version": "Middle",
+      "knowledge_path": "knowledge/selective_patch/Middle/144.json",
+      "knowledge_sha256": "60c7c06f656813e90d0d385cd8e014a1cbb826d4aaa8a417db3b9734351a4341",
+      "record_path": "updates/selective_patch/Middle/144.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.011849400005303323
+      }
+    },
+    {
+      "update_id": "28583bab-e339-4b34-91db-dd8edc6a0f38",
+      "task_id": 156,
+      "strategy": "selective_patch",
+      "target_version": "Middle",
+      "knowledge_path": "knowledge/selective_patch/Middle/156.json",
+      "knowledge_sha256": "8e2acad0143ec331e4f728619bd38346ca159f8fa550e56ee6f75d1d7e5cf0d1",
+      "record_path": "updates/selective_patch/Middle/156.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.007955599998240359
+      }
+    },
+    {
+      "update_id": "no-update-ff1eab35ef713078380c7235f896a8ece43826ed9011e3a9abf8b63be84eaed2",
+      "task_id": 28,
+      "strategy": "no_update",
+      "target_version": "Late",
+      "knowledge_path": "knowledge/no_update/28.json",
+      "knowledge_sha256": "c9dc92e2d49e710a1ad0f92d53b5e2b60fec10adda866910d80ed64849863973",
+      "record_path": "updates/no_update/Late/28.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "update_id": "no-update-2c68ecd06679ca42b0ddac14c1389815a28bf6d1d15812baf6096c86b6bdf0b9",
+      "task_id": 144,
+      "strategy": "no_update",
+      "target_version": "Late",
+      "knowledge_path": "knowledge/no_update/144.json",
+      "knowledge_sha256": "1cca90bbc7ce55e6b2c665d31909269534e97828810d71bce3f436bf307c419f",
+      "record_path": "updates/no_update/Late/144.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "update_id": "no-update-3f45f097df3db68b6c03ef77efb4b139ee2800b5c023e9251c7d33218815e42c",
+      "task_id": 156,
+      "strategy": "no_update",
+      "target_version": "Late",
+      "knowledge_path": "knowledge/no_update/156.json",
+      "knowledge_sha256": "d0caae62b1ba2e367acacf4b57d87e597321509cbc6a24c738119e8b27d69762",
+      "record_path": "updates/no_update/Late/156.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "update_id": "7c885724-3ef1-4370-bb34-cf5cd9532cd8",
+      "task_id": 28,
+      "strategy": "full_rewrite",
+      "target_version": "Late",
+      "knowledge_path": "knowledge/full_rewrite/Late/28.json",
+      "knowledge_sha256": "93b1988de713bba7b8e13d5a2d897fd81c45ec54208720eb81a5cb2d41ba1ad3",
+      "record_path": "updates/full_rewrite/Late/28.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.022425899995141663
+      }
+    },
+    {
+      "update_id": "3dbdcc41-687c-475a-baa7-c9d332eb911c",
+      "task_id": 144,
+      "strategy": "full_rewrite",
+      "target_version": "Late",
+      "knowledge_path": "knowledge/full_rewrite/Late/144.json",
+      "knowledge_sha256": "b8a408953f91b07328adff869b4ab0380880c5653463569ead24184cf9e54a73",
+      "record_path": "updates/full_rewrite/Late/144.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.016498099997988902
+      }
+    },
+    {
+      "update_id": "fce53811-7504-4a6d-b6cb-abbd7b64cac2",
+      "task_id": 156,
+      "strategy": "full_rewrite",
+      "target_version": "Late",
+      "knowledge_path": "knowledge/full_rewrite/Late/156.json",
+      "knowledge_sha256": "279b441653ca846cd7cbca98af7db2124803fe5f561f778a318efb36b6a67818",
+      "record_path": "updates/full_rewrite/Late/156.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.021048699985840358
+      }
+    },
+    {
+      "update_id": "5cc53407-daa4-4614-af5c-fad03477f4a7",
+      "task_id": 28,
+      "strategy": "selective_patch",
+      "target_version": "Late",
+      "knowledge_path": "knowledge/selective_patch/Late/28.json",
+      "knowledge_sha256": "f5d81ef97e4fc2b02ce620caa874e1c80602e1bd0f2026eaddb7ba607bcb8043",
+      "record_path": "updates/selective_patch/Late/28.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.01590810000197962
+      }
+    },
+    {
+      "update_id": "3da277ea-0fab-47c8-89b0-b8936c345e75",
+      "task_id": 144,
+      "strategy": "selective_patch",
+      "target_version": "Late",
+      "knowledge_path": "knowledge/selective_patch/Late/144.json",
+      "knowledge_sha256": "e278676a7e0fd4b6137d729ce70837ab934fb1df1f45bfd12ad23b739f1c7792",
+      "record_path": "updates/selective_patch/Late/144.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.012403599990648217
+      }
+    },
+    {
+      "update_id": "10cb5de8-22ee-4e14-8541-e25bd5c2eccb",
+      "task_id": 156,
+      "strategy": "selective_patch",
+      "target_version": "Late",
+      "knowledge_path": "knowledge/selective_patch/Late/156.json",
+      "knowledge_sha256": "f0de5650bc9b82c23b8234ee5d7fb9b0c59c669cd9fa7363d098f1951f359e10",
+      "record_path": "updates/selective_patch/Late/156.json",
+      "update_cost": {
+        "tokens": 0,
+        "seconds": 0.013891199996578507
+      }
+    }
+  ],
+  "paid_model_requests": 0,
+  "scope": "Actual deterministic adaptation artifacts and interface validation; no TF/PE/ECS claims.",
+  "validated_conditions": 27,
+  "totals_by_strategy": {
+    "no_update": {
+      "tokens": 0,
+      "seconds": 0.0
+    },
+    "full_rewrite": {
+      "tokens": 0,
+      "seconds": 0.15457739999692421
+    },
+    "selective_patch": {
+      "tokens": 0,
+      "seconds": 0.11017759997048415
+    }
+  },
+  "cost_aggregation": "Each nonzero adaptation update_id is counted once; reusing a package for repeated task runs does not repeat its update cost. No-update records share zero-cost baseline IDs."
+}

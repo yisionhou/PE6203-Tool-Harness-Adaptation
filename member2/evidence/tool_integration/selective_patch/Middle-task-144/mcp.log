@@ -1,0 +1,24 @@
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│        ██╗███╗   ███╗  ██████╗ ██████╗                                       │
+│       ███║████╗ ████║ ██╔════╝ ██╔══██╗                                      │
+│       ╚██║██╔████╔██║ ██║      ██████╔╝                                      │
+│        ██║██║╚██╔╝██║ ██║      ██╔═══╝                                       │
+│        ██║██║ ╚═╝ ██║ ╚██████╗ ██║                                           │
+│        ╚═╝╚═╝     ╚═╝  ╚═════╝ ╚═╝                                           │
+│                                                                              │
+│        All your MCPs in one place                                            │
+│                                                                              │
+│   Version: 0.39.6                                                            │
+│   Transport: HTTP (127.0.0.1:3053)                                           │
+│   Servers: 0 configured                                                      │
+│   Auth: Disabled | Log: warn                                                 │
+│   Config: D:\6203-final\outputs\PE6203-Tool-Harness-Adaptation\outputs\mem   │
+│   ber2-tool-integration\selective_patch\Middle-task-144\runtime              │
+│                                                                              │
+│   https://github.com/1mcp-app/agent                                          │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2026-10-30T03:50:39.106Z [WARN] message="Capability conflict in <private>.<private>: client <private> overriding existing value" event="capabilityManager.capability.conflict.in.client.overriding.existing.value.fadeac61"

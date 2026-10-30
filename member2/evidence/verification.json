@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-30",
+  "method": "dependency-aware-v1",
+  "base_commit": "0a2ae7323d64960aa2ebe3c92cc943e3fb8dc2af",
+  "python": "3.12.14",
+  "node": "24.21.0",
+  "pip_check": "passed",
+  "tests": {
+    "passed": 82,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 14.86,
+    "command": "python -X utf8 -m pytest -q"
+  },
+  "generated_conditions": 27,
+  "distinct_packages": 21,
+  "tool_integration": {
+    "cases": 27,
+    "knowledge_ready": 27,
+    "audit_passed": true,
+    "mode": "tools_only"
+  },
+  "paid_model_requests": 0,
+  "judge_requests": 0,
+  "tf_pe_ecs": "not evaluated",
+  "regenerated_tools": {
+    "full_rewrite": 31,
+    "selective_patch": 8
+  },
+  "regenerated_blocks": {
+    "full_rewrite": 40,
+    "selective_patch": 13
+  },
+  "same_model_visible_full_and_selective": {
+    "pairs": 9,
+    "equal_pairs": 9
+  },
+  "limitations": [
+    "Deterministic Schema/description-driven method; no general natural-language rewriting.",
+    "Tool discovery and package loading only; no task completion claims.",
+    "Actual failure trajectories and recovery/retention scores require subsequent model experiments.",
+    "Unobservable semantic changes and incorrectly declared dependencies can escape the detector."
+  ],
+  "mechanism_tests": {
+    "under_update": "Affected opaque rule raises ReviewRequired; synthetic test, not a model failure trajectory.",
+    "over_update": "Full regeneration can remove manually enriched card wording; synthetic test, not observed task damage."
+  },
+  "git_diff_check": "passed"
+}

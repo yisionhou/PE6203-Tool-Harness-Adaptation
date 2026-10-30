@@ -1,0 +1,83 @@
+{
+  "update_id": "3da277ea-0fab-47c8-89b0-b8936c345e75",
+  "strategy": "selective_patch",
+  "base_version": "Early",
+  "target_version": "Late",
+  "base_sha256": "2c68ecd06679ca42b0ddac14c1389815a28bf6d1d15812baf6096c86b6bdf0b9",
+  "target_catalog_sha256": "bffb5d1c6e099380e1c51e0b4c1ba8439e4ebbb969008e0d90d6fcf6f0874202",
+  "changes": {
+    "added": [],
+    "removed": [],
+    "changed": {
+      "time-mcp::convert_time": {
+        "paths": [
+          "/description",
+          "/inputSchema/properties/sourceTimezone/description",
+          "/inputSchema/properties/targetTimezone/description",
+          "/inputSchema/properties/time/description"
+        ],
+        "kinds": [
+          "description"
+        ]
+      },
+      "time-mcp::current_time": {
+        "paths": [
+          "/description"
+        ],
+        "kinds": [
+          "description"
+        ]
+      }
+    },
+    "unchanged": [
+      "time::convert_time",
+      "time::get_current_time"
+    ]
+  },
+  "affected_blocks": [
+    "rule:inventory",
+    "rule:time-mcp::convert_time",
+    "rule:time-mcp::current_time"
+  ],
+  "regenerated_tools": [
+    "time-mcp::convert_time",
+    "time-mcp::current_time"
+  ],
+  "regenerated_blocks": [
+    "rule:inventory",
+    "rule:time-mcp::convert_time",
+    "rule:time-mcp::current_time"
+  ],
+  "removed_blocks": [],
+  "changed_blocks": [
+    "rule:time-mcp::convert_time",
+    "rule:time-mcp::current_time"
+  ],
+  "changed_tool_records": [
+    "time-mcp::convert_time",
+    "time-mcp::current_time"
+  ],
+  "preserved_tool_sha256": {
+    "time::convert_time": "0be82c49e5be02820c65965ab85a73692d6da19a221c40b869e2a8070f8a166d",
+    "time::get_current_time": "6daa133c3d9e6715ad434967886e396f9b78b579091f343430681cfea7d3ec46"
+  },
+  "preserved_block_sha256": {
+    "rule:time::convert_time": "3f2a5d1f8f142260a50199c9ba5491a0183fd290ee12b0fdf2dc95c0e8522cc0",
+    "rule:time::get_current_time": "fd083d45f482524fa3c3e91d06f03124cf09b029000d0b76290bf41586e32db4"
+  },
+  "output_sha256": "189938f99413a86c74e78e64c9dc2217d2e15e195997c1f77346e6fc408ca438",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.012403599990648217
+  },
+  "schema_version": 1,
+  "task_id": 144,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/selective_patch/Late/144.json",
+  "knowledge_sha256": "e278676a7e0fd4b6137d729ce70837ab934fb1df1f45bfd12ad23b739f1c7792",
+  "observation_ref": "Late/144",
+  "record_path": "updates/selective_patch/Late/144.json"
+}

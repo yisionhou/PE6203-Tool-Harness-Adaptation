@@ -1,0 +1,67 @@
+{
+  "update_id": "0d116b24-f987-4227-994e-d34c15b00d57",
+  "strategy": "full_rewrite",
+  "base_version": "Early",
+  "target_version": "Middle",
+  "base_sha256": "3f45f097df3db68b6c03ef77efb4b139ee2800b5c023e9251c7d33218815e42c",
+  "target_catalog_sha256": "5674ec7f501d315e8767d81295b0a1c8316393b0ee9ba71b6b55419c9134439d",
+  "changes": {
+    "added": [],
+    "removed": [],
+    "changed": {
+      "@guanxiong/mcp-server-time::get_time_info": {
+        "paths": [
+          "/inputSchema/properties/hour12",
+          "/inputSchema/properties/includeTimestamp",
+          "/inputSchema/properties/locale"
+        ],
+        "kinds": [
+          "parameter"
+        ]
+      }
+    },
+    "unchanged": [
+      "@guanxiong/mcp-server-time::get_current_time",
+      "calculator::calculate"
+    ]
+  },
+  "affected_blocks": [
+    "rule:@guanxiong/mcp-server-time::get_time_info",
+    "rule:inventory"
+  ],
+  "regenerated_tools": [
+    "@guanxiong/mcp-server-time::get_current_time",
+    "@guanxiong/mcp-server-time::get_time_info",
+    "calculator::calculate"
+  ],
+  "regenerated_blocks": [
+    "rule:@guanxiong/mcp-server-time::get_current_time",
+    "rule:@guanxiong/mcp-server-time::get_time_info",
+    "rule:calculator::calculate",
+    "rule:inventory"
+  ],
+  "removed_blocks": [],
+  "changed_blocks": [
+    "rule:@guanxiong/mcp-server-time::get_time_info"
+  ],
+  "changed_tool_records": [
+    "@guanxiong/mcp-server-time::get_time_info"
+  ],
+  "preserved_tool_sha256": {},
+  "preserved_block_sha256": {},
+  "output_sha256": "e05432e017e1ef4b8bfa6592a933ac3b16c7c62724b863a5ceca66a19ee8ac1a",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.011890300011145882
+  },
+  "schema_version": 1,
+  "task_id": 156,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/full_rewrite/Middle/156.json",
+  "knowledge_sha256": "7dd3981615724acba6717b9bfd106cd8501946f4e43f48cb5348b596be6d7dbc",
+  "observation_ref": "Middle/156",
+  "record_path": "updates/full_rewrite/Middle/156.json"
+}

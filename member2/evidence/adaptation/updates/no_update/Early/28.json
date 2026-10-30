@@ -1,0 +1,42 @@
+{
+  "update_id": "no-update-ff1eab35ef713078380c7235f896a8ece43826ed9011e3a9abf8b63be84eaed2",
+  "strategy": "no_update",
+  "base_version": "Early",
+  "target_version": "Early",
+  "base_sha256": "ff1eab35ef713078380c7235f896a8ece43826ed9011e3a9abf8b63be84eaed2",
+  "target_catalog_sha256": null,
+  "changes": null,
+  "affected_blocks": [],
+  "regenerated_tools": [],
+  "regenerated_blocks": [],
+  "removed_blocks": [],
+  "changed_blocks": [],
+  "changed_tool_records": [],
+  "preserved_tool_sha256": {
+    "mcp-filesystem-server::read_multiple_files": "1674eeabe3442c6da8e5f4abd28c9b75d044293ad1460944aaea9270bad6a6d1",
+    "mcp-tasks::tasks_add": "f0128e6f328edb63f4e5f6ed8978fbba80941dab22d211f72ca75a482cdd7e0a",
+    "mcp-tasks::tasks_setup": "2eac2f55fb081a315567ff7a69da727a8e63a06c6a642a26fe0c2dd4fd5bd811"
+  },
+  "preserved_block_sha256": {
+    "rule:mcp-filesystem-server::read_multiple_files": "c4ce6602175e269a9ce649d8cca859bc3cb9cb50f3d9d0b54281aa5a6187c748",
+    "rule:mcp-tasks::tasks_add": "80ecc42ffd2af1d1b660016f8033f6694487133a03e350520dce1639f624aa68",
+    "rule:mcp-tasks::tasks_setup": "8943f8e7deb038b2050300083e44ea420fe10486d24c4d58cb87c979b8ad9a9f",
+    "rule:inventory": "8d3ee476cc07169d831b79781f48bd4cef45cd8f32d12299eb989879997fd39b"
+  },
+  "output_sha256": "ff1eab35ef713078380c7235f896a8ece43826ed9011e3a9abf8b63be84eaed2",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.0
+  },
+  "harness_overhead_seconds": 0.0031589999998686835,
+  "schema_version": 1,
+  "task_id": 28,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/no_update/28.json",
+  "knowledge_sha256": "c9dc92e2d49e710a1ad0f92d53b5e2b60fec10adda866910d80ed64849863973",
+  "observation_ref": "Early/28",
+  "record_path": "updates/no_update/Early/28.json"
+}

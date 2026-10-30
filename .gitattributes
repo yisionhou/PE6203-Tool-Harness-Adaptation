@@ -3,3 +3,6 @@ member1/snapshots/** -text -whitespace
 # Raw model/server evidence also keeps its original line endings and spacing.
 member1/evidence/** -text -whitespace
 member1/knowledge_examples/** -text -whitespace
+
+# Preserve adaptation observation/package/ledger bytes used by provenance hashes.
+member2/evidence/** -text -whitespace

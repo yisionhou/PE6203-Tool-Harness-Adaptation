@@ -1,0 +1,50 @@
+{
+  "update_id": "a5edfb68-30da-454d-9751-5b10cfd84f60",
+  "strategy": "full_rewrite",
+  "base_version": "Early",
+  "target_version": "Middle",
+  "base_sha256": "ff1eab35ef713078380c7235f896a8ece43826ed9011e3a9abf8b63be84eaed2",
+  "target_catalog_sha256": "697ce8dd909eb300fe8000e47cde0020ab0d829c23ba83752704ca622aef3a64",
+  "changes": {
+    "added": [],
+    "removed": [],
+    "changed": {},
+    "unchanged": [
+      "mcp-filesystem-server::read_multiple_files",
+      "mcp-tasks::tasks_add",
+      "mcp-tasks::tasks_setup"
+    ]
+  },
+  "affected_blocks": [],
+  "regenerated_tools": [
+    "mcp-filesystem-server::read_multiple_files",
+    "mcp-tasks::tasks_add",
+    "mcp-tasks::tasks_setup"
+  ],
+  "regenerated_blocks": [
+    "rule:inventory",
+    "rule:mcp-filesystem-server::read_multiple_files",
+    "rule:mcp-tasks::tasks_add",
+    "rule:mcp-tasks::tasks_setup"
+  ],
+  "removed_blocks": [],
+  "changed_blocks": [],
+  "changed_tool_records": [],
+  "preserved_tool_sha256": {},
+  "preserved_block_sha256": {},
+  "output_sha256": "79a7e3134130284091e83d2216e7ee0686dc66bd4243df6011493dcf2cfbd397",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.01920090000203345
+  },
+  "schema_version": 1,
+  "task_id": 28,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/full_rewrite/Middle/28.json",
+  "knowledge_sha256": "4f9e3902cfe8e03d006e03b9bd6fcab6af23ec984c0ab645f56f411bc640113e",
+  "observation_ref": "Middle/28",
+  "record_path": "updates/full_rewrite/Middle/28.json"
+}

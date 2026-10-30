@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "version": "Early",
+  "task_id": 156,
+  "status": "knowledge_ready",
+  "run_dir": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\member2-tool-integration\\no_update\\Early-task-156",
+  "strategy": "no_update",
+  "knowledge_mode": "provided_file",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.0
+  },
+  "knowledge": {
+    "source_path": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\member2-tool-integration\\knowledge_inputs\\no_update\\Early\\156.json",
+    "sha256": "d0caae62b1ba2e367acacf4b57d87e597321509cbc6a24c738119e8b27d69762",
+    "source_version": "Early",
+    "snapshot": "knowledge.json"
+  },
+  "run_id": "20261030T034954Z-ae39f31d",
+  "environment": "original",
+  "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+  "model": "deepseek-v4-flash-ga-260731",
+  "temperature": 0.2,
+  "max_completion_tokens": 4096,
+  "stop_policy": "final_text_after_tool_result",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "mcp_url": "http://127.0.0.1:3051/mcp",
+  "mode": "tools_only",
+  "started_utc": "2026-10-30T03:49:54.790876+00:00",
+  "max_round": 10,
+  "request_timeout": 60,
+  "run_config_sha256": "1b6824dfcd981c784e0360087ec09d7be660e1ae7292d0d5b46116311ab2e5e6",
+  "manifest_sha256": "4a475ad876d2a159ac5555c863948980ae11fbe541aff6f3f896e09492c16c89",
+  "artifact_revision": "162e3ffbea1717ac8a20fe9b26465e29117229e4",
+  "evolution_layers": [],
+  "services": {
+    "clock": {
+      "original_server": "@guanxiong/mcp-server-time",
+      "package": "@guanxiong/mcp-server-time",
+      "entry_path": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\node_modules\\@guanxiong\\mcp-server-time\\.mcpevol\\original\\index.js",
+      "entry_sha256": "0d0a7cff06a2416299c025d40a7a9f75c7e2ca809194839b776346a9f39465ad"
+    },
+    "calculator": {
+      "original_server": "calculator",
+      "package": "mcp-server-calculator",
+      "entry_path": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\.venv\\Scripts\\mcp-server-calculator.exe",
+      "entry_sha256": "e951a5a8aed99cf7d4a1455dfb34f638df5199b56f7b79046c75222c1eb783fa"
+    }
+  },
+  "workspace": "D:\\6203-final\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\member2-tool-integration\\no_update\\Early-task-156\\workspace",
+  "project_commit": "0a2ae7323d64960aa2ebe3c92cc943e3fb8dc2af",
+  "project_commit_source": "git",
+  "benchmark_commit": "888c779a0fe735f612ca62bdd1fdd7c9e6bf8701",
+  "runner_sha256": "9ccaa6f654ada219eac3ae9b114cdb010069ea4c1d27b58c7963f3a6153912a1",
+  "agent_sha256": "59ec587e0ba6e081986b0c25b5191e5b13718f266b16cdce674705a2baab4f86",
+  "task_source_sha256": "1370d7f9ee4ec8f8635dd6af3a6e7e41e790b4be86d0e3de4990774ac99fbae2",
+  "tools_sha256": "093f21fb75d5d0db956961df8728a018745729bb4a196cac2312722b596f7232",
+  "finished_utc": "2026-10-30T03:49:55.880527+00:00",
+  "exit_code": 0,
+  "process_stopped": true
+}
