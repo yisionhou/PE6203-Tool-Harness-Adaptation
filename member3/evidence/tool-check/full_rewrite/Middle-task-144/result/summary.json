@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "run_id": "20261030T084718Z-aae60fae",
+  "task_id": 144,
+  "version": "Middle",
+  "environment": "iter3",
+  "strategy": "full_rewrite",
+  "status": "knowledge_ready",
+  "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+  "model": "deepseek-v4-flash-ga-260731",
+  "temperature": 0.2,
+  "max_completion_tokens": 4096,
+  "stop_policy": "final_text_after_tool_result",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "mcp_url": "http://127.0.0.1:3053/mcp",
+  "mode": "tools_only",
+  "started_utc": "2026-10-30T08:47:18.838659+00:00",
+  "max_round": 10,
+  "request_timeout": 60,
+  "run_config_sha256": "1b6824dfcd981c784e0360087ec09d7be660e1ae7292d0d5b46116311ab2e5e6",
+  "knowledge_mode": "provided_file",
+  "manifest_sha256": "8cbff7027a5f45a2126402d17b71ba83c24a2377715ed1732e03f9f547ef9af7",
+  "artifact_revision": "162e3ffbea1717ac8a20fe9b26465e29117229e4",
+  "evolution_layers": [
+    1
+  ],
+  "services": {
+    "time_py": {
+      "original_server": "time",
+      "package": "mcp-server-time",
+      "entry_path": "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\.venv\\Scripts\\mcp-server-time.exe",
+      "entry_sha256": "0e738db8a0ab4ec260752d586448540e23ca8c2d14e086e6f10e435affff84d3"
+    },
+    "time_mcp": {
+      "original_server": "time-mcp",
+      "package": "time-mcp",
+      "entry_path": "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\node_modules\\time-mcp\\.mcpevol\\iter3\\dist\\index.js",
+      "entry_sha256": "4d142d9a98d64f892cad5b50b5ebff09d534d9f466db277008eea2b3fe04e3b0"
+    }
+  },
+  "workspace": "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\member3\\evidence\\tool-check\\full_rewrite\\Middle-task-144\\workspace",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.016191999995498918
+  },
+  "knowledge": {
+    "source_path": "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\member3\\evidence\\tool-check\\knowledge_inputs\\full_rewrite\\Middle\\144.json",
+    "sha256": "f4ab929a6a843a9e57871ed31a970accf2808d6c953333d79fba1993a7cad539",
+    "source_version": "Middle",
+    "snapshot": "knowledge.json"
+  },
+  "project_commit": null,
+  "project_commit_source": "unavailable_in_source_archive",
+  "benchmark_commit": "888c779a0fe735f612ca62bdd1fdd7c9e6bf8701",
+  "runner_sha256": "a9888bda1c686722b1b5d1c20e0b3d337c08799bf10adf6d5a61a7e5e78d8fa3",
+  "agent_sha256": "4d2839e00de277885a61dc51d26457eac0409ebbf237716107c703dd68701f04",
+  "task_source_sha256": "b51d09d93afa94b08a67281a95ee8b4c7d69953816adf6769a996e26274bb023",
+  "tools_sha256": "1b0e67536c29e1f959048c0fb291b61729996bfd98265e266e87602c4075f658",
+  "finished_utc": "2026-10-30T08:47:24.398036+00:00"
+}

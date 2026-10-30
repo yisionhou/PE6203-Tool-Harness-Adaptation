@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-30",
+  "actual_task_cases": 162,
+  "valid_scores": 162,
+  "formal_design_complete": true,
+  "task_ids": [
+    3,
+    24,
+    28,
+    90,
+    144,
+    156
+  ],
+  "fresh_repetitions": 3,
+  "audited_batches": 9,
+  "test_results": [
+    "85 existing passed",
+    "13 statistics passed",
+    "3 syntax recovery passed"
+  ],
+  "known_inference_tokens": 2656870,
+  "known_judge_tokens_all_attempts": 2529342,
+  "no_historical_pilot_scores_pooled": true
+}

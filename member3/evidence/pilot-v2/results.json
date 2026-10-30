@@ -1,0 +1,718 @@
+{
+  "schema_version": 1,
+  "label": "pilot-reanalysis",
+  "expected_repetitions": 1,
+  "task_ids": [
+    28,
+    144,
+    156
+  ],
+  "aggregate": {
+    "strategies": {
+      "no_update": {
+        "complete": false,
+        "metrics": {
+          "task_fulfillment": {
+            "mean": null,
+            "observed_mean": 10,
+            "observed_n": 8,
+            "expected_n": 9,
+            "repeat_means": [],
+            "repeat_sample_sd": null
+          },
+          "planning_and_efficiency": {
+            "mean": null,
+            "observed_mean": 7.75,
+            "observed_n": 8,
+            "expected_n": 9,
+            "repeat_means": [],
+            "repeat_sample_sd": null
+          },
+          "grounding": {
+            "mean": null,
+            "observed_mean": 9.875,
+            "observed_n": 8,
+            "expected_n": 9,
+            "repeat_means": [],
+            "repeat_sample_sd": null
+          }
+        },
+        "ecs_mean": null,
+        "ecs_repeat_means": [],
+        "ecs_repeat_sample_sd": null,
+        "expected_cases": 9,
+        "scored_cases": 8
+      },
+      "full_rewrite": {
+        "complete": true,
+        "metrics": {
+          "task_fulfillment": {
+            "mean": 10,
+            "observed_mean": 10,
+            "observed_n": 9,
+            "expected_n": 9,
+            "repeat_means": [
+              10
+            ],
+            "repeat_sample_sd": null
+          },
+          "planning_and_efficiency": {
+            "mean": 8.11111111111111,
+            "observed_mean": 8.11111111111111,
+            "observed_n": 9,
+            "expected_n": 9,
+            "repeat_means": [
+              8.11111111111111
+            ],
+            "repeat_sample_sd": null
+          },
+          "grounding": {
+            "mean": 9.666666666666666,
+            "observed_mean": 9.666666666666666,
+            "observed_n": 9,
+            "expected_n": 9,
+            "repeat_means": [
+              9.666666666666666
+            ],
+            "repeat_sample_sd": null
+          }
+        },
+        "ecs_mean": 10.0,
+        "ecs_repeat_means": [
+          10.0
+        ],
+        "ecs_repeat_sample_sd": null,
+        "expected_cases": 9,
+        "scored_cases": 9
+      },
+      "selective_patch": {
+        "complete": false,
+        "metrics": {
+          "task_fulfillment": {
+            "mean": null,
+            "observed_mean": 10,
+            "observed_n": 8,
+            "expected_n": 9,
+            "repeat_means": [],
+            "repeat_sample_sd": null
+          },
+          "planning_and_efficiency": {
+            "mean": null,
+            "observed_mean": 8.125,
+            "observed_n": 8,
+            "expected_n": 9,
+            "repeat_means": [],
+            "repeat_sample_sd": null
+          },
+          "grounding": {
+            "mean": null,
+            "observed_mean": 9.75,
+            "observed_n": 8,
+            "expected_n": 9,
+            "repeat_means": [],
+            "repeat_sample_sd": null
+          }
+        },
+        "ecs_mean": null,
+        "ecs_repeat_means": [],
+        "ecs_repeat_sample_sd": null,
+        "expected_cases": 9,
+        "scored_cases": 8
+      }
+    },
+    "task_ecs": [
+      {
+        "strategy": "no_update",
+        "repeat": 1,
+        "task_id": 28,
+        "ecs": 10.0,
+        "missing_versions": []
+      },
+      {
+        "strategy": "no_update",
+        "repeat": 1,
+        "task_id": 144,
+        "ecs": 10.0,
+        "missing_versions": []
+      },
+      {
+        "strategy": "no_update",
+        "repeat": 1,
+        "task_id": 156,
+        "ecs": null,
+        "missing_versions": [
+          "Middle"
+        ]
+      },
+      {
+        "strategy": "full_rewrite",
+        "repeat": 1,
+        "task_id": 28,
+        "ecs": 10.0,
+        "missing_versions": []
+      },
+      {
+        "strategy": "full_rewrite",
+        "repeat": 1,
+        "task_id": 144,
+        "ecs": 10.0,
+        "missing_versions": []
+      },
+      {
+        "strategy": "full_rewrite",
+        "repeat": 1,
+        "task_id": 156,
+        "ecs": 10.0,
+        "missing_versions": []
+      },
+      {
+        "strategy": "selective_patch",
+        "repeat": 1,
+        "task_id": 28,
+        "ecs": 10.0,
+        "missing_versions": []
+      },
+      {
+        "strategy": "selective_patch",
+        "repeat": 1,
+        "task_id": 144,
+        "ecs": 10.0,
+        "missing_versions": []
+      },
+      {
+        "strategy": "selective_patch",
+        "repeat": 1,
+        "task_id": 156,
+        "ecs": null,
+        "missing_versions": [
+          "Late"
+        ]
+      }
+    ],
+    "absent_cases": []
+  },
+  "cases": [
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 28,
+      "run_id": "20261030T041028Z-d39e7bb4",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 5,
+        "grounding": 10
+      },
+      "tool_calls": 6,
+      "case_id": "0000-no_update-Early-28",
+      "source_record_sha256": "12230b16436c0ef1238d92d54216e0a0a2d1cf793c3d0175ef2c1ebfe64fc4a2",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 28,
+      "run_id": "20261030T041107Z-1fe3c76f",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 4,
+      "case_id": "0001-full_rewrite-Early-28",
+      "source_record_sha256": "8bf6c5ccd36d3251980be64001fe65ac71327810216dab0db0d7c6510ce08522",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 28,
+      "run_id": "20261030T041134Z-879f8abe",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 4,
+      "case_id": "0002-selective_patch-Early-28",
+      "source_record_sha256": "6209d9445371a8896bf0863496c8266668b0605eb29947828a1e2a5ceeac5661",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 144,
+      "run_id": "20261030T041202Z-f4556175",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 2,
+      "case_id": "0003-no_update-Early-144",
+      "source_record_sha256": "3206804824c6d939bcaca9c81fc6111f808c47130a7aa978a8fd650843207ea9",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 144,
+      "run_id": "20261030T041218Z-3b92643a",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 5,
+        "grounding": 10
+      },
+      "tool_calls": 4,
+      "case_id": "0004-full_rewrite-Early-144",
+      "source_record_sha256": "76f04756c3f7f70cda6f13c618d49607a46ee3dcfac34044784aa11960b6e0d5",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 144,
+      "run_id": "20261030T041235Z-070a64dc",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 2,
+      "case_id": "0005-selective_patch-Early-144",
+      "source_record_sha256": "8aad993c203eddc2177dc69acc2e0ba0d02371d2e3f6c3a41f7d7f0c8e018898",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 156,
+      "run_id": "20261030T041253Z-db91a8bb",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 7,
+        "grounding": 10
+      },
+      "tool_calls": 4,
+      "case_id": "0006-no_update-Early-156",
+      "source_record_sha256": "83538b6f10bf4bfb1f5f11ad9c220264c9574bc27d1e726f7f5a95d8eea76140",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 156,
+      "run_id": "20261030T041313Z-405b47a1",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 2,
+      "case_id": "0007-full_rewrite-Early-156",
+      "source_record_sha256": "4b5d139c951ac41c2fa6bb4d344e979b63491f42b4728e446c9ee959529c3b4c",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 156,
+      "run_id": "20261030T041324Z-c91699ba",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 2,
+      "case_id": "0008-selective_patch-Early-156",
+      "source_record_sha256": "321afe4fdf84531163ee500edd1ac3ca218451a3c723d05c0f36b2b78d61fad5",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 28,
+      "run_id": "20261030T041335Z-c07a1e41",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 5,
+      "case_id": "0009-no_update-Middle-28",
+      "source_record_sha256": "45aed19123fab92f993d568bdc6c0b09a2bf337398e52cce4f4cf12ba92bb7d9",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 28,
+      "run_id": "20261030T041409Z-71ac726c",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 4,
+      "case_id": "0010-full_rewrite-Middle-28",
+      "source_record_sha256": "4c1e20b00f02e09d049f31d68908e45a83ed8cd4b520b09931728fef3b042b13",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 28,
+      "run_id": "20261030T041437Z-5ebed9ac",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 4,
+      "case_id": "0011-selective_patch-Middle-28",
+      "source_record_sha256": "c44f9cec54c48a3e557fb6ef603e09a86ec0754bc6c8163ead83c07b60190afb",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 144,
+      "run_id": "20261030T041508Z-aa04815d",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 9
+      },
+      "tool_calls": 2,
+      "case_id": "0012-no_update-Middle-144",
+      "source_record_sha256": "cc27a3dc4d0e2f6b51636ffd7424cd827ee9afac30e768c7d396d9a7d78bd8c4",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 144,
+      "run_id": "20261030T041525Z-f3185767",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 5,
+        "grounding": 8
+      },
+      "tool_calls": 4,
+      "case_id": "0013-full_rewrite-Middle-144",
+      "source_record_sha256": "84ca241fb6623ea3d8fb756c173ed78c2edbbd14d334ea7da974f2390c1d748d",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 144,
+      "run_id": "20261030T041544Z-6f70750a",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 5,
+        "grounding": 10
+      },
+      "tool_calls": 4,
+      "case_id": "0014-selective_patch-Middle-144",
+      "source_record_sha256": "e81046dd6e484a6f5b8284f987ca421a649f1eba2e4236d2d7eea37e4ceb368a",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 156,
+      "run_id": "20261030T041601Z-d77c02e6",
+      "run_status": "completed",
+      "judge_status": "judge_error",
+      "scores": null,
+      "tool_calls": 3,
+      "case_id": "0015-no_update-Middle-156",
+      "source_record_sha256": "9d25dfed75c874fa5a2f068aadcc36225fcf63f302bc27635558989d0c4d0898",
+      "missing_reason": [
+        "Judge returned no score text; inspect usage and finish_reason"
+      ]
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 156,
+      "run_id": "20261030T041614Z-3b7ed416",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 2,
+      "case_id": "0016-full_rewrite-Middle-156",
+      "source_record_sha256": "97b505c5b6533547a83d199ea570a43273ec6213c7838dd43e94562d5696d39a",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 156,
+      "run_id": "20261030T041627Z-60215f02",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 5,
+        "grounding": 10
+      },
+      "tool_calls": 3,
+      "case_id": "0017-selective_patch-Middle-156",
+      "source_record_sha256": "c2ffdde43114ea9492686c27bb43405e89d2dd82a8c0d4fa7137ccdb4a05f841",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 28,
+      "run_id": "20261030T041640Z-27d65c3a",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 5,
+      "case_id": "0018-no_update-Late-28",
+      "source_record_sha256": "14e8fb51262a5285cfe2c0c99726b2f8043a65ee19b3f40ab4a8fa209f1bb438",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 28,
+      "run_id": "20261030T041712Z-e7fabcbe",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 8,
+        "grounding": 9
+      },
+      "tool_calls": 7,
+      "case_id": "0019-full_rewrite-Late-28",
+      "source_record_sha256": "f305ebc4e057ae91b3e0c662c1e3656445aaa1b660af01257a37d9522e50bfbf",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 28,
+      "run_id": "20261030T041751Z-3fc0e992",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 5,
+      "case_id": "0020-selective_patch-Late-28",
+      "source_record_sha256": "2e6fbbeddeb4af4a4504532f759564524e248252c0cbec7fb59cb0645917fafd",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 144,
+      "run_id": "20261030T041821Z-f53d246d",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 5,
+        "grounding": 10
+      },
+      "tool_calls": 4,
+      "case_id": "0021-no_update-Late-144",
+      "source_record_sha256": "a4029f4f2508ddfc231a11b7030339701a3fa2eb535101db7d245e245ae0c1ff",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 144,
+      "run_id": "20261030T041838Z-a1b1ba0c",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 10,
+        "grounding": 10
+      },
+      "tool_calls": 2,
+      "case_id": "0022-full_rewrite-Late-144",
+      "source_record_sha256": "0685983789ff9fb2c95fc72be24ca6de52ceea8df39fc4aa5c3ff4a83465ec9b",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 144,
+      "run_id": "20261030T041852Z-76ef63fd",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 5,
+        "grounding": 8
+      },
+      "tool_calls": 4,
+      "case_id": "0023-selective_patch-Late-144",
+      "source_record_sha256": "aaa76f24e25fe742a41d32df00184d59d6eda3e6c86b3468a31df264a46b57c3",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 156,
+      "run_id": "20261030T041908Z-30ec8d3c",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 5,
+        "grounding": 10
+      },
+      "tool_calls": 3,
+      "case_id": "0024-no_update-Late-156",
+      "source_record_sha256": "f723b6b91d9d7c79e0b9227f6f5391dbde9be22fd8883bc91f6d36486e2ab534",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 156,
+      "run_id": "20261030T041920Z-953e332c",
+      "run_status": "completed",
+      "judge_status": "completed",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 5,
+        "grounding": 10
+      },
+      "tool_calls": 3,
+      "case_id": "0025-full_rewrite-Late-156",
+      "source_record_sha256": "98ea13113c6e00ed56659ec42e138cc1c4d68183c9d20a1e9399fc431890a5b7",
+      "missing_reason": null
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 156,
+      "run_id": "20261030T041932Z-0fc920ec",
+      "run_status": "completed",
+      "judge_status": "judge_error",
+      "scores": null,
+      "tool_calls": 3,
+      "case_id": "0026-selective_patch-Late-156",
+      "source_record_sha256": "ffc9011a8ddf4d9fb93fb20eb132653dbd2e8c25b328f5cea3bb153c56b020e5",
+      "missing_reason": [
+        "Judge returned no score text; inspect usage and finish_reason"
+      ]
+    }
+  ],
+  "usage": {
+    "judge_completion_tokens": 170518,
+    "judge_prompt_tokens": 161384,
+    "judge_total_tokens": 331902,
+    "task_completion_tokens": 36179,
+    "task_prompt_tokens": 289219,
+    "task_total_tokens": 325398
+  },
+  "update_costs": {
+    "no_update": {
+      "tokens": 0,
+      "seconds": 0.0,
+      "unique_updates": 3,
+      "regenerated_tools": 0,
+      "regenerated_blocks": 0
+    },
+    "full_rewrite": {
+      "tokens": 0,
+      "seconds": 0.15457739999692421,
+      "unique_updates": 9,
+      "regenerated_tools": 31,
+      "regenerated_blocks": 40
+    },
+    "selective_patch": {
+      "tokens": 0,
+      "seconds": 0.11017759997048415,
+      "unique_updates": 9,
+      "regenerated_tools": 8,
+      "regenerated_blocks": 13
+    }
+  },
+  "judge_protocol_sha256": "65c1078abefc3b00d9fb66851416b9ba5c76e5cd5183ba253f2173860e1fe98a",
+  "run_config_sha256": "1b6824dfcd981c784e0360087ec09d7be660e1ae7292d0d5b46116311ab2e5e6",
+  "source_sha256": {
+    "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\member2\\evidence\\pre_handoff\\live\\comparison.json": "5cc934cbc085fe54f72cd924bc405203daee7bae53556192369ccf4a9cd068a1",
+    "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\member2\\evidence\\pre_handoff\\scoring_v2\\evaluation.json": "cc4b3fb79c8679fbb8ee4cfd063e8cb5f4ac366f9834f7613aa74e78d72c9048",
+    "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\member2\\evidence\\pre_handoff\\scoring_v2\\protocol.json": "d1697b8e2d19a2197cce9253059a7b9678c2f4c572806485188dce939e9b3960"
+  },
+  "analyzer_sha256": "0d8409b588667ec45acdc724dcd51f72fb01ada91644b30f36a0969ac5a9953c",
+  "audit": "passed: raw record, frozen knowledge, prompt and judge receipt fingerprints verified"
+}

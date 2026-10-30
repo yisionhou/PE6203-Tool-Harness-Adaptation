@@ -1,0 +1,108 @@
+{
+  "update_id": "02c69db6-c587-4b05-811f-ec1421a0543e",
+  "strategy": "full_rewrite",
+  "base_version": "Early",
+  "target_version": "Late",
+  "base_sha256": "fdbb7cc033adcb5d30caf99289040014aee0b68a3fa9588ca285b50009316966",
+  "target_catalog_sha256": "60e57f6739f0f4a57fdf6986eebec55db4f49db10f0f66770a18296f554d96d6",
+  "changes": {
+    "added": [],
+    "removed": [],
+    "changed": {
+      "mcp-filesystem-server::read_multiple_files": {
+        "paths": [
+          "/description",
+          "/inputSchema/properties/ignoreErrors",
+          "/inputSchema/properties/includeMetadata",
+          "/inputSchema/properties/separator"
+        ],
+        "kinds": [
+          "description",
+          "parameter"
+        ]
+      },
+      "mcp-sequentialthinking-tools::sequentialthinking_tools": {
+        "paths": [
+          "/description",
+          "/inputSchema/properties/available_mcp_tools/description",
+          "/inputSchema/properties/branch_from_thought/description",
+          "/inputSchema/properties/confidence_threshold",
+          "/inputSchema/properties/current_step/description",
+          "/inputSchema/properties/is_revision/description",
+          "/inputSchema/properties/max_branches",
+          "/inputSchema/properties/needs_more_thoughts/description",
+          "/inputSchema/properties/next_thought_needed/description",
+          "/inputSchema/properties/previous_steps/description",
+          "/inputSchema/properties/recommendation_strategy",
+          "/inputSchema/properties/remaining_steps/description",
+          "/inputSchema/properties/revises_thought/description",
+          "/inputSchema/properties/thought/description",
+          "/inputSchema/properties/thought_number/description",
+          "/inputSchema/properties/total_thoughts/description"
+        ],
+        "kinds": [
+          "description",
+          "parameter"
+        ]
+      },
+      "time-mcp::current_time": {
+        "paths": [
+          "/description"
+        ],
+        "kinds": [
+          "description"
+        ]
+      }
+    },
+    "unchanged": [
+      "mcp-filesystem-server::write_file"
+    ]
+  },
+  "affected_blocks": [
+    "rule:inventory",
+    "rule:mcp-filesystem-server::read_multiple_files",
+    "rule:mcp-sequentialthinking-tools::sequentialthinking_tools",
+    "rule:time-mcp::current_time"
+  ],
+  "regenerated_tools": [
+    "mcp-filesystem-server::read_multiple_files",
+    "mcp-filesystem-server::write_file",
+    "mcp-sequentialthinking-tools::sequentialthinking_tools",
+    "time-mcp::current_time"
+  ],
+  "regenerated_blocks": [
+    "rule:inventory",
+    "rule:mcp-filesystem-server::read_multiple_files",
+    "rule:mcp-filesystem-server::write_file",
+    "rule:mcp-sequentialthinking-tools::sequentialthinking_tools",
+    "rule:time-mcp::current_time"
+  ],
+  "removed_blocks": [],
+  "changed_blocks": [
+    "rule:mcp-filesystem-server::read_multiple_files",
+    "rule:mcp-sequentialthinking-tools::sequentialthinking_tools",
+    "rule:time-mcp::current_time"
+  ],
+  "changed_tool_records": [
+    "mcp-filesystem-server::read_multiple_files",
+    "mcp-sequentialthinking-tools::sequentialthinking_tools",
+    "time-mcp::current_time"
+  ],
+  "preserved_tool_sha256": {},
+  "preserved_block_sha256": {},
+  "output_sha256": "8accbb75d243e7a8aec5e1a6101943ebcdb2ac63d3bc828059543cbd429baa8b",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.2989079999970272
+  },
+  "schema_version": 1,
+  "task_id": 3,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/full_rewrite/Late/3.json",
+  "knowledge_sha256": "8f3e67672d7a25139258ad1951eeaee0ea0edea8253670d37b5c6c6da91034f4",
+  "observation_ref": "Late/3",
+  "record_path": "updates/full_rewrite/Late/3.json"
+}

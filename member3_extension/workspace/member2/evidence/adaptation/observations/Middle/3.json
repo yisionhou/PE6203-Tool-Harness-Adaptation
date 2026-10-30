@@ -1,0 +1,331 @@
+[
+  {
+    "name": "files__read_multiple_files",
+    "description": "Read the contents of multiple files simultaneously. This is more efficient than reading files one by one when you need to analyze or compare multiple files.",
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "additionalProperties": false,
+      "properties": {
+        "encoding": {
+          "default": "utf-8",
+          "description": "File encoding (default: utf-8)",
+          "type": "string"
+        },
+        "paths": {
+          "description": "Array of file paths to read",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "paths"
+      ],
+      "type": "object"
+    },
+    "source_name": "read_multiple_files",
+    "source_server": "mcp-filesystem-server"
+  },
+  {
+    "name": "files__write_file",
+    "description": "Create a new file or completely overwrite an existing file with new content. Use with caution as it will overwrite existing files without warning.",
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "description": "The content to write to the file",
+          "type": "string"
+        },
+        "createDirectories": {
+          "default": false,
+          "description": "Create parent directories if they don't exist",
+          "type": "boolean"
+        },
+        "path": {
+          "description": "The path to the file",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "content"
+      ],
+      "type": "object"
+    },
+    "source_name": "write_file",
+    "source_server": "mcp-filesystem-server"
+  },
+  {
+    "name": "time_mcp__current_time",
+    "description": "Get the current date and time.",
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "properties": {
+        "format": {
+          "default": "YYYY-MM-DD HH:mm:ss",
+          "description": "The format of the time",
+          "enum": [
+            "h:mm A",
+            "h:mm:ss A",
+            "YYYY-MM-DD HH:mm:ss",
+            "YYYY-MM-DD",
+            "YYYY-MM",
+            "MM/DD/YYYY",
+            "MM/DD/YY",
+            "YYYY/MM/DD",
+            "YYYY/MM"
+          ],
+          "type": "string"
+        },
+        "timezone": {
+          "description": "The timezone of the time, IANA timezone name, e.g. Asia/Shanghai",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "source_name": "current_time",
+    "source_server": "time-mcp"
+  },
+  {
+    "name": "thinktools__sequentialthinking_tools",
+    "description": "A detailed tool for dynamic, reflective problem-solving through sequential thoughts, with context persistence and step validation.\nThis tool supports problem analysis through a flexible thinking process that can adapt as understanding evolves.\nEach thought can extend, question, or revise earlier insights as the analysis develops.\n\nIMPORTANT: This server supports sequential thinking with MCP tool coordination. The LLM reviews the available tools and their descriptions to make informed recommendations, and this server tracks and organizes those recommendations.\n\nWhen to use this tool:\n- Breaking complex problems into steps\n- Planning and design that may require revision\n- Analysis that may need course correction\n- Problems where the full scope is not clear at the start\n- Problems that require a multi-step solution\n- Tasks that need context to be maintained across multiple steps\n- Situations where irrelevant information should be filtered out\n- When guidance is needed on which tools to use and in what order\n- Long-running analysis that should be saved and resumed later\n- Multi-session problem solving with persistent context\n- Validating whether recommended steps were completed successfully\n\nKey features:\n- total_thoughts can be adjusted up or down as work progresses\n- Previous thoughts can be questioned or revised\n- More thoughts can be added even after reaching an apparent ending point\n- Uncertainty and alternative approaches can be expressed\n- Thoughts do not need to be strictly linear; branching and backtracking are supported\n- Generates a solution hypothesis\n- Verifies the hypothesis against the chain of thought\n- Recommends appropriate tools for each step\n- Provides rationale for tool recommendations\n- Suggests tool execution order and possible parameters\n- Tracks prior recommendations and remaining steps\n\nParameters explained:\n- available_mcp_tools: Array of available MCP tool names (for example, [\"mcp-omnisearch\", \"mcp-turso-cloud\"])\n- thought: The current thinking step, which may include:\n* Regular analytical steps\n* Revisions of earlier thoughts\n* Questions about earlier decisions\n* Realizations that more analysis is needed\n* Changes in approach\n* Hypothesis generation\n* Hypothesis verification\n* Tool recommendations and rationale\n- next_thought_needed: True when another thought step is needed, including when more thinking is required near the apparent end\n- thought_number: The current position in the sequence and may exceed the initial total if needed\n- total_thoughts: The current estimate of how many thoughts are needed and may be adjusted up or down\n- is_revision: Indicates whether this thought revises earlier thinking\n- revises_thought: When is_revision is true, the thought number being reconsidered\n- branch_from_thought: When branching, the thought number where the branch begins\n- session_id: Optional identifier used to save or load a persistent thinking session\n- step_validation: Optional validation result for the previous step recommendation\n- needs_more_thoughts: Indicates that more thoughts are needed after reaching an apparent ending point\n- current_step: The current step recommendation, including:\n* step_description: What needs to be done\n* recommended_tools: Tools recommended for this step\n* expected_outcome: The expected result of this step\n* next_step_conditions: Conditions to consider for the next step\n- previous_steps: Steps that have already been recommended\n- remaining_steps: High-level descriptions of upcoming steps\n\nYou should:\n1. Start with an initial estimate of the thoughts needed, but be ready to adjust it\n2. Freely question or revise earlier thoughts\n3. Add more thoughts when needed, even near the apparent end\n4. Express uncertainty when it is present\n5. Mark thoughts that revise earlier thinking or branch into new paths\n6. Ignore information that is irrelevant to the current step\n7. Generate a solution hypothesis when appropriate\n8. Verify the hypothesis against the chain of thought\n9. Consider which available tools could help with the current step\n10. Provide clear rationale for tool recommendations\n11. Suggest specific tool parameters when appropriate\n12. Consider alternative tools for each step\n13. Track progress through the recommended steps\n14. Provide a single, ideally correct, final answer\n15. Set next_thought_needed to false only when the work is truly complete and a satisfactory answer has been reached",
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "properties": {
+        "available_mcp_tools": {
+          "description": "Array of available MCP tool names (for example, [\"mcp-omnisearch\", \"mcp-turso-cloud\"])",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "branch_from_thought": {
+          "description": "The thought number where the branch starts",
+          "minimum": 1,
+          "type": "number"
+        },
+        "branch_id": {
+          "description": "Branch identifier",
+          "type": "string"
+        },
+        "confidence_threshold": {
+          "description": "Minimum confidence level (0-1) for tool recommendations (default: 0.0)",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "current_step": {
+          "description": "The current recommended step",
+          "properties": {
+            "expected_outcome": {
+              "description": "What to expect from this step",
+              "type": "string"
+            },
+            "next_step_conditions": {
+              "description": "Conditions to consider for the next step",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "recommended_tools": {
+              "description": "Tools recommended for this step",
+              "items": {
+                "properties": {
+                  "alternatives": {
+                    "description": "Alternative tools that could be used",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "confidence": {
+                    "description": "0-1 indicating confidence in recommendation",
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "priority": {
+                    "description": "Order in the recommendation sequence",
+                    "type": "number"
+                  },
+                  "rationale": {
+                    "description": "Why this tool is recommended",
+                    "type": "string"
+                  },
+                  "suggested_inputs": {
+                    "additionalProperties": {},
+                    "description": "Optional suggested parameters",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "tool_name": {
+                    "description": "Name of the tool being recommended",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "tool_name",
+                  "confidence",
+                  "rationale",
+                  "priority"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "step_description": {
+              "description": "What needs to be done",
+              "type": "string"
+            }
+          },
+          "required": [
+            "step_description",
+            "recommended_tools",
+            "expected_outcome"
+          ],
+          "type": "object"
+        },
+        "enable_auto_verification": {
+          "description": "Whether to automatically trigger verification after hypothesis generation (default: true)",
+          "type": "boolean"
+        },
+        "is_revision": {
+          "description": "Whether this thought revises earlier thinking",
+          "type": "boolean"
+        },
+        "max_branches": {
+          "description": "Maximum number of concurrent branches allowed (default: unlimited)",
+          "minimum": 1,
+          "type": "number"
+        },
+        "needs_more_thoughts": {
+          "description": "Whether more thoughts are needed",
+          "type": "boolean"
+        },
+        "next_thought_needed": {
+          "description": "Whether an additional thought step is needed",
+          "type": "boolean"
+        },
+        "previous_steps": {
+          "description": "Steps that have already been recommended",
+          "items": {
+            "properties": {
+              "expected_outcome": {
+                "description": "What to expect from this step",
+                "type": "string"
+              },
+              "next_step_conditions": {
+                "description": "Conditions to consider for the next step",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "recommended_tools": {
+                "description": "Tools recommended for this step",
+                "items": {
+                  "properties": {
+                    "alternatives": {
+                      "description": "Alternative tools that could be used",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "confidence": {
+                      "description": "0-1 indicating confidence in recommendation",
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "priority": {
+                      "description": "Order in the recommendation sequence",
+                      "type": "number"
+                    },
+                    "rationale": {
+                      "description": "Why this tool is recommended",
+                      "type": "string"
+                    },
+                    "suggested_inputs": {
+                      "additionalProperties": {},
+                      "description": "Optional suggested parameters",
+                      "propertyNames": {
+                        "type": "string"
+                      },
+                      "type": "object"
+                    },
+                    "tool_name": {
+                      "description": "Name of the tool being recommended",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "tool_name",
+                    "confidence",
+                    "rationale",
+                    "priority"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "step_description": {
+                "description": "What needs to be done",
+                "type": "string"
+              }
+            },
+            "required": [
+              "step_description",
+              "recommended_tools",
+              "expected_outcome"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "remaining_steps": {
+          "description": "High-level descriptions of the remaining upcoming steps",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "revises_thought": {
+          "description": "The thought number being reconsidered",
+          "minimum": 1,
+          "type": "number"
+        },
+        "thought": {
+          "description": "The current thinking step",
+          "type": "string"
+        },
+        "thought_number": {
+          "description": "The current thought number in the sequence",
+          "minimum": 1,
+          "type": "number"
+        },
+        "total_thoughts": {
+          "description": "The current estimate of the total number of thoughts needed",
+          "minimum": 1,
+          "type": "number"
+        }
+      },
+      "required": [
+        "available_mcp_tools",
+        "thought",
+        "next_thought_needed",
+        "thought_number",
+        "total_thoughts"
+      ],
+      "type": "object"
+    },
+    "source_name": "sequentialthinking_tools",
+    "source_server": "mcp-sequentialthinking-tools"
+  }
+]

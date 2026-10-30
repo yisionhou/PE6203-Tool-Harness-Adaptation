@@ -1,0 +1,50 @@
+{
+  "phase": "formal_complete_after_account_recovery",
+  "date_local": "2026-10-30",
+  "formal_expanded_experiment_complete": true,
+  "actual_task_conditions": 162,
+  "valid_judge_scores": 162,
+  "audited_batches": 9,
+  "fresh_repetitions": 3,
+  "official_task_ids": [
+    3,
+    24,
+    28,
+    90,
+    144,
+    156
+  ],
+  "existing_tests": {
+    "command": "python -X utf8 -m pytest -q --basetemp .tmp/pytest-member3-full -x",
+    "result": "85 passed in 79.63s",
+    "exit_code": 0,
+    "scope": "member1 and member2; collected before member3 tests were added"
+  },
+  "member3_tests": {
+    "command": "python -X utf8 -m pytest -q member3/tests --basetemp .tmp/pytest-member3-final",
+    "result": "13 passed in 0.35s",
+    "exit_code": 0
+  },
+  "recovery_tests": {
+    "result": "3 passed in 0.19s",
+    "exit_code": 0
+  },
+  "ecs_upstream_reference": "matched",
+  "known_account_aborted_task_attempts_preserved_and_replaced": 4,
+  "secrets_excluded_from_delivery": true,
+  "pending": [],
+  "completion_record": "formal/completion.json",
+  "final_qa": "formal/final-qa.json",
+  "offline_fix_validation": {
+    "fixed_findings": [
+      "F1",
+      "F2",
+      "F3",
+      "F4"
+    ],
+    "tests_passed": 112,
+    "new_model_api_requests": 0,
+    "numeric_results_unchanged": true,
+    "details": "../fix_revision_20261030/verification.json"
+  }
+}

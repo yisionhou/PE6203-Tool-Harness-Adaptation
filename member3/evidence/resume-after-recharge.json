@@ -1,0 +1,9 @@
+{
+  "user_confirmed_replenishment": true,
+  "scheduled_missing_requests": 31,
+  "actual_requests": 31,
+  "offline_recovered": 0,
+  "account_stopped_again": false,
+  "max_concurrent_requests": 4,
+  "worker_errors": []
+}

@@ -6,3 +6,18 @@ member1/knowledge_examples/** -text -whitespace
 
 # Preserve adaptation observation/package/ledger bytes used by provenance hashes.
 member2/evidence/** -text -whitespace
+
+# Preserve Member 3 frozen manifests, copied execution sources and raw hashes.
+member1/*.py -text whitespace=cr-at-eol
+member2/*.py -text whitespace=cr-at-eol
+member3/*.py -text whitespace=cr-at-eol
+member3/tests/*.py -text whitespace=cr-at-eol
+member3_extension/*.py -text whitespace=cr-at-eol
+member3_migration/*.py -text whitespace=cr-at-eol
+member3/studies/** -text -whitespace
+member3/evidence/** -text -whitespace
+member3/fix_revision_20261030/** -text -whitespace
+member3_extension/workspace/** -text -whitespace
+member3_extension/snapshots/** -text -whitespace
+member3_migration/workspace/** -text -whitespace
+member3_migration/snapshots/** -text -whitespace

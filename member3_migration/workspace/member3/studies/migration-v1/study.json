@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-30T09:31:27.087505+00:00",
+  "study_kind": "official_task_90_deleted_daily_route",
+  "scope": "Official task 90: get_daily_challenge deleted, get_problem(daily=true) migration; original question unchanged.",
+  "task_ids": [
+    90
+  ],
+  "repetitions": 3,
+  "conditions": 27,
+  "schedule": [
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 90
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 90
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 90
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 90
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 90
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 90
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 90
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 90
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 90
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 90
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 90
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 90
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 90
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 90
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 90
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 90
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 90
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 90
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 90
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 90
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 90
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 90
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 90
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 90
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 90
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 90
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 90
+    }
+  ],
+  "run_config": {
+    "model": "deepseek-v4-flash-ga-260731",
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "temperature": 0.2,
+    "max_completion_tokens": 4096,
+    "max_round": 10,
+    "request_timeout": 60,
+    "stop_policy": "final_text_after_tool_result"
+  },
+  "knowledge_sha256": {
+    "knowledge/no_update/Early/90.json": "be36ad4feaf9beb2c992683396173a6b29dbb63b600683bbc195851e1f34e115",
+    "knowledge/no_update/Middle/90.json": "be36ad4feaf9beb2c992683396173a6b29dbb63b600683bbc195851e1f34e115",
+    "knowledge/no_update/Late/90.json": "be36ad4feaf9beb2c992683396173a6b29dbb63b600683bbc195851e1f34e115",
+    "knowledge/full_rewrite/Early/90.json": "463817783ae53df6f34a873ebf1e102e3d75a542857cd3ff622e4bb6cafd8018",
+    "knowledge/full_rewrite/Middle/90.json": "3cf7b18f53deac856ca7e8134d6e5d458fdcbdaa0908701b0662c6f75501ad5c",
+    "knowledge/full_rewrite/Late/90.json": "0e52e4fd2248fae9542d5dbb3b1473289149971748924096b714f5fe42ee0c55",
+    "knowledge/selective_patch/Early/90.json": "a505c1aff521585424d7a257d4be21efcf3f93249b781822371c6ad9d14eea65",
+    "knowledge/selective_patch/Middle/90.json": "386da1d9aa2a068f4a4dbe64afcd04bd409361d850d3163c5288eb1f1318e72a",
+    "knowledge/selective_patch/Late/90.json": "027e3b25f64e78dd40cb53e5e25ba8ed478f21b2f5f175c560233f71c4acb5db"
+  },
+  "source_sha256": {
+    "member1/tasks_manifest.json": "85f1e8c397a681497bab362874d9b66f03c847a463fdfcfff56837f340c24e53",
+    "src/custom/data/test_cases/test_cases.json": "b51d09d93afa94b08a67281a95ee8b4c7d69953816adf6769a996e26274bb023",
+    "src/custom/data/test_cases/chosen_idx.json": "55df803b7cf40fe1a40d27ff6b2375d87b62e308fbdbc6da3e27e6adbcb63d6c",
+    "src/custom/agents/SimpleOpenAIAgent.py": "4d2839e00de277885a61dc51d26457eac0409ebbf237716107c703dd68701f04",
+    "src/custom/prompt/eval_error_prompt.py": "59ede33bfddfe91138d07ac97fcac9e16b64fad99c13d58d85990944e6649bee",
+    "member1/snapshots/provenance.json": "4f44d1c71aaeca4374a1a27ada0edd24337912f329465ad5d796eaaccc21a307",
+    "member1/requirements-lock.txt": "c9a58aa5fb9259b75ec24954d60813f012e358728e62d76eae9bc4430c72a31b",
+    "package-lock.json": "d0ee73dac9559182b2f6315e884a7bd372e38a6363848cff39db704ccd3f970e"
+  },
+  "code_sha256": {
+    "member1/build_handoff_demo.py": "3cd2f93cdea350c35c2099afd0244fb5ec613f3b583ea547634bc9bae013bf5f",
+    "member1/knowledge.py": "3c4b28fc58d3297436b68af23c52ead226ac4922ecdbe8302bda38acfe589fb2",
+    "member1/prepare_environment.py": "55c1496fd5c16a0d793784d0f900c89ac9cde821a109ece5020706b89048fa3e",
+    "member1/protocol.py": "fad55ab0de929531e467b528ccf2958d72c0502681cafe15e53fd08d5f7a179e",
+    "member1/read_results.py": "570c7128cddcdd97bd704f7ee561c17434668af3e8b4013a170cca892581898e",
+    "member1/run_comparison.py": "bc869b7276c0ce30e03161f556739971f7db991fa02dbda59d0fd57f166661cd",
+    "member1/run_task.py": "a9888bda1c686722b1b5d1c20e0b3d337c08799bf10adf6d5a61a7e5e78d8fa3",
+    "member1/run_versions.py": "f6a0960ff7f8decc78914664bf0e247c96bdc2c81cb9c226156d52be03362789",
+    "member1/scoring_bridge.py": "31ceff7d78f9ee996e85b75ac6aea9281efc9ce13d443073b7e762365fc95035",
+    "member1/stage2.py": "23d0da39c153b2260838d8e6304086de2855138e9fe240581c98c959ec1a7c17",
+    "member2/__init__.py": "b8dfba3029414a4948ee354e1b4f528cc5ce00a3173f0a537af821f1264d9bd7",
+    "member2/adapt.py": "6046150f93e62e2f26f4437e548fbfea0436b2234ae5c0d4ce0860dabc302dce",
+    "member2/build.py": "054f4cc36049ea1f7f46e54ef9c02416738058ac3a4587ee3b3b576717c1ac52",
+    "member2/catalog.py": "a572b42d9c2576f668afe33264b4b5d000ba53c93fac87ac287f92f6cef9c360",
+    "member2/knowledge_base.py": "0d7ef3202b2ea1d077efb21267acdbddd0436c25b8172f102651c01cd32814f8",
+    "member3/__init__.py": "38849e69b0353720e8728312314a96c1e01c40b99a5a481c723c721ea7f1ffad",
+    "member3/analyze.py": "0d8409b588667ec45acdc724dcd51f72fb01ada91644b30f36a0969ac5a9953c",
+    "member3/check_clock.py": "b5c9e20ec1c4878cef31d3035ecd3d59aa08919dcc363d774bbd60608a0eae88",
+    "member3/experiment.py": "f9cf1c9ea92a8871b536df4b6ab0d76b9a7c3976c8005908f3d6682adf771566"
+  },
+  "historical_pilot_included": false,
+  "judge_repeats_per_trajectory": 1,
+  "missing_policy": "retain null and reason; no zero fill or partial overall mean",
+  "ecs_formula": "per repetition/task mean(TF across versions) - population_sd(TF); equal task/repetition mean",
+  "variation": "sample SD of complete repetition means; no SD with only one repetition",
+  "cost_policy": "unique adaptation.update_id only; inference and judging separately",
+  "known_confounders": [
+    "fixed strategy execution order in member1 runner",
+    "real-time clocks differ across cases",
+    "clock service consistency must be checked",
+    "same model for task and judge",
+    "optional changes do not force migration"
+  ],
+  "paid_requests_executed_at_freeze": 0,
+  "input_sha256": {
+    "comparison.json": "086d6fb65a26fda7c9d03aa97635d3f294227a3e225d607dc294936f5f6efbbb",
+    "judge-config.json": "a5bbc72b8bff6aeba2a89481a61754d275b28ab3d6188b08e65c4a542a975075"
+  },
+  "sha256": "75d7053d885419b263be5b4ec6eaaba791e5998cbac238c126ccd02ccb8411d7"
+}

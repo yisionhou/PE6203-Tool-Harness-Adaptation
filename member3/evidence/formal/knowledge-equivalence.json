@@ -1,0 +1,167 @@
+{
+  "pairs": [
+    {
+      "task_id": 28,
+      "version": "Early",
+      "equal": true,
+      "sha256": [
+        "3c7df239154c27d0894b368c152debf04675c7604450d4f4e5904503c3aff6df",
+        "3c7df239154c27d0894b368c152debf04675c7604450d4f4e5904503c3aff6df"
+      ]
+    },
+    {
+      "task_id": 28,
+      "version": "Middle",
+      "equal": true,
+      "sha256": [
+        "3c7df239154c27d0894b368c152debf04675c7604450d4f4e5904503c3aff6df",
+        "3c7df239154c27d0894b368c152debf04675c7604450d4f4e5904503c3aff6df"
+      ]
+    },
+    {
+      "task_id": 28,
+      "version": "Late",
+      "equal": true,
+      "sha256": [
+        "5afea7715632ee05bfd6e3fe7b4383fcc0ebe1236ac9e16e9689bd40c5b9f5fa",
+        "5afea7715632ee05bfd6e3fe7b4383fcc0ebe1236ac9e16e9689bd40c5b9f5fa"
+      ]
+    },
+    {
+      "task_id": 144,
+      "version": "Early",
+      "equal": true,
+      "sha256": [
+        "781b57f5cc80589fc52565bdd39316a942539b7faca9e9a5ac7cedf5f4d18da8",
+        "781b57f5cc80589fc52565bdd39316a942539b7faca9e9a5ac7cedf5f4d18da8"
+      ]
+    },
+    {
+      "task_id": 144,
+      "version": "Middle",
+      "equal": true,
+      "sha256": [
+        "f24336fd832157a04b13723938bb03e14e27bdaf8b4f52bfdb8163825de837a1",
+        "f24336fd832157a04b13723938bb03e14e27bdaf8b4f52bfdb8163825de837a1"
+      ]
+    },
+    {
+      "task_id": 144,
+      "version": "Late",
+      "equal": true,
+      "sha256": [
+        "93267bb5b4a4be0ef8b56dbaa3a04981c15709dd80b2b0392449dcd0f7607be4",
+        "93267bb5b4a4be0ef8b56dbaa3a04981c15709dd80b2b0392449dcd0f7607be4"
+      ]
+    },
+    {
+      "task_id": 156,
+      "version": "Early",
+      "equal": true,
+      "sha256": [
+        "a4bb7615f247ff54cfc74fb3d2e246c4a742c2e7a56245e5014823cf0e470037",
+        "a4bb7615f247ff54cfc74fb3d2e246c4a742c2e7a56245e5014823cf0e470037"
+      ]
+    },
+    {
+      "task_id": 156,
+      "version": "Middle",
+      "equal": true,
+      "sha256": [
+        "0c0a7950220ed10e446b2dc4ba0e83ae54cdea1fa54c6b7cb9ed4c310b3dd6fe",
+        "0c0a7950220ed10e446b2dc4ba0e83ae54cdea1fa54c6b7cb9ed4c310b3dd6fe"
+      ]
+    },
+    {
+      "task_id": 156,
+      "version": "Late",
+      "equal": true,
+      "sha256": [
+        "2b0bab7146ea388210e3e4e9dea2e775394672dac8a45a121e2eb30b63ff4b5c",
+        "2b0bab7146ea388210e3e4e9dea2e775394672dac8a45a121e2eb30b63ff4b5c"
+      ]
+    },
+    {
+      "task_id": 3,
+      "version": "Early",
+      "equal": true,
+      "sha256": [
+        "1fbc5320cd426a40d3aff96a78c31dd7592ef2e3e5c66d5f876f38963b3ae471",
+        "1fbc5320cd426a40d3aff96a78c31dd7592ef2e3e5c66d5f876f38963b3ae471"
+      ]
+    },
+    {
+      "task_id": 3,
+      "version": "Middle",
+      "equal": true,
+      "sha256": [
+        "02469f330975ef1abc0b8faf43d9af290738ca2598398b50b828e68e7eaf0445",
+        "02469f330975ef1abc0b8faf43d9af290738ca2598398b50b828e68e7eaf0445"
+      ]
+    },
+    {
+      "task_id": 3,
+      "version": "Late",
+      "equal": true,
+      "sha256": [
+        "c7986e4544fb9672f61eae1c172d17f3cd2e9dc9c2dd2c513dff3f00bb6617a6",
+        "c7986e4544fb9672f61eae1c172d17f3cd2e9dc9c2dd2c513dff3f00bb6617a6"
+      ]
+    },
+    {
+      "task_id": 24,
+      "version": "Early",
+      "equal": true,
+      "sha256": [
+        "d2c6af72f91ecdcc0cc3f2b9ef522e5fca79c0eb08b51f0559b992746cdadbc9",
+        "d2c6af72f91ecdcc0cc3f2b9ef522e5fca79c0eb08b51f0559b992746cdadbc9"
+      ]
+    },
+    {
+      "task_id": 24,
+      "version": "Middle",
+      "equal": true,
+      "sha256": [
+        "a6e283a138c1679000c4a48f4074e0f2d31aab29a309cb77bb5b4dd25e5f099a",
+        "a6e283a138c1679000c4a48f4074e0f2d31aab29a309cb77bb5b4dd25e5f099a"
+      ]
+    },
+    {
+      "task_id": 24,
+      "version": "Late",
+      "equal": true,
+      "sha256": [
+        "816b533d70b89b0249d978cf18b52e3536965980eb52a9d593bd049ed6f04728",
+        "816b533d70b89b0249d978cf18b52e3536965980eb52a9d593bd049ed6f04728"
+      ]
+    },
+    {
+      "task_id": 90,
+      "version": "Early",
+      "equal": true,
+      "sha256": [
+        "8bdfc522e48a0b5237cdc33c54d57743c08751634b7fd8acda3430aa627c66ab",
+        "8bdfc522e48a0b5237cdc33c54d57743c08751634b7fd8acda3430aa627c66ab"
+      ]
+    },
+    {
+      "task_id": 90,
+      "version": "Middle",
+      "equal": true,
+      "sha256": [
+        "bfbbd63c1fca97c9e344bf1807fb00fae1cf1ef93c283c00c8c3dddabb1d4705",
+        "bfbbd63c1fca97c9e344bf1807fb00fae1cf1ef93c283c00c8c3dddabb1d4705"
+      ]
+    },
+    {
+      "task_id": 90,
+      "version": "Late",
+      "equal": true,
+      "sha256": [
+        "3734da80ddf69b2bcdbbcb86a2fc2c6e65278e00d55ba8f02a282ca60cb0d837",
+        "3734da80ddf69b2bcdbbcb86a2fc2c6e65278e00d55ba8f02a282ca60cb0d837"
+      ]
+    }
+  ],
+  "equal_pairs": 18
+}

@@ -1,0 +1,79 @@
+{
+  "update_id": "1d1f9380-d09c-48e8-8fac-2249e66d64d4",
+  "strategy": "full_rewrite",
+  "base_version": "Early",
+  "target_version": "Middle",
+  "base_sha256": "d30a11db90adfcf46d3ed2cfa0f467bd929ebbf62f8822f64fde782a8869bcdd",
+  "target_catalog_sha256": "f9623aacac589776db47db79717f1415f701a54e70aaa12fb2d7a356da41e6ab",
+  "changes": {
+    "added": [],
+    "removed": [],
+    "changed": {
+      "@jinzcdev/leetcode-mcp-server::get_daily_challenge": {
+        "paths": [
+          "/description"
+        ],
+        "kinds": [
+          "description"
+        ]
+      },
+      "ygocdb-mcp-server::search_cards": {
+        "paths": [
+          "/inputSchema/properties/exact",
+          "/inputSchema/properties/limit"
+        ],
+        "kinds": [
+          "parameter"
+        ]
+      }
+    },
+    "unchanged": [
+      "ygocdb-mcp-server::get_card_by_id",
+      "ygocdb-mcp-server::get_card_image"
+    ]
+  },
+  "affected_blocks": [
+    "rule:@jinzcdev/leetcode-mcp-server::get_daily_challenge",
+    "rule:inventory",
+    "rule:ygocdb-mcp-server::search_cards"
+  ],
+  "regenerated_tools": [
+    "@jinzcdev/leetcode-mcp-server::get_daily_challenge",
+    "ygocdb-mcp-server::get_card_by_id",
+    "ygocdb-mcp-server::get_card_image",
+    "ygocdb-mcp-server::search_cards"
+  ],
+  "regenerated_blocks": [
+    "rule:@jinzcdev/leetcode-mcp-server::get_daily_challenge",
+    "rule:inventory",
+    "rule:ygocdb-mcp-server::get_card_by_id",
+    "rule:ygocdb-mcp-server::get_card_image",
+    "rule:ygocdb-mcp-server::search_cards"
+  ],
+  "removed_blocks": [],
+  "changed_blocks": [
+    "rule:@jinzcdev/leetcode-mcp-server::get_daily_challenge",
+    "rule:ygocdb-mcp-server::search_cards"
+  ],
+  "changed_tool_records": [
+    "@jinzcdev/leetcode-mcp-server::get_daily_challenge",
+    "ygocdb-mcp-server::search_cards"
+  ],
+  "preserved_tool_sha256": {},
+  "preserved_block_sha256": {},
+  "output_sha256": "18d61181856f3db7b5865df75bb845afff8f8c98fb0c2e4b53776e0983af8b9b",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.014173600007779896
+  },
+  "schema_version": 1,
+  "task_id": 90,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/full_rewrite/Middle/90.json",
+  "knowledge_sha256": "3cf7b18f53deac856ca7e8134d6e5d458fdcbdaa0908701b0662c6f75501ad5c",
+  "observation_ref": "Middle/90",
+  "record_path": "updates/full_rewrite/Middle/90.json"
+}

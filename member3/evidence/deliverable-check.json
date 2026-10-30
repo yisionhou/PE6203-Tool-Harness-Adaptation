@@ -1,0 +1,10 @@
+{
+  "python_compile": "passed",
+  "pilot_case_count": 27,
+  "valid_scores": 25,
+  "known_task_tokens": 325398,
+  "known_judge_tokens": 331902,
+  "cost_counts": "matched archived evidence",
+  "report_files": "present",
+  "paid_requests": 0
+}

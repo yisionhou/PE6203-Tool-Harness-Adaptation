@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "kind": "live_service_probe_no_model",
+  "paid_requests": 0,
+  "all_consistent": false,
+  "records": [
+    {
+      "version": "Early",
+      "tool": "get_time_info",
+      "arguments": {
+        "timezone": "Asia/Tokyo"
+      },
+      "raw_result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"year\": 2026,\n  \"month\": 10,\n  \"day\": 30,\n  \"hour\": 17,\n  \"minute\": 43,\n  \"second\": 48,\n  \"weekday\": \"星期五\",\n  \"timezone\": \"Asia/Tokyo\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      },
+      "start_epoch": 1793349828.2393367,
+      "end_epoch": 1793349828.2983057,
+      "drift_seconds": -0.26882123947143555,
+      "within_3_seconds": true,
+      "parse_error": null,
+      "service_sha256": "0d0a7cff06a2416299c025d40a7a9f75c7e2ca809194839b776346a9f39465ad"
+    },
+    {
+      "version": "Early",
+      "tool": "get_current_time",
+      "arguments": {
+        "timezone": "Asia/Tokyo",
+        "format": "locale"
+      },
+      "raw_result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"time\": \"2026/10/30 18:43:48\",\n  \"timezone\": \"Asia/Tokyo\",\n  \"format\": \"locale\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      },
+      "start_epoch": 1793349828.3144767,
+      "end_epoch": 1793349828.3200123,
+      "drift_seconds": 3599.682755470276,
+      "within_3_seconds": false,
+      "parse_error": null,
+      "service_sha256": "0d0a7cff06a2416299c025d40a7a9f75c7e2ca809194839b776346a9f39465ad"
+    },
+    {
+      "version": "Early",
+      "tool": "get_current_time",
+      "arguments": {
+        "timezone": "Asia/Tokyo",
+        "format": "timestamp"
+      },
+      "raw_result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"time\": \"1793353428000\",\n  \"timezone\": \"Asia/Tokyo\",\n  \"format\": \"timestamp\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      },
+      "start_epoch": 1793349828.3260088,
+      "end_epoch": 1793349828.3298383,
+      "drift_seconds": 3599.6720764636993,
+      "within_3_seconds": false,
+      "parse_error": null,
+      "service_sha256": "0d0a7cff06a2416299c025d40a7a9f75c7e2ca809194839b776346a9f39465ad"
+    },
+    {
+      "version": "Middle",
+      "tool": "get_time_info",
+      "arguments": {
+        "timezone": "Asia/Tokyo"
+      },
+      "raw_result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"year\": 2026,\n  \"month\": 10,\n  \"day\": 30,\n  \"hour\": 17,\n  \"minute\": 43,\n  \"second\": 49,\n  \"weekday\": \"星期五\",\n  \"timezone\": \"Asia/Tokyo\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      },
+      "start_epoch": 1793349829.3186402,
+      "end_epoch": 1793349829.3848555,
+      "drift_seconds": -0.351747989654541,
+      "within_3_seconds": true,
+      "parse_error": null,
+      "service_sha256": "a22dd6add78e5a65c8e7ab236ce660f7111557cf05f5d9da5b39b75e9a58e1af"
+    },
+    {
+      "version": "Middle",
+      "tool": "get_current_time",
+      "arguments": {
+        "timezone": "Asia/Tokyo",
+        "format": "locale"
+      },
+      "raw_result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"time\": \"2026/10/30 18:43:49\",\n  \"timezone\": \"Asia/Tokyo\",\n  \"format\": \"locale\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      },
+      "start_epoch": 1793349829.3863716,
+      "end_epoch": 1793349829.3913922,
+      "drift_seconds": 3599.611118078232,
+      "within_3_seconds": false,
+      "parse_error": null,
+      "service_sha256": "a22dd6add78e5a65c8e7ab236ce660f7111557cf05f5d9da5b39b75e9a58e1af"
+    },
+    {
+      "version": "Middle",
+      "tool": "get_current_time",
+      "arguments": {
+        "timezone": "Asia/Tokyo",
+        "format": "timestamp"
+      },
+      "raw_result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"time\": \"1793353429000\",\n  \"timezone\": \"Asia/Tokyo\",\n  \"format\": \"timestamp\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      },
+      "start_epoch": 1793349829.3913922,
+      "end_epoch": 1793349829.3943915,
+      "drift_seconds": 3599.60710811615,
+      "within_3_seconds": false,
+      "parse_error": null,
+      "service_sha256": "a22dd6add78e5a65c8e7ab236ce660f7111557cf05f5d9da5b39b75e9a58e1af"
+    },
+    {
+      "version": "Late",
+      "tool": "get_time_info",
+      "arguments": {
+        "timezone": "Asia/Tokyo"
+      },
+      "raw_result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"year\": 2026,\n  \"month\": 10,\n  \"day\": 30,\n  \"hour\": 17,\n  \"minute\": 43,\n  \"second\": 50,\n  \"weekday\": \"星期五\",\n  \"timezone\": \"Asia/Tokyo\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      },
+      "start_epoch": 1793349830.3965359,
+      "end_epoch": 1793349830.4603562,
+      "drift_seconds": -0.42844605445861816,
+      "within_3_seconds": true,
+      "parse_error": null,
+      "service_sha256": "b5cc7e56366447c8c3954e423fc06cfe67a879b97a411ceb663115db52b0c9a2"
+    },
+    {
+      "version": "Late",
+      "tool": "get_current_time",
+      "arguments": {
+        "timezone": "Asia/Tokyo",
+        "format": "locale"
+      },
+      "raw_result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"time\": \"2026/10/30 18:43:50\",\n  \"timezone\": \"Asia/Tokyo\",\n  \"format\": \"locale\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      },
+      "start_epoch": 1793349830.4603562,
+      "end_epoch": 1793349830.4653568,
+      "drift_seconds": 3599.537143468857,
+      "within_3_seconds": false,
+      "parse_error": null,
+      "service_sha256": "b5cc7e56366447c8c3954e423fc06cfe67a879b97a411ceb663115db52b0c9a2"
+    },
+    {
+      "version": "Late",
+      "tool": "get_current_time",
+      "arguments": {
+        "timezone": "Asia/Tokyo",
+        "format": "timestamp"
+      },
+      "raw_result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"time\": \"1793353430000\",\n  \"timezone\": \"Asia/Tokyo\",\n  \"format\": \"timestamp\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      },
+      "start_epoch": 1793349830.4653568,
+      "end_epoch": 1793349830.4688845,
+      "drift_seconds": 3599.5328793525696,
+      "within_3_seconds": false,
+      "parse_error": null,
+      "service_sha256": "b5cc7e56366447c8c3954e423fc06cfe67a879b97a411ceb663115db52b0c9a2"
+    }
+  ],
+  "policy": "Official snapshots are unchanged. Service defects are not strategy failures."
+}

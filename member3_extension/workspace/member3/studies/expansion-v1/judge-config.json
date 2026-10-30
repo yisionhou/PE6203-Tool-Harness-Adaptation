@@ -1,0 +1,9 @@
+{
+  "model": "deepseek-v4-flash-ga-260731",
+  "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+  "temperature": 0.0,
+  "max_completion_tokens": 16384,
+  "num_runs": 1,
+  "seed": 6203,
+  "request_timeout": 180
+}

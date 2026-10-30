@@ -1,0 +1,574 @@
+{
+  "source": "https://huggingface.co/datasets/anonymous2233/evol-servers",
+  "revision": "162e3ffbea1717ac8a20fe9b26465e29117229e4",
+  "extraction": "HTTP Range; executable JavaScript and package metadata only",
+  "files": [
+    {
+      "snapshot": "original",
+      "server": "ygocdb-mcp-server",
+      "archive_path": "node_modules/ygocdb-mcp-server/dist/index.js",
+      "local_path": "member3_migration/snapshots/original/cards/dist/index.js",
+      "sha256": "52ebf9cb412931d80e169a753294829238a561f9694447a2038c5d5425b7b5f3"
+    },
+    {
+      "snapshot": "original",
+      "server": "ygocdb-mcp-server",
+      "archive_path": "node_modules/ygocdb-mcp-server/package.json",
+      "local_path": "member3_migration/snapshots/original/cards/package.json",
+      "sha256": "476a63c479292f931990010fdba843800c8fae2276d4878e2b368904ece87244"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/common/constants.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/common/constants.js",
+      "sha256": "d7adaa0833890b00838d26e5e2348ed75dad1f267d47a8357510a8bb8c4e2b78"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/common/registry-base.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/common/registry-base.js",
+      "sha256": "44300efa1cb2e884e2d1fff07c9775f676ab0e1b52f4da29f9c2f48fd87974c5"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/contest-tools.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/mcp/tools/contest-tools.js",
+      "sha256": "6b0f8df0f708f58c2c0dde83fa605628c342088d52a77a3b52be089c9315fb76"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/note-tools.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/mcp/tools/note-tools.js",
+      "sha256": "5952a463e1576defee25a98a6c230b55252bbef1354413f8476a5f8f9dddcb92"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/problem-tools.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/mcp/tools/problem-tools.js",
+      "sha256": "dbd06d5985f48f9e300004f00aa7c2ca64fe3bf42b205ec6196c7661c12bacca"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/solution-tools.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/mcp/tools/solution-tools.js",
+      "sha256": "38ee5d38a8e083d30df23421a33d52beefd4fb141c3c46c83e89f9e32d20e06e"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/tool-registry.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/mcp/tools/tool-registry.js",
+      "sha256": "e5b8f4e5ab53cd55dcc3b4ca8a5ec9d8777a228c43501ae6729f6dd69b645dd3"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/user-tools.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/mcp/tools/user-tools.js",
+      "sha256": "a1b8b409183b51bcdab7a6487a12bb786be0eb942455a0e9790254389659bdc3"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/resources/problem-resources.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/mcp/resources/problem-resources.js",
+      "sha256": "2e42fb1cc0ecfdc70da60207e6297da6e8fe3fc9f775f3a93daf2224ab8cb2a0"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/resources/resource-registry.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/mcp/resources/resource-registry.js",
+      "sha256": "07c3352e6082abbb1625c3f5c34656aed483dfa6a7cd8083ace9ce7b98a20e3e"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/resources/solution-resources.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/mcp/resources/solution-resources.js",
+      "sha256": "2c2525b77203dcb83c35cfe2815a8f396b83ec9748f2f9effc46868436b934d4"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/index.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/index.js",
+      "sha256": "5e29d01d3e48b1b1aa6b68cbedcca370c96fb660b1bcc7d1d16f56dd81393261"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/leetcode-base-service.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/leetcode/leetcode-base-service.js",
+      "sha256": "998aa6f9cbe387d88ca1b8eaa5c42233c9345e2932d74dc7dd49f6bb17529a58"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/leetcode-cn-service.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/leetcode/leetcode-cn-service.js",
+      "sha256": "1533e4b6ef43c6f2de37282249718d58142118214598f51e0969ff8021544574"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/leetcode-global-service.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/leetcode/leetcode-global-service.js",
+      "sha256": "4e5ca1858b7e3c0068b00b9347daacb12da83288117f83165488efe560e2f38e"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/leetcode-service-factory.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/leetcode/leetcode-service-factory.js",
+      "sha256": "aa9e2e4bdce1df7c19677c20924248f9dbbde385ed814e3995424fb75234517a"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/cn/note-queries.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/leetcode/graphql/cn/note-queries.js",
+      "sha256": "31f24485dacf41df989621f705f0006c8685a9283cc898a9d7ee137c3c861602"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/cn/search-problems.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/leetcode/graphql/cn/search-problems.js",
+      "sha256": "dff747a54961fea8d25cd1323d287fbf0a013a2b75fbff06ca21284767482e8e"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/cn/solution-article-detail.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/leetcode/graphql/cn/solution-article-detail.js",
+      "sha256": "fc61c58f16c13b8ab11e6d186d109939fefee3c0a1a168cfd54fdf515ba86c52"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/cn/solution-articles.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/leetcode/graphql/cn/solution-articles.js",
+      "sha256": "446a22e9e18fa34b0b7462cb2caf6f7f1dbab763df0b55059ef6b940e53782d6"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/global/search-problems.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/leetcode/graphql/global/search-problems.js",
+      "sha256": "75f17e2ff5822e56f8409a4d0b892be4ce3e6bdb0c202b9c3abaa514594c4bf3"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/global/solution-article-detail.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/leetcode/graphql/global/solution-article-detail.js",
+      "sha256": "3b5ded9c72b4185643af6a1828b4d0698ca85aa555110147deb71752cee4ec2d"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/global/solution-articles.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/leetcode/graphql/global/solution-articles.js",
+      "sha256": "1c80e2eb4bb5e53115f57e29fab794249c4150fa66cbcc1f59d3dc5f66f5c95f"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/utils/logger.js",
+      "local_path": "member3_migration/snapshots/original/leetcode/build/utils/logger.js",
+      "sha256": "fd6d44cbd7df3a9b06e2b20317930e7a3563fc76074d9422428db1a2a632fe54"
+    },
+    {
+      "snapshot": "original",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/package.json",
+      "local_path": "member3_migration/snapshots/original/leetcode/package.json",
+      "sha256": "ae18f5b016c40aabdd2834906f2f30f6936ad12d61cc56001274ad3611fd967c"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "ygocdb-mcp-server",
+      "archive_path": "node_modules/ygocdb-mcp-server/dist/index.js",
+      "local_path": "member3_migration/snapshots/iter3/cards/dist/index.js",
+      "sha256": "97bd185dbe1d674859065d4f3cf8c8c17a352307d996b043e5a4188c54a76705"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "ygocdb-mcp-server",
+      "archive_path": "node_modules/ygocdb-mcp-server/package.json",
+      "local_path": "member3_migration/snapshots/iter3/cards/package.json",
+      "sha256": "476a63c479292f931990010fdba843800c8fae2276d4878e2b368904ece87244"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/common/constants.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/common/constants.js",
+      "sha256": "d7adaa0833890b00838d26e5e2348ed75dad1f267d47a8357510a8bb8c4e2b78"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/common/registry-base.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/common/registry-base.js",
+      "sha256": "44300efa1cb2e884e2d1fff07c9775f676ab0e1b52f4da29f9c2f48fd87974c5"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/contest-tools.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/mcp/tools/contest-tools.js",
+      "sha256": "6b0f8df0f708f58c2c0dde83fa605628c342088d52a77a3b52be089c9315fb76"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/note-tools.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/mcp/tools/note-tools.js",
+      "sha256": "5952a463e1576defee25a98a6c230b55252bbef1354413f8476a5f8f9dddcb92"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/problem-tools.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/mcp/tools/problem-tools.js",
+      "sha256": "4cebcdffa7ee4d803e2158cab6800cb4c826d65d601613813249f0e5de623be3"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/solution-tools.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/mcp/tools/solution-tools.js",
+      "sha256": "38ee5d38a8e083d30df23421a33d52beefd4fb141c3c46c83e89f9e32d20e06e"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/tool-registry.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/mcp/tools/tool-registry.js",
+      "sha256": "e5b8f4e5ab53cd55dcc3b4ca8a5ec9d8777a228c43501ae6729f6dd69b645dd3"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/user-tools.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/mcp/tools/user-tools.js",
+      "sha256": "a1b8b409183b51bcdab7a6487a12bb786be0eb942455a0e9790254389659bdc3"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/resources/problem-resources.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/mcp/resources/problem-resources.js",
+      "sha256": "2e42fb1cc0ecfdc70da60207e6297da6e8fe3fc9f775f3a93daf2224ab8cb2a0"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/resources/resource-registry.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/mcp/resources/resource-registry.js",
+      "sha256": "07c3352e6082abbb1625c3f5c34656aed483dfa6a7cd8083ace9ce7b98a20e3e"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/resources/solution-resources.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/mcp/resources/solution-resources.js",
+      "sha256": "2c2525b77203dcb83c35cfe2815a8f396b83ec9748f2f9effc46868436b934d4"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/index.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/index.js",
+      "sha256": "5e29d01d3e48b1b1aa6b68cbedcca370c96fb660b1bcc7d1d16f56dd81393261"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/leetcode-base-service.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/leetcode/leetcode-base-service.js",
+      "sha256": "998aa6f9cbe387d88ca1b8eaa5c42233c9345e2932d74dc7dd49f6bb17529a58"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/leetcode-cn-service.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/leetcode/leetcode-cn-service.js",
+      "sha256": "1533e4b6ef43c6f2de37282249718d58142118214598f51e0969ff8021544574"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/leetcode-global-service.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/leetcode/leetcode-global-service.js",
+      "sha256": "4e5ca1858b7e3c0068b00b9347daacb12da83288117f83165488efe560e2f38e"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/leetcode-service-factory.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/leetcode/leetcode-service-factory.js",
+      "sha256": "aa9e2e4bdce1df7c19677c20924248f9dbbde385ed814e3995424fb75234517a"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/cn/note-queries.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/leetcode/graphql/cn/note-queries.js",
+      "sha256": "31f24485dacf41df989621f705f0006c8685a9283cc898a9d7ee137c3c861602"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/cn/search-problems.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/leetcode/graphql/cn/search-problems.js",
+      "sha256": "dff747a54961fea8d25cd1323d287fbf0a013a2b75fbff06ca21284767482e8e"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/cn/solution-article-detail.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/leetcode/graphql/cn/solution-article-detail.js",
+      "sha256": "fc61c58f16c13b8ab11e6d186d109939fefee3c0a1a168cfd54fdf515ba86c52"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/cn/solution-articles.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/leetcode/graphql/cn/solution-articles.js",
+      "sha256": "446a22e9e18fa34b0b7462cb2caf6f7f1dbab763df0b55059ef6b940e53782d6"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/global/search-problems.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/leetcode/graphql/global/search-problems.js",
+      "sha256": "75f17e2ff5822e56f8409a4d0b892be4ce3e6bdb0c202b9c3abaa514594c4bf3"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/global/solution-article-detail.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/leetcode/graphql/global/solution-article-detail.js",
+      "sha256": "3b5ded9c72b4185643af6a1828b4d0698ca85aa555110147deb71752cee4ec2d"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/global/solution-articles.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/leetcode/graphql/global/solution-articles.js",
+      "sha256": "1c80e2eb4bb5e53115f57e29fab794249c4150fa66cbcc1f59d3dc5f66f5c95f"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/utils/logger.js",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/build/utils/logger.js",
+      "sha256": "fd6d44cbd7df3a9b06e2b20317930e7a3563fc76074d9422428db1a2a632fe54"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/package.json",
+      "local_path": "member3_migration/snapshots/iter3/leetcode/package.json",
+      "sha256": "ae18f5b016c40aabdd2834906f2f30f6936ad12d61cc56001274ad3611fd967c"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "ygocdb-mcp-server",
+      "archive_path": "node_modules/ygocdb-mcp-server/dist/index.js",
+      "local_path": "member3_migration/snapshots/iter5/cards/dist/index.js",
+      "sha256": "1137dbe80976394efb07e7bbceb4d5c7457395a7e19b7364db25bdbd08c903a9"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "ygocdb-mcp-server",
+      "archive_path": "node_modules/ygocdb-mcp-server/package.json",
+      "local_path": "member3_migration/snapshots/iter5/cards/package.json",
+      "sha256": "476a63c479292f931990010fdba843800c8fae2276d4878e2b368904ece87244"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/common/constants.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/common/constants.js",
+      "sha256": "d7adaa0833890b00838d26e5e2348ed75dad1f267d47a8357510a8bb8c4e2b78"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/common/registry-base.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/common/registry-base.js",
+      "sha256": "44300efa1cb2e884e2d1fff07c9775f676ab0e1b52f4da29f9c2f48fd87974c5"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/contest-tools.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/mcp/tools/contest-tools.js",
+      "sha256": "6b0f8df0f708f58c2c0dde83fa605628c342088d52a77a3b52be089c9315fb76"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/note-tools.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/mcp/tools/note-tools.js",
+      "sha256": "5952a463e1576defee25a98a6c230b55252bbef1354413f8476a5f8f9dddcb92"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/problem-tools.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/mcp/tools/problem-tools.js",
+      "sha256": "cab627ca9a71ce68c702188de97131f58bce2bbcc16bf61d74042125c09b77b4"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/solution-tools.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/mcp/tools/solution-tools.js",
+      "sha256": "38ee5d38a8e083d30df23421a33d52beefd4fb141c3c46c83e89f9e32d20e06e"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/tool-registry.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/mcp/tools/tool-registry.js",
+      "sha256": "e5b8f4e5ab53cd55dcc3b4ca8a5ec9d8777a228c43501ae6729f6dd69b645dd3"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/tools/user-tools.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/mcp/tools/user-tools.js",
+      "sha256": "a1b8b409183b51bcdab7a6487a12bb786be0eb942455a0e9790254389659bdc3"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/resources/problem-resources.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/mcp/resources/problem-resources.js",
+      "sha256": "2e42fb1cc0ecfdc70da60207e6297da6e8fe3fc9f775f3a93daf2224ab8cb2a0"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/resources/resource-registry.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/mcp/resources/resource-registry.js",
+      "sha256": "07c3352e6082abbb1625c3f5c34656aed483dfa6a7cd8083ace9ce7b98a20e3e"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/mcp/resources/solution-resources.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/mcp/resources/solution-resources.js",
+      "sha256": "2c2525b77203dcb83c35cfe2815a8f396b83ec9748f2f9effc46868436b934d4"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/index.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/index.js",
+      "sha256": "5e29d01d3e48b1b1aa6b68cbedcca370c96fb660b1bcc7d1d16f56dd81393261"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/leetcode-base-service.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/leetcode/leetcode-base-service.js",
+      "sha256": "998aa6f9cbe387d88ca1b8eaa5c42233c9345e2932d74dc7dd49f6bb17529a58"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/leetcode-cn-service.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/leetcode/leetcode-cn-service.js",
+      "sha256": "1533e4b6ef43c6f2de37282249718d58142118214598f51e0969ff8021544574"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/leetcode-global-service.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/leetcode/leetcode-global-service.js",
+      "sha256": "4e5ca1858b7e3c0068b00b9347daacb12da83288117f83165488efe560e2f38e"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/leetcode-service-factory.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/leetcode/leetcode-service-factory.js",
+      "sha256": "aa9e2e4bdce1df7c19677c20924248f9dbbde385ed814e3995424fb75234517a"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/cn/note-queries.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/leetcode/graphql/cn/note-queries.js",
+      "sha256": "31f24485dacf41df989621f705f0006c8685a9283cc898a9d7ee137c3c861602"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/cn/search-problems.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/leetcode/graphql/cn/search-problems.js",
+      "sha256": "dff747a54961fea8d25cd1323d287fbf0a013a2b75fbff06ca21284767482e8e"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/cn/solution-article-detail.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/leetcode/graphql/cn/solution-article-detail.js",
+      "sha256": "fc61c58f16c13b8ab11e6d186d109939fefee3c0a1a168cfd54fdf515ba86c52"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/cn/solution-articles.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/leetcode/graphql/cn/solution-articles.js",
+      "sha256": "446a22e9e18fa34b0b7462cb2caf6f7f1dbab763df0b55059ef6b940e53782d6"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/global/search-problems.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/leetcode/graphql/global/search-problems.js",
+      "sha256": "75f17e2ff5822e56f8409a4d0b892be4ce3e6bdb0c202b9c3abaa514594c4bf3"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/global/solution-article-detail.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/leetcode/graphql/global/solution-article-detail.js",
+      "sha256": "3b5ded9c72b4185643af6a1828b4d0698ca85aa555110147deb71752cee4ec2d"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/leetcode/graphql/global/solution-articles.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/leetcode/graphql/global/solution-articles.js",
+      "sha256": "1c80e2eb4bb5e53115f57e29fab794249c4150fa66cbcc1f59d3dc5f66f5c95f"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/build/utils/logger.js",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/build/utils/logger.js",
+      "sha256": "fd6d44cbd7df3a9b06e2b20317930e7a3563fc76074d9422428db1a2a632fe54"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@jinzcdev/leetcode-mcp-server",
+      "archive_path": "node_modules/@jinzcdev/leetcode-mcp-server/package.json",
+      "local_path": "member3_migration/snapshots/iter5/leetcode/package.json",
+      "sha256": "ae18f5b016c40aabdd2834906f2f30f6936ad12d61cc56001274ad3611fd967c"
+    }
+  ]
+}

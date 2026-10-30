@@ -1,4 +1,5 @@
 .venv/
+.tmp/
 node_modules/
 .npm-cache/
 .env
@@ -18,3 +19,21 @@ member1/runtime-identity.json
 member1/presets.json
 member1/sessions/
 member1/clientSessions/
+
+# Member 3 local execution state and generated publication copies.
+**/runtime/
+**/workers/
+**/runtime.owner/
+**/sessions/
+**/clientSessions/
+**/admin/
+**/server.pid
+**/runtime-identity.json
+**/template-context-capability.json
+**/presets.json
+member3/offline_review_20261030/
+member3_submission_english/code/
+member3_submission_english/pages/
+member3_submission_english/screenshots/
+member3_delivery_*.zip
+member3_submission_english_*.zip

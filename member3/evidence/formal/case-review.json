@@ -1,0 +1,250 @@
+{
+  "kind": "real trajectory review candidates",
+  "cases": [
+    {
+      "repeat": 1,
+      "cohort": "expanded",
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 24,
+      "run_status": "tool_error",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 5,
+        "grounding": 10
+      },
+      "errors": [
+        {
+          "event": "tool_result_isError",
+          "data": {
+            "name": "tasks__tasks_add",
+            "arguments": "{\"arguments\": {\"source_id\": \"IH9g\", \"status\": \"To Do\", \"texts\": [\"Investigate low disk space warning: identify large files and free up disk space\", \"Troubleshoot database connection failure: verify DB service status and restore connectivity\", \"Verify service health after fixes: confirm database reconnects and disk usage is back to normal\"]}}",
+            "tool_call_id": "call_v5mge89dbrva1diht4oynikz",
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "schema_input_invalid"
+                }
+              ],
+              "isError": true
+            }
+          }
+        }
+      ],
+      "routing_diagnostics": [],
+      "source": "member3_extension/workspace/outputs/member3-expansion-v1/repeat-1/live/no_update/Early-task-24"
+    },
+    {
+      "repeat": 1,
+      "cohort": "expanded",
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 24,
+      "run_status": "tool_error",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 7,
+        "grounding": 7
+      },
+      "errors": [
+        {
+          "event": "tool_result_isError",
+          "data": {
+            "name": "thinking__sequentialthinking",
+            "arguments": "{\"thought\": \"Analyzing yesterday's log: (1) \\\"Disk space low\\\" is a warning that indicates the host filesystem is running out of space - this needs cleanup of old/temp files and possibly monitoring/alerting to prevent recurrence. (2) \\\"Database connection failed\\\" is an error - needs investigation of the DB service (host 127.0.0.1, port 3305), credential checks, and a restart/verification. Both issues should also be verified post-fix (service healthy, user login flow OK). I'll convert these into concrete To Do tasks.\", \"thoughtNumber\": 1, \"totalThoughts\": 1, \"nextThoughtNeeded\": false}",
+            "tool_call_id": "call_va8dvz26k4bmi1edm91njq4b",
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "thinkingServer.getThoughtHistory is not a function"
+                }
+              ],
+              "isError": true
+            }
+          }
+        }
+      ],
+      "routing_diagnostics": [],
+      "source": "member3_extension/workspace/outputs/member3-expansion-v1/repeat-1/live/full_rewrite/Late-task-24"
+    },
+    {
+      "repeat": 2,
+      "cohort": "expanded",
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 24,
+      "run_status": "tool_error",
+      "scores": {
+        "task_fulfillment": 10,
+        "planning_and_efficiency": 7,
+        "grounding": 10
+      },
+      "errors": [
+        {
+          "event": "tool_result_isError",
+          "data": {
+            "name": "thinking__sequentialthinking",
+            "arguments": "{\"thought\": \"Reading the log, I see 4 entries:\\n1. [INFO] Service started. — normal, no action needed\\n2. [WARN] Disk space low. — actionable problem: requires investigation and cleanup\\n3. [ERROR] Database connection failed. — actionable problem: requires diagnosis and resolution\\n4. [INFO] User logged in. — normal, no action needed\\n\\nThe two problems (low disk space, DB connection failure) should each generate follow-up tasks:\\n- Disk space: check usage, identify large/unneeded files, clean up, set up monitoring\\n- DB connection: verify DB service status, check config/credentials, restore connection, verify after fix\\n\\nAlso add a verification task to confirm the service is healthy after both fixes. I'll create these as \\\"To Do\\\" items in logs_tasks.md.\", \"nextThoughtNeeded\": false, \"thoughtNumber\": 1, \"totalThoughts\": 1}",
+            "tool_call_id": "call_490yivxif8jzakibjbjbqfpv",
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "thinkingServer.getThoughtHistory is not a function"
+                }
+              ],
+              "isError": true
+            }
+          }
+        }
+      ],
+      "routing_diagnostics": [],
+      "source": "member3_extension/workspace/outputs/member3-expansion-v1/repeat-2/live/no_update/Late-task-24"
+    },
+    {
+      "repeat": 1,
+      "cohort": "migration",
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 90,
+      "run_status": "tool_error",
+      "scores": {
+        "task_fulfillment": 7,
+        "planning_and_efficiency": 4,
+        "grounding": 7
+      },
+      "errors": [
+        {
+          "event": "tool_error",
+          "data": {
+            "name": "leetcode__get_daily_challenge",
+            "error": "unhandled errors in a TaskGroup (1 sub-exception)"
+          }
+        },
+        {
+          "event": "tool_error",
+          "data": {
+            "name": "leetcode__get_daily_challenge",
+            "error": "unhandled errors in a TaskGroup (1 sub-exception)"
+          }
+        },
+        {
+          "event": "tool_error",
+          "data": {
+            "name": "leetcode__get_daily_challenge",
+            "error": "unhandled errors in a TaskGroup (1 sub-exception)"
+          }
+        },
+        {
+          "event": "tool_error",
+          "data": {
+            "name": "leetcode__get_daily_challenge",
+            "error": "unhandled errors in a TaskGroup (1 sub-exception)"
+          }
+        }
+      ],
+      "routing_diagnostics": [
+        "2026-10-30T09:32:44.059Z [WARN] message=\"tool.failed\" source=\"local-diagnostic\" details=\"{\\\"callId\\\":\\\"1ce694a1-f61f-4f68-a55e-cb7136335bb4\\\",\\\"requestedTool\\\":\\\"leetcode_1mcp_get_daily_challenge\\\",\\\"phase\\\":\\\"routing\\\",\\\"outcome\\\":\\\"failed\\\",\\\"error\\\":{\\\"name\\\":\\\"Error\\\",\\\"message\\\":\\\"Unknown tool: leetcode_1mcp_get_daily_challenge\\\"},\\\"durationMs\\\":7.546399999999267}\"",
+        "2026-10-30T09:32:48.403Z [WARN] message=\"tool.failed\" source=\"local-diagnostic\" details=\"{\\\"callId\\\":\\\"8460d4c3-bda6-48b7-8ed9-01dac404a65d\\\",\\\"requestedTool\\\":\\\"leetcode_1mcp_get_daily_challenge\\\",\\\"phase\\\":\\\"routing\\\",\\\"outcome\\\":\\\"failed\\\",\\\"error\\\":{\\\"name\\\":\\\"Error\\\",\\\"message\\\":\\\"Unknown tool: leetcode_1mcp_get_daily_challenge\\\"},\\\"durationMs\\\":4.329699999998411}\"",
+        "2026-10-30T09:32:50.363Z [WARN] message=\"tool.failed\" source=\"local-diagnostic\" details=\"{\\\"callId\\\":\\\"7df5575d-a0dc-487a-b522-e22a4d2cef85\\\",\\\"requestedTool\\\":\\\"leetcode_1mcp_get_daily_challenge\\\",\\\"phase\\\":\\\"routing\\\",\\\"outcome\\\":\\\"failed\\\",\\\"error\\\":{\\\"name\\\":\\\"Error\\\",\\\"message\\\":\\\"Unknown tool: leetcode_1mcp_get_daily_challenge\\\"},\\\"durationMs\\\":4.46480000000156}\"",
+        "2026-10-30T09:32:52.567Z [WARN] message=\"tool.failed\" source=\"local-diagnostic\" details=\"{\\\"callId\\\":\\\"033befd3-cee6-4716-841a-085d631a9b45\\\",\\\"requestedTool\\\":\\\"leetcode_1mcp_get_daily_challenge\\\",\\\"phase\\\":\\\"routing\\\",\\\"outcome\\\":\\\"failed\\\",\\\"error\\\":{\\\"name\\\":\\\"Error\\\",\\\"message\\\":\\\"Unknown tool: leetcode_1mcp_get_daily_challenge\\\"},\\\"durationMs\\\":4.6863999999986845}\""
+      ],
+      "source": "member3_migration/workspace/outputs/member3-migration-v1/repeat-1/live/no_update/Late-task-90"
+    },
+    {
+      "repeat": 2,
+      "cohort": "migration",
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 90,
+      "run_status": "tool_error",
+      "scores": {
+        "task_fulfillment": 6,
+        "planning_and_efficiency": 4,
+        "grounding": 7
+      },
+      "errors": [
+        {
+          "event": "tool_error",
+          "data": {
+            "name": "leetcode__get_daily_challenge",
+            "error": "unhandled errors in a TaskGroup (1 sub-exception)"
+          }
+        },
+        {
+          "event": "tool_error",
+          "data": {
+            "name": "leetcode__get_daily_challenge",
+            "error": "unhandled errors in a TaskGroup (1 sub-exception)"
+          }
+        },
+        {
+          "event": "tool_error",
+          "data": {
+            "name": "leetcode__get_daily_challenge",
+            "error": "unhandled errors in a TaskGroup (1 sub-exception)"
+          }
+        },
+        {
+          "event": "tool_error",
+          "data": {
+            "name": "leetcode__get_daily_challenge",
+            "error": "unhandled errors in a TaskGroup (1 sub-exception)"
+          }
+        }
+      ],
+      "routing_diagnostics": [
+        "2026-10-30T09:38:46.675Z [WARN] message=\"tool.failed\" source=\"local-diagnostic\" details=\"{\\\"callId\\\":\\\"4a2e519a-d71d-4cbf-bfb5-09647839ab3a\\\",\\\"requestedTool\\\":\\\"leetcode_1mcp_get_daily_challenge\\\",\\\"phase\\\":\\\"routing\\\",\\\"outcome\\\":\\\"failed\\\",\\\"error\\\":{\\\"name\\\":\\\"Error\\\",\\\"message\\\":\\\"Unknown tool: leetcode_1mcp_get_daily_challenge\\\"},\\\"durationMs\\\":7.259799999999814}\"",
+        "2026-10-30T09:38:51.087Z [WARN] message=\"tool.failed\" source=\"local-diagnostic\" details=\"{\\\"callId\\\":\\\"f262c393-173b-4234-877d-f35413c75457\\\",\\\"requestedTool\\\":\\\"leetcode_1mcp_get_daily_challenge\\\",\\\"phase\\\":\\\"routing\\\",\\\"outcome\\\":\\\"failed\\\",\\\"error\\\":{\\\"name\\\":\\\"Error\\\",\\\"message\\\":\\\"Unknown tool: leetcode_1mcp_get_daily_challenge\\\"},\\\"durationMs\\\":6.94550000000163}\"",
+        "2026-10-30T09:38:54.363Z [WARN] message=\"tool.failed\" source=\"local-diagnostic\" details=\"{\\\"callId\\\":\\\"e08498b4-3465-48a4-b4ea-4580fbce41e5\\\",\\\"requestedTool\\\":\\\"leetcode_1mcp_get_daily_challenge\\\",\\\"phase\\\":\\\"routing\\\",\\\"outcome\\\":\\\"failed\\\",\\\"error\\\":{\\\"name\\\":\\\"Error\\\",\\\"message\\\":\\\"Unknown tool: leetcode_1mcp_get_daily_challenge\\\"},\\\"durationMs\\\":5.244699999999284}\"",
+        "2026-10-30T09:38:56.158Z [WARN] message=\"tool.failed\" source=\"local-diagnostic\" details=\"{\\\"callId\\\":\\\"463172ab-78c3-4e6c-bc18-57a7035c2973\\\",\\\"requestedTool\\\":\\\"leetcode_1mcp_get_daily_challenge\\\",\\\"phase\\\":\\\"routing\\\",\\\"outcome\\\":\\\"failed\\\",\\\"error\\\":{\\\"name\\\":\\\"Error\\\",\\\"message\\\":\\\"Unknown tool: leetcode_1mcp_get_daily_challenge\\\"},\\\"durationMs\\\":4.789800000002288}\""
+      ],
+      "source": "member3_migration/workspace/outputs/member3-migration-v1/repeat-2/live/no_update/Late-task-90"
+    },
+    {
+      "repeat": 3,
+      "cohort": "migration",
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 90,
+      "run_status": "tool_error",
+      "scores": {
+        "task_fulfillment": 6,
+        "planning_and_efficiency": 5,
+        "grounding": 7
+      },
+      "errors": [
+        {
+          "event": "tool_error",
+          "data": {
+            "name": "leetcode__get_daily_challenge",
+            "error": "unhandled errors in a TaskGroup (1 sub-exception)"
+          }
+        },
+        {
+          "event": "tool_error",
+          "data": {
+            "name": "leetcode__get_daily_challenge",
+            "error": "unhandled errors in a TaskGroup (1 sub-exception)"
+          }
+        },
+        {
+          "event": "tool_error",
+          "data": {
+            "name": "leetcode__get_daily_challenge",
+            "error": "unhandled errors in a TaskGroup (1 sub-exception)"
+          }
+        }
+      ],
+      "routing_diagnostics": [
+        "2026-10-30T09:57:47.858Z [WARN] message=\"tool.failed\" source=\"local-diagnostic\" details=\"{\\\"callId\\\":\\\"63db82be-a047-4eb3-a7ee-25fab3f5ab41\\\",\\\"requestedTool\\\":\\\"leetcode_1mcp_get_daily_challenge\\\",\\\"phase\\\":\\\"routing\\\",\\\"outcome\\\":\\\"failed\\\",\\\"error\\\":{\\\"name\\\":\\\"Error\\\",\\\"message\\\":\\\"Unknown tool: leetcode_1mcp_get_daily_challenge\\\"},\\\"durationMs\\\":7.886800000000221}\"",
+        "2026-10-30T09:57:51.054Z [WARN] message=\"tool.failed\" source=\"local-diagnostic\" details=\"{\\\"callId\\\":\\\"f67fc323-03f1-4827-bbab-bf8e25c03f4b\\\",\\\"requestedTool\\\":\\\"leetcode_1mcp_get_daily_challenge\\\",\\\"phase\\\":\\\"routing\\\",\\\"outcome\\\":\\\"failed\\\",\\\"error\\\":{\\\"name\\\":\\\"Error\\\",\\\"message\\\":\\\"Unknown tool: leetcode_1mcp_get_daily_challenge\\\"},\\\"durationMs\\\":8.460100000000239}\"",
+        "2026-10-30T09:57:54.966Z [WARN] message=\"tool.failed\" source=\"local-diagnostic\" details=\"{\\\"callId\\\":\\\"32a915a3-d9ff-4eb4-a3ac-8d3433b5d0cf\\\",\\\"requestedTool\\\":\\\"leetcode_1mcp_get_daily_challenge\\\",\\\"phase\\\":\\\"routing\\\",\\\"outcome\\\":\\\"failed\\\",\\\"error\\\":{\\\"name\\\":\\\"Error\\\",\\\"message\\\":\\\"Unknown tool: leetcode_1mcp_get_daily_challenge\\\"},\\\"durationMs\\\":6.357499999998254}\""
+      ],
+      "source": "member3_migration/workspace/outputs/member3-migration-v1/repeat-3/live-account-recovery/no_update/Late-task-90"
+    }
+  ],
+  "policy": "Review errors in context; service defects and reference-route deletion are not automatically selective-update failures."
+}

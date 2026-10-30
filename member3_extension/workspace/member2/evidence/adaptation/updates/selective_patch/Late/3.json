@@ -1,0 +1,110 @@
+{
+  "update_id": "6741a3bb-ea41-4f0e-a60a-f8e3fa0a9d03",
+  "strategy": "selective_patch",
+  "base_version": "Early",
+  "target_version": "Late",
+  "base_sha256": "fdbb7cc033adcb5d30caf99289040014aee0b68a3fa9588ca285b50009316966",
+  "target_catalog_sha256": "60e57f6739f0f4a57fdf6986eebec55db4f49db10f0f66770a18296f554d96d6",
+  "changes": {
+    "added": [],
+    "removed": [],
+    "changed": {
+      "mcp-filesystem-server::read_multiple_files": {
+        "paths": [
+          "/description",
+          "/inputSchema/properties/ignoreErrors",
+          "/inputSchema/properties/includeMetadata",
+          "/inputSchema/properties/separator"
+        ],
+        "kinds": [
+          "description",
+          "parameter"
+        ]
+      },
+      "mcp-sequentialthinking-tools::sequentialthinking_tools": {
+        "paths": [
+          "/description",
+          "/inputSchema/properties/available_mcp_tools/description",
+          "/inputSchema/properties/branch_from_thought/description",
+          "/inputSchema/properties/confidence_threshold",
+          "/inputSchema/properties/current_step/description",
+          "/inputSchema/properties/is_revision/description",
+          "/inputSchema/properties/max_branches",
+          "/inputSchema/properties/needs_more_thoughts/description",
+          "/inputSchema/properties/next_thought_needed/description",
+          "/inputSchema/properties/previous_steps/description",
+          "/inputSchema/properties/recommendation_strategy",
+          "/inputSchema/properties/remaining_steps/description",
+          "/inputSchema/properties/revises_thought/description",
+          "/inputSchema/properties/thought/description",
+          "/inputSchema/properties/thought_number/description",
+          "/inputSchema/properties/total_thoughts/description"
+        ],
+        "kinds": [
+          "description",
+          "parameter"
+        ]
+      },
+      "time-mcp::current_time": {
+        "paths": [
+          "/description"
+        ],
+        "kinds": [
+          "description"
+        ]
+      }
+    },
+    "unchanged": [
+      "mcp-filesystem-server::write_file"
+    ]
+  },
+  "affected_blocks": [
+    "rule:inventory",
+    "rule:mcp-filesystem-server::read_multiple_files",
+    "rule:mcp-sequentialthinking-tools::sequentialthinking_tools",
+    "rule:time-mcp::current_time"
+  ],
+  "regenerated_tools": [
+    "mcp-filesystem-server::read_multiple_files",
+    "mcp-sequentialthinking-tools::sequentialthinking_tools",
+    "time-mcp::current_time"
+  ],
+  "regenerated_blocks": [
+    "rule:inventory",
+    "rule:mcp-filesystem-server::read_multiple_files",
+    "rule:mcp-sequentialthinking-tools::sequentialthinking_tools",
+    "rule:time-mcp::current_time"
+  ],
+  "removed_blocks": [],
+  "changed_blocks": [
+    "rule:mcp-filesystem-server::read_multiple_files",
+    "rule:mcp-sequentialthinking-tools::sequentialthinking_tools",
+    "rule:time-mcp::current_time"
+  ],
+  "changed_tool_records": [
+    "mcp-filesystem-server::read_multiple_files",
+    "mcp-sequentialthinking-tools::sequentialthinking_tools",
+    "time-mcp::current_time"
+  ],
+  "preserved_tool_sha256": {
+    "mcp-filesystem-server::write_file": "7e1c0e5a18fc93ce068a1fc3f5b41c4413142db44de20a11497617c6fc38c9b9"
+  },
+  "preserved_block_sha256": {
+    "rule:mcp-filesystem-server::write_file": "9566354e8939349414fbf8e49f8d84fb6ff0c166f05047f5dd57b918aa9d75d3"
+  },
+  "output_sha256": "dd8f9173ef6a3a2a8b026d4a1071eff1129f6174c61402636cc33249b9c40b04",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.22509719990193844
+  },
+  "schema_version": 1,
+  "task_id": 3,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/selective_patch/Late/3.json",
+  "knowledge_sha256": "27262abf7095e8c1251bf468ae88f348fb976afdd0df941b6e0123b43b510b37",
+  "observation_ref": "Late/3",
+  "record_path": "updates/selective_patch/Late/3.json"
+}

@@ -1,0 +1,11 @@
+{
+  "offline_repetitions": 30,
+  "strategy_block_samples": 90,
+  "conditions_per_block": 18,
+  "regeneration_counts_match_frozen_records": true,
+  "all_measured_outputs_match_frozen_knowledge": true,
+  "formal_task_scores_unchanged": 162,
+  "new_paid_model_requests": 0,
+  "chart_png_svg_present": true,
+  "visual_qa": "PNG inspected; labels, error bars, units and footnotes legible"
+}

@@ -1,0 +1,583 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-30T08:40:36.923571+00:00",
+  "study_kind": "fresh_repetitions_of_existing_official_subset",
+  "scope": "Replication only; expanded migration and retention coverage remain pending.",
+  "task_ids": [
+    28,
+    144,
+    156
+  ],
+  "repetitions": 3,
+  "conditions": 81,
+  "schedule": [
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 28
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 28
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 28
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 144
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 144
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 144
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 156
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 156
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 156
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 28
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 28
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 28
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 144
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 144
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 144
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 156
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 156
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 156
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 28
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 28
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 28
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 144
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 144
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 144
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 156
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 156
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 156
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 28
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 28
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 28
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 144
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 144
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 144
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 156
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 156
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 156
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 28
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 28
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 28
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 144
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 144
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 144
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 156
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 156
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 156
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 28
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 28
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 28
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 144
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 144
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 144
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 156
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 156
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 156
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 28
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 28
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 28
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 144
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 144
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 144
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 156
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 156
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 156
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 28
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 28
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 28
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 144
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 144
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 144
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 156
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 156
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 156
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 28
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 28
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 28
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 144
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 144
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 144
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 156
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 156
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 156
+    }
+  ],
+  "run_config": {
+    "model": "deepseek-v4-flash-ga-260731",
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "temperature": 0.2,
+    "max_completion_tokens": 4096,
+    "max_round": 10,
+    "request_timeout": 60,
+    "stop_policy": "final_text_after_tool_result"
+  },
+  "knowledge_sha256": {
+    "knowledge/no_update/Early/28.json": "c9dc92e2d49e710a1ad0f92d53b5e2b60fec10adda866910d80ed64849863973",
+    "knowledge/no_update/Early/144.json": "1cca90bbc7ce55e6b2c665d31909269534e97828810d71bce3f436bf307c419f",
+    "knowledge/no_update/Early/156.json": "d0caae62b1ba2e367acacf4b57d87e597321509cbc6a24c738119e8b27d69762",
+    "knowledge/no_update/Middle/28.json": "c9dc92e2d49e710a1ad0f92d53b5e2b60fec10adda866910d80ed64849863973",
+    "knowledge/no_update/Middle/144.json": "1cca90bbc7ce55e6b2c665d31909269534e97828810d71bce3f436bf307c419f",
+    "knowledge/no_update/Middle/156.json": "d0caae62b1ba2e367acacf4b57d87e597321509cbc6a24c738119e8b27d69762",
+    "knowledge/no_update/Late/28.json": "c9dc92e2d49e710a1ad0f92d53b5e2b60fec10adda866910d80ed64849863973",
+    "knowledge/no_update/Late/144.json": "1cca90bbc7ce55e6b2c665d31909269534e97828810d71bce3f436bf307c419f",
+    "knowledge/no_update/Late/156.json": "d0caae62b1ba2e367acacf4b57d87e597321509cbc6a24c738119e8b27d69762",
+    "knowledge/full_rewrite/Early/28.json": "fef7cb4addb1c077d6424e6a531bfff61e42d07e33aa6f3ee0ac59298711fd72",
+    "knowledge/full_rewrite/Early/144.json": "27b8ccddf9c16c5b05013c753c5c0ec049c6072054d2148842727bd10b32ea71",
+    "knowledge/full_rewrite/Early/156.json": "04adcd80abcb0ba8c57f9a9c4d9cd1ae01bf44fd86b8f4bb1d632f03b1d8362e",
+    "knowledge/full_rewrite/Middle/28.json": "4f9e3902cfe8e03d006e03b9bd6fcab6af23ec984c0ab645f56f411bc640113e",
+    "knowledge/full_rewrite/Middle/144.json": "f4ab929a6a843a9e57871ed31a970accf2808d6c953333d79fba1993a7cad539",
+    "knowledge/full_rewrite/Middle/156.json": "7dd3981615724acba6717b9bfd106cd8501946f4e43f48cb5348b596be6d7dbc",
+    "knowledge/full_rewrite/Late/28.json": "93b1988de713bba7b8e13d5a2d897fd81c45ec54208720eb81a5cb2d41ba1ad3",
+    "knowledge/full_rewrite/Late/144.json": "b8a408953f91b07328adff869b4ab0380880c5653463569ead24184cf9e54a73",
+    "knowledge/full_rewrite/Late/156.json": "279b441653ca846cd7cbca98af7db2124803fe5f561f778a318efb36b6a67818",
+    "knowledge/selective_patch/Early/28.json": "35b2c90eb5cc0a6c43c27adafbc0eb7fd315c83dda9d7f7f5841bbb64d3e910e",
+    "knowledge/selective_patch/Early/144.json": "3d44bf7e8b6946fccaca69ecacacac3fe6a8d8d1b666df2bafc1c38181bd3f3a",
+    "knowledge/selective_patch/Early/156.json": "3213db769b348adcb48ca30c148ada25017f1849a6b739dbefda5a5806eff810",
+    "knowledge/selective_patch/Middle/28.json": "7019968fd065d2964f8cd25bdef10acabc24a048483a5653802bf5a4bce1e41a",
+    "knowledge/selective_patch/Middle/144.json": "60c7c06f656813e90d0d385cd8e014a1cbb826d4aaa8a417db3b9734351a4341",
+    "knowledge/selective_patch/Middle/156.json": "8e2acad0143ec331e4f728619bd38346ca159f8fa550e56ee6f75d1d7e5cf0d1",
+    "knowledge/selective_patch/Late/28.json": "f5d81ef97e4fc2b02ce620caa874e1c80602e1bd0f2026eaddb7ba607bcb8043",
+    "knowledge/selective_patch/Late/144.json": "e278676a7e0fd4b6137d729ce70837ab934fb1df1f45bfd12ad23b739f1c7792",
+    "knowledge/selective_patch/Late/156.json": "f0de5650bc9b82c23b8234ee5d7fb9b0c59c669cd9fa7363d098f1951f359e10"
+  },
+  "source_sha256": {
+    "member1/tasks_manifest.json": "8cbff7027a5f45a2126402d17b71ba83c24a2377715ed1732e03f9f547ef9af7",
+    "src/custom/data/test_cases/test_cases.json": "b51d09d93afa94b08a67281a95ee8b4c7d69953816adf6769a996e26274bb023",
+    "src/custom/data/test_cases/chosen_idx.json": "55df803b7cf40fe1a40d27ff6b2375d87b62e308fbdbc6da3e27e6adbcb63d6c"
+  },
+  "code_sha256": {
+    "member1/build_handoff_demo.py": "3cd2f93cdea350c35c2099afd0244fb5ec613f3b583ea547634bc9bae013bf5f",
+    "member1/knowledge.py": "3c4b28fc58d3297436b68af23c52ead226ac4922ecdbe8302bda38acfe589fb2",
+    "member1/prepare_environment.py": "55c1496fd5c16a0d793784d0f900c89ac9cde821a109ece5020706b89048fa3e",
+    "member1/protocol.py": "fad55ab0de929531e467b528ccf2958d72c0502681cafe15e53fd08d5f7a179e",
+    "member1/read_results.py": "570c7128cddcdd97bd704f7ee561c17434668af3e8b4013a170cca892581898e",
+    "member1/run_comparison.py": "bc869b7276c0ce30e03161f556739971f7db991fa02dbda59d0fd57f166661cd",
+    "member1/run_task.py": "a9888bda1c686722b1b5d1c20e0b3d337c08799bf10adf6d5a61a7e5e78d8fa3",
+    "member1/run_versions.py": "f6a0960ff7f8decc78914664bf0e247c96bdc2c81cb9c226156d52be03362789",
+    "member1/scoring_bridge.py": "31ceff7d78f9ee996e85b75ac6aea9281efc9ce13d443073b7e762365fc95035",
+    "member1/stage2.py": "8b0c0a867b8ac179960550e08c24901ef861ad22e0aff6e4480e943d325ed1d4",
+    "member2/__init__.py": "b8dfba3029414a4948ee354e1b4f528cc5ce00a3173f0a537af821f1264d9bd7",
+    "member2/adapt.py": "6046150f93e62e2f26f4437e548fbfea0436b2234ae5c0d4ce0860dabc302dce",
+    "member2/build.py": "054f4cc36049ea1f7f46e54ef9c02416738058ac3a4587ee3b3b576717c1ac52",
+    "member2/catalog.py": "a572b42d9c2576f668afe33264b4b5d000ba53c93fac87ac287f92f6cef9c360",
+    "member2/knowledge_base.py": "0d7ef3202b2ea1d077efb21267acdbddd0436c25b8172f102651c01cd32814f8",
+    "member3/__init__.py": "38849e69b0353720e8728312314a96c1e01c40b99a5a481c723c721ea7f1ffad",
+    "member3/analyze.py": "358cc3486ac678cf3566f6aa5fed602a9a3905281bee1d55e2fa089b08955dd7",
+    "member3/experiment.py": "20995151e1fc4125dbb9d6fc1883a3e914f69bd6da3f5852fcd3f21a2189cf77"
+  },
+  "historical_pilot_included": false,
+  "judge_repeats_per_trajectory": 1,
+  "missing_policy": "retain null and reason; no zero fill or partial overall mean",
+  "ecs_formula": "per repetition/task mean(TF across versions) - population_sd(TF); equal task/repetition mean",
+  "variation": "sample SD of complete repetition means; no SD with only one repetition",
+  "cost_policy": "unique adaptation.update_id only; inference and judging separately",
+  "known_confounders": [
+    "fixed strategy execution order in member1 runner",
+    "real-time clocks differ across cases",
+    "clock service consistency must be checked",
+    "same model for task and judge",
+    "optional changes do not force migration"
+  ],
+  "paid_requests_executed_at_freeze": 0,
+  "input_sha256": {
+    "comparison.json": "90ddfd558e4c35d4f5dda272dcfd52c3216ab709d68011df2e8927fc2501e373",
+    "judge-config.json": "a5bbc72b8bff6aeba2a89481a61754d275b28ab3d6188b08e65c4a542a975075"
+  },
+  "sha256": "69558b3f9c245f8be879846dca0f7c9d956335627d4e3a3d28127b3133e8476a"
+}

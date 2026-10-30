@@ -1,0 +1,23 @@
+{
+  "kind": "api_connection_probe",
+  "started_utc": "2026-10-30T08:59:21.476975+00:00",
+  "model": "deepseek-v4-flash-ga-260731",
+  "status": "connected",
+  "response_model": "deepseek-v4-flash-ga-260731",
+  "finish_reason": "stop",
+  "usage": {
+    "completion_tokens": 8,
+    "prompt_tokens": 86,
+    "total_tokens": 94,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 5,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}
