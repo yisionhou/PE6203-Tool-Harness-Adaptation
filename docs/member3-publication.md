@@ -17,7 +17,7 @@ The published 30-repeat cost measurements remain unchanged. Running a new benchm
 
 ## Historical evidence and current code
 
-The original offline fix validation had 112 passing tests and zero model API requests. Four additional archive-restoration tests cover idempotence, fingerprint tampering, conflicting existing files and path traversal. Fresh publication validation is recorded separately so historical results are not overwritten.
+The original offline fix validation had 112 passing tests and zero model API requests. Four additional archive-restoration tests cover idempotence, fingerprint tampering, conflicting existing files and path traversal. Fresh publication validation passed all 116 tests with zero real HTTP attempts and zero model API requests. Nine fresh batch audits reproduced all 162 scores and the published numerical fields without change. All 27 source hashes match after accounting for the relocated repository path. The record is `member3/evidence/publication-validation.json`; historical results were not overwritten.
 
 The original execution workspaces and frozen studies preserve historical sources and absolute path strings for traceability. Frozen paid-experiment manifests are historical records, not a portable promise that the old experiment can be resumed after code changes. New paid experiments require a new freeze. Offline auditing uses the correct cohort manifests and the current root postprocessing code.
 

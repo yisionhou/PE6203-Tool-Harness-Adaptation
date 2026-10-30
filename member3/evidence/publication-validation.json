@@ -1,0 +1,23 @@
+{
+  "pytest_exit_code": 0,
+  "test_counts": {
+    "passed": 116
+  },
+  "real_http_attempts": 0,
+  "model_api_requests": 0,
+  "fresh_audited_batches": 9,
+  "valid_scores": 162,
+  "published_fields_unchanged": [
+    "cases",
+    "aggregate",
+    "usage",
+    "update_costs",
+    "task_ids",
+    "judge_protocol_sha256",
+    "run_config_sha256"
+  ],
+  "source_hashes_match_after_repository_path_relocation": true,
+  "source_hash_count": 27,
+  "dependency_environment": "Existing pinned local Python environment and Node dependencies; dependencies excluded from Git",
+  "base_commit": "3e2b851640fe7015ef36f7d74930b51cdcdbf143"
+}
