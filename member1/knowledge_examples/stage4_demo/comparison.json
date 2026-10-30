@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "purpose": "interface_smoke",
+  "task_ids": [
+    156
+  ],
+  "versions": [
+    "Early",
+    "Middle",
+    "Late"
+  ],
+  "run_config": {
+    "model": "deepseek-v4-flash-ga-260731",
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "temperature": 0.2,
+    "max_completion_tokens": 4096,
+    "max_round": 10,
+    "request_timeout": 60,
+    "stop_policy": "final_text_after_tool_result"
+  },
+  "knowledge_dirs": {
+    "no_update": {
+      "Early": "no_update",
+      "Middle": "no_update",
+      "Late": "no_update"
+    },
+    "full_rewrite": {
+      "Early": "full_rewrite/Early",
+      "Middle": "full_rewrite/Middle",
+      "Late": "full_rewrite/Late"
+    },
+    "selective_patch": {
+      "Early": "selective_patch/Early",
+      "Middle": "selective_patch/Middle",
+      "Late": "selective_patch/Late"
+    }
+  }
+}

@@ -9,9 +9,14 @@ PE6203 选题 4：研究工具环境发生变化后，如何更新 Agent 的工�
 - [x] 阶段一：搭建环境、接入方舟模型、运行一个原始任务并保存真实轨迹。
 - [x] 阶段二：实现 Early、Middle、Late 三版本运行，固定任务 28、144、156，完成 9 次真实验证。
 - [x] 阶段三：接入外部 JSON 工具知识、阻止自动刷新，提供统一原始结果读取接口。
-- [ ] 阶段四：联调、评分、实验分析与交付。
+- [x] 阶段四运行器侧：三策略接口、参数隔离、评分桥接、原始证据与交接文档。
+- [ ] 正式实验：接入成员 2 的实际方法，并由成员 3 完成正式多任务评测。
 
-阶段一已使用火山方舟 `deepseek-v4-flash-ga-260731` 运行任务 156，3 次工具调用均成功，模型答案与计算器结果一致。当前结果是运行连通性验证，尚未完成正式三策略对比和 TF / PE / ECS 评分。
+阶段四已完成任务 156 的三策略接口样例 × 三版本共 9 次真实运行，条件审计通过；9 次评分中 8 次有效、1 次空正文失败，缺失项保持为空。56 项测试通过。成员 2 的正式算法尚未交付，这些结果仅用于接口验收。
+
+当前工作区：`D:\6203-final`；主仓库在 `outputs/PE6203-Tool-Harness-Adaptation`。在 PowerShell 执行 `. D:\6203-final\start-work.ps1` 进入环境。
+
+**下一步先读 [阶段四联调与交付说明](docs/stage4-integration-and-handoff.md)**；报告素材见 [运行环境与基准集成说明](docs/member1-report-section.md)。
 
 ## 开始运行
 
@@ -61,6 +66,8 @@ PE6203 选题 4：研究工具环境发生变化后，如何更新 Agent 的工�
 | `member1/tasks_manifest.json`、`member1/run_versions.py` | 固定子集与版本运行入口 |
 | `docs/stage3-knowledge-and-results-handoff.md` | JSON 知识包与原始结果读取协议 |
 | `member1/knowledge.py`、`member1/read_results.py` | 知识包导出/校验与 JSONL 结果读取 |
+| `member1/run_comparison.py`、`member1/protocol.py` | 三策略批次与固定推理参数 |
+| `member1/scoring_bridge.py`、`member1/evidence/stage4/` | 评分桥接与真实验收证据 |
 | `src/`、`servers/`、`anotation_path/` | 上游基准代码、服务配置和任务资源 |
 
 `.env`、本机运行时凭证、虚拟环境、Node 依赖和临时输出均通过 `.gitignore` 排除。仓库提供不含密钥的 `.env.example`；每位组员在本地配置自己的凭证。

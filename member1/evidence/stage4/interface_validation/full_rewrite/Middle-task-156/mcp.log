@@ -1,0 +1,45 @@
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│        ██╗███╗   ███╗  ██████╗ ██████╗                                       │
+│       ███║████╗ ████║ ██╔════╝ ██╔══██╗                                      │
+│       ╚██║██╔████╔██║ ██║      ██████╔╝                                      │
+│        ██║██║╚██╔╝██║ ██║      ██╔═══╝                                       │
+│        ██║██║ ╚═╝ ██║ ╚██████╗ ██║                                           │
+│        ╚═╝╚═╝     ╚═╝  ╚═════╝ ╚═╝                                           │
+│                                                                              │
+│        All your MCPs in one place                                            │
+│                                                                              │
+│   Version: 0.39.6                                                            │
+│   Transport: HTTP (127.0.0.1:3053)                                           │
+│   Servers: 0 configured                                                      │
+│   Auth: Disabled | Log: warn                                                 │
+│   Config: C:\Users\13238\Documents\Codex\2026-10-29\zhe\outputs\PE6203-Too   │
+│   l-Harness-Adaptation\outputs\stage4-interface-validation\full_rewrite\Mi   │
+│   ddle-task-156\runtime                                                      │
+│                                                                              │
+│   https://github.com/1mcp-app/agent                                          │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2026-10-30T02:50:25.213Z [WARN] message="[clock] MCP 时间服务器已启动" serverName="clock" source="backend-stderr" backendLogSequence=1 backendLogSourceId="static:clock" backendLogEventKind="line"
+2026-10-30T02:50:25.832Z [WARN] message="[calculator] C:\\Users\\13238\\Documents\\Codex\\2026-10-29\\zhe\\outputs\\PE6203-Tool-Harness-Adaptation\\.venv\\Lib\\site-packages\\pydantic_settings\\sources\\utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined." serverName="calculator" source="backend-stderr" backendLogSequence=2 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:25.832Z [WARN] message="[calculator]   warnings.warn(" serverName="calculator" source="backend-stderr" backendLogSequence=3 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:26.818Z [WARN] message="[calculator] Processing request of type ListToolsRequest" serverName="calculator" source="backend-stderr" backendLogSequence=4 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:26.818Z [WARN] message="[calculator] Processing request of type ListPromptsRequest" serverName="calculator" source="backend-stderr" backendLogSequence=5 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:26.819Z [WARN] message="[calculator] Processing request of type ListResourcesRequest" serverName="calculator" source="backend-stderr" backendLogSequence=6 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:26.820Z [WARN] message="[calculator] Processing request of type ListResourceTemplatesRequest" serverName="calculator" source="backend-stderr" backendLogSequence=7 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:30.258Z [WARN] message="[calculator] Processing request of type ListToolsRequest" serverName="calculator" source="backend-stderr" backendLogSequence=8 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:30.259Z [WARN] message="[calculator] Processing request of type ListPromptsRequest" serverName="calculator" source="backend-stderr" backendLogSequence=9 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:30.259Z [WARN] message="[calculator] Processing request of type ListResourcesRequest" serverName="calculator" source="backend-stderr" backendLogSequence=10 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:30.260Z [WARN] message="[calculator] Processing request of type ListResourceTemplatesRequest" serverName="calculator" source="backend-stderr" backendLogSequence=11 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:30.284Z [WARN] message="[calculator] Processing request of type ListToolsRequest" serverName="calculator" source="backend-stderr" backendLogSequence=12 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:30.284Z [WARN] message="[calculator] Processing request of type ListPromptsRequest" serverName="calculator" source="backend-stderr" backendLogSequence=13 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:30.285Z [WARN] message="[calculator] Processing request of type ListResourcesRequest" serverName="calculator" source="backend-stderr" backendLogSequence=14 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:30.285Z [WARN] message="[calculator] Processing request of type ListResourceTemplatesRequest" serverName="calculator" source="backend-stderr" backendLogSequence=15 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:32.021Z [WARN] message="[calculator] Processing request of type ListToolsRequest" serverName="calculator" source="backend-stderr" backendLogSequence=16 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:32.022Z [WARN] message="[calculator] Processing request of type ListPromptsRequest" serverName="calculator" source="backend-stderr" backendLogSequence=17 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:32.022Z [WARN] message="[calculator] Processing request of type ListResourcesRequest" serverName="calculator" source="backend-stderr" backendLogSequence=18 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:32.023Z [WARN] message="[calculator] Processing request of type ListResourceTemplatesRequest" serverName="calculator" source="backend-stderr" backendLogSequence=19 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:32.036Z [WARN] message="[calculator] Processing request of type CallToolRequest" serverName="calculator" source="backend-stderr" backendLogSequence=20 backendLogSourceId="static:calculator" backendLogEventKind="line"
+2026-10-30T02:50:32.043Z [WARN] message="[calculator] Processing request of type ListToolsRequest" serverName="calculator" source="backend-stderr" backendLogSequence=21 backendLogSourceId="static:calculator" backendLogEventKind="line"

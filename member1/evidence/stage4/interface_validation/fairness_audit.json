@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "purpose": "interface_smoke",
+  "mode": "live_model",
+  "expected_cases": 9,
+  "observed_cases": 9,
+  "checks": [
+    {
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 156,
+      "status": "completed",
+      "knowledge_sha256": "080949dd1bf383c513c24749298b6a04c8f85eb3feca0ee6a8427cc69e548990",
+      "passed": true
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 156,
+      "status": "completed",
+      "knowledge_sha256": "a556d3cbce4b367aacf763ae04c2994ca2054791f27957a8aa0797de0f2496fc",
+      "passed": true
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 156,
+      "status": "completed",
+      "knowledge_sha256": "01b3a54d5a208f502a01242000a53cfc40d954aeafc4d337fcc12b8380de56ff",
+      "passed": true
+    },
+    {
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 156,
+      "status": "completed",
+      "knowledge_sha256": "080949dd1bf383c513c24749298b6a04c8f85eb3feca0ee6a8427cc69e548990",
+      "passed": true
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 156,
+      "status": "completed",
+      "knowledge_sha256": "d9b626ad56f0c6c626058bc211c2b639490c7d7fe2e121b8067e2bc1e0b78fdc",
+      "passed": true
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 156,
+      "status": "completed",
+      "knowledge_sha256": "eeb87e619e984e4cde97669aa7e1346d253f8cb281344bf443cd07e48324d656",
+      "passed": true
+    },
+    {
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 156,
+      "status": "completed",
+      "knowledge_sha256": "080949dd1bf383c513c24749298b6a04c8f85eb3feca0ee6a8427cc69e548990",
+      "passed": true
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 156,
+      "status": "completed",
+      "knowledge_sha256": "28e559f7bdac6a7591848facb5ab7c803dd8f69a0501a3a1055cc96b13b4820e",
+      "passed": true
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 156,
+      "status": "completed",
+      "knowledge_sha256": "2c2053d39c6335a04750c0264d1e7b86ee43ad7098a6a2ef7152a24fdb1c3fc8",
+      "passed": true
+    }
+  ],
+  "issues": [],
+  "scope": "Protocol/input isolation check; not proof of strategy quality or task fulfillment."
+}

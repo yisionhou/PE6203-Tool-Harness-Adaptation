@@ -1,0 +1,58 @@
+{
+  "version": "Late",
+  "snapshot": "iter5",
+  "task_ids": [
+    156
+  ],
+  "mcp_url": "http://127.0.0.1:3055/mcp",
+  "services": {
+    "clock": {
+      "original_server": "@guanxiong/mcp-server-time",
+      "package": "@guanxiong/mcp-server-time",
+      "entry_path": "C:\\Users\\13238\\Documents\\Codex\\2026-10-29\\zhe\\outputs\\PE6203-Tool-Harness-Adaptation\\node_modules\\@guanxiong\\mcp-server-time\\.mcpevol\\iter5\\index.js",
+      "entry_sha256": "b5cc7e56366447c8c3954e423fc06cfe67a879b97a411ceb663115db52b0c9a2"
+    },
+    "calculator": {
+      "original_server": "calculator",
+      "package": "mcp-server-calculator",
+      "entry_path": "C:\\Users\\13238\\Documents\\Codex\\2026-10-29\\zhe\\outputs\\PE6203-Tool-Harness-Adaptation\\.venv\\Scripts\\mcp-server-calculator.exe",
+      "entry_sha256": "6967749001bec6db81fc32519c99238e606df1f2462e874b9de83774a2242592"
+    }
+  },
+  "workspace": "C:\\Users\\13238\\Documents\\Codex\\2026-10-29\\zhe\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\stage4-interface-validation\\full_rewrite\\Late-task-156\\workspace",
+  "manifest_sha256": "4a475ad876d2a159ac5555c863948980ae11fbe541aff6f3f896e09492c16c89",
+  "artifact_revision": "162e3ffbea1717ac8a20fe9b26465e29117229e4",
+  "evolution_layers": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "benchmark_commit": "888c779a0fe735f612ca62bdd1fdd7c9e6bf8701",
+  "workspace_initial_sha256": {
+    "txt/log_yesterday.txt": "5c1ff5f77281d4a9b1f14fdf1ec12d1a82764c4bafe309c518ab0a75e73b1ccc",
+    "txt/log_today.txt": "ca16f52bf4b099d2bdff7c2b755466d7b3e41352d92ae7afcca4607ff7b095f9",
+    ".task-sources.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "config_path": "C:\\Users\\13238\\Documents\\Codex\\2026-10-29\\zhe\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\stage4-interface-validation\\full_rewrite\\Late-task-156\\runtime\\mcp.json",
+  "config_sha256": "40f030fc1c6da21a0219f8cba36292c5af2b80c0de7223cf5485a4cefdb50e5f",
+  "launch_command": [
+    "D:\\Program Files\\nodejs\\node.EXE",
+    "C:\\Users\\13238\\Documents\\Codex\\2026-10-29\\zhe\\outputs\\PE6203-Tool-Harness-Adaptation\\node_modules\\@1mcp\\agent\\build\\index.js",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "3055",
+    "--transport",
+    "http",
+    "--log-level",
+    "warn",
+    "--config",
+    "C:\\Users\\13238\\Documents\\Codex\\2026-10-29\\zhe\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\stage4-interface-validation\\full_rewrite\\Late-task-156\\runtime\\mcp.json",
+    "--config-dir",
+    "C:\\Users\\13238\\Documents\\Codex\\2026-10-29\\zhe\\outputs\\PE6203-Tool-Harness-Adaptation\\outputs\\stage4-interface-validation\\full_rewrite\\Late-task-156\\runtime",
+    "--enable-session-persistence=false",
+    "--enable-internal-tools=false"
+  ],
+  "pid": 29528
+}

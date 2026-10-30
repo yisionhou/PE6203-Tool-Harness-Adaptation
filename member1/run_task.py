@@ -29,6 +29,15 @@ def load_task(task_id: int) -> dict:
     return {key: task[key] for key in ('idx', 'question', 'servers', 'tool_calls')}
 
 
+def project_commit():
+    """Source ZIPs have no Git metadata; code hashes still identify their files."""
+    try:
+        return subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT,
+            text=True, stderr=subprocess.DEVNULL).strip()
+    except (FileNotFoundError, subprocess.CalledProcessError):
+        return None
+
+
 async def discover_tools(url: str):
     from mcp import ClientSession
     from mcp.client.streamable_http import streamablehttp_client
@@ -48,6 +57,7 @@ def main() -> int:
     parser.add_argument('--version', choices=['Early', 'Middle', 'Late'], default='Early')
     parser.add_argument('--runtime-context', type=Path, help='Created by run_versions.py for a managed snapshot')
     parser.add_argument('--knowledge-file', type=Path, help='Use this frozen tool-knowledge packet without live refresh')
+    parser.add_argument('--run-config', type=Path, help='Frozen public inference configuration shared by all strategies')
     args = parser.parse_args()
     run_id = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ') + '-' + uuid.uuid4().hex[:8]
     output = args.output_dir or ROOT / 'outputs' / f'stage1-{run_id}'
@@ -92,6 +102,13 @@ def main() -> int:
     context = None
     knowledge = None
     try:
+        from member1.protocol import DEFAULTS, canonical_hash, load_config
+        config = load_config(args.run_config) if args.run_config else {
+            **DEFAULTS, 'model': summary['model'], 'base_url': summary['base_url']}
+        summary.update(config)
+        summary['run_config_sha256'] = canonical_hash(config)
+        save('run_config.json', config)
+        save('summary.json', summary)
         if args.runtime_context:
             from member1.stage2 import validate_context
             context = json.loads(args.runtime_context.read_text(encoding='utf-8'))
@@ -122,8 +139,8 @@ def main() -> int:
                     'source_version': knowledge['packet']['source_version'], 'snapshot': 'knowledge.json'})
             record('knowledge_loaded', summary['knowledge'])
             save('summary.json', summary)
-        commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
-        summary['project_commit'] = commit
+        summary['project_commit'] = project_commit()
+        summary['project_commit_source'] = 'git' if summary['project_commit'] else 'unavailable_in_source_archive'
         summary['benchmark_commit'] = context['benchmark_commit'] if context else '888c779a0fe735f612ca62bdd1fdd7c9e6bf8701'
         summary['runner_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
         summary['agent_sha256'] = hashlib.sha256((ROOT / 'src/custom/agents/SimpleOpenAIAgent.py').read_bytes()).hexdigest()
@@ -170,8 +187,9 @@ def main() -> int:
             from custom.agents.SimpleOpenAIAgent import ChatModel
             agent = ChatModel(
                 model_name=summary['model'], model_url=summary['base_url'], api_key=key,
-                temperature=0.2, max_new_tokens=4096, tools=tools,
-                max_round=10, tool_server_map=server_map,
+                temperature=config['temperature'], max_new_tokens=config['max_completion_tokens'], tools=tools,
+                max_round=config['max_round'], tool_server_map=server_map,
+                request_timeout=config['request_timeout'],
                 file_exists=generate_tree_string(context['workspace'] if context else ROOT / 'anotation_path'),
                 mcp_server_url=args.mcp_url, event_callback=record,
                 stop_on_final_answer=True,

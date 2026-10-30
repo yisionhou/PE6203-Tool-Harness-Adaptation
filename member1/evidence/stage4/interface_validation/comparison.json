@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "comparison_id": "stage4-interface-validation",
+  "purpose": "interface_smoke",
+  "mode": "live_model",
+  "versions": [
+    "Early",
+    "Middle",
+    "Late"
+  ],
+  "task_ids": [
+    156
+  ],
+  "run_config": {
+    "model": "deepseek-v4-flash-ga-260731",
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "temperature": 0.2,
+    "max_completion_tokens": 4096,
+    "max_round": 10,
+    "request_timeout": 60,
+    "stop_policy": "final_text_after_tool_result"
+  },
+  "run_config_sha256": "1b6824dfcd981c784e0360087ec09d7be660e1ae7292d0d5b46116311ab2e5e6",
+  "inputs": {
+    "no_update/Early/156": {
+      "snapshot": "knowledge_inputs/no_update/Early/156.json",
+      "sha256": "080949dd1bf383c513c24749298b6a04c8f85eb3feca0ee6a8427cc69e548990",
+      "test_fixture": true
+    },
+    "no_update/Middle/156": {
+      "snapshot": "knowledge_inputs/no_update/Middle/156.json",
+      "sha256": "080949dd1bf383c513c24749298b6a04c8f85eb3feca0ee6a8427cc69e548990",
+      "test_fixture": true
+    },
+    "no_update/Late/156": {
+      "snapshot": "knowledge_inputs/no_update/Late/156.json",
+      "sha256": "080949dd1bf383c513c24749298b6a04c8f85eb3feca0ee6a8427cc69e548990",
+      "test_fixture": true
+    },
+    "full_rewrite/Early/156": {
+      "snapshot": "knowledge_inputs/full_rewrite/Early/156.json",
+      "sha256": "a556d3cbce4b367aacf763ae04c2994ca2054791f27957a8aa0797de0f2496fc",
+      "test_fixture": true
+    },
+    "full_rewrite/Middle/156": {
+      "snapshot": "knowledge_inputs/full_rewrite/Middle/156.json",
+      "sha256": "d9b626ad56f0c6c626058bc211c2b639490c7d7fe2e121b8067e2bc1e0b78fdc",
+      "test_fixture": true
+    },
+    "full_rewrite/Late/156": {
+      "snapshot": "knowledge_inputs/full_rewrite/Late/156.json",
+      "sha256": "28e559f7bdac6a7591848facb5ab7c803dd8f69a0501a3a1055cc96b13b4820e",
+      "test_fixture": true
+    },
+    "selective_patch/Early/156": {
+      "snapshot": "knowledge_inputs/selective_patch/Early/156.json",
+      "sha256": "01b3a54d5a208f502a01242000a53cfc40d954aeafc4d337fcc12b8380de56ff",
+      "test_fixture": true
+    },
+    "selective_patch/Middle/156": {
+      "snapshot": "knowledge_inputs/selective_patch/Middle/156.json",
+      "sha256": "eeb87e619e984e4cde97669aa7e1346d253f8cb281344bf443cd07e48324d656",
+      "test_fixture": true
+    },
+    "selective_patch/Late/156": {
+      "snapshot": "knowledge_inputs/selective_patch/Late/156.json",
+      "sha256": "2c2053d39c6335a04750c0264d1e7b86ee43ad7098a6a2ef7152a24fdb1c3fc8",
+      "test_fixture": true
+    }
+  },
+  "runs": [
+    {
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 156,
+      "case_path": "no_update/Early-task-156",
+      "status": "completed"
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 156,
+      "case_path": "full_rewrite/Early-task-156",
+      "status": "completed"
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 156,
+      "case_path": "selective_patch/Early-task-156",
+      "status": "completed"
+    },
+    {
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 156,
+      "case_path": "no_update/Middle-task-156",
+      "status": "completed"
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 156,
+      "case_path": "full_rewrite/Middle-task-156",
+      "status": "completed"
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 156,
+      "case_path": "selective_patch/Middle-task-156",
+      "status": "completed"
+    },
+    {
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 156,
+      "case_path": "no_update/Late-task-156",
+      "status": "completed"
+    },
+    {
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 156,
+      "case_path": "full_rewrite/Late-task-156",
+      "status": "completed"
+    },
+    {
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 156,
+      "case_path": "selective_patch/Late-task-156",
+      "status": "completed"
+    }
+  ]
+}

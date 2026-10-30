@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "ecs_definition": "per task: mean(TF_Early,TF_Middle,TF_Late) - population_stddev",
+  "tasks": [
+    {
+      "strategy": "full_rewrite",
+      "task_id": 156,
+      "issues": [
+        "Late: no complete judge score (judge_error)"
+      ],
+      "ecs": null
+    },
+    {
+      "strategy": "no_update",
+      "task_id": 156,
+      "issues": [],
+      "ecs": 10.0,
+      "tf_by_version": {
+        "Early": 10,
+        "Middle": 10,
+        "Late": 10
+      }
+    },
+    {
+      "strategy": "selective_patch",
+      "task_id": 156,
+      "issues": [],
+      "ecs": 10.0,
+      "tf_by_version": {
+        "Early": 10,
+        "Middle": 10,
+        "Late": 10
+      }
+    }
+  ],
+  "unscored_cases": 1,
+  "note": "Interface-smoke scores are integration evidence, not formal strategy-performance conclusions."
+}

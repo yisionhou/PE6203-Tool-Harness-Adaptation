@@ -47,7 +47,7 @@ def stop_owned_process(process):
         process.wait(timeout=5)
 
 
-def run_one(version, task_id, suite_root, check_tools=False, knowledge_file=None):
+def run_one(version, task_id, suite_root, check_tools=False, knowledge_file=None, run_config_file=None, env_file=None):
     run_root = suite_root / f'{version}-task-{task_id}'
     run_root.mkdir()
     runtime = run_root / 'runtime'
@@ -106,6 +106,10 @@ def run_one(version, task_id, suite_root, check_tools=False, knowledge_file=None
             invocation.append('--check-tools')
         if knowledge_file is not None:
             invocation += ['--knowledge-file', str(knowledge_file)]
+        if run_config_file is not None:
+            invocation += ['--run-config', str(run_config_file)]
+        if env_file is not None:
+            invocation += ['--env-file', str(env_file)]
         failure_stage = 'runner_error'
         with (run_root / 'runner.log').open('w', encoding='utf-8') as log:
             completed = subprocess.run(invocation, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=600)
@@ -143,6 +147,8 @@ def main():
     parser.add_argument('--version', choices=['Early', 'Middle', 'Late', 'all'], default='all')
     parser.add_argument('--task-id', type=int, help='Omit to run every task in the fixed manifest')
     parser.add_argument('--check-tools', action='store_true', help='Validate every required tool without charging model API calls')
+    parser.add_argument('--env-file', type=Path, help='Local credentials file; never copied into the output')
+    parser.add_argument('--run-config', type=Path, help='Shared credential-free model/inference configuration')
     knowledge_args = parser.add_mutually_exclusive_group()
     knowledge_args.add_argument('--knowledge-file', type=Path, help='One packet; requires --task-id')
     knowledge_args.add_argument('--knowledge-dir', type=Path, help='Directory with <task-id>.json for every selected task')
@@ -182,7 +188,9 @@ def main():
         'versions': versions, 'task_ids': task_ids, 'knowledge_inputs': input_records, 'runs': []}
     for version in versions:
         for task_id in task_ids:
-            suite_record['runs'].append(run_one(version, task_id, suite, args.check_tools, frozen.get(task_id)))
+            suite_record['runs'].append(run_one(version, task_id, suite, args.check_tools, frozen.get(task_id),
+                args.run_config.resolve() if args.run_config else None,
+                args.env_file.resolve() if args.env_file else None))
             (suite / 'suite.json').write_text(json.dumps(suite_record, ensure_ascii=False, indent=2), encoding='utf-8')
     print(f'Suite output: {suite}', flush=True)
     return 0 if all(r['status'] in {'completed', 'tools_ready', 'knowledge_ready'} for r in suite_record['runs']) else 1

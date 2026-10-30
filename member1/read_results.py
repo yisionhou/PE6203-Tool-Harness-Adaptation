@@ -10,9 +10,23 @@ import sys
 def read_results(source):
     source = Path(source).resolve()
     if source.is_file():
-        if source.name not in ('suite.json', 'run_summary.json', 'summary.json'):
-            raise ValueError('Use a suite/result directory or its suite.json/run_summary.json/summary.json')
+        if source.name not in ('comparison.json', 'suite.json', 'run_summary.json', 'summary.json'):
+            raise ValueError('Use a comparison/suite/result directory or its comparison.json/suite.json/run_summary.json/summary.json')
         source = source.parent
+    comparison_file = source / 'comparison.json'
+    if comparison_file.exists():
+        comparison = json.loads(comparison_file.read_text(encoding='utf-8-sig'))
+        for run in comparison['runs']:
+            case_path = (source / run['case_path']).resolve()
+            if not case_path.is_relative_to(source):
+                raise ValueError('Comparison case path escapes the input directory')
+            for row in read_results(case_path):
+                row['comparison_id'] = comparison['comparison_id']
+                row['purpose'] = comparison['purpose']
+                row['source_files'] = {key: (Path(run['case_path']) / value).as_posix() if value else None
+                    for key, value in row['source_files'].items()}
+                yield row
+        return
     if source.name == 'result' and (source.parent / 'run_summary.json').exists():
         # The driver may add timeout/cleanup status after the child is gone.
         # Reading its result/ must not resurrect the child's stale "running".
@@ -56,11 +70,12 @@ def read_results(source):
                     events.append(json.loads(line))
                 except json.JSONDecodeError as exc:
                     read_errors.append({'file': 'events.jsonl', 'line': number, 'raw': line, 'error': str(exc)})
+        runtime_tools = read_json(result / 'runtime_tools.json')
         yield {'schema_version': 1, 'task_id': summary['task_id'], 'version': summary['version'],
             'strategy': summary.get('strategy'), 'status': summary['status'],
             'knowledge': summary.get('knowledge'), 'update_cost': summary.get('update_cost'),
             'summary': summary, 'answer_record': answer, 'trajectory_messages': trajectory,
-            'events': events, 'read_errors': read_errors,
+            'events': events, 'runtime_tools': runtime_tools, 'read_errors': read_errors,
             'source_files': {'summary': metadata.relative_to(source).as_posix(),
                 'answer': answer_path.relative_to(source).as_posix() if answer_path.exists() else None,
                 'events': event_file.relative_to(source).as_posix() if event_file.exists() else None}}

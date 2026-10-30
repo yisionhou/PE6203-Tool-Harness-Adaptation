@@ -93,6 +93,8 @@ def build_runtime_config(version, workspace, task_ids):
         'workspace': str(workspace), 'manifest_sha256': hashlib.sha256(MANIFEST_PATH.read_bytes()).hexdigest(),
         'artifact_revision': data['artifact_revision'], 'evolution_layers': info['evolution_layers'],
         'benchmark_commit': data['benchmark_commit']}
+    context['workspace_initial_sha256'] = {name: hashlib.sha256((workspace / name).read_bytes()).hexdigest()
+        for name in [*data['fixtures'], '.task-sources.json'] if (workspace / name).exists()}
     if sys.platform == 'win32' and 'tasks' in services:
         context['compatibility_loader_sha256'] = hashlib.sha256((ROOT / 'member1/windows_paths.mjs').read_bytes()).hexdigest()
     return {'mcpServers': services}, context

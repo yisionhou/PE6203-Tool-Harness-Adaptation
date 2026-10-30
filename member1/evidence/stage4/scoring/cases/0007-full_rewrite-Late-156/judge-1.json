@@ -1,0 +1,24 @@
+{
+  "protocol_sha256": "6d3f77eb55eccc5e436b07e7081f66ff1485b78e9f052365980b3937e3445055",
+  "prompt_sha256": "820682e5035119d8882abfa8436e14843f102b245b44ce4e1ca893c0d759b9bd",
+  "started_utc": "2026-10-30T02:53:26.910251+00:00",
+  "raw_response": "",
+  "response_model": "deepseek-v4-flash-ga-260731",
+  "usage": {
+    "completion_tokens": 8192,
+    "prompt_tokens": 3626,
+    "total_tokens": 11818,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 8192,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  },
+  "status": "judge_error",
+  "error": "Expecting value: line 1 column 1 (char 0)"
+}

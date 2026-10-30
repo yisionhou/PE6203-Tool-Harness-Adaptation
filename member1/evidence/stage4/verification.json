@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-30",
+  "purpose": "interface_smoke",
+  "base_project_commit": "222764661527f7be108d05b986d0576d66cc1e59",
+  "benchmark_commit": "888c779a0fe735f612ca62bdd1fdd7c9e6bf8701",
+  "real_task_runs": 9,
+  "completed_task_runs": 9,
+  "judge_requests": 9,
+  "completed_scores": 8,
+  "judge_errors": 1,
+  "fairness_audit_passed": true,
+  "usage": {
+    "runner": {
+      "prompt_tokens": 34077,
+      "completion_tokens": 3370,
+      "total_tokens": 37447
+    },
+    "judge": {
+      "prompt_tokens": 27098,
+      "completion_tokens": 17749,
+      "total_tokens": 44847
+    }
+  },
+  "strategy_inputs": "Labelled interface fixtures; member 2 methods not supplied",
+  "limitations": [
+    "One judge response contains no score text: 8192 completion tokens, all reported as reasoning tokens. No extra paid retry was made.",
+    "No formal algorithm comparison or teammate sign-off is claimed.",
+    "Historical source paths are preserved; reader uses archive-relative paths."
+  ],
+  "tests": {
+    "passed": 56,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 24.82,
+    "command": "python -X utf8 -m pytest -q"
+  },
+  "migration": {
+    "workspace": "D:\\6203-final",
+    "verified_files": 37755,
+    "verified_bytes": 636497730,
+    "mismatches": 0,
+    "post_migration_tools": {
+      "Early": "tools_ready",
+      "Middle": "tools_ready",
+      "Late": "tools_ready"
+    }
+  },
+  "environment": {
+    "python": "3.12.14",
+    "node": "24.21.0",
+    "npm": "11.19.0",
+    "pip_check": "passed"
+  },
+  "git_diff_check": "passed",
+  "final_code_sha256": {
+    "member1/build_handoff_demo.py": "3cd2f93cdea350c35c2099afd0244fb5ec613f3b583ea547634bc9bae013bf5f",
+    "member1/knowledge.py": "9712eeda87952923d7ce8ee58d240197830df19e369258392725a24872cd78e2",
+    "member1/prepare_environment.py": "fd6f6d7bc8d32da5baa269a11575c01eb456074ab4d1d3d83282c7b00d037092",
+    "member1/protocol.py": "fad55ab0de929531e467b528ccf2958d72c0502681cafe15e53fd08d5f7a179e",
+    "member1/read_results.py": "ec93104a791f9c6e3e61f5e78a6b7cf8eac0219584275790808f3c736bca85e5",
+    "member1/run_comparison.py": "0babc676a95ec722a9dea935c12d0ea16712b0556400fa490c45856e2625a8d0",
+    "member1/run_task.py": "9ccaa6f654ada219eac3ae9b114cdb010069ea4c1d27b58c7963f3a6153912a1",
+    "member1/run_versions.py": "9fe133d583a5a81b9b7070142e5137a66d8fcdb88beb81a6861633e2d3641c1e",
+    "member1/scoring_bridge.py": "2f3150e1100ee013b9b98657213a00db2dec92394b1961727741df7ceeefbdf5",
+    "member1/stage2.py": "16e1a69ae15c71c92911bb0fca4c076b2ac8b115ecfdcaf1a4b051d052e3cb8a"
+  }
+}
