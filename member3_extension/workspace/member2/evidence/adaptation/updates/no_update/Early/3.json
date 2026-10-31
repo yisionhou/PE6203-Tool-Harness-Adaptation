@@ -1,0 +1,44 @@
+{
+  "update_id": "no-update-fdbb7cc033adcb5d30caf99289040014aee0b68a3fa9588ca285b50009316966",
+  "strategy": "no_update",
+  "base_version": "Early",
+  "target_version": "Early",
+  "base_sha256": "fdbb7cc033adcb5d30caf99289040014aee0b68a3fa9588ca285b50009316966",
+  "target_catalog_sha256": null,
+  "changes": null,
+  "affected_blocks": [],
+  "regenerated_tools": [],
+  "regenerated_blocks": [],
+  "removed_blocks": [],
+  "changed_blocks": [],
+  "changed_tool_records": [],
+  "preserved_tool_sha256": {
+    "mcp-filesystem-server::read_multiple_files": "1674eeabe3442c6da8e5f4abd28c9b75d044293ad1460944aaea9270bad6a6d1",
+    "mcp-filesystem-server::write_file": "7e1c0e5a18fc93ce068a1fc3f5b41c4413142db44de20a11497617c6fc38c9b9",
+    "mcp-sequentialthinking-tools::sequentialthinking_tools": "bb4305281bb043b88940f512861d63044358ef1feb512556473199f8e8821a5c",
+    "time-mcp::current_time": "fce9672a4dcb660b4ed17464d45c0fea2551778c79885273b0e1dcd9e86b3b0a"
+  },
+  "preserved_block_sha256": {
+    "rule:mcp-filesystem-server::read_multiple_files": "c4ce6602175e269a9ce649d8cca859bc3cb9cb50f3d9d0b54281aa5a6187c748",
+    "rule:mcp-filesystem-server::write_file": "9566354e8939349414fbf8e49f8d84fb6ff0c166f05047f5dd57b918aa9d75d3",
+    "rule:mcp-sequentialthinking-tools::sequentialthinking_tools": "af7ffc822ef362c071347893ab6c19308edc356f20a9ccd33130b2972f9484b3",
+    "rule:time-mcp::current_time": "4daa9b15e027a56402fbc5f312f5a72ac7dd708525dfa40b207cc28cff9af08b",
+    "rule:inventory": "04996d39abcc5e6a83c8588cdc0cf812f45aa910af7f171f713d5e1e9875f000"
+  },
+  "output_sha256": "fdbb7cc033adcb5d30caf99289040014aee0b68a3fa9588ca285b50009316966",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.0
+  },
+  "harness_overhead_seconds": 0.054448300041258335,
+  "schema_version": 1,
+  "task_id": 3,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/no_update/3.json",
+  "knowledge_sha256": "ef02f6e08641cccec56d844d1d745e49291ace47fd65cd249165f0f9ee6b3fbb",
+  "observation_ref": "Early/3",
+  "record_path": "updates/no_update/Early/3.json"
+}

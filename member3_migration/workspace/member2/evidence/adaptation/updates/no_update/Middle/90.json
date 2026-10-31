@@ -1,0 +1,44 @@
+{
+  "update_id": "no-update-d30a11db90adfcf46d3ed2cfa0f467bd929ebbf62f8822f64fde782a8869bcdd",
+  "strategy": "no_update",
+  "base_version": "Early",
+  "target_version": "Middle",
+  "base_sha256": "d30a11db90adfcf46d3ed2cfa0f467bd929ebbf62f8822f64fde782a8869bcdd",
+  "target_catalog_sha256": null,
+  "changes": null,
+  "affected_blocks": [],
+  "regenerated_tools": [],
+  "regenerated_blocks": [],
+  "removed_blocks": [],
+  "changed_blocks": [],
+  "changed_tool_records": [],
+  "preserved_tool_sha256": {
+    "@jinzcdev/leetcode-mcp-server::get_daily_challenge": "2a392624fd176d617db0c3a8daf4246cceeac1d454c057fa0e8266f9212020e1",
+    "ygocdb-mcp-server::get_card_by_id": "f73710050b7de097f8358f3d8038fde0270baa5da1f6bcb7e68190d617259290",
+    "ygocdb-mcp-server::get_card_image": "7faea6191ebc856ff0d9eb2f383f06ce2fe4fa4885bc0ff8d9d868a2628d63cf",
+    "ygocdb-mcp-server::search_cards": "071a8eebff76d2f8166000e660c164114d2e949920633942ad4891d14afeb094"
+  },
+  "preserved_block_sha256": {
+    "rule:@jinzcdev/leetcode-mcp-server::get_daily_challenge": "ec3fccd0cd5dfefeaeb0b4e29c1e19d7f7c4ba6e8a546f97f52050913286bfe6",
+    "rule:ygocdb-mcp-server::get_card_by_id": "50e90712813e69b4c45408959f2a83f5891fcbfd69c13eb41dbbe3d65bc14a0e",
+    "rule:ygocdb-mcp-server::get_card_image": "b7a13b76d4fa1b7a971ac595c12002f4740540533bb7d03c8775f270062293db",
+    "rule:ygocdb-mcp-server::search_cards": "f9169b5947b80c713f063f28b5c8ebd5b6cf4b5a916dd5f07614b072359a983c",
+    "rule:inventory": "3daaee5feb08d4c2cca877ef922fb795810f0a312cd334809ad5e587272bfe06"
+  },
+  "output_sha256": "d30a11db90adfcf46d3ed2cfa0f467bd929ebbf62f8822f64fde782a8869bcdd",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.0
+  },
+  "harness_overhead_seconds": 0.0017715999856591225,
+  "schema_version": 1,
+  "task_id": 90,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/no_update/90.json",
+  "knowledge_sha256": "be36ad4feaf9beb2c992683396173a6b29dbb63b600683bbc195851e1f34e115",
+  "observation_ref": "Middle/90",
+  "record_path": "updates/no_update/Middle/90.json"
+}

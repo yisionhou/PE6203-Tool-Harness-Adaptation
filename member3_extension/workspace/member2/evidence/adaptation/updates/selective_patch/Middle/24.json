@@ -1,0 +1,82 @@
+{
+  "update_id": "3a77ec51-eb17-4907-a387-c976fac13a6c",
+  "strategy": "selective_patch",
+  "base_version": "Early",
+  "target_version": "Middle",
+  "base_sha256": "3ef678866fce04f543b92a9d6c9413fc17f7952f11f69821b3545d4cf1fc9f50",
+  "target_catalog_sha256": "8c50cffdfd12557dad1df1cacf411add8a2571e31e2db4f58fe888cf15004c7c",
+  "changes": {
+    "added": [],
+    "removed": [],
+    "changed": {
+      "@modelcontextprotocol/server-filesystem::read_text_file": {
+        "paths": [
+          "/description",
+          "/inputSchema/properties/tail"
+        ],
+        "kinds": [
+          "description",
+          "parameter"
+        ]
+      },
+      "server-sequential-thinking::sequentialthinking": {
+        "paths": [
+          "/description"
+        ],
+        "kinds": [
+          "description"
+        ]
+      }
+    },
+    "unchanged": [
+      "mcp-tasks::tasks_add",
+      "mcp-tasks::tasks_setup"
+    ]
+  },
+  "affected_blocks": [
+    "rule:@modelcontextprotocol/server-filesystem::read_text_file",
+    "rule:inventory",
+    "rule:server-sequential-thinking::sequentialthinking"
+  ],
+  "regenerated_tools": [
+    "@modelcontextprotocol/server-filesystem::read_text_file",
+    "server-sequential-thinking::sequentialthinking"
+  ],
+  "regenerated_blocks": [
+    "rule:@modelcontextprotocol/server-filesystem::read_text_file",
+    "rule:inventory",
+    "rule:server-sequential-thinking::sequentialthinking"
+  ],
+  "removed_blocks": [],
+  "changed_blocks": [
+    "rule:@modelcontextprotocol/server-filesystem::read_text_file",
+    "rule:server-sequential-thinking::sequentialthinking"
+  ],
+  "changed_tool_records": [
+    "@modelcontextprotocol/server-filesystem::read_text_file",
+    "server-sequential-thinking::sequentialthinking"
+  ],
+  "preserved_tool_sha256": {
+    "mcp-tasks::tasks_add": "f0128e6f328edb63f4e5f6ed8978fbba80941dab22d211f72ca75a482cdd7e0a",
+    "mcp-tasks::tasks_setup": "2eac2f55fb081a315567ff7a69da727a8e63a06c6a642a26fe0c2dd4fd5bd811"
+  },
+  "preserved_block_sha256": {
+    "rule:mcp-tasks::tasks_add": "80ecc42ffd2af1d1b660016f8033f6694487133a03e350520dce1639f624aa68",
+    "rule:mcp-tasks::tasks_setup": "8943f8e7deb038b2050300083e44ea420fe10486d24c4d58cb87c979b8ad9a9f"
+  },
+  "output_sha256": "c4daf2b6d2403c8ef7a7796625ddf2ff1601ab2717ac34637e67a6534e66c3f8",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.09971169999334961
+  },
+  "schema_version": 1,
+  "task_id": 24,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/selective_patch/Middle/24.json",
+  "knowledge_sha256": "c3653c4e91fb962ba5de575be81d8f02bffedcd686d7659feafb1a2a1a12ca14",
+  "observation_ref": "Middle/24",
+  "record_path": "updates/selective_patch/Middle/24.json"
+}

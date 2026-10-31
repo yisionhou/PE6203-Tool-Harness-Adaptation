@@ -1,0 +1,10 @@
+{
+  "pytest_exit_code": 0,
+  "real_http_requests_allowed": 0,
+  "blocked_real_http_attempts": 0,
+  "usable_key_environment_removed": true,
+  "test_counts": {
+    "passed": 112
+  },
+  "model_api_requests": 0
+}

@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "task_id": 28,
+  "strategy": "full_rewrite",
+  "source_version": "Middle",
+  "tools": [
+    {
+      "name": "files__read_multiple_files",
+      "description": "Read the contents of multiple files simultaneously. This is more efficient than reading files one by one when you need to analyze or compare multiple files.",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "properties": {
+          "encoding": {
+            "default": "utf-8",
+            "description": "File encoding (default: utf-8)",
+            "type": "string"
+          },
+          "paths": {
+            "description": "Array of file paths to read",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "paths"
+        ],
+        "type": "object"
+      },
+      "source_name": "read_multiple_files",
+      "source_server": "mcp-filesystem-server"
+    },
+    {
+      "name": "tasks__tasks_add",
+      "description": "Add new tasks with a specific status. It's faster and cheaper if you use this in batch. User can add atomically while AI works using the CLI add tool",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "properties": {
+          "index": {
+            "description": "0-based index to place the tasks. e.g.:\n- 0 for \"Do this next\"\n- Omit to place at the end (\"Do this later\")",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "source_id": {
+            "description": "Source ID from task_setup() response\n- Defaults to most recent in the workspace if not provided\n- Try to always provide it!\n- If you don't have it, ask the user for a file path and call task_setup()",
+            "minLength": 1,
+            "type": "string"
+          },
+          "status": {
+            "description": "You might need to infer it from the context:\n- \"To Do\" for tasks coming up next (e.g. \"Do X next\")\n- \"In Progress\" for what you'll do now (e.g. \"First do X\")\n- \"Reminders\" instructions for you (the AI) to be constantly reminded of\n- \"Notes\" to collect non-actionable notes",
+            "enum": [
+              "In Progress",
+              "To Do",
+              "Backlog",
+              "Done",
+              "Reminders",
+              "Notes",
+              "Deleted"
+            ],
+            "type": "string"
+          },
+          "texts": {
+            "description": "Each text becomes a task",
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "texts",
+          "status"
+        ],
+        "type": "object"
+      },
+      "source_name": "tasks_add",
+      "source_server": "mcp-tasks"
+    },
+    {
+      "name": "tasks__tasks_setup",
+      "description": "Initializes an source file from a path\n- Always call once per conversation when asked to use these tools\n- Ask the user to clarify the file path if not given, before calling this tool\n- Creates the file if it does not exist\n- Returns the source ID for further use\n- Use mcp-tasks tools when the user mentions new or updated tasks",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "properties": {
+          "source_path": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "workspace": {
+            "description": "Workspace/project directory path (provided by the IDE or use $PWD)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_path"
+        ],
+        "type": "object"
+      },
+      "source_name": "tasks_setup",
+      "source_server": "mcp-tasks"
+    }
+  ],
+  "instructions": "Use the supplied tool knowledge. Example arguments illustrate JSON shape only; replace placeholders with values from the user task before execution. Do not treat examples as task answers. Inspect tool errors before continuing.\n\nAvailable routes: files__read_multiple_files, tasks__tasks_add, tasks__tasks_setup. Use only these supplied routes and their declared argument names.\n\nTool files__read_multiple_files: Read the contents of multiple files simultaneously. This is more efficient than reading files one by one when you need to analyze or compare multiple files.\nRequired arguments: paths.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"additionalProperties\": false, \"properties\": {\"encoding\": {\"default\": \"utf-8\", \"description\": \"File encoding (default: utf-8)\", \"type\": \"string\"}, \"paths\": {\"description\": \"Array of file paths to read\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"required\": [\"paths\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"paths\": []}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"files__read_multiple_files\"}\n\nTool tasks__tasks_add: Add new tasks with a specific status. It's faster and cheaper if you use this in batch. User can add atomically while AI works using the CLI add tool\nRequired arguments: texts, status.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"additionalProperties\": false, \"properties\": {\"index\": {\"description\": \"0-based index to place the tasks. e.g.:\\n- 0 for \\\"Do this next\\\"\\n- Omit to place at the end (\\\"Do this later\\\")\", \"minimum\": 0, \"type\": \"integer\"}, \"source_id\": {\"description\": \"Source ID from task_setup() response\\n- Defaults to most recent in the workspace if not provided\\n- Try to always provide it!\\n- If you don't have it, ask the user for a file path and call task_setup()\", \"minLength\": 1, \"type\": \"string\"}, \"status\": {\"description\": \"You might need to infer it from the context:\\n- \\\"To Do\\\" for tasks coming up next (e.g. \\\"Do X next\\\")\\n- \\\"In Progress\\\" for what you'll do now (e.g. \\\"First do X\\\")\\n- \\\"Reminders\\\" instructions for you (the AI) to be constantly reminded of\\n- \\\"Notes\\\" to collect non-actionable notes\", \"enum\": [\"In Progress\", \"To Do\", \"Backlog\", \"Done\", \"Reminders\", \"Notes\", \"Deleted\"], \"type\": \"string\"}, \"texts\": {\"description\": \"Each text becomes a task\", \"items\": {\"minLength\": 1, \"type\": \"string\"}, \"type\": \"array\"}}, \"required\": [\"texts\", \"status\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"status\": \"In Progress\", \"texts\": []}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"tasks__tasks_add\"}\n\nTool tasks__tasks_setup: Initializes an source file from a path\n- Always call once per conversation when asked to use these tools\n- Ask the user to clarify the file path if not given, before calling this tool\n- Creates the file if it does not exist\n- Returns the source ID for further use\n- Use mcp-tasks tools when the user mentions new or updated tasks\nRequired arguments: source_path.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"additionalProperties\": false, \"properties\": {\"source_path\": {\"minLength\": 1, \"type\": \"string\"}, \"workspace\": {\"description\": \"Workspace/project directory path (provided by the IDE or use $PWD)\", \"type\": \"string\"}}, \"required\": [\"source_path\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"source_path\": \"<source_path>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"tasks__tasks_setup\"}",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.01920090000203345
+  },
+  "knowledge_blocks": [
+    {
+      "id": "rule:mcp-filesystem-server::read_multiple_files",
+      "recipe": "tool_card_v1",
+      "tool_id": "mcp-filesystem-server::read_multiple_files",
+      "depends_on": [
+        "tool:mcp-filesystem-server::read_multiple_files"
+      ],
+      "text": "Tool files__read_multiple_files: Read the contents of multiple files simultaneously. This is more efficient than reading files one by one when you need to analyze or compare multiple files.\nRequired arguments: paths.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"additionalProperties\": false, \"properties\": {\"encoding\": {\"default\": \"utf-8\", \"description\": \"File encoding (default: utf-8)\", \"type\": \"string\"}, \"paths\": {\"description\": \"Array of file paths to read\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"required\": [\"paths\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"paths\": []}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"files__read_multiple_files\"}",
+      "example": {
+        "tool": "files__read_multiple_files",
+        "arguments": {
+          "paths": []
+        },
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:mcp-tasks::tasks_add",
+      "recipe": "tool_card_v1",
+      "tool_id": "mcp-tasks::tasks_add",
+      "depends_on": [
+        "tool:mcp-tasks::tasks_add"
+      ],
+      "text": "Tool tasks__tasks_add: Add new tasks with a specific status. It's faster and cheaper if you use this in batch. User can add atomically while AI works using the CLI add tool\nRequired arguments: texts, status.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"additionalProperties\": false, \"properties\": {\"index\": {\"description\": \"0-based index to place the tasks. e.g.:\\n- 0 for \\\"Do this next\\\"\\n- Omit to place at the end (\\\"Do this later\\\")\", \"minimum\": 0, \"type\": \"integer\"}, \"source_id\": {\"description\": \"Source ID from task_setup() response\\n- Defaults to most recent in the workspace if not provided\\n- Try to always provide it!\\n- If you don't have it, ask the user for a file path and call task_setup()\", \"minLength\": 1, \"type\": \"string\"}, \"status\": {\"description\": \"You might need to infer it from the context:\\n- \\\"To Do\\\" for tasks coming up next (e.g. \\\"Do X next\\\")\\n- \\\"In Progress\\\" for what you'll do now (e.g. \\\"First do X\\\")\\n- \\\"Reminders\\\" instructions for you (the AI) to be constantly reminded of\\n- \\\"Notes\\\" to collect non-actionable notes\", \"enum\": [\"In Progress\", \"To Do\", \"Backlog\", \"Done\", \"Reminders\", \"Notes\", \"Deleted\"], \"type\": \"string\"}, \"texts\": {\"description\": \"Each text becomes a task\", \"items\": {\"minLength\": 1, \"type\": \"string\"}, \"type\": \"array\"}}, \"required\": [\"texts\", \"status\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"status\": \"In Progress\", \"texts\": []}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"tasks__tasks_add\"}",
+      "example": {
+        "tool": "tasks__tasks_add",
+        "arguments": {
+          "texts": [],
+          "status": "In Progress"
+        },
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:mcp-tasks::tasks_setup",
+      "recipe": "tool_card_v1",
+      "tool_id": "mcp-tasks::tasks_setup",
+      "depends_on": [
+        "tool:mcp-tasks::tasks_setup"
+      ],
+      "text": "Tool tasks__tasks_setup: Initializes an source file from a path\n- Always call once per conversation when asked to use these tools\n- Ask the user to clarify the file path if not given, before calling this tool\n- Creates the file if it does not exist\n- Returns the source ID for further use\n- Use mcp-tasks tools when the user mentions new or updated tasks\nRequired arguments: source_path.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"additionalProperties\": false, \"properties\": {\"source_path\": {\"minLength\": 1, \"type\": \"string\"}, \"workspace\": {\"description\": \"Workspace/project directory path (provided by the IDE or use $PWD)\", \"type\": \"string\"}}, \"required\": [\"source_path\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"source_path\": \"<source_path>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"tasks__tasks_setup\"}",
+      "example": {
+        "tool": "tasks__tasks_setup",
+        "arguments": {
+          "source_path": "<source_path>"
+        },
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:inventory",
+      "recipe": "tool_inventory_v1",
+      "depends_on": [
+        "rule:mcp-filesystem-server::read_multiple_files",
+        "rule:mcp-tasks::tasks_add",
+        "rule:mcp-tasks::tasks_setup"
+      ],
+      "text": "Available routes: files__read_multiple_files, tasks__tasks_add, tasks__tasks_setup. Use only these supplied routes and their declared argument names."
+    }
+  ],
+  "knowledge_global_instructions": "Use the supplied tool knowledge. Example arguments illustrate JSON shape only; replace placeholders with values from the user task before execution. Do not treat examples as task answers. Inspect tool errors before continuing.",
+  "adaptation": {
+    "method_version": "dependency-aware-v1",
+    "backend": "deterministic_templates",
+    "update_id": "a5edfb68-30da-454d-9751-5b10cfd84f60",
+    "base_version": "Early",
+    "base_sha256": "ff1eab35ef713078380c7235f896a8ece43826ed9011e3a9abf8b63be84eaed2",
+    "knowledge_sha256": "79a7e3134130284091e83d2216e7ee0686dc66bd4243df6011493dcf2cfbd397",
+    "target_catalog_sha256": "697ce8dd909eb300fe8000e47cde0020ab0d829c23ba83752704ca622aef3a64"
+  }
+}

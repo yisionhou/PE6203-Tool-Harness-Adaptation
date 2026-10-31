@@ -1,0 +1,16 @@
+{
+  "reason": "Bounded parallel scheduling for remaining disjoint ports; no model/prompt changes",
+  "schedulers": [
+    {
+      "scheduler_pid": 36812,
+      "state": "terminated after original child completed; no output discarded",
+      "active_child_requests": "left running; no cancellation"
+    },
+    {
+      "scheduler_pid": 52028,
+      "state": "terminated after original child completed; no output discarded",
+      "active_child_requests": "left running; no cancellation"
+    }
+  ],
+  "reason_for_final_stop": "AccountOverdueError; no new paid retries until account restored"
+}

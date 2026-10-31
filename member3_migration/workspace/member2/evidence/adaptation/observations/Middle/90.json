@@ -1,0 +1,78 @@
+[
+  {
+    "name": "cards__get_card_by_id",
+    "description": "通过卡牌ID获取单张游戏王卡牌的详细信息",
+    "inputSchema": {
+      "properties": {
+        "id": {
+          "description": "游戏王卡牌ID，通常为八位数字",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object",
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "source_name": "get_card_by_id",
+    "source_server": "ygocdb-mcp-server"
+  },
+  {
+    "name": "cards__get_card_image",
+    "description": "通过卡牌ID获取游戏王卡牌的图片",
+    "inputSchema": {
+      "properties": {
+        "id": {
+          "description": "游戏王卡牌ID，可以使用search_cards工具搜索",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object",
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "source_name": "get_card_image",
+    "source_server": "ygocdb-mcp-server"
+  },
+  {
+    "name": "cards__search_cards",
+    "description": "通过关键字搜索游戏王卡牌，可以搜索卡牌名称、效果文本等。",
+    "inputSchema": {
+      "properties": {
+        "exact": {
+          "description": "可选，是否仅保留与关键字完全匹配的卡名结果，默认 false",
+          "type": "boolean"
+        },
+        "limit": {
+          "description": "可选，限制返回结果数量，默认返回全部结果",
+          "type": "number"
+        },
+        "query": {
+          "description": "搜索关键字，可以是卡牌名称、效果描述等",
+          "type": "string"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "type": "object",
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "source_name": "search_cards",
+    "source_server": "ygocdb-mcp-server"
+  },
+  {
+    "name": "leetcode__get_daily_challenge",
+    "description": "Retrieves today's LeetCode Daily Challenge problem.",
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "properties": {},
+      "type": "object"
+    },
+    "source_name": "get_daily_challenge",
+    "source_server": "@jinzcdev/leetcode-mcp-server"
+  }
+]

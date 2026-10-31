@@ -1,0 +1,8 @@
+{
+  "fixed_before_first_completed_judge_batch": true,
+  "scope": "Technical missing scores only; no valid low scores are rerun",
+  "max_additional_requests_per_missing_trajectory": 2,
+  "unchanged": ["model", "prompt", "judge protocol", "max completion tokens"],
+  "evidence": "Original attempts immutable; retries in new sibling directories; every billed usage receipt retained",
+  "stop": "Account, authentication, insufficient balance or authorization errors"
+}

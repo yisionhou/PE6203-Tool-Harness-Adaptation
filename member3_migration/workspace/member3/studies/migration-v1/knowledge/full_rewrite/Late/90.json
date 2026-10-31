@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "task_id": 90,
+  "strategy": "full_rewrite",
+  "source_version": "Late",
+  "tools": [
+    {
+      "name": "leetcode__get_problem",
+      "description": "Retrieves complete details for a specific LeetCode problem, including the full description, examples, constraints, test cases, and related information. Use this for comprehensive problem analysis. You can also fetch today's LeetCode Daily Challenge by setting the 'daily' parameter to true; in that case, 'titleSlug' is not required.",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "properties": {
+          "daily": {
+            "default": false,
+            "description": "When set to true, retrieves today's LeetCode Daily Challenge problem instead of a specific problem by slug.",
+            "type": "boolean"
+          },
+          "titleSlug": {
+            "description": "The problem's URL slug or identifier (for example, 'two-sum' or 'add-two-numbers') as it appears in the LeetCode URL. Not required when 'daily' is true.",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "source_name": "get_problem",
+      "source_server": "@jinzcdev/leetcode-mcp-server"
+    },
+    {
+      "name": "cards__get_card_by_id",
+      "description": "通过卡牌ID获取单张游戏王卡牌的详细信息",
+      "inputSchema": {
+        "properties": {
+          "id": {
+            "description": "游戏王卡牌ID，通常为八位数字",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "source_name": "get_card_by_id",
+      "source_server": "ygocdb-mcp-server"
+    },
+    {
+      "name": "cards__get_card_image",
+      "description": "根据游戏王卡牌ID获取对应的卡牌图片。参数id为必填，可通过search_cards工具搜索获得。",
+      "inputSchema": {
+        "properties": {
+          "id": {
+            "description": "游戏王卡牌ID，可以使用search_cards工具搜索",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "source_name": "get_card_image",
+      "source_server": "ygocdb-mcp-server"
+    },
+    {
+      "name": "cards__get_cards_by_type",
+      "description": "通过卡牌类型筛选游戏王卡牌，例如：怪兽、魔法、陷阱等",
+      "inputSchema": {
+        "properties": {
+          "card_type": {
+            "description": "卡牌类型关键字，例如：怪兽、魔法、陷阱、融合、同调、超量、连接",
+            "type": "string"
+          },
+          "limit": {
+            "description": "可选，限制返回结果数量，默认返回全部结果",
+            "type": "number"
+          },
+          "query": {
+            "description": "搜索关键字，用于初步筛选卡牌",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query",
+          "card_type"
+        ],
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "source_name": "get_cards_by_type",
+      "source_server": "ygocdb-mcp-server"
+    },
+    {
+      "name": "cards__search_cards",
+      "description": "通过关键字搜索游戏王卡牌，可以搜索卡牌名称、效果文本等。",
+      "inputSchema": {
+        "properties": {
+          "card_attribute": {
+            "description": "可选，按卡牌属性筛选，例如：光、暗、地、水、火、风、神",
+            "type": "string"
+          },
+          "card_race": {
+            "description": "可选，按卡牌种族筛选，例如：龙族、战士族、魔法师族、恶魔族等",
+            "type": "string"
+          },
+          "exact": {
+            "description": "可选，是否仅保留与关键字完全匹配的卡名结果，默认 false",
+            "type": "boolean"
+          },
+          "level_range": {
+            "description": "可选，按等级范围筛选，格式为 'min-max'，例如：'4-6' 表示等级4到6的卡牌",
+            "type": "string"
+          },
+          "limit": {
+            "description": "可选，限制返回结果数量，默认返回全部结果",
+            "type": "number"
+          },
+          "query": {
+            "description": "搜索关键字，可以是卡牌名称、效果描述等",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      },
+      "source_name": "search_cards",
+      "source_server": "ygocdb-mcp-server"
+    }
+  ],
+  "instructions": "Use the supplied tool knowledge. Example arguments illustrate JSON shape only; replace placeholders with values from the user task before execution. Do not treat examples as task answers. Inspect tool errors before continuing.\n\nTool leetcode__get_problem: Retrieves complete details for a specific LeetCode problem, including the full description, examples, constraints, test cases, and related information. Use this for comprehensive problem analysis. You can also fetch today's LeetCode Daily Challenge by setting the 'daily' parameter to true; in that case, 'titleSlug' is not required.\nRequired arguments: .\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"additionalProperties\": false, \"properties\": {\"daily\": {\"default\": false, \"description\": \"When set to true, retrieves today's LeetCode Daily Challenge problem instead of a specific problem by slug.\", \"type\": \"boolean\"}, \"titleSlug\": {\"description\": \"The problem's URL slug or identifier (for example, 'two-sum' or 'add-two-numbers') as it appears in the LeetCode URL. Not required when 'daily' is true.\", \"type\": \"string\"}}, \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"leetcode__get_problem\"}\n\nAvailable routes: leetcode__get_problem, cards__get_card_by_id, cards__get_card_image, cards__get_cards_by_type, cards__search_cards. Use only these supplied routes and their declared argument names.\n\nTool cards__get_card_by_id: 通过卡牌ID获取单张游戏王卡牌的详细信息\nRequired arguments: id.\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"id\": {\"description\": \"游戏王卡牌ID，通常为八位数字\", \"type\": \"string\"}}, \"required\": [\"id\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"id\": \"<id>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"cards__get_card_by_id\"}\n\nTool cards__get_card_image: 根据游戏王卡牌ID获取对应的卡牌图片。参数id为必填，可通过search_cards工具搜索获得。\nRequired arguments: id.\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"id\": {\"description\": \"游戏王卡牌ID，可以使用search_cards工具搜索\", \"type\": \"string\"}}, \"required\": [\"id\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"id\": \"<id>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"cards__get_card_image\"}\n\nTool cards__get_cards_by_type: 通过卡牌类型筛选游戏王卡牌，例如：怪兽、魔法、陷阱等\nRequired arguments: query, card_type.\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"card_type\": {\"description\": \"卡牌类型关键字，例如：怪兽、魔法、陷阱、融合、同调、超量、连接\", \"type\": \"string\"}, \"limit\": {\"description\": \"可选，限制返回结果数量，默认返回全部结果\", \"type\": \"number\"}, \"query\": {\"description\": \"搜索关键字，用于初步筛选卡牌\", \"type\": \"string\"}}, \"required\": [\"query\", \"card_type\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"card_type\": \"<card_type>\", \"query\": \"<query>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"cards__get_cards_by_type\"}\n\nTool cards__search_cards: 通过关键字搜索游戏王卡牌，可以搜索卡牌名称、效果文本等。\nRequired arguments: query.\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"card_attribute\": {\"description\": \"可选，按卡牌属性筛选，例如：光、暗、地、水、火、风、神\", \"type\": \"string\"}, \"card_race\": {\"description\": \"可选，按卡牌种族筛选，例如：龙族、战士族、魔法师族、恶魔族等\", \"type\": \"string\"}, \"exact\": {\"description\": \"可选，是否仅保留与关键字完全匹配的卡名结果，默认 false\", \"type\": \"boolean\"}, \"level_range\": {\"description\": \"可选，按等级范围筛选，格式为 'min-max'，例如：'4-6' 表示等级4到6的卡牌\", \"type\": \"string\"}, \"limit\": {\"description\": \"可选，限制返回结果数量，默认返回全部结果\", \"type\": \"number\"}, \"query\": {\"description\": \"搜索关键字，可以是卡牌名称、效果描述等\", \"type\": \"string\"}}, \"required\": [\"query\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"query\": \"<query>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"cards__search_cards\"}",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.02587480004876852
+  },
+  "knowledge_blocks": [
+    {
+      "id": "rule:@jinzcdev/leetcode-mcp-server::get_problem",
+      "recipe": "tool_card_v1",
+      "tool_id": "@jinzcdev/leetcode-mcp-server::get_problem",
+      "depends_on": [
+        "tool:@jinzcdev/leetcode-mcp-server::get_problem"
+      ],
+      "text": "Tool leetcode__get_problem: Retrieves complete details for a specific LeetCode problem, including the full description, examples, constraints, test cases, and related information. Use this for comprehensive problem analysis. You can also fetch today's LeetCode Daily Challenge by setting the 'daily' parameter to true; in that case, 'titleSlug' is not required.\nRequired arguments: .\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"additionalProperties\": false, \"properties\": {\"daily\": {\"default\": false, \"description\": \"When set to true, retrieves today's LeetCode Daily Challenge problem instead of a specific problem by slug.\", \"type\": \"boolean\"}, \"titleSlug\": {\"description\": \"The problem's URL slug or identifier (for example, 'two-sum' or 'add-two-numbers') as it appears in the LeetCode URL. Not required when 'daily' is true.\", \"type\": \"string\"}}, \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"leetcode__get_problem\"}",
+      "example": {
+        "tool": "leetcode__get_problem",
+        "arguments": {},
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:ygocdb-mcp-server::get_card_by_id",
+      "recipe": "tool_card_v1",
+      "tool_id": "ygocdb-mcp-server::get_card_by_id",
+      "depends_on": [
+        "tool:ygocdb-mcp-server::get_card_by_id"
+      ],
+      "text": "Tool cards__get_card_by_id: 通过卡牌ID获取单张游戏王卡牌的详细信息\nRequired arguments: id.\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"id\": {\"description\": \"游戏王卡牌ID，通常为八位数字\", \"type\": \"string\"}}, \"required\": [\"id\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"id\": \"<id>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"cards__get_card_by_id\"}",
+      "example": {
+        "tool": "cards__get_card_by_id",
+        "arguments": {
+          "id": "<id>"
+        },
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:ygocdb-mcp-server::get_card_image",
+      "recipe": "tool_card_v1",
+      "tool_id": "ygocdb-mcp-server::get_card_image",
+      "depends_on": [
+        "tool:ygocdb-mcp-server::get_card_image"
+      ],
+      "text": "Tool cards__get_card_image: 根据游戏王卡牌ID获取对应的卡牌图片。参数id为必填，可通过search_cards工具搜索获得。\nRequired arguments: id.\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"id\": {\"description\": \"游戏王卡牌ID，可以使用search_cards工具搜索\", \"type\": \"string\"}}, \"required\": [\"id\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"id\": \"<id>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"cards__get_card_image\"}",
+      "example": {
+        "tool": "cards__get_card_image",
+        "arguments": {
+          "id": "<id>"
+        },
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:ygocdb-mcp-server::get_cards_by_type",
+      "recipe": "tool_card_v1",
+      "tool_id": "ygocdb-mcp-server::get_cards_by_type",
+      "depends_on": [
+        "tool:ygocdb-mcp-server::get_cards_by_type"
+      ],
+      "text": "Tool cards__get_cards_by_type: 通过卡牌类型筛选游戏王卡牌，例如：怪兽、魔法、陷阱等\nRequired arguments: query, card_type.\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"card_type\": {\"description\": \"卡牌类型关键字，例如：怪兽、魔法、陷阱、融合、同调、超量、连接\", \"type\": \"string\"}, \"limit\": {\"description\": \"可选，限制返回结果数量，默认返回全部结果\", \"type\": \"number\"}, \"query\": {\"description\": \"搜索关键字，用于初步筛选卡牌\", \"type\": \"string\"}}, \"required\": [\"query\", \"card_type\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"card_type\": \"<card_type>\", \"query\": \"<query>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"cards__get_cards_by_type\"}",
+      "example": {
+        "tool": "cards__get_cards_by_type",
+        "arguments": {
+          "query": "<query>",
+          "card_type": "<card_type>"
+        },
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:ygocdb-mcp-server::search_cards",
+      "recipe": "tool_card_v1",
+      "tool_id": "ygocdb-mcp-server::search_cards",
+      "depends_on": [
+        "tool:ygocdb-mcp-server::search_cards"
+      ],
+      "text": "Tool cards__search_cards: 通过关键字搜索游戏王卡牌，可以搜索卡牌名称、效果文本等。\nRequired arguments: query.\nParameter contract: {\"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"properties\": {\"card_attribute\": {\"description\": \"可选，按卡牌属性筛选，例如：光、暗、地、水、火、风、神\", \"type\": \"string\"}, \"card_race\": {\"description\": \"可选，按卡牌种族筛选，例如：龙族、战士族、魔法师族、恶魔族等\", \"type\": \"string\"}, \"exact\": {\"description\": \"可选，是否仅保留与关键字完全匹配的卡名结果，默认 false\", \"type\": \"boolean\"}, \"level_range\": {\"description\": \"可选，按等级范围筛选，格式为 'min-max'，例如：'4-6' 表示等级4到6的卡牌\", \"type\": \"string\"}, \"limit\": {\"description\": \"可选，限制返回结果数量，默认返回全部结果\", \"type\": \"number\"}, \"query\": {\"description\": \"搜索关键字，可以是卡牌名称、效果描述等\", \"type\": \"string\"}}, \"required\": [\"query\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"query\": \"<query>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"cards__search_cards\"}",
+      "example": {
+        "tool": "cards__search_cards",
+        "arguments": {
+          "query": "<query>"
+        },
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:inventory",
+      "recipe": "tool_inventory_v1",
+      "depends_on": [
+        "rule:@jinzcdev/leetcode-mcp-server::get_problem",
+        "rule:ygocdb-mcp-server::get_card_by_id",
+        "rule:ygocdb-mcp-server::get_card_image",
+        "rule:ygocdb-mcp-server::get_cards_by_type",
+        "rule:ygocdb-mcp-server::search_cards"
+      ],
+      "text": "Available routes: leetcode__get_problem, cards__get_card_by_id, cards__get_card_image, cards__get_cards_by_type, cards__search_cards. Use only these supplied routes and their declared argument names."
+    }
+  ],
+  "knowledge_global_instructions": "Use the supplied tool knowledge. Example arguments illustrate JSON shape only; replace placeholders with values from the user task before execution. Do not treat examples as task answers. Inspect tool errors before continuing.",
+  "adaptation": {
+    "method_version": "dependency-aware-v1",
+    "backend": "deterministic_templates",
+    "update_id": "d4bc62cb-3251-46be-bc82-e38b6c1e51d9",
+    "base_version": "Early",
+    "base_sha256": "d30a11db90adfcf46d3ed2cfa0f467bd929ebbf62f8822f64fde782a8869bcdd",
+    "knowledge_sha256": "436944114e15138d5435471283855354e9b71b2aed80f9ff65276d58ea421b28",
+    "target_catalog_sha256": "56ac601bed4a1a07faf3cb5b4fedaa417772ae665fe80c61fa3b72c36a5c7cb5"
+  }
+}

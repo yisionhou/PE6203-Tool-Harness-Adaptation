@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "task_id": 24,
+  "strategy": "selective_patch",
+  "source_version": "Middle",
+  "tools": [
+    {
+      "name": "fs_official__read_text_file",
+      "description": "Read the complete contents of a file from the file system as text. Handles various text encodings and provides detailed error messages if the file cannot be read. Use this tool when you need to examine the contents of a single file. Use the 'head' parameter to read only the first N lines of a file. Operates on the file as text regardless of extension. Only works within allowed directories.",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "properties": {
+          "head": {
+            "description": "If provided, returns only the first N lines of the file",
+            "type": "number"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "type": "object"
+      },
+      "source_name": "read_text_file",
+      "source_server": "@modelcontextprotocol/server-filesystem"
+    },
+    {
+      "name": "tasks__tasks_add",
+      "description": "Add new tasks with a specific status. It's faster and cheaper if you use this in batch. User can add atomically while AI works using the CLI add tool",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "properties": {
+          "index": {
+            "description": "0-based index to place the tasks. e.g.:\n- 0 for \"Do this next\"\n- Omit to place at the end (\"Do this later\")",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "source_id": {
+            "description": "Source ID from task_setup() response\n- Defaults to most recent in the workspace if not provided\n- Try to always provide it!\n- If you don't have it, ask the user for a file path and call task_setup()",
+            "minLength": 1,
+            "type": "string"
+          },
+          "status": {
+            "description": "You might need to infer it from the context:\n- \"To Do\" for tasks coming up next (e.g. \"Do X next\")\n- \"In Progress\" for what you'll do now (e.g. \"First do X\")\n- \"Reminders\" instructions for you (the AI) to be constantly reminded of\n- \"Notes\" to collect non-actionable notes",
+            "enum": [
+              "In Progress",
+              "To Do",
+              "Backlog",
+              "Done",
+              "Reminders",
+              "Notes",
+              "Deleted"
+            ],
+            "type": "string"
+          },
+          "texts": {
+            "description": "Each text becomes a task",
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "texts",
+          "status"
+        ],
+        "type": "object"
+      },
+      "source_name": "tasks_add",
+      "source_server": "mcp-tasks"
+    },
+    {
+      "name": "tasks__tasks_setup",
+      "description": "Initializes an source file from a path\n- Always call once per conversation when asked to use these tools\n- Ask the user to clarify the file path if not given, before calling this tool\n- Creates the file if it does not exist\n- Returns the source ID for further use\n- Use mcp-tasks tools when the user mentions new or updated tasks",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "properties": {
+          "source_path": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "workspace": {
+            "description": "Workspace/project directory path (provided by the IDE or use $PWD)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_path"
+        ],
+        "type": "object"
+      },
+      "source_name": "tasks_setup",
+      "source_server": "mcp-tasks"
+    },
+    {
+      "name": "thinking__sequentialthinking",
+      "description": "A detailed tool for dynamic and reflective problem-solving through sequential thoughts.\nThis tool helps analyze problems through a flexible thinking process that can adapt and evolve.\nEach thought can build on, question, or revise previous insights as understanding deepens.\n\nWhen to use this tool:\n- Breaking down complex problems into ordered steps\n- Planning and design with room for revision along a single reasoning path\n- Analysis that might need course correction within a linear progression\n- Problems where the full scope might not be clear initially\n- Problems that require a multi-step solution with maintained context\n- Tasks that need to maintain context over multiple sequential steps\n- Situations where irrelevant information needs to be filtered out\n- When you need ONE coherent chain of reasoning rather than exploring multiple paths\n\nFor exploring multiple solution approaches simultaneously, use the parallel-thinking tool instead.\n\nKey features:\n- You can adjust total_thoughts up or down as you progress\n- You can question or revise previous thoughts\n- You can add more thoughts even after reaching what seemed like the end\n- You can express uncertainty and explore alternative approaches\n- Not every thought needs to build linearly - you can branch or backtrack\n- Generates a solution hypothesis\n- Verifies the hypothesis based on the Chain of Thought steps\n- Repeats the process until satisfied\n- Provides a correct answer\n\nParameters explained:\n- thought: Your current thinking step, which can include:\n  * Regular analytical steps\n  * Revisions of previous thoughts\n  * Questions about previous decisions\n  * Realizations about needing more analysis\n  * Changes in approach\n  * Hypothesis generation\n  * Hypothesis verification\n- nextThoughtNeeded: True if you need more thinking, even if at what seemed like the end\n- thoughtNumber: Current number in sequence (can go beyond initial total if needed)\n- totalThoughts: Current estimate of thoughts needed (can be adjusted up/down)\n- isRevision: A boolean indicating if this thought revises previous thinking\n- revisesThought: If is_revision is true, which thought number is being reconsidered\n- branchFromThought: If branching, which thought number is the branching point\n- branchId: Identifier for the current branch (if any)\n- needsMoreThoughts: If reaching end but realizing more thoughts needed\n\nYou should:\n1. Start with an initial estimate of needed thoughts, but be ready to adjust\n2. Feel free to question or revise previous thoughts\n3. Don't hesitate to add more thoughts if needed, even at the \"end\"\n4. Express uncertainty when present\n5. Mark thoughts that revise previous thinking or branch into new paths\n6. Ignore information that is irrelevant to the current step\n7. Generate a solution hypothesis when appropriate\n8. Verify the hypothesis based on the Chain of Thought steps\n9. Repeat the process until satisfied with the solution\n10. Provide a single, ideally correct answer as the final output\n11. Only set nextThoughtNeeded to false when truly done and a satisfactory answer is reached",
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "properties": {
+          "branchFromThought": {
+            "description": "Branching point thought number",
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "branchId": {
+            "description": "Branch identifier",
+            "type": "string"
+          },
+          "isRevision": {
+            "description": "Whether this revises previous thinking",
+            "type": "boolean"
+          },
+          "needsMoreThoughts": {
+            "description": "If more thoughts are needed",
+            "type": "boolean"
+          },
+          "nextThoughtNeeded": {
+            "description": "Whether another thought step is needed",
+            "type": "boolean"
+          },
+          "revisesThought": {
+            "description": "Which thought is being reconsidered",
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "thought": {
+            "description": "Your current thinking step",
+            "type": "string"
+          },
+          "thoughtNumber": {
+            "description": "Current thought number (numeric value, e.g., 1, 2, 3)",
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "totalThoughts": {
+            "description": "Estimated total thoughts needed (numeric value, e.g., 5, 10)",
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "thought",
+          "nextThoughtNeeded",
+          "thoughtNumber",
+          "totalThoughts"
+        ],
+        "type": "object"
+      },
+      "source_name": "sequentialthinking",
+      "source_server": "server-sequential-thinking"
+    }
+  ],
+  "instructions": "Use the supplied tool knowledge. Example arguments illustrate JSON shape only; replace placeholders with values from the user task before execution. Do not treat examples as task answers. Inspect tool errors before continuing.\n\nTool fs_official__read_text_file: Read the complete contents of a file from the file system as text. Handles various text encodings and provides detailed error messages if the file cannot be read. Use this tool when you need to examine the contents of a single file. Use the 'head' parameter to read only the first N lines of a file. Operates on the file as text regardless of extension. Only works within allowed directories.\nRequired arguments: path.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"properties\": {\"head\": {\"description\": \"If provided, returns only the first N lines of the file\", \"type\": \"number\"}, \"path\": {\"type\": \"string\"}}, \"required\": [\"path\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"path\": \"<path>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"fs_official__read_text_file\"}\n\nAvailable routes: fs_official__read_text_file, tasks__tasks_add, tasks__tasks_setup, thinking__sequentialthinking. Use only these supplied routes and their declared argument names.\n\nTool tasks__tasks_add: Add new tasks with a specific status. It's faster and cheaper if you use this in batch. User can add atomically while AI works using the CLI add tool\nRequired arguments: texts, status.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"additionalProperties\": false, \"properties\": {\"index\": {\"description\": \"0-based index to place the tasks. e.g.:\\n- 0 for \\\"Do this next\\\"\\n- Omit to place at the end (\\\"Do this later\\\")\", \"minimum\": 0, \"type\": \"integer\"}, \"source_id\": {\"description\": \"Source ID from task_setup() response\\n- Defaults to most recent in the workspace if not provided\\n- Try to always provide it!\\n- If you don't have it, ask the user for a file path and call task_setup()\", \"minLength\": 1, \"type\": \"string\"}, \"status\": {\"description\": \"You might need to infer it from the context:\\n- \\\"To Do\\\" for tasks coming up next (e.g. \\\"Do X next\\\")\\n- \\\"In Progress\\\" for what you'll do now (e.g. \\\"First do X\\\")\\n- \\\"Reminders\\\" instructions for you (the AI) to be constantly reminded of\\n- \\\"Notes\\\" to collect non-actionable notes\", \"enum\": [\"In Progress\", \"To Do\", \"Backlog\", \"Done\", \"Reminders\", \"Notes\", \"Deleted\"], \"type\": \"string\"}, \"texts\": {\"description\": \"Each text becomes a task\", \"items\": {\"minLength\": 1, \"type\": \"string\"}, \"type\": \"array\"}}, \"required\": [\"texts\", \"status\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"status\": \"In Progress\", \"texts\": []}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"tasks__tasks_add\"}\n\nTool tasks__tasks_setup: Initializes an source file from a path\n- Always call once per conversation when asked to use these tools\n- Ask the user to clarify the file path if not given, before calling this tool\n- Creates the file if it does not exist\n- Returns the source ID for further use\n- Use mcp-tasks tools when the user mentions new or updated tasks\nRequired arguments: source_path.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"additionalProperties\": false, \"properties\": {\"source_path\": {\"minLength\": 1, \"type\": \"string\"}, \"workspace\": {\"description\": \"Workspace/project directory path (provided by the IDE or use $PWD)\", \"type\": \"string\"}}, \"required\": [\"source_path\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"source_path\": \"<source_path>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"tasks__tasks_setup\"}\n\nTool thinking__sequentialthinking: A detailed tool for dynamic and reflective problem-solving through sequential thoughts.\nThis tool helps analyze problems through a flexible thinking process that can adapt and evolve.\nEach thought can build on, question, or revise previous insights as understanding deepens.\n\nWhen to use this tool:\n- Breaking down complex problems into ordered steps\n- Planning and design with room for revision along a single reasoning path\n- Analysis that might need course correction within a linear progression\n- Problems where the full scope might not be clear initially\n- Problems that require a multi-step solution with maintained context\n- Tasks that need to maintain context over multiple sequential steps\n- Situations where irrelevant information needs to be filtered out\n- When you need ONE coherent chain of reasoning rather than exploring multiple paths\n\nFor exploring multiple solution approaches simultaneously, use the parallel-thinking tool instead.\n\nKey features:\n- You can adjust total_thoughts up or down as you progress\n- You can question or revise previous thoughts\n- You can add more thoughts even after reaching what seemed like the end\n- You can express uncertainty and explore alternative approaches\n- Not every thought needs to build linearly - you can branch or backtrack\n- Generates a solution hypothesis\n- Verifies the hypothesis based on the Chain of Thought steps\n- Repeats the process until satisfied\n- Provides a correct answer\n\nParameters explained:\n- thought: Your current thinking step, which can include:\n  * Regular analytical steps\n  * Revisions of previous thoughts\n  * Questions about previous decisions\n  * Realizations about needing more analysis\n  * Changes in approach\n  * Hypothesis generation\n  * Hypothesis verification\n- nextThoughtNeeded: True if you need more thinking, even if at what seemed like the end\n- thoughtNumber: Current number in sequence (can go beyond initial total if needed)\n- totalThoughts: Current estimate of thoughts needed (can be adjusted up/down)\n- isRevision: A boolean indicating if this thought revises previous thinking\n- revisesThought: If is_revision is true, which thought number is being reconsidered\n- branchFromThought: If branching, which thought number is the branching point\n- branchId: Identifier for the current branch (if any)\n- needsMoreThoughts: If reaching end but realizing more thoughts needed\n\nYou should:\n1. Start with an initial estimate of needed thoughts, but be ready to adjust\n2. Feel free to question or revise previous thoughts\n3. Don't hesitate to add more thoughts if needed, even at the \"end\"\n4. Express uncertainty when present\n5. Mark thoughts that revise previous thinking or branch into new paths\n6. Ignore information that is irrelevant to the current step\n7. Generate a solution hypothesis when appropriate\n8. Verify the hypothesis based on the Chain of Thought steps\n9. Repeat the process until satisfied with the solution\n10. Provide a single, ideally correct answer as the final output\n11. Only set nextThoughtNeeded to false when truly done and a satisfactory answer is reached\nRequired arguments: thought, nextThoughtNeeded, thoughtNumber, totalThoughts.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"properties\": {\"branchFromThought\": {\"description\": \"Branching point thought number\", \"maximum\": 9007199254740991, \"minimum\": 1, \"type\": \"integer\"}, \"branchId\": {\"description\": \"Branch identifier\", \"type\": \"string\"}, \"isRevision\": {\"description\": \"Whether this revises previous thinking\", \"type\": \"boolean\"}, \"needsMoreThoughts\": {\"description\": \"If more thoughts are needed\", \"type\": \"boolean\"}, \"nextThoughtNeeded\": {\"description\": \"Whether another thought step is needed\", \"type\": \"boolean\"}, \"revisesThought\": {\"description\": \"Which thought is being reconsidered\", \"maximum\": 9007199254740991, \"minimum\": 1, \"type\": \"integer\"}, \"thought\": {\"description\": \"Your current thinking step\", \"type\": \"string\"}, \"thoughtNumber\": {\"description\": \"Current thought number (numeric value, e.g., 1, 2, 3)\", \"maximum\": 9007199254740991, \"minimum\": 1, \"type\": \"integer\"}, \"totalThoughts\": {\"description\": \"Estimated total thoughts needed (numeric value, e.g., 5, 10)\", \"maximum\": 9007199254740991, \"minimum\": 1, \"type\": \"integer\"}}, \"required\": [\"thought\", \"nextThoughtNeeded\", \"thoughtNumber\", \"totalThoughts\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"nextThoughtNeeded\": true, \"thought\": \"<thought>\", \"thoughtNumber\": 1, \"totalThoughts\": 1}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"thinking__sequentialthinking\"}",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.09971169999334961
+  },
+  "knowledge_blocks": [
+    {
+      "id": "rule:@modelcontextprotocol/server-filesystem::read_text_file",
+      "recipe": "tool_card_v1",
+      "tool_id": "@modelcontextprotocol/server-filesystem::read_text_file",
+      "depends_on": [
+        "tool:@modelcontextprotocol/server-filesystem::read_text_file"
+      ],
+      "text": "Tool fs_official__read_text_file: Read the complete contents of a file from the file system as text. Handles various text encodings and provides detailed error messages if the file cannot be read. Use this tool when you need to examine the contents of a single file. Use the 'head' parameter to read only the first N lines of a file. Operates on the file as text regardless of extension. Only works within allowed directories.\nRequired arguments: path.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"properties\": {\"head\": {\"description\": \"If provided, returns only the first N lines of the file\", \"type\": \"number\"}, \"path\": {\"type\": \"string\"}}, \"required\": [\"path\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"path\": \"<path>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"fs_official__read_text_file\"}",
+      "example": {
+        "tool": "fs_official__read_text_file",
+        "arguments": {
+          "path": "<path>"
+        },
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:inventory",
+      "recipe": "tool_inventory_v1",
+      "depends_on": [
+        "rule:@modelcontextprotocol/server-filesystem::read_text_file",
+        "rule:mcp-tasks::tasks_add",
+        "rule:mcp-tasks::tasks_setup",
+        "rule:server-sequential-thinking::sequentialthinking"
+      ],
+      "text": "Available routes: fs_official__read_text_file, tasks__tasks_add, tasks__tasks_setup, thinking__sequentialthinking. Use only these supplied routes and their declared argument names."
+    },
+    {
+      "id": "rule:mcp-tasks::tasks_add",
+      "recipe": "tool_card_v1",
+      "tool_id": "mcp-tasks::tasks_add",
+      "depends_on": [
+        "tool:mcp-tasks::tasks_add"
+      ],
+      "text": "Tool tasks__tasks_add: Add new tasks with a specific status. It's faster and cheaper if you use this in batch. User can add atomically while AI works using the CLI add tool\nRequired arguments: texts, status.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"additionalProperties\": false, \"properties\": {\"index\": {\"description\": \"0-based index to place the tasks. e.g.:\\n- 0 for \\\"Do this next\\\"\\n- Omit to place at the end (\\\"Do this later\\\")\", \"minimum\": 0, \"type\": \"integer\"}, \"source_id\": {\"description\": \"Source ID from task_setup() response\\n- Defaults to most recent in the workspace if not provided\\n- Try to always provide it!\\n- If you don't have it, ask the user for a file path and call task_setup()\", \"minLength\": 1, \"type\": \"string\"}, \"status\": {\"description\": \"You might need to infer it from the context:\\n- \\\"To Do\\\" for tasks coming up next (e.g. \\\"Do X next\\\")\\n- \\\"In Progress\\\" for what you'll do now (e.g. \\\"First do X\\\")\\n- \\\"Reminders\\\" instructions for you (the AI) to be constantly reminded of\\n- \\\"Notes\\\" to collect non-actionable notes\", \"enum\": [\"In Progress\", \"To Do\", \"Backlog\", \"Done\", \"Reminders\", \"Notes\", \"Deleted\"], \"type\": \"string\"}, \"texts\": {\"description\": \"Each text becomes a task\", \"items\": {\"minLength\": 1, \"type\": \"string\"}, \"type\": \"array\"}}, \"required\": [\"texts\", \"status\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"status\": \"In Progress\", \"texts\": []}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"tasks__tasks_add\"}",
+      "example": {
+        "tool": "tasks__tasks_add",
+        "arguments": {
+          "texts": [],
+          "status": "In Progress"
+        },
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:mcp-tasks::tasks_setup",
+      "recipe": "tool_card_v1",
+      "tool_id": "mcp-tasks::tasks_setup",
+      "depends_on": [
+        "tool:mcp-tasks::tasks_setup"
+      ],
+      "text": "Tool tasks__tasks_setup: Initializes an source file from a path\n- Always call once per conversation when asked to use these tools\n- Ask the user to clarify the file path if not given, before calling this tool\n- Creates the file if it does not exist\n- Returns the source ID for further use\n- Use mcp-tasks tools when the user mentions new or updated tasks\nRequired arguments: source_path.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"additionalProperties\": false, \"properties\": {\"source_path\": {\"minLength\": 1, \"type\": \"string\"}, \"workspace\": {\"description\": \"Workspace/project directory path (provided by the IDE or use $PWD)\", \"type\": \"string\"}}, \"required\": [\"source_path\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"source_path\": \"<source_path>\"}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"tasks__tasks_setup\"}",
+      "example": {
+        "tool": "tasks__tasks_setup",
+        "arguments": {
+          "source_path": "<source_path>"
+        },
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    },
+    {
+      "id": "rule:server-sequential-thinking::sequentialthinking",
+      "recipe": "tool_card_v1",
+      "tool_id": "server-sequential-thinking::sequentialthinking",
+      "depends_on": [
+        "tool:server-sequential-thinking::sequentialthinking"
+      ],
+      "text": "Tool thinking__sequentialthinking: A detailed tool for dynamic and reflective problem-solving through sequential thoughts.\nThis tool helps analyze problems through a flexible thinking process that can adapt and evolve.\nEach thought can build on, question, or revise previous insights as understanding deepens.\n\nWhen to use this tool:\n- Breaking down complex problems into ordered steps\n- Planning and design with room for revision along a single reasoning path\n- Analysis that might need course correction within a linear progression\n- Problems where the full scope might not be clear initially\n- Problems that require a multi-step solution with maintained context\n- Tasks that need to maintain context over multiple sequential steps\n- Situations where irrelevant information needs to be filtered out\n- When you need ONE coherent chain of reasoning rather than exploring multiple paths\n\nFor exploring multiple solution approaches simultaneously, use the parallel-thinking tool instead.\n\nKey features:\n- You can adjust total_thoughts up or down as you progress\n- You can question or revise previous thoughts\n- You can add more thoughts even after reaching what seemed like the end\n- You can express uncertainty and explore alternative approaches\n- Not every thought needs to build linearly - you can branch or backtrack\n- Generates a solution hypothesis\n- Verifies the hypothesis based on the Chain of Thought steps\n- Repeats the process until satisfied\n- Provides a correct answer\n\nParameters explained:\n- thought: Your current thinking step, which can include:\n  * Regular analytical steps\n  * Revisions of previous thoughts\n  * Questions about previous decisions\n  * Realizations about needing more analysis\n  * Changes in approach\n  * Hypothesis generation\n  * Hypothesis verification\n- nextThoughtNeeded: True if you need more thinking, even if at what seemed like the end\n- thoughtNumber: Current number in sequence (can go beyond initial total if needed)\n- totalThoughts: Current estimate of thoughts needed (can be adjusted up/down)\n- isRevision: A boolean indicating if this thought revises previous thinking\n- revisesThought: If is_revision is true, which thought number is being reconsidered\n- branchFromThought: If branching, which thought number is the branching point\n- branchId: Identifier for the current branch (if any)\n- needsMoreThoughts: If reaching end but realizing more thoughts needed\n\nYou should:\n1. Start with an initial estimate of needed thoughts, but be ready to adjust\n2. Feel free to question or revise previous thoughts\n3. Don't hesitate to add more thoughts if needed, even at the \"end\"\n4. Express uncertainty when present\n5. Mark thoughts that revise previous thinking or branch into new paths\n6. Ignore information that is irrelevant to the current step\n7. Generate a solution hypothesis when appropriate\n8. Verify the hypothesis based on the Chain of Thought steps\n9. Repeat the process until satisfied with the solution\n10. Provide a single, ideally correct answer as the final output\n11. Only set nextThoughtNeeded to false when truly done and a satisfactory answer is reached\nRequired arguments: thought, nextThoughtNeeded, thoughtNumber, totalThoughts.\nParameter contract: {\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"properties\": {\"branchFromThought\": {\"description\": \"Branching point thought number\", \"maximum\": 9007199254740991, \"minimum\": 1, \"type\": \"integer\"}, \"branchId\": {\"description\": \"Branch identifier\", \"type\": \"string\"}, \"isRevision\": {\"description\": \"Whether this revises previous thinking\", \"type\": \"boolean\"}, \"needsMoreThoughts\": {\"description\": \"If more thoughts are needed\", \"type\": \"boolean\"}, \"nextThoughtNeeded\": {\"description\": \"Whether another thought step is needed\", \"type\": \"boolean\"}, \"revisesThought\": {\"description\": \"Which thought is being reconsidered\", \"maximum\": 9007199254740991, \"minimum\": 1, \"type\": \"integer\"}, \"thought\": {\"description\": \"Your current thinking step\", \"type\": \"string\"}, \"thoughtNumber\": {\"description\": \"Current thought number (numeric value, e.g., 1, 2, 3)\", \"maximum\": 9007199254740991, \"minimum\": 1, \"type\": \"integer\"}, \"totalThoughts\": {\"description\": \"Estimated total thoughts needed (numeric value, e.g., 5, 10)\", \"maximum\": 9007199254740991, \"minimum\": 1, \"type\": \"integer\"}}, \"required\": [\"thought\", \"nextThoughtNeeded\", \"thoughtNumber\", \"totalThoughts\"], \"type\": \"object\"}\nShape example (substitute task values): {\"arguments\": {\"nextThoughtNeeded\": true, \"thought\": \"<thought>\", \"thoughtNumber\": 1, \"totalThoughts\": 1}, \"kind\": \"shape_only\", \"requires_task_values\": true, \"tool\": \"thinking__sequentialthinking\"}",
+      "example": {
+        "tool": "thinking__sequentialthinking",
+        "arguments": {
+          "thought": "<thought>",
+          "nextThoughtNeeded": true,
+          "thoughtNumber": 1,
+          "totalThoughts": 1
+        },
+        "kind": "shape_only",
+        "requires_task_values": true
+      },
+      "example_unavailable_reason": null
+    }
+  ],
+  "knowledge_global_instructions": "Use the supplied tool knowledge. Example arguments illustrate JSON shape only; replace placeholders with values from the user task before execution. Do not treat examples as task answers. Inspect tool errors before continuing.",
+  "adaptation": {
+    "method_version": "dependency-aware-v1",
+    "backend": "deterministic_templates",
+    "update_id": "3a77ec51-eb17-4907-a387-c976fac13a6c",
+    "base_version": "Early",
+    "base_sha256": "3ef678866fce04f543b92a9d6c9413fc17f7952f11f69821b3545d4cf1fc9f50",
+    "knowledge_sha256": "c4daf2b6d2403c8ef7a7796625ddf2ff1601ab2717ac34637e67a6534e66c3f8",
+    "target_catalog_sha256": "8c50cffdfd12557dad1df1cacf411add8a2571e31e2db4f58fe888cf15004c7c"
+  }
+}

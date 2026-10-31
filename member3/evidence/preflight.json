@@ -1,0 +1,16 @@
+{
+  "ready": false,
+  "checks": {
+    "api_key_present": false,
+    "node_available": true,
+    "mcp_python_services": true,
+    "python_dependencies": true,
+    "node_package:@guanxiong/mcp-server-time": true,
+    "node_package:time-mcp": true,
+    "node_package:mcp-filesystem-server": true,
+    "node_package:mcp-tasks": true
+  },
+  "planned_fresh_task_runs": 81,
+  "planned_judge_requests": 81,
+  "paid_requests_executed": 0
+}

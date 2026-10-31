@@ -1,0 +1,9 @@
+{
+  "benchmark_sha256": "b54d0b703869c2b25bcf06fecd3e6e55c9ef63e2355559f6e70e17fc5bd4f0d1",
+  "plot_script_sha256": "7e1941d49db913d8bb078a2ae8ed7085cf1f4948c1c54d6ece2182759e6a4de4",
+  "software": {
+    "matplotlib": "3.11.2"
+  },
+  "paid_model_requests": 0,
+  "conclusion": "在相同電腦、相同六任務知識與相同處理範圍下重複量測 30 次，選擇性修補的平均處理時間為 0.6130 秒，全量重寫為 0.8849 秒，前者平均少 30.7%。兩者正式任務完成度皆為 10 分。這支持本機此實作的處理時間優勢與較小重建範圍；未量測人工工時或薪金。"
+}

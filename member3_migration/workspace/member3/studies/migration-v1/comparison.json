@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "purpose": "strategy_comparison",
+  "task_ids": [
+    90
+  ],
+  "versions": [
+    "Early",
+    "Middle",
+    "Late"
+  ],
+  "run_config": {
+    "model": "deepseek-v4-flash-ga-260731",
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "temperature": 0.2,
+    "max_completion_tokens": 4096,
+    "max_round": 10,
+    "request_timeout": 60,
+    "stop_policy": "final_text_after_tool_result"
+  },
+  "knowledge_dirs": {
+    "no_update": {
+      "Early": "knowledge/no_update/Early",
+      "Middle": "knowledge/no_update/Middle",
+      "Late": "knowledge/no_update/Late"
+    },
+    "full_rewrite": {
+      "Early": "knowledge/full_rewrite/Early",
+      "Middle": "knowledge/full_rewrite/Middle",
+      "Late": "knowledge/full_rewrite/Late"
+    },
+    "selective_patch": {
+      "Early": "knowledge/selective_patch/Early",
+      "Middle": "knowledge/selective_patch/Middle",
+      "Late": "knowledge/selective_patch/Late"
+    }
+  }
+}

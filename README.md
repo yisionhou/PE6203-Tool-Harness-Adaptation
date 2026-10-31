@@ -1,5 +1,10 @@
 # PE6203 Tool Harness Adaptation
 
+## Member 3 evaluation delivery
+
+Start with [Member 3 setup and offline checks](member3/README.md), the [English report](docs/member3-report-en.md), or the [Word report with editable charts](docs/member3-report-en.docx). The six-task study has 162 valid scored conditions; archived raw evidence is restored and verified locally without model calls. See the [publication notes](docs/member3-publication.md).
+
+
 PE6203 选题 4：研究工具环境发生变化后，如何更新 Agent 的工具知识，并比较不更新、全量重写和选择性修补三种策略。
 
 本项目基于 [Octobrist/MCPEvol-Bench](https://github.com/Octobrist/MCPEvol-Bench)，保留基准代码和任务数据。上游基准说明见 [UPSTREAM_README.md](UPSTREAM_README.md)。

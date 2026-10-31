@@ -1,0 +1,14 @@
+{
+  "benchmark_sha256": "b54d0b703869c2b25bcf06fecd3e6e55c9ef63e2355559f6e70e17fc5bd4f0d1",
+  "figure_sha256": {
+    "update_cost_comparison.png": "c2e26a6d2d767809d4eab46d172202c00f50976105ce935c8b31a92aa7436275",
+    "update_cost_comparison.svg": "6ed6619c6a48abba8e160e97180e3d7c3f9a373d5c13c956ee3ef9e1b0dbc2c4"
+  },
+  "plot_script_sha256": "af1cf06a15d7ff0a036ba9b6d73fcc9e707353f7dda7229d8f0f59c2ef5476ca",
+  "cost_report_sha256": "8cddd44575f316f79ddf979689559175f812c99493e7aa3d9044717c3f7bf63d",
+  "software": {
+    "matplotlib": "3.11.2"
+  },
+  "paid_model_requests": 0,
+  "conclusion": "在相同電腦、相同六任務知識與相同處理範圍下重複量測 30 次，選擇性修補的平均處理時間為 0.6130 秒，全量重寫為 0.8849 秒，前者平均少 30.7%。兩者正式任務完成度皆為 10 分。這支持本機此實作的處理時間優勢與較小重建範圍；未量測人工工時或薪金。"
+}

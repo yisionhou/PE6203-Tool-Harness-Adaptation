@@ -1,0 +1,53 @@
+{
+  "version": "Early",
+  "snapshot": "original",
+  "task_ids": [
+    156
+  ],
+  "mcp_url": "http://127.0.0.1:3051/mcp",
+  "services": {
+    "clock": {
+      "original_server": "@guanxiong/mcp-server-time",
+      "package": "@guanxiong/mcp-server-time",
+      "entry_path": "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\node_modules\\@guanxiong\\mcp-server-time\\.mcpevol\\original\\index.js",
+      "entry_sha256": "0d0a7cff06a2416299c025d40a7a9f75c7e2ca809194839b776346a9f39465ad"
+    },
+    "calculator": {
+      "original_server": "calculator",
+      "package": "mcp-server-calculator",
+      "entry_path": "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\.venv\\Scripts\\mcp-server-calculator.exe",
+      "entry_sha256": "cb401c554d4c28d74cc0a5c12efbbe6791ad8dc45b952d4cd01fad6c53bf138c"
+    }
+  },
+  "workspace": "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\member3\\evidence\\tool-check\\selective_patch\\Early-task-156\\workspace",
+  "manifest_sha256": "8cbff7027a5f45a2126402d17b71ba83c24a2377715ed1732e03f9f547ef9af7",
+  "artifact_revision": "162e3ffbea1717ac8a20fe9b26465e29117229e4",
+  "evolution_layers": [],
+  "benchmark_commit": "888c779a0fe735f612ca62bdd1fdd7c9e6bf8701",
+  "workspace_initial_sha256": {
+    "txt/log_yesterday.txt": "b8f96aa34e28e8026d7186f2900d596d4d1a3ae6c9220c62ffca323dc57c20ee",
+    "txt/log_today.txt": "f72377983140d67776446da48187c205a0725241b540fce79afe5ce5050bf012",
+    ".task-sources.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "config_path": "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\member3\\evidence\\tool-check\\selective_patch\\Early-task-156\\runtime\\mcp.json",
+  "config_sha256": "072bf7a6353546927e012421ed66dbdc855dc9220e5114e36758786525add50b",
+  "launch_command": [
+    "C:\\Users\\gener\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.EXE",
+    "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\node_modules\\@1mcp\\agent\\build\\index.js",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "3051",
+    "--transport",
+    "http",
+    "--log-level",
+    "warn",
+    "--config",
+    "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\member3\\evidence\\tool-check\\selective_patch\\Early-task-156\\runtime\\mcp.json",
+    "--config-dir",
+    "C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\member3\\evidence\\tool-check\\selective_patch\\Early-task-156\\runtime",
+    "--enable-session-persistence=false",
+    "--enable-internal-tools=false"
+  ],
+  "pid": 24560
+}

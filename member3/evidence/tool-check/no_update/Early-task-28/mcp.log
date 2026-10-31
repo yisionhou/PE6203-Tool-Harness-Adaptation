@@ -1,0 +1,27 @@
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│        ██╗███╗   ███╗  ██████╗ ██████╗                                       │
+│       ███║████╗ ████║ ██╔════╝ ██╔══██╗                                      │
+│       ╚██║██╔████╔██║ ██║      ██████╔╝                                      │
+│        ██║██║╚██╔╝██║ ██║      ██╔═══╝                                       │
+│        ██║██║ ╚═╝ ██║ ╚██████╗ ██║                                           │
+│        ╚═╝╚═╝     ╚═╝  ╚═════╝ ╚═╝                                           │
+│                                                                              │
+│        All your MCPs in one place                                            │
+│                                                                              │
+│   Version: 0.39.6                                                            │
+│   Transport: HTTP (127.0.0.1:3051)                                           │
+│   Servers: 0 configured                                                      │
+│   Auth: Disabled | Log: warn                                                 │
+│   Config: C:\Users\gener\iCloudDrive\Desktop\NTU\PE6203\Assignment_2\PE620   │
+│   3-Tool-Harness-Adaptation-main\member3\evidence\tool-check\no_update\Ear   │
+│   ly-task-28\runtime                                                         │
+│                                                                              │
+│   https://github.com/1mcp-app/agent                                          │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+2026-10-30T08:42:54.846Z [WARN] message="[files] MCP Filesystem Server running on stdio" serverName="files" source="backend-stderr" backendLogSequence=1 backendLogSourceId="static:files" backendLogEventKind="line"
+2026-10-30T08:42:54.848Z [WARN] message="[files] Current working directory (pwd): C:\\Users\\gener\\iCloudDrive\\Desktop\\NTU\\PE6203\\Assignment_2\\PE6203-Tool-Harness-Adaptation-main\\member3\\evidence\\tool-check\\no_update\\Early-task-28\\workspace" serverName="files" source="backend-stderr" backendLogSequence=2 backendLogSourceId="static:files" backendLogEventKind="line"
+2026-10-30T08:42:54.849Z [WARN] message="[files] Unrestricted filesystem access enabled" serverName="files" source="backend-stderr" backendLogSequence=3 backendLogSourceId="static:files" backendLogEventKind="line"

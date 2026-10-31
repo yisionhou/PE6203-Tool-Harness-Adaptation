@@ -1,0 +1,9 @@
+{
+  "task_id": 24,
+  "correct_deleted_tool": "read_file",
+  "correct_migration_target": "read_text_file",
+  "task_original_tool": "read_text_file",
+  "task_classification": "Retention and expanded service coverage; not forced migration",
+  "evidence": "Official layer-2 evolution.json and the six live catalogs show read_text_file remains available",
+  "frozen_metadata": "Some earlier frozen scope/notes reversed the direction. They are preserved for traceability and superseded by this correction; no task, knowledge packet or scoring prompt changed."
+}

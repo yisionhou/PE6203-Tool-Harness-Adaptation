@@ -1,0 +1,86 @@
+{
+  "update_id": "f63089fe-3093-473a-b201-70879412345c",
+  "strategy": "selective_patch",
+  "base_version": "Early",
+  "target_version": "Middle",
+  "base_sha256": "fdbb7cc033adcb5d30caf99289040014aee0b68a3fa9588ca285b50009316966",
+  "target_catalog_sha256": "22ba8b26a6a15e144f30ceac6c31fad58a072d98e18b679cf73d4e61ec510823",
+  "changes": {
+    "added": [],
+    "removed": [],
+    "changed": {
+      "mcp-sequentialthinking-tools::sequentialthinking_tools": {
+        "paths": [
+          "/description",
+          "/inputSchema/properties/available_mcp_tools/description",
+          "/inputSchema/properties/branch_from_thought/description",
+          "/inputSchema/properties/confidence_threshold",
+          "/inputSchema/properties/current_step/description",
+          "/inputSchema/properties/enable_auto_verification",
+          "/inputSchema/properties/is_revision/description",
+          "/inputSchema/properties/max_branches",
+          "/inputSchema/properties/needs_more_thoughts/description",
+          "/inputSchema/properties/next_thought_needed/description",
+          "/inputSchema/properties/previous_steps/description",
+          "/inputSchema/properties/remaining_steps/description",
+          "/inputSchema/properties/revises_thought/description",
+          "/inputSchema/properties/thought/description",
+          "/inputSchema/properties/thought_number/description",
+          "/inputSchema/properties/total_thoughts/description"
+        ],
+        "kinds": [
+          "description",
+          "parameter"
+        ]
+      }
+    },
+    "unchanged": [
+      "mcp-filesystem-server::read_multiple_files",
+      "mcp-filesystem-server::write_file",
+      "time-mcp::current_time"
+    ]
+  },
+  "affected_blocks": [
+    "rule:inventory",
+    "rule:mcp-sequentialthinking-tools::sequentialthinking_tools"
+  ],
+  "regenerated_tools": [
+    "mcp-sequentialthinking-tools::sequentialthinking_tools"
+  ],
+  "regenerated_blocks": [
+    "rule:inventory",
+    "rule:mcp-sequentialthinking-tools::sequentialthinking_tools"
+  ],
+  "removed_blocks": [],
+  "changed_blocks": [
+    "rule:mcp-sequentialthinking-tools::sequentialthinking_tools"
+  ],
+  "changed_tool_records": [
+    "mcp-sequentialthinking-tools::sequentialthinking_tools"
+  ],
+  "preserved_tool_sha256": {
+    "mcp-filesystem-server::read_multiple_files": "1674eeabe3442c6da8e5f4abd28c9b75d044293ad1460944aaea9270bad6a6d1",
+    "mcp-filesystem-server::write_file": "7e1c0e5a18fc93ce068a1fc3f5b41c4413142db44de20a11497617c6fc38c9b9",
+    "time-mcp::current_time": "fce9672a4dcb660b4ed17464d45c0fea2551778c79885273b0e1dcd9e86b3b0a"
+  },
+  "preserved_block_sha256": {
+    "rule:mcp-filesystem-server::read_multiple_files": "c4ce6602175e269a9ce649d8cca859bc3cb9cb50f3d9d0b54281aa5a6187c748",
+    "rule:mcp-filesystem-server::write_file": "9566354e8939349414fbf8e49f8d84fb6ff0c166f05047f5dd57b918aa9d75d3",
+    "rule:time-mcp::current_time": "4daa9b15e027a56402fbc5f312f5a72ac7dd708525dfa40b207cc28cff9af08b"
+  },
+  "output_sha256": "85ba0a28fc2c98cbe508158aa4434e9dbd4e16c1eccbebc8fd4362b3a9414c1d",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.22821049997583032
+  },
+  "schema_version": 1,
+  "task_id": 3,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/selective_patch/Middle/3.json",
+  "knowledge_sha256": "a67017e57a0bc523e5455e73061f5f01e1319625af318930bb37cd668babe36e",
+  "observation_ref": "Middle/3",
+  "record_path": "updates/selective_patch/Middle/3.json"
+}

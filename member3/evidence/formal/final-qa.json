@@ -1,0 +1,12 @@
+{
+  "exact_design_cardinality": 162,
+  "no_duplicate_conditions": true,
+  "complete_scores": 162,
+  "no_account_aborted_attempts_in_selected_matrix": true,
+  "ecs_matches_upstream_reference": true,
+  "verified_stale_route_failure_repetitions": 3,
+  "equal_model_visible_knowledge_pairs": 18,
+  "audited_batches": 9,
+  "tests": "85 existing + 13 statistics + 3 recovery passed",
+  "known_account_aborted_attempts_preserved": 4
+}

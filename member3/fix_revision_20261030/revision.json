@@ -1,0 +1,23 @@
+{
+  "kind": "offline postprocessing fixes; frozen execution code and raw evidence retained",
+  "before_code_sha256": {
+    "member3/analyze.py": "0d8409b588667ec45acdc724dcd51f72fb01ada91644b30f36a0969ac5a9953c",
+    "member3_extension/merge_results.py": "1e8608a522acb49f3fb5c9fb1443a79c8c376a614523ca9c605770c06147c86b",
+    "member3_extension/deliver.py": "b4948a4cfd7c546aebe8c6fdbf36083f10d3bac6c49e2d3ac857719ffb7d97e8",
+    "member3_extension/plot_update_cost.py": "7e1941d49db913d8bb078a2ae8ed7085cf1f4948c1c54d6ece2182759e6a4de4"
+  },
+  "raw_evidence_policy": "do not modify trajectories, prompts, receipts or original study manifests",
+  "new_model_api_requests": 0,
+  "after_code_sha256": {
+    "member3/analyze.py": "74cec7d8c4f11575bf80197e3aac49e2ef3be11d0878a0d241f9cb73d8e79a36",
+    "member3_extension/merge_results.py": "39b4231f268ad58d5c6680666c46e76dd73507ae1f9bd284f1a29a3b5d7a3eb5",
+    "member3_extension/deliver.py": "8a13ae53c6899d567b4bf56a4f129e892d89524876811da0490dc1ab0d3588b9",
+    "member3_extension/plot_update_cost.py": "af1cf06a15d7ff0a036ba9b6d73fcc9e707353f7dda7229d8f0f59c2ef5476ca",
+    "member3_extension/cost_report.py": "8cddd44575f316f79ddf979689559175f812c99493e7aa3d9044717c3f7bf63d",
+    "member3/tests/test_audit_regressions.py": "964267048af2f914a40fea672bcb014d99aa4cc06fd8d2c87817edbf30b43e01",
+    "member3/tests/test_analysis.py": "8b9d444d00412bd66dbfd4a9575f83c0d145904dc0869a256e7f7b578371d5ca",
+    "member3_extension/package_delivery.py": "e46f8737616126f6f16b9792d092489efe5160104e745c2473194ad60cfe7e93"
+  },
+  "status": "four fixes implemented and offline validated",
+  "previous_delivery_zip_sha256": "3925e3a24e2172adab96d571e75ca086b75fd3cc3c361754a6d5009479ce656e"
+}

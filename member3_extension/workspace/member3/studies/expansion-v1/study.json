@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-30T09:12:07.258785+00:00",
+  "study_kind": "additional_official_tasks_3_and_24",
+  "scope": "Two additional official tasks; task 24 requires the deleted read_text_file route to migrate to read_file. Analyze with original cohort using equal task weights; report runner scope differences.",
+  "task_ids": [
+    3,
+    24
+  ],
+  "repetitions": 3,
+  "conditions": 54,
+  "schedule": [
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 3
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 3
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 3
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 24
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 24
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 24
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 3
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 3
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 3
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 24
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 24
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 24
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 3
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 3
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 3
+    },
+    {
+      "repeat": 1,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 24
+    },
+    {
+      "repeat": 1,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 24
+    },
+    {
+      "repeat": 1,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 24
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 3
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 3
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 3
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 24
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 24
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 24
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 3
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 3
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 3
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 24
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 24
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 24
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 3
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 3
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 3
+    },
+    {
+      "repeat": 2,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 24
+    },
+    {
+      "repeat": 2,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 24
+    },
+    {
+      "repeat": 2,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 24
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 3
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 3
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 3
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Early",
+      "task_id": 24
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Early",
+      "task_id": 24
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Early",
+      "task_id": 24
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 3
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 3
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 3
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Middle",
+      "task_id": 24
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Middle",
+      "task_id": 24
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Middle",
+      "task_id": 24
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 3
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 3
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 3
+    },
+    {
+      "repeat": 3,
+      "strategy": "no_update",
+      "version": "Late",
+      "task_id": 24
+    },
+    {
+      "repeat": 3,
+      "strategy": "full_rewrite",
+      "version": "Late",
+      "task_id": 24
+    },
+    {
+      "repeat": 3,
+      "strategy": "selective_patch",
+      "version": "Late",
+      "task_id": 24
+    }
+  ],
+  "run_config": {
+    "model": "deepseek-v4-flash-ga-260731",
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "temperature": 0.2,
+    "max_completion_tokens": 4096,
+    "max_round": 10,
+    "request_timeout": 60,
+    "stop_policy": "final_text_after_tool_result"
+  },
+  "knowledge_sha256": {
+    "knowledge/no_update/Early/3.json": "ef02f6e08641cccec56d844d1d745e49291ace47fd65cd249165f0f9ee6b3fbb",
+    "knowledge/no_update/Early/24.json": "839d63b3bcce495ed19ad3ec591966e86cce40cdaf8e0252c74e135bf891c622",
+    "knowledge/no_update/Middle/3.json": "ef02f6e08641cccec56d844d1d745e49291ace47fd65cd249165f0f9ee6b3fbb",
+    "knowledge/no_update/Middle/24.json": "839d63b3bcce495ed19ad3ec591966e86cce40cdaf8e0252c74e135bf891c622",
+    "knowledge/no_update/Late/3.json": "ef02f6e08641cccec56d844d1d745e49291ace47fd65cd249165f0f9ee6b3fbb",
+    "knowledge/no_update/Late/24.json": "839d63b3bcce495ed19ad3ec591966e86cce40cdaf8e0252c74e135bf891c622",
+    "knowledge/full_rewrite/Early/3.json": "ae55c58b5b4c346ef091863bd88bf85c53d086caccafb8c6748d2c3692e576eb",
+    "knowledge/full_rewrite/Early/24.json": "af6ecb2a410506e148af77c1bf926a31005d14563003b8c005d99aebce25d7e3",
+    "knowledge/full_rewrite/Middle/3.json": "411e687d56a8bb24b837de9d9c08cc0ac7a102eef8ad1a1d32ac77017b3648e0",
+    "knowledge/full_rewrite/Middle/24.json": "9c0a3879331d87aad13a478624d90ca6e165847c48058d15b8df59f35166e77a",
+    "knowledge/full_rewrite/Late/3.json": "8f3e67672d7a25139258ad1951eeaee0ea0edea8253670d37b5c6c6da91034f4",
+    "knowledge/full_rewrite/Late/24.json": "3a4c2195b40e80d988f3d88f6719e1aefdc32b848764683a50f4397924678747",
+    "knowledge/selective_patch/Early/3.json": "292a8e589cee160e4f85f80fdaa55403f461310bb03b64b2389579f4c3b5bd33",
+    "knowledge/selective_patch/Early/24.json": "3b43af706d3a89d7edca4b099f64106c78e18a4cf4aceee15c7dad416b4c3e2a",
+    "knowledge/selective_patch/Middle/3.json": "a67017e57a0bc523e5455e73061f5f01e1319625af318930bb37cd668babe36e",
+    "knowledge/selective_patch/Middle/24.json": "c3653c4e91fb962ba5de575be81d8f02bffedcd686d7659feafb1a2a1a12ca14",
+    "knowledge/selective_patch/Late/3.json": "27262abf7095e8c1251bf468ae88f348fb976afdd0df941b6e0123b43b510b37",
+    "knowledge/selective_patch/Late/24.json": "c687b5d94460b9fc49e0c8ba88a0126d9b4d9d04caeca4ba0b901d663ccd5fc9"
+  },
+  "source_sha256": {
+    "member1/tasks_manifest.json": "5c8ef34bcf41e47e9c6f3efa664e1bdc54282a3bd0d0e6efcd24031cdd79abca",
+    "src/custom/data/test_cases/test_cases.json": "b51d09d93afa94b08a67281a95ee8b4c7d69953816adf6769a996e26274bb023",
+    "src/custom/data/test_cases/chosen_idx.json": "55df803b7cf40fe1a40d27ff6b2375d87b62e308fbdbc6da3e27e6adbcb63d6c",
+    "src/custom/agents/SimpleOpenAIAgent.py": "4d2839e00de277885a61dc51d26457eac0409ebbf237716107c703dd68701f04",
+    "src/custom/prompt/eval_error_prompt.py": "59ede33bfddfe91138d07ac97fcac9e16b64fad99c13d58d85990944e6649bee",
+    "member1/snapshots/provenance.json": "132bae362efcafc37b84298f5e6ba42887b209a529df6ff3b3b7b9c3e33f5bdc",
+    "member1/requirements-lock.txt": "c9a58aa5fb9259b75ec24954d60813f012e358728e62d76eae9bc4430c72a31b",
+    "package-lock.json": "36a8cc0dbfb45a091900eb7979786438ec4da345dad51512d637f5f2ac37db66"
+  },
+  "code_sha256": {
+    "member1/build_handoff_demo.py": "3cd2f93cdea350c35c2099afd0244fb5ec613f3b583ea547634bc9bae013bf5f",
+    "member1/knowledge.py": "3c4b28fc58d3297436b68af23c52ead226ac4922ecdbe8302bda38acfe589fb2",
+    "member1/prepare_environment.py": "55c1496fd5c16a0d793784d0f900c89ac9cde821a109ece5020706b89048fa3e",
+    "member1/protocol.py": "fad55ab0de929531e467b528ccf2958d72c0502681cafe15e53fd08d5f7a179e",
+    "member1/read_results.py": "570c7128cddcdd97bd704f7ee561c17434668af3e8b4013a170cca892581898e",
+    "member1/run_comparison.py": "bc869b7276c0ce30e03161f556739971f7db991fa02dbda59d0fd57f166661cd",
+    "member1/run_task.py": "a9888bda1c686722b1b5d1c20e0b3d337c08799bf10adf6d5a61a7e5e78d8fa3",
+    "member1/run_versions.py": "f6a0960ff7f8decc78914664bf0e247c96bdc2c81cb9c226156d52be03362789",
+    "member1/scoring_bridge.py": "31ceff7d78f9ee996e85b75ac6aea9281efc9ce13d443073b7e762365fc95035",
+    "member1/stage2.py": "e368a247c3a3dc8ebf6a70cdace3283efce7f01d54f46d075ad2d24c32ab66bb",
+    "member2/__init__.py": "b8dfba3029414a4948ee354e1b4f528cc5ce00a3173f0a537af821f1264d9bd7",
+    "member2/adapt.py": "6046150f93e62e2f26f4437e548fbfea0436b2234ae5c0d4ce0860dabc302dce",
+    "member2/build.py": "054f4cc36049ea1f7f46e54ef9c02416738058ac3a4587ee3b3b576717c1ac52",
+    "member2/catalog.py": "a572b42d9c2576f668afe33264b4b5d000ba53c93fac87ac287f92f6cef9c360",
+    "member2/knowledge_base.py": "0d7ef3202b2ea1d077efb21267acdbddd0436c25b8172f102651c01cd32814f8",
+    "member3/__init__.py": "38849e69b0353720e8728312314a96c1e01c40b99a5a481c723c721ea7f1ffad",
+    "member3/analyze.py": "16d0748b7c7f45da46d0d946e22efe18d28890d1246add549329c4404007f132",
+    "member3/check_clock.py": "b5c9e20ec1c4878cef31d3035ecd3d59aa08919dcc363d774bbd60608a0eae88",
+    "member3/experiment.py": "fbcfec6a5bf7e27b847df32a6dc004d3e3784cd25587742812f2860f70439cda"
+  },
+  "historical_pilot_included": false,
+  "judge_repeats_per_trajectory": 1,
+  "missing_policy": "retain null and reason; no zero fill or partial overall mean",
+  "ecs_formula": "per repetition/task mean(TF across versions) - population_sd(TF); equal task/repetition mean",
+  "variation": "sample SD of complete repetition means; no SD with only one repetition",
+  "cost_policy": "unique adaptation.update_id only; inference and judging separately",
+  "known_confounders": [
+    "fixed strategy execution order in member1 runner",
+    "real-time clocks differ across cases",
+    "clock service consistency must be checked",
+    "same model for task and judge",
+    "optional changes do not force migration"
+  ],
+  "paid_requests_executed_at_freeze": 0,
+  "input_sha256": {
+    "comparison.json": "43d293cefb858e86d38e5ef3ede7419e80d217c9f33ba4275cc9b19a7251ec3f",
+    "judge-config.json": "a5bbc72b8bff6aeba2a89481a61754d275b28ab3d6188b08e65c4a542a975075"
+  },
+  "sha256": "a307e10e8667e6b1754b7a22916be6fdf398545103f7f80ef08eb539d097353e"
+}

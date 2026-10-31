@@ -1,0 +1,33 @@
+{
+  "fixes": {
+    "F1_cost_section_generated_from_shared_renderer": true,
+    "F2_receipt_scores_bound_to_raw_response": true,
+    "F3_fresh_fairness_audit_per_cohort": true,
+    "F4_valid_score_range_1_to_10": true
+  },
+  "test_counts": {
+    "passed": 112
+  },
+  "pytest_exit_code": 0,
+  "real_http_attempts": 0,
+  "new_model_api_requests": 0,
+  "fresh_audited_batches": 9,
+  "valid_scores": 162,
+  "published_numeric_fields_unchanged": [
+    "cases",
+    "aggregate",
+    "usage",
+    "update_costs",
+    "task_ids",
+    "judge_protocol_sha256",
+    "run_config_sha256",
+    "source_sha256"
+  ],
+  "raw_evidence_modified": false,
+  "historical_sources": "before/",
+  "remaining_course_presentation_scope": "Version/group tables and member5 over-update analysis are outside these four code fixes",
+  "regenerated_report_keeps_cost_figure": true,
+  "regenerated_report_keeps_30_repeat_table": true,
+  "png_visual_unchanged": true,
+  "figure_and_benchmark_fingerprints_valid": true
+}

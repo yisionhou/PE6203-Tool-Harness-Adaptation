@@ -1,0 +1,84 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>Member 3 results</title><style>body{max-width:1100px;margin:40px auto;padding:20px;font:16px/1.6 system-ui}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><pre># 成员 3：评测结果与证据核对
+
+数据用途：**pilot-reanalysis**。实际纳入 27 条任务记录；计划重复 1 次。
+
+NA 表示预定条件不完整，不填零、不删案例。observed_mean 仅在 JSON 中保留为探索性描述。
+
+| 策略 | 有效/预定 | 平均 TF | 平均 PE | 平均 ECS |
+| --- | ---: | ---: | ---: | ---: |
+| no_update | 8/9 | NA | NA | NA |
+| full_rewrite | 9/9 | 10.00 | 8.11 | 10.00 |
+| selective_patch | 8/9 | NA | NA | NA |
+
+ECS 按每个任务、每次重复计算：三版本 TF 均值减总体标准差；再对预定任务与重复等权平均。
+重复波动使用各次重复均值的样本标准差；只有一次运行时不报告重复波动。
+
+## 更新成本（按 update_id 去重）
+
+| 策略 | 更新 token | 更新时间/秒 | 重建工具 | 重建规则 |
+| --- | ---: | ---: | ---: | ---: |
+| no_update | 0 | 0.000000 | 0 | 0 |
+| full_rewrite | 0 | 0.154577 | 31 | 40 |
+| selective_patch | 0 | 0.110178 | 8 | 13 |
+
+更新时间不含磁盘读写、共同初始化、任务推理和评分。历史单次时间不能解释为稳定加速比例。
+
+## 缺失评分
+
+- repeat 1 / 0015-no_update-Middle-156: judge_error; [&#x27;Judge returned no score text; inspect usage and finish_reason&#x27;]
+- repeat 1 / 0026-selective_patch-Late-156: judge_error; [&#x27;Judge returned no score text; inspect usage and finish_reason&#x27;]
+
+## 使用限制
+
+当前任务集主要包含可选参数与说明变化；新增工具未必是完成任务的必要条件。
+现有先导实验不构成强制工具迁移验证；不能据此认定选择性修补优于全量重写。
+时钟服务曾出现一小时不一致；正式时钟实验前需检查服务输出。
+未执行的重复或扩充任务不会出现在实际结果中。
+
+## 已记录用量
+
+```json
+{
+  &quot;judge_completion_tokens&quot;: 170518,
+  &quot;judge_prompt_tokens&quot;: 161384,
+  &quot;judge_total_tokens&quot;: 331902,
+  &quot;task_completion_tokens&quot;: 36179,
+  &quot;task_prompt_tokens&quot;: 289219,
+  &quot;task_total_tokens&quot;: 325398
+}
+```
+
+用量来自保存的 model_usage 与 judge 回执；无回执请求的未知费用不视为零。
+
+## 逐条件结果
+
+| 重复 | 策略 | 版本 | 任务 | TF | PE | 工具调用 | 评分状态 |
+| ---: | --- | --- | ---: | ---: | ---: | ---: | --- |
+| 1 | no_update | Early | 28 | 10.00 | 5.00 | 6 | completed |
+| 1 | full_rewrite | Early | 28 | 10.00 | 10.00 | 4 | completed |
+| 1 | selective_patch | Early | 28 | 10.00 | 10.00 | 4 | completed |
+| 1 | no_update | Early | 144 | 10.00 | 10.00 | 2 | completed |
+| 1 | full_rewrite | Early | 144 | 10.00 | 5.00 | 4 | completed |
+| 1 | selective_patch | Early | 144 | 10.00 | 10.00 | 2 | completed |
+| 1 | no_update | Early | 156 | 10.00 | 7.00 | 4 | completed |
+| 1 | full_rewrite | Early | 156 | 10.00 | 10.00 | 2 | completed |
+| 1 | selective_patch | Early | 156 | 10.00 | 10.00 | 2 | completed |
+| 1 | no_update | Middle | 28 | 10.00 | 10.00 | 5 | completed |
+| 1 | full_rewrite | Middle | 28 | 10.00 | 10.00 | 4 | completed |
+| 1 | selective_patch | Middle | 28 | 10.00 | 10.00 | 4 | completed |
+| 1 | no_update | Middle | 144 | 10.00 | 10.00 | 2 | completed |
+| 1 | full_rewrite | Middle | 144 | 10.00 | 5.00 | 4 | completed |
+| 1 | selective_patch | Middle | 144 | 10.00 | 5.00 | 4 | completed |
+| 1 | no_update | Middle | 156 | NA | NA | 3 | judge_error |
+| 1 | full_rewrite | Middle | 156 | 10.00 | 10.00 | 2 | completed |
+| 1 | selective_patch | Middle | 156 | 10.00 | 5.00 | 3 | completed |
+| 1 | no_update | Late | 28 | 10.00 | 10.00 | 5 | completed |
+| 1 | full_rewrite | Late | 28 | 10.00 | 8.00 | 7 | completed |
+| 1 | selective_patch | Late | 28 | 10.00 | 10.00 | 5 | completed |
+| 1 | no_update | Late | 144 | 10.00 | 5.00 | 4 | completed |
+| 1 | full_rewrite | Late | 144 | 10.00 | 10.00 | 2 | completed |
+| 1 | selective_patch | Late | 144 | 10.00 | 5.00 | 4 | completed |
+| 1 | no_update | Late | 156 | 10.00 | 5.00 | 3 | completed |
+| 1 | full_rewrite | Late | 156 | 10.00 | 5.00 | 3 | completed |
+| 1 | selective_patch | Late | 156 | NA | NA | 3 | judge_error |
+</pre></html>

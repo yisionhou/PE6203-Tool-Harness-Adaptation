@@ -1,0 +1,448 @@
+{
+  "source": "https://huggingface.co/datasets/anonymous2233/evol-servers",
+  "revision": "162e3ffbea1717ac8a20fe9b26465e29117229e4",
+  "extraction": "HTTP Range ZIP extraction; package metadata and executable entrypoints only; runtime dependencies are npm-locked",
+  "files": [
+    {
+      "snapshot": "original",
+      "server": "@guanxiong/mcp-server-time",
+      "archive_path": "node_modules/@guanxiong/mcp-server-time/package.json",
+      "local_path": "member1/snapshots/original/clock/package.json",
+      "sha256": "a394dcdfdcd6266d7c966d35d48f199f8aff6f15add4e7a24b2e11a4b9b06592"
+    },
+    {
+      "snapshot": "original",
+      "server": "@guanxiong/mcp-server-time",
+      "archive_path": "node_modules/@guanxiong/mcp-server-time/index.js",
+      "local_path": "member1/snapshots/original/clock/index.js",
+      "sha256": "0d0a7cff06a2416299c025d40a7a9f75c7e2ca809194839b776346a9f39465ad"
+    },
+    {
+      "snapshot": "original",
+      "server": "time-mcp",
+      "archive_path": "node_modules/time-mcp/package.json",
+      "local_path": "member1/snapshots/original/time_mcp/package.json",
+      "sha256": "954afa21aff9fea80da5fbda752d60a393a22aa77b5db953a19a41cad2ea7cd7"
+    },
+    {
+      "snapshot": "original",
+      "server": "time-mcp",
+      "archive_path": "node_modules/time-mcp/dist/index.js",
+      "local_path": "member1/snapshots/original/time_mcp/dist/index.js",
+      "sha256": "4d142d9a98d64f892cad5b50b5ebff09d534d9f466db277008eea2b3fe04e3b0"
+    },
+    {
+      "snapshot": "original",
+      "server": "mcp-filesystem-server",
+      "archive_path": "node_modules/mcp-filesystem-server/package.json",
+      "local_path": "member1/snapshots/original/files/package.json",
+      "sha256": "2eb5e82fec2f04113d62a7ac2de36fd66b6caa5dd5df6c44f913f66bdea377b0"
+    },
+    {
+      "snapshot": "original",
+      "server": "mcp-filesystem-server",
+      "archive_path": "node_modules/mcp-filesystem-server/server.js",
+      "local_path": "member1/snapshots/original/files/server.js",
+      "sha256": "36b183b163085c382c3f09f7c5f32077eba20657cdf706dc00adbbeeb094ccaa"
+    },
+    {
+      "snapshot": "original",
+      "server": "mcp-tasks",
+      "archive_path": "node_modules/mcp-tasks/package.json",
+      "local_path": "member1/snapshots/original/tasks/package.json",
+      "sha256": "ede3f50cf63508b060cc2a78ce7581cb5aac5c74ce1d2098342c05c2f1a0536b"
+    },
+    {
+      "snapshot": "original",
+      "server": "mcp-tasks",
+      "archive_path": "node_modules/mcp-tasks/dist/index.js",
+      "local_path": "member1/snapshots/original/tasks/dist/index.js",
+      "sha256": "19a16be37051360fb10931ef783df9beea7adbfee7ea3abdb37e26494d06a54a"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@guanxiong/mcp-server-time",
+      "archive_path": "node_modules/@guanxiong/mcp-server-time/package.json",
+      "local_path": "member1/snapshots/iter3/clock/package.json",
+      "sha256": "a394dcdfdcd6266d7c966d35d48f199f8aff6f15add4e7a24b2e11a4b9b06592"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@guanxiong/mcp-server-time",
+      "archive_path": "node_modules/@guanxiong/mcp-server-time/index.js",
+      "local_path": "member1/snapshots/iter3/clock/index.js",
+      "sha256": "a22dd6add78e5a65c8e7ab236ce660f7111557cf05f5d9da5b39b75e9a58e1af"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "time-mcp",
+      "archive_path": "node_modules/time-mcp/package.json",
+      "local_path": "member1/snapshots/iter3/time_mcp/package.json",
+      "sha256": "954afa21aff9fea80da5fbda752d60a393a22aa77b5db953a19a41cad2ea7cd7"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "time-mcp",
+      "archive_path": "node_modules/time-mcp/dist/index.js",
+      "local_path": "member1/snapshots/iter3/time_mcp/dist/index.js",
+      "sha256": "4d142d9a98d64f892cad5b50b5ebff09d534d9f466db277008eea2b3fe04e3b0"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "mcp-filesystem-server",
+      "archive_path": "node_modules/mcp-filesystem-server/package.json",
+      "local_path": "member1/snapshots/iter3/files/package.json",
+      "sha256": "2eb5e82fec2f04113d62a7ac2de36fd66b6caa5dd5df6c44f913f66bdea377b0"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "mcp-filesystem-server",
+      "archive_path": "node_modules/mcp-filesystem-server/server.js",
+      "local_path": "member1/snapshots/iter3/files/server.js",
+      "sha256": "86549dd09c526178d67ad49fa27c5fb8ffbf2c0dba7dc4cd91e32683af823c23"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "mcp-tasks",
+      "archive_path": "node_modules/mcp-tasks/package.json",
+      "local_path": "member1/snapshots/iter3/tasks/package.json",
+      "sha256": "ede3f50cf63508b060cc2a78ce7581cb5aac5c74ce1d2098342c05c2f1a0536b"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "mcp-tasks",
+      "archive_path": "node_modules/mcp-tasks/dist/index.js",
+      "local_path": "member1/snapshots/iter3/tasks/dist/index.js",
+      "sha256": "19a16be37051360fb10931ef783df9beea7adbfee7ea3abdb37e26494d06a54a"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@guanxiong/mcp-server-time",
+      "archive_path": "node_modules/@guanxiong/mcp-server-time/package.json",
+      "local_path": "member1/snapshots/iter5/clock/package.json",
+      "sha256": "a394dcdfdcd6266d7c966d35d48f199f8aff6f15add4e7a24b2e11a4b9b06592"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@guanxiong/mcp-server-time",
+      "archive_path": "node_modules/@guanxiong/mcp-server-time/index.js",
+      "local_path": "member1/snapshots/iter5/clock/index.js",
+      "sha256": "b5cc7e56366447c8c3954e423fc06cfe67a879b97a411ceb663115db52b0c9a2"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "time-mcp",
+      "archive_path": "node_modules/time-mcp/package.json",
+      "local_path": "member1/snapshots/iter5/time_mcp/package.json",
+      "sha256": "954afa21aff9fea80da5fbda752d60a393a22aa77b5db953a19a41cad2ea7cd7"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "time-mcp",
+      "archive_path": "node_modules/time-mcp/dist/index.js",
+      "local_path": "member1/snapshots/iter5/time_mcp/dist/index.js",
+      "sha256": "4d142d9a98d64f892cad5b50b5ebff09d534d9f466db277008eea2b3fe04e3b0"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "mcp-filesystem-server",
+      "archive_path": "node_modules/mcp-filesystem-server/package.json",
+      "local_path": "member1/snapshots/iter5/files/package.json",
+      "sha256": "2eb5e82fec2f04113d62a7ac2de36fd66b6caa5dd5df6c44f913f66bdea377b0"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "mcp-filesystem-server",
+      "archive_path": "node_modules/mcp-filesystem-server/server.js",
+      "local_path": "member1/snapshots/iter5/files/server.js",
+      "sha256": "cbf3400d9704eb24bbd6a8bf1e26a9a0f0206e028de8b5c887d80c39e1a39ed4"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "mcp-tasks",
+      "archive_path": "node_modules/mcp-tasks/package.json",
+      "local_path": "member1/snapshots/iter5/tasks/package.json",
+      "sha256": "ede3f50cf63508b060cc2a78ce7581cb5aac5c74ce1d2098342c05c2f1a0536b"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "mcp-tasks",
+      "archive_path": "node_modules/mcp-tasks/dist/index.js",
+      "local_path": "member1/snapshots/iter5/tasks/dist/index.js",
+      "sha256": "19a16be37051360fb10931ef783df9beea7adbfee7ea3abdb37e26494d06a54a"
+    },
+    {
+      "snapshot": "original",
+      "server": "mcp-sequentialthinking-tools",
+      "archive_path": "node_modules/mcp-sequentialthinking-tools/dist/index.js",
+      "local_path": "member1/snapshots/original/thinktools/dist/index.js",
+      "sha256": "f1dfe66ef766b79151502fc2d086378fd4573f13f36f4d6eb712460a62601708"
+    },
+    {
+      "snapshot": "original",
+      "server": "mcp-sequentialthinking-tools",
+      "archive_path": "node_modules/mcp-sequentialthinking-tools/dist/schema.js",
+      "local_path": "member1/snapshots/original/thinktools/dist/schema.js",
+      "sha256": "dbaeb16ce063c9239e1674cbd320eac4034aa499595ce950a6de308b942264fd"
+    },
+    {
+      "snapshot": "original",
+      "server": "mcp-sequentialthinking-tools",
+      "archive_path": "node_modules/mcp-sequentialthinking-tools/dist/types.js",
+      "local_path": "member1/snapshots/original/thinktools/dist/types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "snapshot": "original",
+      "server": "mcp-sequentialthinking-tools",
+      "archive_path": "node_modules/mcp-sequentialthinking-tools/package.json",
+      "local_path": "member1/snapshots/original/thinktools/package.json",
+      "sha256": "a0787cb82aa7119895d36bebc18b31f3c9e172602baf126eacbb3aa728a2986f"
+    },
+    {
+      "snapshot": "original",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/index.js",
+      "local_path": "member1/snapshots/original/fs_official/dist/index.js",
+      "sha256": "c2f3126214742c10f6cb25297e3b89465f894b62a4df8dd042ea3d0e2d033652"
+    },
+    {
+      "snapshot": "original",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/lib.js",
+      "local_path": "member1/snapshots/original/fs_official/dist/lib.js",
+      "sha256": "d2e8e9927b74a8b6c597b490009e96b8f219e090d01b2bac5a13ca13349c0146"
+    },
+    {
+      "snapshot": "original",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/path-utils.js",
+      "local_path": "member1/snapshots/original/fs_official/dist/path-utils.js",
+      "sha256": "2c25cbb4591cdafc19696ec02f18148a32bf1e0419f0a1cfa837a0229d0f7ca8"
+    },
+    {
+      "snapshot": "original",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/path-validation.js",
+      "local_path": "member1/snapshots/original/fs_official/dist/path-validation.js",
+      "sha256": "c2d5481e236814c3a4f32c74580f03fb19b25ff7d0b743cf9d51555c9399d9b6"
+    },
+    {
+      "snapshot": "original",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/roots-utils.js",
+      "local_path": "member1/snapshots/original/fs_official/dist/roots-utils.js",
+      "sha256": "66e701fed706865d0a0889212e3cffb2511ff0fe929789d5e6b9b812b9de4031"
+    },
+    {
+      "snapshot": "original",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/package.json",
+      "local_path": "member1/snapshots/original/fs_official/package.json",
+      "sha256": "a7fb83c2a8000d1d69e632f6c7ce150db8ea615df9e605bc8a14ac78832cab9e"
+    },
+    {
+      "snapshot": "original",
+      "server": "server-sequential-thinking",
+      "archive_path": "node_modules/@modelcontextprotocol/server-sequential-thinking/dist/index.js",
+      "local_path": "member1/snapshots/original/thinking/dist/index.js",
+      "sha256": "81986868f123134e5d1661140fd69a77d50b4c57d1dbab59eb73b922dfe3c43f"
+    },
+    {
+      "snapshot": "original",
+      "server": "server-sequential-thinking",
+      "archive_path": "node_modules/@modelcontextprotocol/server-sequential-thinking/dist/lib.js",
+      "local_path": "member1/snapshots/original/thinking/dist/lib.js",
+      "sha256": "816a631fafa89967caa7346969b8c9618ed27ed2fd9b7e3b9835973d5aaf70c5"
+    },
+    {
+      "snapshot": "original",
+      "server": "server-sequential-thinking",
+      "archive_path": "node_modules/@modelcontextprotocol/server-sequential-thinking/package.json",
+      "local_path": "member1/snapshots/original/thinking/package.json",
+      "sha256": "75f1b3d71af33bcab50defcb70cb14866f1a86a6f1cec84680a32d069ab68987"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "mcp-sequentialthinking-tools",
+      "archive_path": "node_modules/mcp-sequentialthinking-tools/dist/index.js",
+      "local_path": "member1/snapshots/iter3/thinktools/dist/index.js",
+      "sha256": "697742e1330c1417637d9bd7ed85e3d910cc0be120f57a01e52b83e15b87977e"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "mcp-sequentialthinking-tools",
+      "archive_path": "node_modules/mcp-sequentialthinking-tools/dist/schema.js",
+      "local_path": "member1/snapshots/iter3/thinktools/dist/schema.js",
+      "sha256": "d1a592dd1e4df1935970c57a7274c1125d6174ecd6c9493c3c1717d807f10c3f"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "mcp-sequentialthinking-tools",
+      "archive_path": "node_modules/mcp-sequentialthinking-tools/dist/types.js",
+      "local_path": "member1/snapshots/iter3/thinktools/dist/types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "mcp-sequentialthinking-tools",
+      "archive_path": "node_modules/mcp-sequentialthinking-tools/package.json",
+      "local_path": "member1/snapshots/iter3/thinktools/package.json",
+      "sha256": "a0787cb82aa7119895d36bebc18b31f3c9e172602baf126eacbb3aa728a2986f"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/index.js",
+      "local_path": "member1/snapshots/iter3/fs_official/dist/index.js",
+      "sha256": "d31538776b622f750fcda37854574d325b460bf07fcc1680238b99ab4d8e1692"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/lib.js",
+      "local_path": "member1/snapshots/iter3/fs_official/dist/lib.js",
+      "sha256": "d2e8e9927b74a8b6c597b490009e96b8f219e090d01b2bac5a13ca13349c0146"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/path-utils.js",
+      "local_path": "member1/snapshots/iter3/fs_official/dist/path-utils.js",
+      "sha256": "2c25cbb4591cdafc19696ec02f18148a32bf1e0419f0a1cfa837a0229d0f7ca8"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/path-validation.js",
+      "local_path": "member1/snapshots/iter3/fs_official/dist/path-validation.js",
+      "sha256": "c2d5481e236814c3a4f32c74580f03fb19b25ff7d0b743cf9d51555c9399d9b6"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/roots-utils.js",
+      "local_path": "member1/snapshots/iter3/fs_official/dist/roots-utils.js",
+      "sha256": "66e701fed706865d0a0889212e3cffb2511ff0fe929789d5e6b9b812b9de4031"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/package.json",
+      "local_path": "member1/snapshots/iter3/fs_official/package.json",
+      "sha256": "a7fb83c2a8000d1d69e632f6c7ce150db8ea615df9e605bc8a14ac78832cab9e"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "server-sequential-thinking",
+      "archive_path": "node_modules/@modelcontextprotocol/server-sequential-thinking/dist/index.js",
+      "local_path": "member1/snapshots/iter3/thinking/dist/index.js",
+      "sha256": "defb818d5e896b0e49142e0134f531b0302c23bdbe9a2ad543a223633b737faf"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "server-sequential-thinking",
+      "archive_path": "node_modules/@modelcontextprotocol/server-sequential-thinking/dist/lib.js",
+      "local_path": "member1/snapshots/iter3/thinking/dist/lib.js",
+      "sha256": "816a631fafa89967caa7346969b8c9618ed27ed2fd9b7e3b9835973d5aaf70c5"
+    },
+    {
+      "snapshot": "iter3",
+      "server": "server-sequential-thinking",
+      "archive_path": "node_modules/@modelcontextprotocol/server-sequential-thinking/package.json",
+      "local_path": "member1/snapshots/iter3/thinking/package.json",
+      "sha256": "75f1b3d71af33bcab50defcb70cb14866f1a86a6f1cec84680a32d069ab68987"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "mcp-sequentialthinking-tools",
+      "archive_path": "node_modules/mcp-sequentialthinking-tools/dist/index.js",
+      "local_path": "member1/snapshots/iter5/thinktools/dist/index.js",
+      "sha256": "d2418e28b3c316b5636a191fe9a8b177c2a40f1d1c34ceba5610a395de7d97ce"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "mcp-sequentialthinking-tools",
+      "archive_path": "node_modules/mcp-sequentialthinking-tools/dist/schema.js",
+      "local_path": "member1/snapshots/iter5/thinktools/dist/schema.js",
+      "sha256": "896436779d00dace7aa5686a793ef488e5d3e27748eee776f91bf1ff105c61a4"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "mcp-sequentialthinking-tools",
+      "archive_path": "node_modules/mcp-sequentialthinking-tools/dist/types.js",
+      "local_path": "member1/snapshots/iter5/thinktools/dist/types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "mcp-sequentialthinking-tools",
+      "archive_path": "node_modules/mcp-sequentialthinking-tools/package.json",
+      "local_path": "member1/snapshots/iter5/thinktools/package.json",
+      "sha256": "a0787cb82aa7119895d36bebc18b31f3c9e172602baf126eacbb3aa728a2986f"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/index.js",
+      "local_path": "member1/snapshots/iter5/fs_official/dist/index.js",
+      "sha256": "1f0af4858dc8ca14c7048ca75660ac3c6bef523758adad830dbec0684a1190c8"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/lib.js",
+      "local_path": "member1/snapshots/iter5/fs_official/dist/lib.js",
+      "sha256": "d2e8e9927b74a8b6c597b490009e96b8f219e090d01b2bac5a13ca13349c0146"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/path-utils.js",
+      "local_path": "member1/snapshots/iter5/fs_official/dist/path-utils.js",
+      "sha256": "2c25cbb4591cdafc19696ec02f18148a32bf1e0419f0a1cfa837a0229d0f7ca8"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/path-validation.js",
+      "local_path": "member1/snapshots/iter5/fs_official/dist/path-validation.js",
+      "sha256": "c2d5481e236814c3a4f32c74580f03fb19b25ff7d0b743cf9d51555c9399d9b6"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/dist/roots-utils.js",
+      "local_path": "member1/snapshots/iter5/fs_official/dist/roots-utils.js",
+      "sha256": "66e701fed706865d0a0889212e3cffb2511ff0fe929789d5e6b9b812b9de4031"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "@modelcontextprotocol/server-filesystem",
+      "archive_path": "node_modules/@modelcontextprotocol/server-filesystem/package.json",
+      "local_path": "member1/snapshots/iter5/fs_official/package.json",
+      "sha256": "a7fb83c2a8000d1d69e632f6c7ce150db8ea615df9e605bc8a14ac78832cab9e"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "server-sequential-thinking",
+      "archive_path": "node_modules/@modelcontextprotocol/server-sequential-thinking/dist/index.js",
+      "local_path": "member1/snapshots/iter5/thinking/dist/index.js",
+      "sha256": "88a42960c3fcb5ca23d87e2a5cea2f4203d6f5351744009fd2967fe699af0bd7"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "server-sequential-thinking",
+      "archive_path": "node_modules/@modelcontextprotocol/server-sequential-thinking/dist/lib.js",
+      "local_path": "member1/snapshots/iter5/thinking/dist/lib.js",
+      "sha256": "816a631fafa89967caa7346969b8c9618ed27ed2fd9b7e3b9835973d5aaf70c5"
+    },
+    {
+      "snapshot": "iter5",
+      "server": "server-sequential-thinking",
+      "archive_path": "node_modules/@modelcontextprotocol/server-sequential-thinking/package.json",
+      "local_path": "member1/snapshots/iter5/thinking/package.json",
+      "sha256": "75f1b3d71af33bcab50defcb70cb14866f1a86a6f1cec84680a32d069ab68987"
+    }
+  ]
+}

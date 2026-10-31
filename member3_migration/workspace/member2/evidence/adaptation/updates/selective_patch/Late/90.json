@@ -1,0 +1,100 @@
+{
+  "update_id": "e272d04d-038d-4eac-aaa5-a3230d5d3d1a",
+  "strategy": "selective_patch",
+  "base_version": "Early",
+  "target_version": "Late",
+  "base_sha256": "d30a11db90adfcf46d3ed2cfa0f467bd929ebbf62f8822f64fde782a8869bcdd",
+  "target_catalog_sha256": "56ac601bed4a1a07faf3cb5b4fedaa417772ae665fe80c61fa3b72c36a5c7cb5",
+  "changes": {
+    "added": [
+      "@jinzcdev/leetcode-mcp-server::get_problem",
+      "ygocdb-mcp-server::get_cards_by_type"
+    ],
+    "removed": [
+      "@jinzcdev/leetcode-mcp-server::get_daily_challenge"
+    ],
+    "changed": {
+      "ygocdb-mcp-server::get_card_image": {
+        "paths": [
+          "/description"
+        ],
+        "kinds": [
+          "description"
+        ]
+      },
+      "ygocdb-mcp-server::search_cards": {
+        "paths": [
+          "/inputSchema/properties/card_attribute",
+          "/inputSchema/properties/card_race",
+          "/inputSchema/properties/exact",
+          "/inputSchema/properties/level_range",
+          "/inputSchema/properties/limit"
+        ],
+        "kinds": [
+          "parameter"
+        ]
+      }
+    },
+    "unchanged": [
+      "ygocdb-mcp-server::get_card_by_id"
+    ]
+  },
+  "affected_blocks": [
+    "rule:@jinzcdev/leetcode-mcp-server::get_daily_challenge",
+    "rule:inventory",
+    "rule:ygocdb-mcp-server::get_card_image",
+    "rule:ygocdb-mcp-server::search_cards"
+  ],
+  "regenerated_tools": [
+    "@jinzcdev/leetcode-mcp-server::get_problem",
+    "ygocdb-mcp-server::get_card_image",
+    "ygocdb-mcp-server::get_cards_by_type",
+    "ygocdb-mcp-server::search_cards"
+  ],
+  "regenerated_blocks": [
+    "rule:@jinzcdev/leetcode-mcp-server::get_problem",
+    "rule:inventory",
+    "rule:ygocdb-mcp-server::get_card_image",
+    "rule:ygocdb-mcp-server::get_cards_by_type",
+    "rule:ygocdb-mcp-server::search_cards"
+  ],
+  "removed_blocks": [
+    "rule:@jinzcdev/leetcode-mcp-server::get_daily_challenge"
+  ],
+  "changed_blocks": [
+    "rule:@jinzcdev/leetcode-mcp-server::get_daily_challenge",
+    "rule:@jinzcdev/leetcode-mcp-server::get_problem",
+    "rule:inventory",
+    "rule:ygocdb-mcp-server::get_card_image",
+    "rule:ygocdb-mcp-server::get_cards_by_type",
+    "rule:ygocdb-mcp-server::search_cards"
+  ],
+  "changed_tool_records": [
+    "@jinzcdev/leetcode-mcp-server::get_daily_challenge",
+    "@jinzcdev/leetcode-mcp-server::get_problem",
+    "ygocdb-mcp-server::get_card_image",
+    "ygocdb-mcp-server::get_cards_by_type",
+    "ygocdb-mcp-server::search_cards"
+  ],
+  "preserved_tool_sha256": {
+    "ygocdb-mcp-server::get_card_by_id": "f73710050b7de097f8358f3d8038fde0270baa5da1f6bcb7e68190d617259290"
+  },
+  "preserved_block_sha256": {
+    "rule:ygocdb-mcp-server::get_card_by_id": "50e90712813e69b4c45408959f2a83f5891fcbfd69c13eb41dbbe3d65bc14a0e"
+  },
+  "output_sha256": "c4fd1b40aaa534b95b31a35411123c7264c616649f83577e15438eb7dcdb2c8a",
+  "update_cost": {
+    "tokens": 0,
+    "seconds": 0.018959400011226535
+  },
+  "schema_version": 1,
+  "task_id": 90,
+  "method_version": "dependency-aware-v1",
+  "backend": "deterministic_templates",
+  "measurement_scope": "update algorithm including detection, rendering and validation; excludes disk IO, compatibility export/serialization, initial shared seeding, task inference and scoring",
+  "no_update_cost_policy": "No knowledge update; zero update cost, orchestration validation/copy time recorded separately",
+  "knowledge_path": "knowledge/selective_patch/Late/90.json",
+  "knowledge_sha256": "027e3b25f64e78dd40cb53e5e25ba8ed478f21b2f5f175c560233f71c4acb5db",
+  "observation_ref": "Late/90",
+  "record_path": "updates/selective_patch/Late/90.json"
+}
